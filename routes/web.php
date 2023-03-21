@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\http\Request;
 
@@ -29,7 +30,9 @@ Route::get('/dashboard', function (){
 Route::get('/table', function (){
     return view ('table');
 });
-    
+
+Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
 
 // Route::get('home',function(){

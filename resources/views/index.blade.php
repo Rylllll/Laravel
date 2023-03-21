@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/Logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -33,6 +34,9 @@
 <body class="">
 
 
+  
+
+
     <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between">
 
         <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
@@ -47,17 +51,76 @@
             <div class="flex justify-between space-x-2">
                 <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                 <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
-              
+           
                 <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
+                  <i class="fa-sharp fa-solid fa-right-to-bracket"></i>
                 Login
                 </span></a>
                 
                 <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
             </div>
+               <div class="block md:hidden">
+            <button
+              class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-    </nav>
+      </nav>
 
-<section id="hero" class="one bg-cover bg-no-repeat bg-fixed" style="background-image: url('../img/shout.jpg'); top: 0%; height: 100vh;">
+<section
+  class="bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('../img/shout.jpg'); top: 0%; height: 110vh;"
+>
+ 
+
+  <div
+    class="relative mx-auto px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8 mt-0  container flex flex-col-reverse items-center space-y-0 md:space-y-0 md:flex-row text-[#212121]"
+  >
+    <div class="max-w-xl text-center sm:text-left mt-5">
+      <h1 class="text-3xl font-extrabold sm:text-5xl">
+       Welcome to
+       <strong class="block font-extrabold text-[#212121] font-delirium max-w-full text-9xl md:text-9xl">
+        Wonders of the world
+      </strong>
+    
+      </h1>
+   
+      <p class="text-white mt-4 max-w-lg sm:text-xl sm:leading-relaxed w-full">
+        Step into the world of wonder and marvel at the awe-inspiring creations of our ancestors, experience the magnificence of human achievement as you embark on a journey to discover the wonders that have stood the test of time
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4 text-center">
+        <a class="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring active:text-[#212121] w-full md:w-1/2 sm:w-full text-center" href="">
+          <span class="absolute inset-0 border border-current rounded-lg"></span>
+          <span class="block border border-current bg-[#212121] p-6 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 rounded-lg">
+            Lets go </span></a>
+      </div>
+      <div class="mt-10">
+        <i class="fab fa-facebook-f fa-lg cursor-pointer bg-blue rounded-lg text-white p-4 hover:bg-blue-600  transition duration-300"></i>
+        <i class="fab fa-youtube fa-lg bg-red rounded-lg p-4 cursor-pointer hover:bg-red-700  text-white transition duration-300"></i>
+        <i class="fab fa-instagram fa-lg bg-red rounded-lg p-4 cursor-pointer hover:bg-gradient-to-br from-[#ff9800]  text-white to-[#f50057] transition duration-300"></i>
+        <i class="fab fa-github fa-lg rounded-lg p-4 cursor-pointer hover:bg-gray-600  text-white transition duration-300"></i>
+       </div>
+    </div>
+  </div>
+</section> 
+
+{{-- 
+<section id="hero" class="one bg-cover bg-no-repeat bg-fixed" style="background-image: url('../img/shout.jpg'); top: 0%; height: 110vh;">
       <!-- Flex Container -->
       <div
         class=" mt-0 relative container flex flex-col-reverse items-center px-6 mx-auto space-y-0 md:space-y-0 md:flex-row text-[#212121] md:top-52"
@@ -98,15 +161,10 @@
            </div>
     </div>
     <!-- component -->
-<script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script> 
 
-        <!-- Image -->
-        {{-- <div class="md:w-1/2 ">
-            <img src="img/trav.png" class="rounded-lg relative" alt="" />
-          </div>
-      </div> --}}
- 
-    </section>
+      
+    </section> --}
 
     {{-- <div id="van" >
         <div class="relative mx-auto text-black top-96 text-center ">
@@ -125,8 +183,8 @@
 <div class="py-16 bg-white">  
     
     <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
-        <h1 class="p-4 text-black rounded-full mb-10 w-full sm:w-1/12 text-center bg-[#eeeeee] font-bold">01-About</h1>
-        <div class="border border-[#9e9e9e] 1px "></div>
+        <h1 class="p-4 text-black rounded-full mb-10 w-full sm:w-1/12 text-center bg-[#eeeeee] font-bold">01 - About</h1>
+        <div class="border border-[#e0e0e0] 1px "></div>
         <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12 p-9">
           <!-- component -->
 
@@ -192,8 +250,8 @@
  
 <div class="py-16 ">  
     <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
-        <h1 class="p-4 text-black rounded-full mb-10 w-1/4 text-center bg-[#eeeeee] font-bold">02-Services we offer</h1>
-        <div class="border border-[#9e9e9e] 1px "></div>
+        <h1 class="p-4 text-black rounded-full mb-10 w-1/4 text-center bg-[#eeeeee] font-bold">02 - Services we offer</h1>
+        <div class="border border-[#e0e0e0] 1px "></div>
         <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3 p-9">
             <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
                 <div class="mb-12 space-y-4">
@@ -224,102 +282,208 @@
 </div>
 
 
-<div id="data-container">
-
-
-</div>
-
-
-   
+ 
 <div class="py-16 ">  
-    <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
-        <h1 class="p-4 text-black rounded-full mb-10 w-1/4 text-center bg-[#eeeeee] font-bold">03-Contact us</h1>
-        <div class="border border-[#9e9e9e] 1px "></div>
-        <div
-  id="carouselExampleControls"
-  class="relative"
-  data-te-carousel-init
-  data-te-carousel-slide>
-  <div
-    class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-    <div
-      class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-      data-te-carousel-item
-      data-te-carousel-active>
-      <img
-        src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
-        class="block w-full"
-        alt="Wild Landscape" />
-    </div>
-    <div
-      class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-      data-te-carousel-item>
-      <img
-        src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
-        class="block w-full"
-        alt="Camera" />
-    </div>
-    <div
-      class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-      data-te-carousel-item>
-      <img
-        src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
-        class="block w-full"
-        alt="Exotic Fruits" />
-    </div>
+  <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
+      <h1 class="p-4 text-black rounded-full mb-10 w-1/4 text-center bg-[#eeeeee] font-bold">03 - Gallery</h1>
+      <div class="border border-[#e0e0e0] 1px "></div>
+      <section>
+        <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+          <header>
+            <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">
+              Travel spot gallery
+            </h2>
+      
+            <p class="max-w-md mt-4 text-gray-500">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
+              praesentium cumque iure dicta incidunt est ipsam, officia dolor fugit
+              natus?
+            </p>
+          </header>
+      
+          <ul class="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4 rounded-lg">
+            <li>
+              <a href="#" class="block overflow-hidden group">
+                <img
+                src="../img/m5.jpg"
+                  alt=""
+                  class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] rounded-lg"
+                />
+      
+                <div class="relative pt-3 bg-white">
+                  <h3
+                    class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
+                  >
+                    Basic Tee
+                  </h3>
+      
+                  <p class="mt-2">
+                    <span class="sr-only"> Regular Price </span>
+      
+                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  </p>
+                </div>
+              </a>
+            </li>
+      
+            <li>
+              <a href="#" class="block overflow-hidden group">
+                <img
+                src="../img/d3.jpg"
+                  alt=""
+                  class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] rounded-lg "
+                />
+      
+                <div class="relative pt-3 bg-white">
+                  <h3
+                    class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4 "
+                  >
+                    Basic Tee
+                  </h3>
+      
+                  <p class="mt-2">
+                    <span class="sr-only"> Regular Price </span>
+      
+                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  </p>
+                </div>
+              </a>
+            </li>
+      
+            <li>
+              <a href="#" class="block overflow-hidden group">
+                <img
+src="../img/mountains.jpg"
+                alt=""
+                  class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] rounded-lg"
+                />
+      
+                <div class="relative pt-3 bg-white">
+                  <h3
+                    class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
+                  >
+                    Basic Tee
+                  </h3>
+      
+                  <p class="mt-2">
+                    <span class="sr-only"> Regular Price </span>
+      
+                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  </p>
+                </div>
+              </a>
+            </li>
+      
+            <li>
+              <a href="#" class="block overflow-hidden group">
+                <img
+                src="../img/d1.jpg"
+                  alt=""
+                  class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] rounded-lg"
+                />
+      
+                <div class="relative pt-3 bg-white">
+                  <h3
+                    class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
+                  >
+                    Basic Tee
+                  </h3>
+      
+                  <p class="mt-2">
+                    <span class="sr-only"> Regular Price </span>
+      
+                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      
   </div>
-  <button
-    class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-    type="button"
-    data-te-target="#carouselExampleControls"
-    data-te-slide="prev">
-    <span class="inline-block h-8 w-8">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="h-6 w-6">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15.75 19.5L8.25 12l7.5-7.5" />
-      </svg>
-    </span>
-    <span
-      class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-      >Previous</span
-    >
-  </button>
-  <button
-    class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-    type="button"
-    data-te-target="#carouselExampleControls"
-    data-te-slide="next">
-    <span class="inline-block h-8 w-8">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="h-6 w-6">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-      </svg>
-    </span>
-    <span
-      class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-      >Next</span
-    >
-  </button>
-</div>
-    </div>
 </div>
 
+{{-- 
+    <section id="gallery" class="relative mx-auto px-6 sm:px-6 mt-20 ">
+        <!--Tabs-------------<div class="w-1500 sm:w-7/12 sm:mx-auto ">--------------------------------->
+        <div class="w-auto sm:w-7/12 sm:mx-auto bg-white rounded-lg">
+            <div role="tablist" aria-label="tabs" class="bg-black relative w-full mx-auto h-12 grid grid-cols-3 items-center px-[3px] shadow-2xl shadow-900/20 transition">
+                <div class="absolute indicator h-11 my-auto top-0 bottom-0 left-0 shadow-md border-b  border-white"></div>
+                <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0" class="relative block h-10 px-6 tab rounded-full ">
+              <span class="text-white text-xl"> Mountains</span>
+            </button>
+                <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1" class="relative block h-10 px-6 tab rounded-full">
+              <span class="text-white text-xl">Beaches</span>
+            </button>
+                <button role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1" class="relative block h-10 px-6 tab rounded-full">
+              <span class="text-white text-xl">Caves</span>
+            </button>
+
+            </div>
+
+            <div class="mt-20 relative rounded-lg bg-white">
+                <div role="tabpanel" id="panel-1" class="tab-panel p-6 transition duration-300">
+
+                    <h2 class="text-xl font-semibold text-black text-center ">
+                        <i class="fa-solid fa-mountains"></i> Diffrent mountains in the world
+                    </h2>
+                    <p class="mt-4 text-black text-center p-5">Mountains are some of the most breathtaking natural features on Earth. They are characterized by their towering heights, rugged terrain, and diverse ecosystems. Mountains play an important role in shaping our planet's climate, weather
+                        patterns, and water cycles. They are also rich in natural resources and provide habitats for a wide variety of plant and animal species. From the majestic peaks of the Himalayas to the scenic ranges of the Rocky Mountains, mountains
+                        are a source of inspiration and wonder for people all over the world. Whether you enjoy hiking, skiing, or simply taking in the panoramic views, there is something truly awe-inspiring about these natural wonders that draws us to
+                        them.
+                    </p>
+                    <div class="w-full p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-5 rounded-lg overflow-y-auto max-h-1000">
+
+                        <img class="rounded-lg  cursor-pointer h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 " src="../img/m1.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/m2.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/m3.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/m4.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/m5.jpg" alt="">
+
+
+
+                        <div id="data-container">
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div role="tabpanel" id="panel-2" class="absolute top-0 invisible opacity-0 tab-panel p-6 transition duration-300">
+                    <h2 class="text-xl font-semibold text-black text-center">Diffrent beaches in the world</h2>
+                    <p class="mt-4 text-black text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas dolores voluptate temporibus, atque ab eos, delectus at ad hic voluptatem veritatis iure, nulla voluptates quod nobis doloremque eaque! Perferendis, soluta.</p>
+                    <div class="w-full p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-5 rounded-lg">
+                        <img class="rounded-lg cursor-pointer h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="../img/d1.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/d2.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/d3.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/d4.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/d5.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/d6.jpg" alt="">
+                    </div>
+
+                </div>
+                <div role="tabpanel" id="panel-3" class="absolute top-0 invisible opacity-0 tab-panel p-6 transition duration-300">
+                    <h2 class="text-xl font-semibold text-black text-center">Diffrent caves in the world</h2>
+                    <p class="mt-4 text-black text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas dolores voluptate temporibus, atque ab eos, delectus at ad hic voluptatem veritatis iure, nulla voluptates quod nobis doloremque eaque! Perferendis, soluta.</p>
+                    <div class="w-full p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-5 rounded-lg">
+                        <img class="rounded-lg cursor-pointer h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="../img/d1.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/d2.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/d3.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/d4.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/d5.jpg" alt="">
+                        <img class="rounded-lg cursor-pointer" src="../img/d6.jpg" alt="">
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </section> --}}
 
     <div class="py-16 ">  
         <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
