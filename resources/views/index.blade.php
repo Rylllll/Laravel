@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="./app.css" rel="stylesheet">
@@ -49,13 +50,39 @@
                 <a href="# ">Contact</a>
             </div>
             <div class="flex justify-between space-x-2">
-                <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+              @auth
+              <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+
+              <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
+                  @csrf
+
+                  
+                  <button  type="submit" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+                    <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
+               
+                    <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
+             
+                    Log out
+                    </span></button>
+              </form>
+          @else
+              
+              <a  href="/register" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                 <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
            
                 <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
-                  <i class="fa-sharp fa-solid fa-right-to-bracket"></i>
+            
+                Register
+                </span></a>
+              <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+                <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
+           
+                <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
+         
                 Login
                 </span></a>
+          @endauth
+                
                 
                 <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
             </div>
@@ -853,12 +880,25 @@ src="../img/mountains.jpg"
 
     </div>
     </div>
+    @if (session()->has('success'))
+    <div x-data="{ show: true }"
+         x-init="setTimeout(() => show = false, 4000)"
+         x-show="show"
+         class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm"
+    >  <p class="text-sm font-medium">
+    
+      {{ session('success') }}
+    </p>
+    
+    
+    </div>
+    @endif
 </body>
-<script>
+{{-- <script>
     $(document).ready(function() {
         updateUserName();
     });
-</script>
+</script> --}}
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 <!-- <script src="wow.min.js"></script> -->
 <script src="./main.js"></script>

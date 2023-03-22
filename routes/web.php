@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\http\Request;
 
@@ -15,50 +18,25 @@ use Illuminate\http\Request;
 |
 */
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view ('index');
-});
-
-Route::get('/login', function (){
-return view ('login');
-});
-
-Route::get('/dashboard', function (){
-    return view ('dashboard');
 });
 
 Route::get('/table', function (){
     return view ('table');
 });
 
+Route::resource("/employee", UploadController::class);
+
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
+Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
+Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
-// Route::get('home',function(){
-//     return view('welcome');
-// });
 
-// Route::get('home2',function(){
-//     return view('home2');
-// });
+Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-// Route::get('/LandingPage/{id}/{Fruits}', function($id, $Fruits){
-// return response ($id.'-'.$Fruits, 200);
- 
+Route::get('admin/post/create', [PostController::class, 'create']);
 
-// });
 
-// Route::get('/req-json', function(){
-//     return response()->json(['name','panot']);
-// });
-
-// Route::get('/sar/{id}', function($id){
-// return response($id, 200);
-
-// });
-
-// Route::get('/panot/{ikaw}/{supot}', function($ikaw, $supot){
-// return response($ikaw.'-'.$supot , 200);
-
-// });
