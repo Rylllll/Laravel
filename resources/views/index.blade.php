@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -35,8 +36,7 @@
 <body class="">
 
 
-  
-
+ 
 
     <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between">
 
@@ -108,7 +108,7 @@
           </div>
         </div>
       </nav>
-
+ 
 <section
   class="bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('../img/shout.jpg'); top: 0%; height: 110vh;"
 >
@@ -146,123 +146,28 @@
   </div>
 </section> 
 
-{{-- 
-<section id="hero" class="one bg-cover bg-no-repeat bg-fixed" style="background-image: url('../img/shout.jpg'); top: 0%; height: 110vh;">
-      <!-- Flex Container -->
-      <div
-        class=" mt-0 relative container flex flex-col-reverse items-center px-6 mx-auto space-y-0 md:space-y-0 md:flex-row text-[#212121] md:top-52"
-      >
-        <!-- Left item -->
-        <div class="flex flex-col mb-32 space-y-12 md:w-1/2 ">
-            <h1
-            class="max-w-md text-5xl font-bold text-center md:text-5xl md:text-left font-sans"
-          >
-           Welcome to
-          </h1>
-          <h1
-            class="max-w-full text-9xl font-bold text-center md:text-9xl md:text-left font-delirium md:mt-0"
-          >
-          Wonders of the world
-          </h1>
-          <p class="max-w-sm text-center text-white md:text-left">
-            Step into the world of wonder and marvel at the awe-inspiring creations of our ancestors. <br> From the towering Great Pyramid of Giza to the breathtaking Taj Mahal, <br>experience the magnificence of human achievement <br> as you embark
-                on a journey to discover the seven wonders that have stood the test of time
-          </p>
-          <div class="flex justify-center md:justify-start">
-    
-            <!-- Base -->
 
-
-<a class="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring active:text-[#212121] w-1/2 text-center" href="">
-<span class="absolute inset-0 border border-current rounded-lg"></span>
-<span class="block border border-current bg-[#212121] px-12 py-3 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 rounded-lg">
-  Lets go </span></a>
-
-          
-          </div>
-          <div class="">
-            <i class="fab fa-facebook-f fa-lg cursor-pointer bg-blue rounded-lg p-4 hover:bg-blue-600 hover:text-white transition duration-300"></i>
-            <i class="fab fa-youtube fa-lg bg-red rounded-lg p-4 cursor-pointer hover:bg-red-700 hover:text-white transition duration-300"></i>
-            <i class="fab fa-instagram fa-lg bg-red rounded-lg p-4 cursor-pointer hover:bg-gradient-to-br from-[#ff9800] to-[#f50057] hover:text-white transition duration-300"></i>
-            <i class="fab fa-github fa-lg rounded-lg p-4 cursor-pointer hover:bg-gray-600 hover:text-white transition duration-300"></i>
-           </div>
-    </div>
-    <!-- component -->
-<script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script> 
-
-      
-    </section> --}
-
-    {{-- <div id="van" >
-        <div class="relative mx-auto text-black top-96 text-center ">
-            <p class="font-delirium text-3xl sm:text-sm md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sm:top-0">Welcome to</p>
-            <h1 class="font-delirium text-5xl sm:text-5xl md:text-8xl lg:text-9xl xl:text-10xl 2xl:text-11xl">Wonders of the world</h1>
-            <p class="mt-4 text-black text-center p-5 text-sm sm:text-base md:text-lg lg:text-2xl xl:text-2xl 2xl:text-3xl">"Step into the world of wonder and marvel at the awe-inspiring creations of our ancestors. <br> From the towering Great Pyramid of Giza to the breathtaking Taj Mahal, <br>experience the magnificence of human achievement <br> as you embark
-                on a journey to discover the seven wonders that have stood the test of time."</p>
-            <button class="relative top-55 bg-black hover:bg-blue-400 text-black font-bold py-2 px-4 rounded-md border-4 border-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 active:translate-y-1 active:border-blue-500 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
-            <a href="#what">Lets go!</a>
-          </button>
-        </div>
-    </div> --}}
-
-<!---About-->
-<!-- component -->
 <div class="py-16 bg-white">  
     
     <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
         <h1 class="p-4 text-black rounded-full mb-10 w-full sm:w-1/12 text-center bg-[#eeeeee] font-bold">01 - About</h1>
         <div class="border border-[#e0e0e0] 1px "></div>
         <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12 p-9">
-          <!-- component -->
 
-<div class="max-w-2xl mx-auto">
-
-	<div id="default-carousel" class="relative" data-carousel="static">
-        <!-- Carousel wrapper -->
-        <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+          <section class="bg-white dark:bg-gray-900">
+            <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Travel and see the world with your eyes</h2>
+                    <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
+                    <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
+                    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
+                </div>
+            </div>
+        </section>
           
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="../img/d1.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-            </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="../img/M1.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-            </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="../img/d2.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-            </div>
-           
-        
-        </div>
-        <!-- Slider indicators -->
-        <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-        </div>
-        <!-- Slider controls -->
-        <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
-            <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-     
-            </span>
-        </button>
-        <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
-            <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-             
-            </span>
-        </button>
-    </div>
-
-	<p class="mt-5">The wonders of the world are not only awe-inspiring, but they also represent the remarkable achievements of human creativity, innovation, and perseverance throughout history, and therefore, visiting them is a truly once-in-a-lifetime experience that everyone should have the opportunity to enjoy.
-	</p>
-
-</div>
-          <div class="md:7/12 lg:w-6/12">
-            <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">Travel and see the world</h2>
-            <p class="mt-6 text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae unde aperiam, repellat expedita consequatur! Officiis id consequatur atque doloremque!</p>
-            <p class="mt-4 text-gray-600"> Nobis minus voluptatibus pariatur dignissimos libero quaerat iure expedita at? Asperiores nemo possimus nesciunt dicta veniam aspernatur quam mollitia.</p>
-          </div>
         </div>
 
         </div>
@@ -310,7 +215,7 @@
 
 
  
-<div class="py-16 ">  
+<div class="py-16">  
   <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
       <h1 class="p-4 text-black rounded-full mb-10 w-1/4 text-center bg-[#eeeeee] font-bold">03 - Gallery</h1>
       <div class="border border-[#e0e0e0] 1px "></div>
@@ -328,107 +233,53 @@
             </p>
           </header>
       
-          <ul class="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4 rounded-lg">
-            <li>
-              <a href="#" class="block overflow-hidden group">
-                <img
-                src="../img/m5.jpg"
-                  alt=""
-                  class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] rounded-lg"
-                />
       
-                <div class="relative pt-3 bg-white">
-                  <h3
-                    class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
-                  >
-                    Basic Tee
-                  </h3>
-      
-                  <p class="mt-2">
-                    <span class="sr-only"> Regular Price </span>
-      
-                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                  </p>
-                </div>
-              </a>
-            </li>
-      
-            <li>
-              <a href="#" class="block overflow-hidden group">
-                <img
-                src="../img/d3.jpg"
-                  alt=""
-                  class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] rounded-lg "
-                />
-      
-                <div class="relative pt-3 bg-white">
-                  <h3
-                    class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4 "
-                  >
-                    Basic Tee
-                  </h3>
-      
-                  <p class="mt-2">
-                    <span class="sr-only"> Regular Price </span>
-      
-                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                  </p>
-                </div>
-              </a>
-            </li>
-      
-            <li>
-              <a href="#" class="block overflow-hidden group">
-                <img
-src="../img/mountains.jpg"
-                alt=""
-                  class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] rounded-lg"
-                />
-      
-                <div class="relative pt-3 bg-white">
-                  <h3
-                    class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
-                  >
-                    Basic Tee
-                  </h3>
-      
-                  <p class="mt-2">
-                    <span class="sr-only"> Regular Price </span>
-      
-                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                  </p>
-                </div>
-              </a>
-            </li>
-      
-            <li>
-              <a href="#" class="block overflow-hidden group">
-                <img
-                src="../img/d1.jpg"
-                  alt=""
-                  class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px] rounded-lg"
-                />
-      
-                <div class="relative pt-3 bg-white">
-                  <h3
-                    class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
-                  >
-                    Basic Tee
-                  </h3>
-      
-                  <p class="mt-2">
-                    <span class="sr-only"> Regular Price </span>
-      
-                    <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-                  </p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-      
+
+
+
+  
+   
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 w-96 sm:w-auto">
+
+      @foreach ($home as $item)
+ 
+<article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+  <img
+    alt="Office"
+    src="{{$item->image}}"
+    class="h-56 w-full object-cover"
+  />
+
+  <div class="bg-white p-4 sm:p-6">
+    <time datetime="2022-10-10" class="block text-xs text-gray-500">
+      10th Oct 2022
+    </time>
+
+    <a href="#">
+      <h3 class="mt-0.5 text-lg text-gray-900">
+        {{$item->title}}
+      </h3>
+    </a>
+
+    <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+      {{$item->about}}
+    </p>
   </div>
+</article>
+
+
+    
+      @endforeach
+    
+    
+
+        
+        </div>
+        
+      </section>
+
+  </div>
+  
 </div>
 
 {{-- 

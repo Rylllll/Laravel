@@ -27,75 +27,75 @@
 
 <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between">
 
-    <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
-        <div class="">
-            <img src="/img/7wonders.png " alt=" ">
-        </div>
-        <div class="hidden md:flex space-x-20 ">
-            <a href="#van">About</a>
-            <a href="#gallery">Gallery</a>
-            <a href="# ">Contact</a>
-        </div>
-        <div class="flex justify-between space-x-2">
-          @auth
-          <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
-
-          <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
-              @csrf
-
-              
-              <button  type="submit" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
-                <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
-           
-                <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
-         
-                Log out
-                </span></button>
-          </form>
-      @else
-          
-          <a  href="/register" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
-            <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
-       
-            <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
-        
-            Register
-            </span></a>
-          <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
-            <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
-       
-            <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
-     
-            Login
-            </span></a>
-      @endauth
-            
-            
-            <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
-        </div>
-           <div class="block md:hidden">
-        <button
-          class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+  <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
+      <div class="">
+          <img src="../img/7wonders.png " alt=" ">
       </div>
+      <div class="hidden md:flex space-x-20 ">
+          <a href="#van">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="# ">Contact</a>
+      </div>
+      <div class="flex justify-between space-x-2">
+        @auth
+        <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+
+        <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
+            @csrf
+
+            
+            <button  type="submit" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+              <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
+         
+              <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
+       
+              Log out
+              </span></button>
+        </form>
+    @else
+        
+        <a  href="/register" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
+     
+          <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
+      
+          Register
+          </span></a>
+        <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
+     
+          <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
+   
+          Login
+          </span></a>
+    @endauth
+          
+          
+          <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
+      </div>
+         <div class="block md:hidden">
+      <button
+        class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
     </div>
-  </nav>
-  
+  </div>
+</nav>
+
 
   @yield('content')
 

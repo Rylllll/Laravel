@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\upload;
+use DB;
 class UploadController extends Controller
 {
     /**
@@ -11,16 +12,19 @@ class UploadController extends Controller
      */
     public function index()
     {
-        $upload = upload::all();
-        return view ('post.index')->with('post', $upload);
+        $uploads = Upload::paginate(10); // 10 is the number of items per page
+        $count = Upload::count();
+        return view('uploader.table')->with('uploader', $uploads)->with('count', $count);
     }
+    
 
+   
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('post.create');
+        return view('uploader.create');
     }
 
     /**
@@ -34,8 +38,8 @@ class UploadController extends Controller
             $path = $request->file('image')->storeAs('images', $fileName, 'public');
             $requestData["image"] = '/storage/'.$path;
             upload::create($requestData);
-            return redirect('admin/index')->with('flash_message', 'Photo added');
-    }
+            return redirect('uploads')->with('flash_message', 'Photo added');
+        }
         
     }
 

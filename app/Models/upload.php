@@ -12,4 +12,8 @@ class upload extends Model
     protected $table = 'upimages';
     protected $primaryKey = 'id';
     protected $fillable = ['title', 'about', 'image'];
+
+
 }
+
+
