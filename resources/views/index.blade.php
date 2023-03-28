@@ -33,7 +33,7 @@
 
 
 
-<body class="">
+<body class="bg-[#fff3e0]">
 
 
  
@@ -45,15 +45,90 @@
                 <img src="../img/7wonders.png " alt=" ">
             </div>
             <div class="hidden md:flex space-x-20 ">
-                <a href="#van">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="# ">Contact</a>
+                <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
+                href="# " >About</a>
+                <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
+          href="#gallery">Gallery</a>
+                <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
+            href="# ">Contact</a>
             </div>
             <div class="flex justify-between space-x-2">
               @auth
-              <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+           
+         
 
-              <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
+<div x-data="{ isActive: false }" class="relative">
+  <div
+    class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
+    href="/download"
+  >
+  <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+
+    <button
+      x-on:click="isActive = !isActive"
+      class="h-full p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-700"
+    >
+      <span class="sr-only">Menu</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <div
+    class="absolute right-0 z-10 mt-2 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
+    role="menu"
+    x-cloak
+    x-transition
+    x-show="isActive"
+    x-on:click.away="isActive = false"
+    x-on:keydown.escape.window="isActive = false"
+  >
+    <div class="p-2">
+      <strong class="block p-2 text-xs font-medium uppercase text-gray-400">
+        General
+      </strong>
+
+      <a
+        href="{{URL::to('uploads')}}"
+        class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+        role="menuitem"
+      >
+        Go to dashboard
+      </a>
+    
+     
+    <form method="POST" action="/logout" >
+      @csrf
+
+      <button type="submit"
+      href=""
+      class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+      role="menuitem"
+    >
+     Log out
+    </button>
+      
+  </form>
+
+    </div>
+
+   
+  </div>
+</div>
+
+              
+
+              {{-- <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
                   @csrf
 
                   
@@ -64,7 +139,7 @@
              
                     Log out
                     </span></button>
-              </form>
+              </form> --}}
           @else
               
               <a  href="/register" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
@@ -109,6 +184,11 @@
         </div>
       </nav>
  
+
+
+
+
+      
 <section
   class="bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('../img/shout.jpg'); top: 0%; height: 110vh;"
 >
@@ -147,14 +227,14 @@
 </section> 
 
 
-<div class="py-16 bg-white">  
+<div class="py-16 ">  
     
     <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
         <h1 class="p-4 text-black rounded-full mb-10 w-full sm:w-1/12 text-center bg-[#eeeeee] font-bold">01 - About</h1>
         <div class="border border-[#e0e0e0] 1px "></div>
         <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12 p-9">
 
-          <section class="bg-white dark:bg-gray-900">
+          <section class="bg-white rounded-2xl dark:bg-gray-900 shadow-2xl">
             <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                 <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                     <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Travel and see the world with your eyes</h2>
@@ -173,8 +253,6 @@
         </div>
     </div>
 
-    <!-- component -->
-<!-- This is an example component -->
 
   </div>
 
@@ -243,7 +321,7 @@
 
       @foreach ($home as $item)
  
-<article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+<article class="overflow-hidden rounded-2xl shadow transition hover:shadow-lg">
   <img
     alt="Office"
     src="{{$item->image}}"
@@ -282,86 +360,6 @@
   
 </div>
 
-{{-- 
-    <section id="gallery" class="relative mx-auto px-6 sm:px-6 mt-20 ">
-        <!--Tabs-------------<div class="w-1500 sm:w-7/12 sm:mx-auto ">--------------------------------->
-        <div class="w-auto sm:w-7/12 sm:mx-auto bg-white rounded-lg">
-            <div role="tablist" aria-label="tabs" class="bg-black relative w-full mx-auto h-12 grid grid-cols-3 items-center px-[3px] shadow-2xl shadow-900/20 transition">
-                <div class="absolute indicator h-11 my-auto top-0 bottom-0 left-0 shadow-md border-b  border-white"></div>
-                <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0" class="relative block h-10 px-6 tab rounded-full ">
-              <span class="text-white text-xl"> Mountains</span>
-            </button>
-                <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1" class="relative block h-10 px-6 tab rounded-full">
-              <span class="text-white text-xl">Beaches</span>
-            </button>
-                <button role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1" class="relative block h-10 px-6 tab rounded-full">
-              <span class="text-white text-xl">Caves</span>
-            </button>
-
-            </div>
-
-            <div class="mt-20 relative rounded-lg bg-white">
-                <div role="tabpanel" id="panel-1" class="tab-panel p-6 transition duration-300">
-
-                    <h2 class="text-xl font-semibold text-black text-center ">
-                        <i class="fa-solid fa-mountains"></i> Diffrent mountains in the world
-                    </h2>
-                    <p class="mt-4 text-black text-center p-5">Mountains are some of the most breathtaking natural features on Earth. They are characterized by their towering heights, rugged terrain, and diverse ecosystems. Mountains play an important role in shaping our planet's climate, weather
-                        patterns, and water cycles. They are also rich in natural resources and provide habitats for a wide variety of plant and animal species. From the majestic peaks of the Himalayas to the scenic ranges of the Rocky Mountains, mountains
-                        are a source of inspiration and wonder for people all over the world. Whether you enjoy hiking, skiing, or simply taking in the panoramic views, there is something truly awe-inspiring about these natural wonders that draws us to
-                        them.
-                    </p>
-                    <div class="w-full p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-5 rounded-lg overflow-y-auto max-h-1000">
-
-                        <img class="rounded-lg  cursor-pointer h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 " src="../img/m1.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/m2.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/m3.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/m4.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/m5.jpg" alt="">
-
-
-
-                        <div id="data-container">
-
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div role="tabpanel" id="panel-2" class="absolute top-0 invisible opacity-0 tab-panel p-6 transition duration-300">
-                    <h2 class="text-xl font-semibold text-black text-center">Diffrent beaches in the world</h2>
-                    <p class="mt-4 text-black text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas dolores voluptate temporibus, atque ab eos, delectus at ad hic voluptatem veritatis iure, nulla voluptates quod nobis doloremque eaque! Perferendis, soluta.</p>
-                    <div class="w-full p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-5 rounded-lg">
-                        <img class="rounded-lg cursor-pointer h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="../img/d1.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/d2.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/d3.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/d4.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/d5.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/d6.jpg" alt="">
-                    </div>
-
-                </div>
-                <div role="tabpanel" id="panel-3" class="absolute top-0 invisible opacity-0 tab-panel p-6 transition duration-300">
-                    <h2 class="text-xl font-semibold text-black text-center">Diffrent caves in the world</h2>
-                    <p class="mt-4 text-black text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas dolores voluptate temporibus, atque ab eos, delectus at ad hic voluptatem veritatis iure, nulla voluptates quod nobis doloremque eaque! Perferendis, soluta.</p>
-                    <div class="w-full p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-5 rounded-lg">
-                        <img class="rounded-lg cursor-pointer h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="../img/d1.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/d2.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/d3.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/d4.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/d5.jpg" alt="">
-                        <img class="rounded-lg cursor-pointer" src="../img/d6.jpg" alt="">
-                    </div>
-
-                </div>
-
-
-            </div>
-        </div>
-
-
-    </section> --}}
 
     <div class="py-16 ">  
         <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
@@ -686,23 +684,23 @@
                 <h2 class="text-xl font-semibold text-white mb-4">Social media</h2>
                 <ul class="list-none">
                     <li>
-                        <i class="fab fa-facebook-f text-white bg-blue rounded-lg p-4 cursor-pointer hover:bg-blue-600"></i>
+                        <i class="fab fa-facebook-f text-white bg-blue rounded-2xl p-4 cursor-pointer hover:bg-blue-600"></i>
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook</a>
                     </li>
                     <li>
-                        <i class="fab fa-instagram text-white bg-red rounded-lg p-4 cursor-pointer hover:bg-gradient-to-br from-[#ff9800] to-[#f50057]"></i>
+                        <i class="fab fa-instagram text-white bg-red rounded-2xl p-4 cursor-pointer hover:bg-gradient-to-br from-[#ff9800] to-[#f50057]"></i>
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
                     </li>
                     <li>
-                        <i class="fab fa-twitter text-white bg-red rounded-lg p-4 cursor-pointer hover:bg-[#03a9f4]"></i>
+                        <i class="fab fa-twitter text-white bg-red rounded-2xl p-4 cursor-pointer hover:bg-[#03a9f4]"></i>
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
                     </li>
                     <li>
-                        <i class="fab fa-youtube text-white bg-red rounded-lg p-4 cursor-pointer hover:bg-red-700"></i>
+                        <i class="fab fa-youtube text-white bg-red rounded-2xl p-4 cursor-pointer hover:bg-red-700"></i>
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">Youtube</a>
                     </li>
                     <li>
-                        <i class="fab fa-github text-white bg-red rounded-lg p-4 cursor-pointer hover:bg-gray-600"></i>
+                        <i class="fab fa-github text-white bg-red rounded-2xl p-4 cursor-pointer hover:bg-gray-600"></i>
                         <a href="#" class="text-gray-400 hover:text-white transition duration-300">Github</a>
                     </li>
                 </ul>
@@ -734,15 +732,16 @@
     @if (session()->has('success'))
     <div x-data="{ show: true }"
          x-init="setTimeout(() => show = false, 4000)"
-         x-show="show"
-         class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm"
-    >  <p class="text-sm font-medium">
+         x-show="show" class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">  <p class="text-sm font-medium">
     
       {{ session('success') }}
     </p>
     
     
     </div>
+
+
+    
     @endif
 </body>
 {{-- <script>
@@ -750,8 +749,8 @@
         updateUserName();
     });
 </script> --}}
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-<!-- <script src="wow.min.js"></script> -->
 <script src="./main.js"></script>
 <script src="./modal.js"></script>
 <script src="./get.js"></script>

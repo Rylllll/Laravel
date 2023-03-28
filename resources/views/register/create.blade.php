@@ -26,54 +26,7 @@
 </style>
 
 <body class="bg-blue-400">
-    {{-- <section class="px-6 py-8">
-        <main class="max-w-lg mx-auto mt-10 bg-gray-100 border border-gray-200 p-6 rounded-xl">
-            <h1 class="text-center font-bold text-xl">Register!</h1>
-
-            <form method="POST" action="/register" class="mt-10">
-                @csrf
-
-                <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
-                           for="name"
-                    >
-                        Name
-                    </label>
-
-                    <input class="border border-gray-400 p-2 w-full"
-                           type="text"
-                           name="name"
-                           id="name"
-                           required
-                    >
-                </div>
-
-        
-                <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
-                           for="password"
-                    >
-                        Password
-                    </label>
-
-                    <input class="border border-gray-400 p-2 w-full"
-                           type="password"
-                           name="password"
-                           id="password"
-                           required
-                    >
-                </div>
-
-                <div class="mb-6">
-                    <button type="submit"
-                            class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
-                    >
-                        Submit
-                    </button>
-                </div>
-            </form>
-        </main>
-    </section> --}}
+   
     <section class="min-h-screen flex items-center justify-center bg-2b2d42">
         <!-- login container -->
         <div class="bg-gray-100 flex rounded-2xl shadow-2xl max-w-7xl p-5 items-center text-black  ">
@@ -86,20 +39,20 @@
 
                 <form action="/register" class="flex flex-col gap-4" method="POST" id="loginForm">
                     @csrf
-                    <input class="p-6 mt-8 rounded-xl border" id="name" type="name" name="name" placeholder="Name" value="{{ old('name') }}" required>
+                    <input class="p-2 px-7 mt-8 rounded-xl border" id="name" type="name" name="name" placeholder="Name" value="{{ old('name') }}" required>
                     @error('name')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
-                <input class="p-6 rounded-xl border" id="username" type="username" name="username" placeholder="Username" value="{{ old('username') }}"required>
+                <input class="p-2 px-7 rounded-xl border" id="username" type="username" name="username" placeholder="Username" value="{{ old('username') }}"required>
                 @error('username')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
             @enderror
-            <input class="p-6 rounded-xl border" id="email" type="email" name="email" placeholder="email" value="{{ old('email') }} "required>
+            <input class="p-2 px-7  rounded-xl border" id="email" type="email" name="email" placeholder="email" value="{{ old('email') }} "required>
             @error('email')
             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
         @enderror
                     <div class="relative">
-                        <input class="p-6 rounded-xl border w-full" id="password" type="password" name="password" placeholder="Password" required>
+                        <input class="p-2 px-7 rounded-xl border w-full" id="password" type="password" name="password" placeholder="Password" required>
                         @error('password')
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror

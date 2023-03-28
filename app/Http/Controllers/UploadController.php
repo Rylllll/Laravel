@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\upload;
 use DB;
@@ -12,24 +11,24 @@ class UploadController extends Controller
      */
     public function index()
     {
-        $uploads = Upload::paginate(10); // 10 is the number of items per page
+        
+        $uploads = Upload::paginate(10); 
         $count = Upload::count();
         return view('uploader.table')->with('uploader', $uploads)->with('count', $count);
     }
     
 
    
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('uploader.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    // public function index()
+    // {
+    //     // Select the columns that you want from the database
+    //     $uploads = Upload::select('title', 'about', 'image')
+    //                 ->paginate(10); 
+    //     $count = Upload::count();
+    //     return view('uploader.table')->with('uploader', $uploads)->with('count', $count);
+    // }
+    
+   
     public function store(Request $request)
     {
         if ($request->hasFile('image')) {
@@ -54,24 +53,40 @@ class UploadController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    // public function edit(string $id)
+    // {
+    //     $edits = DB::select('select * from student where id = ?', [$id]);
+    //     return view('uploader.table', ['edits'=>$edits]);
+    // }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+    // public function update(Request $request, string $id)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-    }
+  public function destroy(string $id)
+{
+    $upload = Upload::findOrFail($id); // Find the upload by id or throw an exception
+    $upload->delete(); // Delete the upload
+    $uploads = Upload::paginate(10); // Get all the uploads to display in the view
+    $count = Upload::count();
+    return view('uploader.table')->with('uploader', $uploads)->with('count', $count)->with('flash_message', 'Photo deleted');
+}
+
+public function update(Request $request, $id){
+    $images = Upload::find($id);
+    return view('/uploader.table', compact('uploads'));
+}
+
+public function edit_controller($id){
+
+
+}
+    
 }

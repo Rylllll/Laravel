@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function create(){
-        return view('post.create');  
+        return view('uploads.table');  
 
         if(auth()->guest()){
             return redirect('/')->with('success', 'Goodbye!');

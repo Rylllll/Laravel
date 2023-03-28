@@ -16,7 +16,16 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-
+    'providers' => [
+        // ...
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+    ],
+    
+    'aliases' => [
+        // ...
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+    ],
+    
     /*
     |--------------------------------------------------------------------------
     | Application Environment
