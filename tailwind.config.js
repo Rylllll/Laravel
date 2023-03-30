@@ -4,14 +4,25 @@ module.exports = {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        "./node_modules/flowbite/**/*.js"
     ],
     theme: {
+        safelist: [
+            '!duration-0',
+            '!delay-0',
+            'html.js :where([class*="taos:"]:not(.taos-init))'
+        ],
+        content: {
+            transform: (content) => content.replace(/taos:/g, ''),
+
+        },
         extend: {
             screens: {
-                sm: '480px',
+                sm: '320px',
                 md: '780px',
+                lr: '974',
                 lg: '976px',
-                xl: '2040px'
+
             },
             fontFamily: {
                 'sans': ['Poppins', 'sans-serif'],
@@ -74,5 +85,9 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('taos/plugin'),
+        require('flowbite/plugin'),
+
+    ],
 }

@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+    
+    <script>document.documentElement.classList.add('js')</script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
@@ -27,7 +29,7 @@
 
 
 <html class="scroll-smooth">
-<!-- ... -->
+
 
 </html>
 
@@ -44,23 +46,25 @@
             <div class="">
                 <img src="../img/7wonders.png " alt=" ">
             </div>
-            <div class="hidden md:flex space-x-20 ">
+            <div class="hidden lg:flex space-x-20 ">
                 <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-                href="# " >About</a>
+                href="#About " >About</a>
                 <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-          href="#gallery">Gallery</a>
+          href="#Gallery">Gallery</a>
                 <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-            href="# ">Contact</a>
+            href="#Services">Services</a>
             </div>
             <div class="flex justify-between space-x-2">
+              
+              
               @auth
            
          
 
-<div x-data="{ isActive: false }" class="relative">
+<div x-data="{ isActive: false }" class="relative lg:block hidden">
   <div
-    class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
-    href="/download"
+    class=" relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
+    href="#"
   >
   <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
 
@@ -126,30 +130,17 @@
   </div>
 </div>
 
-              
-
-              {{-- <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
-                  @csrf
-
-                  
-                  <button  type="submit" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
-                    <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
-               
-                    <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
-             
-                    Log out
-                    </span></button>
-              </form> --}}
+   
           @else
               
-              <a  href="/register" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+              <a  href="/register" class="hidden md:flex lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                 <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
            
                 <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
             
                 Register
                 </span></a>
-              <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+              <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden md:flex lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                 <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
            
                 <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
@@ -161,10 +152,10 @@
                 
                 <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
             </div>
-               <div class="block md:hidden">
+               <div class="block lg:hidden">
             <button
-              class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
-            >
+              class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"
+           >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -195,18 +186,19 @@
  
 
   <div
-    class="relative mx-auto px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8 mt-0  container flex flex-col-reverse items-center space-y-0 md:space-y-0 md:flex-row text-[#212121]"
+    class="relative px-4 py-32 mx-auto md:mx-auto lg:flex lg:h-screen lg:items-center lg:px-8 mt-0  container flex flex-col-reverse items-center space-y-0 md:space-y-0 md:flex-row text-[#212121]"
   >
+  
     <div class="max-w-xl text-center sm:text-left mt-5">
-      <h1 class="text-3xl font-extrabold sm:text-5xl">
+      <h1 class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl">
        Welcome to
-       <strong class="block font-extrabold text-[#212121] font-delirium max-w-full text-9xl md:text-9xl">
+       <strong class="block font-extrabold text-[#212121] font-delirium max-w-full sm:text-9xl md:text-9xl">
         Wonders of the world
       </strong>
     
       </h1>
    
-      <p class="text-white mt-4 max-w-lg sm:text-xl sm:leading-relaxed w-full">
+      <p class="text-white mt-4 max-w-lg text-sm md:text-2xl sm:leading-relaxed w-full">
         Step into the world of wonder and marvel at the awe-inspiring creations of our ancestors, experience the magnificence of human achievement as you embark on a journey to discover the wonders that have stood the test of time
       </p>
 
@@ -216,7 +208,7 @@
           <span class="block border border-current bg-[#212121] p-6 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 rounded-lg">
             Lets go </span></a>
       </div>
-      <div class="mt-10">
+      <div class="mt-10 text-center md:text-left">
         <i class="fab fa-facebook-f fa-lg cursor-pointer bg-blue rounded-lg text-white p-4 hover:bg-blue-600  transition duration-300"></i>
         <i class="fab fa-youtube fa-lg bg-red rounded-lg p-4 cursor-pointer hover:bg-red-700  text-white transition duration-300"></i>
         <i class="fab fa-instagram fa-lg bg-red rounded-lg p-4 cursor-pointer hover:bg-gradient-to-br from-[#ff9800]  text-white to-[#f50057] transition duration-300"></i>
@@ -224,28 +216,33 @@
        </div>
     </div>
   </div>
+  
 </section> 
 
 
-<div class="py-16 ">  
-    
-    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
-        <h1 class="p-4 text-black rounded-full mb-10 w-full sm:w-1/12 text-center bg-[#eeeeee] font-bold">01 - About</h1>
-        <div class="border border-[#e0e0e0] 1px "></div>
+<div class="py-16 " id="About">  
+ 
+    <div class="md:container md:m-auto mx-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
+      <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">01 - About us</h1>
+
+        <div class="border border-[#9e9e9e] 1px "></div>
         <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12 p-9">
 
-          <section class="bg-white rounded-2xl dark:bg-gray-900 shadow-2xl">
+          <section class="bg-white rounded-2xl dark:bg-gray-900 shadow-2xl  ">
+            <div class="delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
             <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                 <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Travel and see the world with your eyes</h2>
-                    <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
-                    <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
+                    <h2 class="mb-4 md:text-4xl text-sm tracking-tight font-extrabold text-gray-900 dark:text-white">Travel and see the world with your eyes</h2>
+                    <p class="mb-4 md:text-lg text-sm">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
+                    <p class="md:text-lg text-sm">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-4 mt-8">
                     <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
                     <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
                 </div>
             </div>
+          </div>
+
         </section>
           
         </div>
@@ -254,145 +251,243 @@
     </div>
 
 
-  </div>
+    <div class="py-16 ">  
+      <div class="md:container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
+          <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">02 - How it works</h1>
+          <div class="border border-[#9e9e9e] 1px "></div>
+          <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3 p-9">
 
+            <a href="" class="group relative block h-64 sm:h-80 lg:h-96">
+              <span class="absolute inset-0 border-2 border-dashed border-black rounded-2xl"></span>
+            
+              <div
+                class="relative flex h-full transform items-end  rounded-2xl bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 shadow-2xl"
+              >
+                <div
+                  class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-black"
+                >
+                <img src="../img/trav1.png" class="w-1/2 md:w-2/3 md:mx-auto mb-5 flex mx-auto justify-center " alt="illustration" loading="lazy" width="900" height="600">
+               
+            
+              
+                </div>
+            
+                <div
+                  class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-black"
+                >
+                  <h3 class="mt-4 md:text-xl text-sm font-medium sm:text-2xl">Go around the world</h3>
+            
+                  <p class="mt-4 text-sm sm:text-base">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
+                    praesentium voluptatem omnis atque culpa repellendus.
+                  </p>
+            
+                  <p class="mt-8 font-bold">Read more</p>
+                </div>
+              </div>
+            </a>
+            
+            <a href="" class="group relative block h-64 sm:h-80 lg:h-96">
+              <span class="absolute inset-0 border-2 border-dashed border-black rounded-2xl"></span>
+            
+              <div
+                class="relative flex h-full transform items-end  rounded-2xl bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 shadow-2xl"
+              >
+                <div
+                  class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-black"
+                >
+               
+                <img src="../img/trav2.png" class="w-2/4 md:w-2/3 ml-auto mb-5 flex mx-auto " alt="illustration" loading="lazy" width="900" height="600">
+                  
+                </div>
+            
+                <div
+                  class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-black"
+                >
+                  <h3 class="mt-4 text-xl font-medium sm:text-2xl">Create memories along the way</h3>
+            
+                  <p class="mt-4 text-sm sm:text-base">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
+                    praesentium voluptatem omnis atque culpa repellendus.
+                  </p>
+            
+                  <p class="mt-8 font-bold">Read more</p>
+                </div>
+              </div>
+            </a>
+            
+            <a href="" class="group relative block h-64 sm:h-80 lg:h-96">
+              <span class="absolute inset-0 border-2 border-dashed border-black rounded-2xl"></span>
+            
+              <div
+                class="relative flex h-full transform items-end  rounded-lg bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 shadow-2xl"
+              >
+                <div
+                  class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-black"
+            >
+            <img src="../img/trav3.png" class="w-2/4 ml-auto mb-5 flex mx-auto " alt="illustration" loading="lazy" width="900" height="600">
+                </div>
+            
+                <div
+                  class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-black"
+                >
+                  <h3 class="mt-4 text-xl font-medium sm:text-2xl">Share what you saw</h3>
+            
+                  <p class="mt-4 text-sm sm:text-base">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
+                    praesentium voluptatem omnis atque culpa repellendus.
+                  </p>
+            
+                  <p class="mt-8 font-bold">Read more</p>
+                </div>
+              </div>
+            </a>
+          </div>
+      </div>
+  </div>
     <!--Services-->
  
-<div class="py-16 ">  
-    <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
-        <h1 class="p-4 text-black rounded-full mb-10 w-1/4 text-center bg-[#eeeeee] font-bold">02 - Services we offer</h1>
-        <div class="border border-[#e0e0e0] 1px "></div>
-        <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3 p-9">
-            <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                <div class="mb-12 space-y-4">
-                    <h3 class="text-2xl font-semibold text-black"></i> High definition pictures</h3>
-                    <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                    <a href="#" class="block font-medium text-black">Know more</a>
-                </div>
-                <img src="../img/gall.jpg" class="w-2/3 ml-auto -mb-12" alt="illustration" loading="lazy" width="900" height="600">
-            </div>
-            <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                <div class="mb-12 space-y-4">
-                    <h3 class="text-2xl font-semibold text-black"><i class="fa-regular fa-square-info"></i>Detailed information</h3>
-                    <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                    <a href="#" class="block font-medium text-black">Know more</a>
-                </div>
-                <img src="../img/read.jpg" class="w-2/3 ml-auto" alt="illustration" loading="lazy" width="900" height="600">
-            </div>
-            <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                <div class="mb-12 space-y-4">
-                    <h3 class="text-2xl font-semibold text-black">Remarkable tips</h3>
-                    <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                    <a href="#" class="block font-medium text-black">Know more</a>
-                </div>
-                <img src="../img/teach.jpg" class="w-2/3 ml-auto " alt="illustration" loading="lazy" width="900" height="600">
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
 
 
  
-<div class="py-16">  
-  <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
-      <h1 class="p-4 text-black rounded-full mb-10 w-1/4 text-center bg-[#eeeeee] font-bold">03 - Gallery</h1>
-      <div class="border border-[#e0e0e0] 1px "></div>
+<div class="py-16" id="Gallery">  
+  <div class="md:container  m-auto px-6 text-gray-500 md:px-12 xl:px-0">
+      <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">03 - Gallery</h1>
+      <div class="border border-[#9e9e9e] 1px "></div>
       <section>
         <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
           <header>
-            <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">
+            <h2 class="text-xl font-bold text-gray-900 sm:text-3xl text-center">
               Travel spot gallery
             </h2>
       
-            <p class="max-w-md mt-4 text-gray-500">
+            <p class=" mt-4 text-gray-500 text-center ">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
               praesentium cumque iure dicta incidunt est ipsam, officia dolor fugit
               natus?
             </p>
           </header>
       
-      
-
-
-
-  
+    
    
-    <div class="grid grid-cols-2 gap-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 w-96 sm:w-auto">
+    <div class="mt-5 flex flex-cols-2 gap-4 lg:grid-cols-3 lr:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 w-96 sm:w-auto sm:grid ">
 
       @foreach ($home as $item)
  
-<article class="overflow-hidden rounded-2xl shadow transition hover:shadow-lg">
-  <img
-    alt="Office"
-    src="{{$item->image}}"
-    class="h-56 w-full object-cover"
-  />
-
-  <div class="bg-white p-4 sm:p-6">
-    <time datetime="2022-10-10" class="block text-xs text-gray-500">
-      10th Oct 2022
-    </time>
-
-    <a href="#">
-      <h3 class="mt-0.5 text-lg text-gray-900">
-        {{$item->title}}
-      </h3>
-    </a>
-
-    <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
-      {{$item->about}}
-    </p>
-  </div>
-</article>
-
+      <a href="#" class="group relative block bg-black rounded-2xl">
+        <img
+          alt="Developer"
+          src="{{$item->image}}"
+          class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-2xl"
+        />
+      
+        <div class="relative p-4 sm:p-6 lg:p-8">
+          <p class="text-sm font-medium uppercase tracking-widest text-pink-500">
+            Gallery
+          </p>
+      
+          <p class="text-xl font-bold text-white sm:text-2xl">{{$item->title}}</p>
+      
+          <div class="mt-32 sm:mt-48 lg:mt-64">
+            <div
+              class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+            >
+              <p class="text-sm text-white">
+                {{$item->about}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      
 
     
       @endforeach
-    
-    
-
-        
+  
         </div>
+        <div class="flex justify-center ">
+          <a
+          class="group relative inline-flex items-center overflow-hidden rounded-full bg-[#212121] px-8 py-3 text-white focus:outline-none focus:ring active:bg-[#212121]"
+          href="{{URL::to('/gallery')}}"
+        >
+          <span
+            class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4"
+          >
+            <svg
+              class="h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </span>
         
+          <span class="text-sm font-medium transition-all group-hover:mr-4">
+            See more
+          </span>
+        </a>
+        
+            </div>
       </section>
 
   </div>
   
 </div>
 
+<div class="py-16 " id="Services">  
 
-    <div class="py-16 ">  
-        <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
-            <h1 class="p-4 text-black rounded-full mb-10 w-1/4 text-center bg-[#eeeeee] font-bold">03-Contact us</h1>
-            <div class="border border-[#9e9e9e] 1px "></div>
-            <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3 p-9">
-                <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                    <div class="mb-12 space-y-4">
-                        <h3 class="text-2xl font-semibold text-black"><i class="fa-regular fa-image"></i> High definition pictures</h3>
-                        <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                        <a href="#" class="block font-medium text-black">Know more</a>
-                    </div>
-                    <img src="../img/gall.jpg" class="w-2/3 ml-auto -mb-12" alt="illustration" loading="lazy" width="900" height="600">
-                </div>
-                <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                    <div class="mb-12 space-y-4">
-                        <h3 class="text-2xl font-semibold text-black"><i class="fa-regular fa-square-info"></i>Detailed information</h3>
-                        <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                        <a href="#" class="block font-medium text-black">Know more</a>
-                    </div>
-                    <img src="../img/read.jpg" class="w-2/3 ml-auto" alt="illustration" loading="lazy" width="900" height="600">
-                </div>
-                <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                    <div class="mb-12 space-y-4">
-                        <h3 class="text-2xl font-semibold text-black">Remarkable tips</h3>
-                        <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                        <a href="#" class="block font-medium text-black">Know more</a>
-                    </div>
-                    <img src="../img/teach.jpg" class="w-2/3 ml-auto " alt="illustration" loading="lazy" width="900" height="600">
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="md:container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
+      <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/3 text-center bg-[#212121] font-bold">04 - Services we offer</h1>
+      <div class="border border-[#9e9e9e] 1px "></div>
+      <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3 p-9">
+
+
+          <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 transition hover:scale-90 hover:shadow-xl focus:outline-none focus:ring">
+              <div class="mb-12 space-y-4">
+                  <h3 class="text-2xl font-semibold text-black"></i> High definition pictures</h3>
+                  <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
+                  <a href="#" class="block font-medium text-black">Know more</a>
+              </div>
+              <img src="../img/gall.jpg" class="w-2/3 ml-auto -mb-12 flex mx-auto " alt="illustration" loading="lazy" width="900" height="600">
+          </div>
+
+
+          <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 transition hover:scale-90 hover:shadow-xl focus:outline-none focus:ring">
+              <div class="mb-12 space-y-4">
+                  <h3 class="text-2xl font-semibold text-black"><i class="fa-regular fa-square-info"></i>Detailed information</h3>
+                  <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
+                  <a href="#" class="block font-medium text-black">Know more</a>
+              </div>
+              <img src="../img/read.jpg" class="w-2/3 ml-auto mx-auto" alt="illustration" loading="lazy" width="900" height="600">
+          </div>
+
+
+          <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 transition hover:scale-90 hover:shadow-xl focus:outline-none focus:ring">
+              <div class="mb-12 space-y-4">
+                  <h3 class="text-2xl font-semibold text-black">Remarkable tips</h3>
+                  <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
+                  <a href="#" class="block font-medium text-black">Know more</a>
+              </div>
+              <img src="../img/teach.jpg" class="w-2/3 ml-auto mx-auto " alt="illustration" loading="lazy" width="900" height="600">
+          </div>
+
+          
+      </div>
+  </div>
+ 
+</div>
+
+   
    
    
     <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5">
@@ -547,7 +642,7 @@
             </div>
       
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div>
+              <div class="hidden md:grid grid-cols-1 gap-4">
                 <p class="font-medium text-gray-900">Services</p>
       
                 <nav aria-label="Footer Navigation - Services" class="mt-6">
@@ -585,7 +680,7 @@
                 </nav>
               </div>
       
-              <div>
+              <div class="hidden md:grid grid-cols-1 gap-4">
                 <p class="font-medium text-gray-900">Company</p>
       
                 <nav aria-label="Footer Navigation - Company" class="mt-6">
@@ -645,116 +740,149 @@
         </div>
       </footer>
       
-
-{{-- 
-    <footer class="bg-gray-900">
-        <div class="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between">
-            <div class="w-full lg:w-2/5 mb-4 lg:mb-0">
-                <h2 class="text-xl font-semibold text-white mb-4">About Us</h2>
-                <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
-            </div>
-            <div class="w-full lg:w-1/4 mb-4 lg:mb-0">
-                <h2 class="text-xl font-semibold text-white mb-4">Quick Links</h2>
-                <ul class="list-none">
-                    <li>
-                        <i class="fas fa-home mr-2 text-white"></i>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-info-circle text-white mr-2"></i>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-cog  text-white mr-2"></i>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-newspaper text-white mr-2"></i>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope text-white mr-2"></i>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div class="w-full lg:w-1/4 mb-4 lg:mb-0 text-white ">
-                <h2 class="text-xl font-semibold text-white mb-4">Social media</h2>
-                <ul class="list-none">
-                    <li>
-                        <i class="fab fa-facebook-f text-white bg-blue rounded-2xl p-4 cursor-pointer hover:bg-blue-600"></i>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Facebook</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-instagram text-white bg-red rounded-2xl p-4 cursor-pointer hover:bg-gradient-to-br from-[#ff9800] to-[#f50057]"></i>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-twitter text-white bg-red rounded-2xl p-4 cursor-pointer hover:bg-[#03a9f4]"></i>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-youtube text-white bg-red rounded-2xl p-4 cursor-pointer hover:bg-red-700"></i>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Youtube</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-github text-white bg-red rounded-2xl p-4 cursor-pointer hover:bg-gray-600"></i>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Github</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="w-full lg:w-1/4">
-                <h2 class="text-xl font-semibold text-white mb-4">Contact Us</h2>
-                <p class="text-gray-400"><i class="fa-solid fa-map-marker-alt mr-2"></i>123 Main Street, Suite 100<br>City, State 12345</p>
-                <p class="text-gray-400 mt-4"><i class="fa-solid fa-phone mr-2"></i>(123) 456-7890</p>
-                <p class="text-gray-400 mt-4"><i class="fa-solid fa-envelope mr-2"></i>info@example.com</p>
-            </div>
-        </div>
-        <div class="bg-gray-800 py-4 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto text-center text-gray-400">
-
-                <p class="text-sm">&copy; 2023 7wonders. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer> --}}
-
-    <!--Modal--------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
+     
+{{-- Sidebar ----------------------------------------------------------------------}}
+<div id="drawer-navigation" class="fixed top-0 mt-20 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+  <h5 id="drawer-navigation-label" class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">7Wonders menu</h5>
+  <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
+      <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      <span class="sr-only">Close menu</span>
+  </button>
+<div class="py-4 overflow-y-auto">
+    <ul class="space-y-2 font-medium">
+    
+       @auth
+           
+       <li>
+        <button type="button" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+          <i class="fa-solid fa-user" style="color: #000000;"></i>
+          <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+        <ul id="dropdown-example" class="hidden py-2 space-y-2">
+              <li>
+                <a href="{{URL::to('uploads')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                  <i class="fa-solid fa-chart-simple hover:text-white" ></i>
+                   <span class="ml-3">Dashboard</span>
+                </a>
+                
+              </li>
+        
+          
+      
+                
+              <form method="POST" action="/logout" >
+                @csrf
+              <li>
+                <button href="#" type="submit" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                  <i class="fa-solid fa-right-from-bracket" style="color: #000000;"></i>
+                  <span class="ml-3">Logout</span>
+                </button>
+                </li>
+            </form>
+        </ul>
+     </li>
+      
+       
+          
+                 @else
+                     
+                 <li>
+                   <a href="{{URL::to('register')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
+                     <i class="fa-solid fa-user-plus hover:text-white"></i>
+                     <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+                   </a>
+                </li>
+                       </span>
+                      </li>
+   
+                       <li>
+                         <a href="{{URL::to('login')}}" class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700">
+                           <i class="fa-solid fa-right-to-bracket hover:text-white"></i>
+                           <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+                         </a>
+                      </li>
+                      
+               
+                 @endauth         
+                 <li>
+                  <a href="#About" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                    <i class="fa-sharp fa-solid fa-circle-info hover:text-white" ></i>
+                     <span class="ml-3">About</span>
+                  </a>
+               </li>
+               <li>
+                <a href="#Gallery" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                  <i class="fa-solid fa-image hover:text-white" ></i>
+                  <span class="ml-3">Gallery</span>
+                </a>
+             </li>
+             <li>
+              <a href="#Services" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                <i class="fa-sharp fa-solid fa-address-card hover:text-white" ></i>
+                <span class="ml-3">Services</span>
+              </a>
+           </li>
+                        
+    </ul>
+    
+  
+ </div>
+</div>
 
 
 
 
     </div>
-    </div>
+    
     @if (session()->has('success'))
-    <div x-data="{ show: true }"
-         x-init="setTimeout(() => show = false, 4000)"
-         x-show="show" class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">  <p class="text-sm font-medium">
-    
-      {{ session('success') }}
-    </p>
-    
-    
-    </div>
+  
+
+    <aside
+    x-data="{ show: true }"
+    x-init="setTimeout(() => show = false, 4000)"
+    x-show="show" 
+  class="fixed bottom-4 right-4 z-50 flex items-center justify-center gap-4 rounded-lg bg-black px-5 py-3 text-white"
+>
+  <a
+    href="/new-thing"
+    target="_blank"
+    rel="noreferrer"
+    class="text-sm font-medium hover:opacity-75"
+  >
+  {{ session('success') }} 👋
+  </a>
+
+  <button class="rounded bg-white/20 p-1 hover:bg-white/10">
+    <span class="sr-only">Close</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-4 w-4"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fillRule="evenodd"
+        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+        clipRule="evenodd"
+      />
+    </svg>
+  </button>
+</aside>
+
 
 
     
     @endif
-</body>
-{{-- <script>
-    $(document).ready(function() {
-        updateUserName();
-    });
-</script> --}}
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-<script src="./main.js"></script>
-<script src="./modal.js"></script>
-<script src="./get.js"></script>
-<script src="./display.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+ 
+</body>
+
 
 
 </html>

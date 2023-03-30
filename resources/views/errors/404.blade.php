@@ -25,7 +25,7 @@
 
 <div class="grid h-screen px-4 bg-white place-content-center">
     <div class="text-center">
-    <img src="../img/baloon.jpg" class="h-96 mx-auto" alt="">
+    <img src="../img/baloon.gif" class="h-96 mx-auto" alt="">
        
   
       <h1

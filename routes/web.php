@@ -29,6 +29,7 @@ Route::get('/table', function (){
    return view ('table');});
 
 Route::resource("/uploads", UploadController::class);
+// Route::get("/uploads", [UploadController::class, 'getData']);
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
@@ -37,6 +38,10 @@ Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth'
 Route::get('/gallery', [DisplayController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
 Route::delete('uploads/{id}', 'UploadController@destroy')->name('uploads.destroy');
-Route::get('uploads/{id}', 'UploadController@update');
+Route::get('/uploads/{id}/edit', 'UploadController@edit')->name('uploads.edit');
+Route::put('/uploads/{id}', 'UploadController@update')->name('uploads.update');
+
+
+
 
 
