@@ -34,7 +34,8 @@
 
   <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
       <div class="">
-          <img src="../img/7wonders.png " alt=" ">
+        <a href="/">
+          <img  src="../img/7wonders.png " alt=" "></a>
       </div>
       <div class="hidden lg:flex space-x-20 ">
           <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
@@ -165,11 +166,6 @@ Log out
   </div>
 </nav>
 
-
-
-
-
-{{-- <a href="{{ route('display.show', ['id' => $item->id]) }}"> --}}
     
 
  

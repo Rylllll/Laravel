@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -28,23 +28,29 @@
 
 
 
-<html class="scroll-smooth">
 
-
-</html>
 
 
 
 <body class="bg-[#fff3e0]">
 
 
- 
+  <button x-data="topBtn" @click="scrolltoTop" id="topButton"
+  class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18">
+      </path>
+  </svg>
+</button>
 
     <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between">
 
         <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
             <div class="">
+              <a href="/">
                 <img src="../img/7wonders.png " alt=" ">
+              </a>
             </div>
             <div class="hidden lg:flex space-x-20 ">
                 <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
@@ -189,10 +195,10 @@
     class="relative px-4 py-32 mx-auto md:mx-auto lg:flex lg:h-screen lg:items-center lg:px-8 mt-0  container flex flex-col-reverse items-center space-y-0 md:space-y-0 md:flex-row text-[#212121]"
   >
   
-    <div class="max-w-xl text-center sm:text-left mt-5">
+    <div class="max-w-xl text-center sm:text-left  md:mt-20">
       <h1 class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl">
        Welcome to
-       <strong class="hidden font-extrabold text-[#212121] font-sans max-w-full text-4xl sm:block md:block">
+       <strong class="font-extrabold text-[#212121] max-w-full text-6xl block md:text-5xl ">
         Wonders of the world
       </strong>
     
@@ -203,7 +209,7 @@
       </p>
 
       <div class="mt-8 flex flex-wrap gap-4 text-center">
-        <a class="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring active:text-[#212121] w-full md:w-1/2 sm:w-full text-center" href="">
+        <a class="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring active:text-[#212121] w-full md:w-1/2 sm:w-full text-center" href="/gallery">
           <span class="absolute inset-0 border border-current rounded-lg"></span>
           <span class="block border border-current bg-[#212121] p-6 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 rounded-lg">
             Lets go </span></a>
@@ -276,9 +282,9 @@
                 <div
                   class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-black"
                 >
-                  <h3 class="mt-4 md:text-xl text-sm font-medium sm:text-2xl">Go around the world</h3>
+                  <h3 class="mt-4 md:text-2xl text-sm font-medium ">Go around the world</h3>
             
-                  <p class="mt-4 text-sm sm:text-base">
+                  <p class="mt-4 md:text-xl text-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
                     praesentium voluptatem omnis atque culpa repellendus.
                   </p>
@@ -305,9 +311,9 @@
                 <div
                   class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-black"
                 >
-                  <h3 class="mt-4 text-xl font-medium sm:text-2xl">Create memories along the way</h3>
+                  <h3 class="mt-4 font-medium md:text-2xl text-sm">Create memories along the way</h3>
             
-                  <p class="mt-4 text-sm sm:text-base">
+                  <p class="mt-4 md:text-xl text-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
                     praesentium voluptatem omnis atque culpa repellendus.
                   </p>
@@ -332,9 +338,9 @@
                 <div
                   class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-black"
                 >
-                  <h3 class="mt-4 text-xl font-medium sm:text-2xl">Share what you saw</h3>
+                  <h3 class="mt-4 md:text-2xl font-medium text-sm">Share what you saw</h3>
             
-                  <p class="mt-4 text-sm sm:text-base">
+                  <p class="mt-4 md:text-xl text-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
                     praesentium voluptatem omnis atque culpa repellendus.
                   </p>
@@ -374,7 +380,7 @@
       
     
    
-          <div class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-6 px-4 w-96 sm:w-auto">
+          <div class="md:grid grid-cols-4 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-6 px-4 w-96 sm:w-auto">
             @foreach ($home as $item)
            
             
@@ -883,6 +889,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
     <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="../js/scroll.js"></script>
  
 </body>
 
