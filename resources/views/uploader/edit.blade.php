@@ -236,17 +236,17 @@
 
         <div class=" rounded-2xl sm:overflow-hidden sm:rounded-md">
 
-            <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+            <div class=" bg-white px-4 sm:p-6">
 
 
                 <div>
   
                     <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Title of the image</label>
-                    <input required placeholder="Input title" type="text" name="title" id="title" value="{{ $upload->title }}" class="mb-3 mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
+                    <input required placeholder="Input title" type="text" name="title" id="title" value="{{ $upload->title }}" class="mb-3 mt-1 block w-full rounded-md border border-black text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                     />
                     <label for="about" class="block text-sm font-medium leading-6 text-gray-900 mb-3">About (Brief description about the place or destination.)</label>
                     <div class="mt-2">
-                      <textarea required id="about" name="about" rows="3" class="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
+                      <textarea required id="about" name="about" rows="3" class="mt-1 block w-full rounded-md text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6 border border-black"
           style="max-height: 150px; max-width: 100%; resize: vertical;" placeholder="Information" >{{ $upload->about }}</textarea>
 
                     </div>

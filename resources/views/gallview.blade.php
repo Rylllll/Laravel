@@ -178,7 +178,7 @@ Log out
           <img
             alt="Party"
             src=" {{ $upload->image }}"
-            class="absolute inset-0 h-full object-cover w-50 md:w-full"
+            class="absolute inset-0 h-full object-cover w-full md:w-full"
           />
         </div>
   
