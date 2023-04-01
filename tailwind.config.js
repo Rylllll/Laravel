@@ -7,6 +7,12 @@ module.exports = {
         "./node_modules/flowbite/**/*.js"
     ],
     theme: {
+        fontFamily: {
+            'sans': ['Poppins', 'sans-serif'],
+            'del': [ 'DELIRIUM NCV', 'sans-serif'],
+            'script': ['Dancing Script', 'cursive'],
+
+        },
         safelist: [
             '!duration-0',
             '!delay-0',
@@ -24,12 +30,7 @@ module.exports = {
                 lg: '976px',
 
             },
-            fontFamily: {
-                'sans': ['Poppins', 'sans-serif'],
-                'delirium': ['DELIRIUM NCV', 'sans-serif'],
-                script: ['Dancing Script', 'cursive'],
-
-            },
+           
             fontSize: {
                 xs: ["0.75rem", { lineHeight: "1rem" }],
                 sm: ["0.875rem", { lineHeight: "1.25rem" }],

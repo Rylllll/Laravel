@@ -55,7 +55,7 @@
                 sidenav-close></i>
             <a class="block px-8 py-6 m-0 mx-auto text-xl whitespace-nowrap text-slate-700 font-sans"
                 href="{{URL::to('/')}}" target="_blank">
-                <img src="../img/Logo.png"
+                <img src="../img/tempLog.png"
                     class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8"
                     alt="main_logo" />
                 <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">7Wonders</span>
@@ -227,7 +227,7 @@
         </li>
       </form>
       <li class="p-2">
-        <a class="inline-block rounded bg-black cursor-pointer px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+        <a class="inline-block rounded bg-[#212121] cursor-pointer px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
             onclick="openModal()">
             <i class="fa-solid fa-plus"></i> Create
         </a>
@@ -346,9 +346,9 @@
                                 <tr class="border-b  ">
                                     <td class="p-3 px-5 font-sans hidden"> {{ $item->id }}</td>
                                     <td class="p-3 px-5 font-sans"> {{ $item->title }}</td>
-                                    <td class="p-3 px-5 font-sans md:w-1/2">{{ $item->about }}</td>
+                                    <td class="p-3 px-5 font-sans text-sm md:text-lg">{{ $item->about }}</td>
                                     <td class="p-3 px-5 font-sans">
-                                        <img src="{{ asset($item->image) }}" width='100' height='100'
+                                        <img src="{{ $item->image }}" width='100' height='100'
                                             class="img img-responsive rounded-lg" />
                                     </td>
                                     <td class="p-3 px-5 flex justify-center">
@@ -418,7 +418,7 @@
             </div>
         </div>
 
-        <div id="modal" class="fixed z-10 inset-0 overflow-y-auto hidden ease-in-out duration-300">
+        <div id="modal" class="fixed z-10 top-0 inset-0 overflow-y-auto hidden ease-in-out duration-300">
             <div class="flex items-center justify-center max-h-screen">
                 <!-- Modal overlay -->
                 <div class="fixed w-full z-0 inset-0 bg-black opacity-50"></div>
@@ -449,7 +449,7 @@
 
                         <div class=" rounded-2xl sm:overflow-hidden sm:rounded-md">
 
-                            <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+                            <div class=" bg-white  sm:p-6">
 
 
                                 <div>
@@ -542,7 +542,7 @@
 
 
 
-                    <input type="hidden" name="page" value="{{ $item->id }}" id="page-input">
+                    {{-- <input type="hidden" name="page" value="{{ $item->id }}" id="page-input"> --}}
 
                 </div>
             </div>

@@ -21,15 +21,11 @@ use Illuminate\http\Request;
 |
 */
 
-// Route::get('/', function () {
-//     return view ('index');
+// Route::get('gallview', function () {
+//    return view('gallview');
 // });
-
-Route::get('/table', function (){
-   return view ('table');});
-
+Route::get('/display/{id}', [DisplayController::class, 'show'])->name('display.show');
 Route::resource("/uploads", UploadController::class);
-// Route::get("/uploads", [UploadController::class, 'getData']);
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest');

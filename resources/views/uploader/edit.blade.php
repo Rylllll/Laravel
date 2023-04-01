@@ -31,16 +31,103 @@
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Nucleo Icons -->
-    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="../../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
-    <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
+    <link href="../../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
 
 </head>
 
 <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-[#fff3e0] text-slate-500">
+  <aside
+  class="hidden max-w-62.5 ease-nav-brand lg:block lr:hidden fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-2xl transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent"
+  >
+  <div class="h-19.5 ">
+      <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"
+          sidenav-close></i>
+      <a class="block px-8 py-6 m-0 mx-auto text-xl whitespace-nowrap text-slate-700 font-sans"
+          href="{{URL::to('/')}}" target="_blank">
+          <img src="../../img/templog.png"
+              class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8"
+              alt="main_logo" />
+          <span class="ml-1 font-semibold transition-all duration-200 font-sans ease-nav-brand">Wonders</span>
+      </a>
+  </div>
+
+
+  <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
+
+  <nav aria-label="Main Nav" class="flex flex-col space-y-1 p-4 h-sidenav">
+      <a href="" class="flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+
+          <span class="text-sm font-medium"> Dashboard </span>
+      </a>
+
+      <details class="group [&_summary::-webkit-details-marker]:hidden">
+          <summary
+              class="group flex items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+             
+
+          
+          </summary>
+
+     
+      </details>
+
+     
+
+    
+
+      <details class="group [&_summary::-webkit-details-marker]:hidden">
+          <summary
+              class="group flex items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+              <div class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+
+                  <span class="text-sm font-medium"> Account </span>
+              </div>
+
+              <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                      fill="currentColor">
+                      <path fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd" />
+                  </svg>
+              </span>
+          </summary>
+
+          <nav aria-label="Account Nav" class="mt-2 flex flex-col space-y-1 px-4">
+            
+
+             
+              <form method="POST" action="/logout" class="">
+                  @csrf
+
+
+                  <button type="submit"
+                      class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+                      Logout
+                  </button>
+              </form>
+
+          </nav>
+      </details>
+  </nav>
+
+</aside>
 
     
 
@@ -136,7 +223,7 @@
   </span>
 
   <span class="text-sm font-medium transition-all group-hover:ml-4">
-   Dashboard
+   Tables
   </span>
 </a>
   </div>
@@ -160,7 +247,7 @@
                     <label for="about" class="block text-sm font-medium leading-6 text-gray-900 mb-3">About (Brief description about the place or destination.)</label>
                     <div class="mt-2">
                       <textarea required id="about" name="about" rows="3" class="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
-          style="max-height: 150px; max-width: 100%; resize: vertical;" placeholder="Information" maxlength="200">{{ $upload->about }}</textarea>
+          style="max-height: 150px; max-width: 100%; resize: vertical;" placeholder="Information" >{{ $upload->about }}</textarea>
 
                     </div>
 
@@ -181,11 +268,11 @@
     </svg>
                             <div class="flex text-sm text-gray-600">
                                 <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-medium text-blue-900 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
-        <span class="hidden sm:hidden md:block">Upload a file</span>
-        <input type="file" name="image" id="image" class="cursor-pointer flex justify-center text-sm" onchange="loadFile(event)" accept="image/jpeg, image/png, image/gif" required size="10000000">
+     
+        <input type="file" name="image" id="image" class="cursor-pointer flex justify-center text-sm" onchange="loadFile(event)" accept="image/jpeg, image/png, image/gif"  size="10000000">
 
       </label>
-                                <p class="pl-1 hidden sm:hidden md:block">or drag and drop</p>
+                                
                             </div>
                             <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                         </div>
@@ -351,9 +438,9 @@
 
 </body>
 <!-- plugin for scrollbar  -->
-<script src="../assets/js/plugins/perfect-scrollbar.min.js " async></script>
+<script src="../../assets/js/plugins/perfect-scrollbar.min.js " async></script>
 <script async defer src="https://buttons.github.io/buttons.js "></script>
-<script src="../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4 " async></script>
+<script src="../../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4 " async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 <script src="../../js/alert.js " async></script>
 </html>

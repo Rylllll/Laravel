@@ -11,12 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/delirium-ncv" rel="stylesheet">         
      @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-    
     <script>document.documentElement.classList.add('js')</script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -133,14 +133,14 @@
    
           @else
               
-              <a  href="/register" class="hidden md:flex lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+              <a  href="/register" class="lg:flex hidden group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                 <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
            
                 <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
             
                 Register
                 </span></a>
-              <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden md:flex lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+              <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden lg:flex  group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                 <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
            
                 <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
@@ -192,7 +192,7 @@
     <div class="max-w-xl text-center sm:text-left mt-5">
       <h1 class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl">
        Welcome to
-       <strong class="block font-extrabold text-[#212121] font-delirium max-w-full sm:text-9xl md:text-9xl">
+       <strong class="hidden font-extrabold text-[#212121] font-sans max-w-full text-4xl sm:block md:block">
         Wonders of the world
       </strong>
     
@@ -220,8 +220,8 @@
 </section> 
 
 
-<div class="py-16 " id="About">  
- 
+<section class="py-16 " id="About">  
+ <div class="py-16">
     <div class="md:container md:m-auto mx-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
       <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">01 - About us</h1>
 
@@ -248,7 +248,8 @@
         </div>
 
         </div>
-    </div>
+      </div>
+      </section>
 
 
     <div class="py-16 ">  
@@ -352,8 +353,8 @@
 
 
 
- 
-<div class="py-16" id="Gallery">  
+ <section class="py-16" id="Gallery">
+<div class="py-16" >  
   <div class="md:container  m-auto px-6 text-gray-500 md:px-12 xl:px-0">
       <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">03 - Gallery</h1>
       <div class="border border-[#9e9e9e] 1px "></div>
@@ -373,41 +374,41 @@
       
     
    
-    <div class="mt-5 flex flex-cols-2 gap-4 lg:grid-cols-3 lr:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 w-96 sm:w-auto sm:grid ">
-
-      @foreach ($home as $item)
- 
-      <a href="#" class="group relative block bg-black rounded-2xl">
-        <img
-          alt="Developer"
-          src="{{$item->image}}"
-          class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-2xl"
-        />
-      
-        <div class="relative p-4 sm:p-6 lg:p-8">
-          <p class="text-sm font-medium uppercase tracking-widest text-pink-500">
-            Gallery
-          </p>
-      
-          <p class="text-xl font-bold text-white sm:text-2xl">{{$item->title}}</p>
-      
-          <div class="mt-32 sm:mt-48 lg:mt-64">
-            <div
-              class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-            >
-              <p class="text-sm text-white">
-                {{$item->about}}
-              </p>
-            </div>
+          <div class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-6 px-4 w-96 sm:w-auto">
+            @foreach ($home as $item)
+           
+            
+              <a href="{{ route('display.show', ['id' => $item->id]) }}" class="group relative block bg-black ">
+                <img
+                  alt="Developer"
+                  src="{{$item->image}}"
+                  class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+                />
+              
+                <div class="relative p-4 sm:p-6 lg:p-8">
+                  <p class="text-sm font-medium uppercase tracking-widest text-blue-500">
+                    Gallery
+                  </p>
+              
+                  <p class="text-xl font-bold text-white sm:text-2xl">{{$item->title}}</p>
+              
+                  <div class="mt-32 sm:mt-48 lg:mt-64">
+                    <div
+                      class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                    <p class="mt-1.5 max-w-[45ch] text-xs text-white overflow-hidden" style="max-height: 3em; text-overflow: ellipsis;">
+                      {{ substr($item->about, 0, 60) }}{{ strlen($item->about) > 250 ? "..." : "" }}
+                    </p>
+                    
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </a>
+            
+            @endforeach
           </div>
-        </div>
-      </a>
-      
-
-    
-      @endforeach
-  
-        </div>
         <div class="flex justify-center ">
           <a
           class="group relative inline-flex items-center overflow-hidden rounded-full bg-[#212121] px-8 py-3 text-white focus:outline-none focus:ring active:bg-[#212121]"
@@ -443,8 +444,10 @@
   </div>
   
 </div>
+</section>
 
-<div class="py-16 " id="Services">  
+<section class="py-16" id="Services">
+<div class="py-16 " >  
 
   <div class="md:container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
       <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/3 text-center bg-[#212121] font-bold">04 - Services we offer</h1>
@@ -487,7 +490,7 @@
  
 </div>
 
-   
+</section>
    
    
     <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5">
@@ -806,19 +809,19 @@
                
                  @endauth         
                  <li>
-                  <a href="#About" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                  <a href="#About" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                     <i class="fa-sharp fa-solid fa-circle-info hover:text-white" ></i>
                      <span class="ml-3">About</span>
                   </a>
                </li>
                <li>
-                <a href="#Gallery" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                <a href="#Gallery" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                   <i class="fa-solid fa-image hover:text-white" ></i>
                   <span class="ml-3">Gallery</span>
                 </a>
              </li>
              <li>
-              <a href="#Services" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+              <a href="#Services" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                 <i class="fa-sharp fa-solid fa-address-card hover:text-white" ></i>
                 <span class="ml-3">Services</span>
               </a>

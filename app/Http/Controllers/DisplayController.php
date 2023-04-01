@@ -7,7 +7,15 @@ use Illuminate\Http\Request;
 class DisplayController extends Controller
 {
     public function index(){
-        $display = upload::paginate();
-        return view('gallery', ['display' => $display]);
+        $homes = upload::all();
+        $home = upload::take(6)->get();
+        return view('/gallery', ['home' => $home], ['homes' => $homes]);
     }
+    
+    public function show($id)
+    {
+        $upload = Upload::findOrFail($id);
+        return view('/gallview', compact('upload'));
+    }
+    
 }

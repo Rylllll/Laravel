@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/Logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -37,22 +38,22 @@
                 <h2 class="font-bold text-2xl text-center ">Register</h2>
                 <p class="text-xs mt-4 text-[#002D74] text-center">If you are not a member, register now</p>
 
-                <form action="/register" class="flex flex-col gap-4" method="POST" id="loginForm">
+                <form action="/register" class="flex flex-col gap-4 mt-2" method="POST" id="loginForm">
                     @csrf
-                    <input class="p-2 px-7 mt-8 rounded-xl border" id="name" type="name" name="name" placeholder="Name" value="{{ old('name') }}" required>
+                    <input class="p-2 px-7 rounded-xl border border-blue-200" id="name" type="name" name="name" placeholder="Name" value="{{ old('name') }}" required>
                     @error('name')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
-                <input class="p-2 px-7 rounded-xl border" id="username" type="username" name="username" placeholder="Username" value="{{ old('username') }}"required>
+                <input class="p-2 px-7 rounded-xl border border-blue-200" id="username" type="username" name="username" placeholder="Username" value="{{ old('username') }}"required>
                 @error('username')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
             @enderror
-            <input class="p-2 px-7  rounded-xl border" id="email" type="email" name="email" placeholder="email" value="{{ old('email') }} "required>
+            <input class="p-2 px-7  rounded-xl border border-blue-200" id="email" type="email" name="email" placeholder="email" value="{{ old('email') }} "required>
             @error('email')
             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
         @enderror
                     <div class="relative">
-                        <input class="p-2 px-7 rounded-xl border w-full" id="password" type="password" name="password" placeholder="Password" required>
+                        <input class="p-2 px-7 rounded-xl border w-full border border-blue-200" id="password" type="password" name="password" placeholder="Password" required>
                         @error('password')
                         <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
