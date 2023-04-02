@@ -241,10 +241,10 @@
 
                 <div>
   
-                    <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Title of the image</label>
+                    <label for="about" class="block text-sm font-bold leading-6 text-gray-900">Title of the image</label>
                     <input required placeholder="Input title" type="text" name="title" id="title" value="{{ $upload->title }}" class="mb-3 mt-1 block w-full rounded-md border border-black text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                     />
-                    <label for="about" class="block text-sm font-medium leading-6 text-gray-900 mb-3">About (Brief description about the place or destination.)</label>
+                    <label for="about" class="block text-sm font-bold leading-6 text-gray-900 mb-3">About (Brief description about the place or destination.)</label>
                     <div class="mt-2">
                       <textarea required id="about" name="about" rows="3" class="mt-1 block w-full rounded-md text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6 border border-black"
           style="max-height: 150px; max-width: 100%; resize: vertical;" placeholder="Information" >{{ $upload->about }}</textarea>
@@ -260,7 +260,7 @@
 
 
                 <div>
-                    <label class="block text-sm font-medium leading-6 text-gray-900">Upload image section</label>
+                    <label class="block text-sm font-bold leading-6 text-gray-900">Upload image section</label>
                     <div class="mt-2 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
                         <div class="space-y-1 text-center">
                             <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
@@ -270,13 +270,15 @@
                                 <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-medium text-blue-900 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
      
         <input type="file" name="image" id="image" class="cursor-pointer flex justify-center text-sm" onchange="loadFile(event)" accept="image/jpeg, image/png, image/gif"  size="10000000">
-
+      
       </label>
                                 
                             </div>
                             <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                         </div>
+                        
                     </div>
+                    <img id="output" class="mt-5 flex mx-auto justify-center h-50 w-full" src="../../img/prev1.jpg" alt="">
                 </div>
             </div>
             <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">

@@ -353,6 +353,7 @@
                                     </td>
                                     <td class="p-3 px-5 flex justify-center">
                                         <div class="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
+                                            <a href="{{ route('uploads.edit', $item->id) }}">
                                             <button
                                                 class="inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm text-gray-500 hover:text-gray-700 focus:relative">
 
@@ -362,12 +363,12 @@
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                                                 </svg>
-                                                <a href="{{ route('uploads.edit', $item->id) }}">
+                                              
 
                                                     Edit
-                                                </a>
+                                                
                                             </button>
-
+                                        </a>
 
                                             <form method="POST" action="{{ route('uploads.destroy', ['id' => $item->id]) }}">
                                                 @csrf
@@ -455,13 +456,13 @@
                                 <div>
 
                                     <label for="about"
-                                        class="block text-sm font-medium leading-6 text-gray-900">Title of the
+                                        class="block text-sm font-bold leading-6 text-gray-900">Title of the
                                         image</label>
                                     <input required placeholder="Input title" type="text" name="title"
                                         id="title"
                                         class="mb-3 mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6" />
                                     <label for="about"
-                                        class="block text-sm font-medium leading-6 text-gray-900 mb-3">About (Brief
+                                        class="block text-sm font-bold leading-6 text-gray-900 mb-3">About (Brief
                                         description about the place or destination.)</label>
                                     <div class="mt-2">
                                         <textarea required id="about" name="about" rows="3"
@@ -479,7 +480,7 @@
 
 
                                 <div>
-                                    <label class="block text-sm font-medium leading-6 text-gray-900">Upload image
+                                    <label class="block text-sm font-bold leading-6 text-gray-900">Upload image
                                         section</label>
                                     <div
                                         class="mt-2 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
