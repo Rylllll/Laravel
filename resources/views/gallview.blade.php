@@ -28,7 +28,14 @@
 
 
 <body>
-
+  <button x-data="topBtn" @click="scrolltoTop" id="topButton"
+  class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18">
+      </path>
+  </svg>
+</button>
 
 <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between">
 
@@ -36,14 +43,7 @@
       <div class="">
           <img src="../img/7wonders.png " alt=" ">
       </div>
-      {{-- <div class="hidden lg:flex space-x-20 ">
-          <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-          href="#About " >About</a>
-          <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-    href="#Gallery">Gallery</a>
-          <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-      href="#Services">Services</a>
-      </div> --}}
+   
       <div class="flex justify-between space-x-2">
         
         
@@ -234,7 +234,7 @@ Log out
   </section>
 
   
-  <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5">
+  <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5 mt-10">
     <div class="relative block h-32 lg:col-span-2 lg:h-full">
       <img
         src="../img/shout.jpg"
@@ -483,6 +483,6 @@ Log out
       </div>
     </div>
   </footer>
-  
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>

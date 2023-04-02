@@ -46,7 +46,14 @@
 
 
 <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-[#fff3e0] text-slate-500">
-
+    <button x-data="topBtn" @click="scrolltoTop" id="topButton"
+    class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18">
+        </path>
+    </svg>
+  </button>
     <aside
         class="hidden max-w-62.5 ease-nav-brand lg:block lr:hidden fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-2xl transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent"
         >
@@ -316,7 +323,7 @@
 
             <div class="p-4 text-gray-900 bg-white rounded-2xl shadow-xl">
                 <div class="p-4 flex">
-                    <h1 class="text-xl font-bold">Images Table</h1>
+                    <h1 class="text-xl font-bold">Wonders Table</h1>
 
                     <div class="hidden md:block items-center md:ml-auto md:pr-4">
                         <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease-soft">
@@ -560,6 +567,7 @@
     
 </body>
 <!-- plugin for scrollbar  -->
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.min.js " async></script>
 <script src="../js/modal.js " async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
