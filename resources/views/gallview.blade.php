@@ -178,7 +178,7 @@ Log out
           <img
             alt="Party"
             src=" {{ $upload->image }}"
-            class="absolute inset-0 h-full object-cover w-full md:w-full"
+            class="absolute inset-0 h-full object-cover w-full md:w-full transition hover:scale-90"
           />
         </div>
   
@@ -221,7 +221,7 @@ Log out
   </span>
 
   <span class="text-sm font-medium transition-all group-hover:ml-4">
-   Go Back
+   Gallery
  
   </span>
 </button>

@@ -31,11 +31,7 @@
  
   <button x-data="topBtn" @click="scrolltoTop" id="topButton"
   class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
-  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18">
-      </path>
-  </svg>
+  <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000;"></i>
 </button>
 
 <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between">
@@ -199,7 +195,7 @@ Log out
       <img
         alt="Developer"
         src="{{$item->image}}"
-        class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+        class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 "
       />
     
       <div class="relative p-4 sm:p-6 lg:p-8">
@@ -241,7 +237,7 @@ Log out
     
     <div class="w-full max-w-7xl p-12 pb-10 mx-auto gap-6 columns-3 space-y-5 grid md:block md:grid-cols-3 lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
       @foreach ($homes as $item)
-      <img src="{{$item->image}}">
+      <img src="{{$item->image}}" class="transition hover:scale-90">
       <div class="mt-3 flex justify-between text-sm">
         <div>
           <h3
