@@ -24,7 +24,7 @@
 <!-- Sweet Alert JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     @vite('resources/css/app.css')
-    <title>7Wonders Dashboard/Tables</title>
+    <title>Wonders Dashboard/Tables</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />

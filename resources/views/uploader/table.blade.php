@@ -27,7 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     @vite('resources/css/app.css')
       @vite('resources/js/app.js')
-    <title>7Wonders Dashboard/Tables</title>
+    <title>Wonders Dashboard/Tables</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -65,7 +65,7 @@
                 <img src="../img/tempLog.png"
                     class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8"
                     alt="main_logo" />
-                <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">7Wonders</span>
+                <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Wonders</span>
             </a>
         </div>
 

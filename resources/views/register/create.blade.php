@@ -34,7 +34,7 @@
             <!-- form -->
             <div class="md:w-1/2 px-8 md:px-16 ">
                 <a href="{{URL::to('/')}}">
-                    <img class="mx-auto block cursor-pointer" src="../img/7wonders.png" alt=""></a>
+                    <img class="mx-auto block cursor-pointer" src="../img/wonders.png" alt=""></a>
                 <h2 class="font-bold text-2xl text-center ">Register</h2>
                 <p class="text-xs mt-4 text-[#002D74] text-center">If you are not a member, register now</p>
 

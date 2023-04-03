@@ -41,7 +41,7 @@
 
   <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
       <div class="">
-          <img src="../img/7wonders.png " alt=" ">
+          <img src="../img/Wonders.png " alt=" ">
       </div>
    
       <div class="flex justify-between space-x-2">
@@ -238,7 +238,7 @@ Log out
   
 {{-- Sidebar ----------------------------------------------------------------------}}
 <div id="drawer-navigation" class="fixed top-0 mt-20 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
-  <h5 id="drawer-navigation-label" class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">7Wonders menu</h5>
+  <h5 id="drawer-navigation-label" class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">Wonders menu</h5>
   <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
       <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
       <span class="sr-only">Close menu</span>
@@ -463,39 +463,23 @@ Log out
   
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div class="hidden md:grid grid-cols-1 gap-4">
-            <p class="font-medium text-gray-900">Services</p>
+            <p class="font-medium text-gray-900">Features</p>
   
             <nav aria-label="Footer Navigation - Services" class="mt-6">
               <ul class="space-y-4 text-sm">
                 <li>
                   <a href="#" class="text-gray-700 transition hover:opacity-75">
-                    1on1 Coaching
+                    Hd images
                   </a>
                 </li>
   
                 <li>
                   <a href="#" class="text-gray-700 transition hover:opacity-75">
-                    Company Review
+                    Detailed Places
                   </a>
                 </li>
   
-                <li>
-                  <a href="#" class="text-gray-700 transition hover:opacity-75">
-                    Accounts Review
-                  </a>
-                </li>
-  
-                <li>
-                  <a href="#" class="text-gray-700 transition hover:opacity-75">
-                    HR Consulting
-                  </a>
-                </li>
-  
-                <li>
-                  <a href="#" class="text-gray-700 transition hover:opacity-75">
-                    SEO Optimisation
-                  </a>
-                </li>
+                
               </ul>
             </nav>
           </div>
@@ -506,20 +490,20 @@ Log out
             <nav aria-label="Footer Navigation - Company" class="mt-6">
               <ul class="space-y-4 text-sm">
                 <li>
-                  <a href="#" class="text-gray-700 transition hover:opacity-75">
+                  <a href="About" class="text-gray-700 transition hover:opacity-75">
                     About
                   </a>
                 </li>
   
                 <li>
-                  <a href="#" class="text-gray-700 transition hover:opacity-75">
-                    Meet the Team
+                  <a href="Services" class="text-gray-700 transition hover:opacity-75">
+                    Services
                   </a>
                 </li>
   
                 <li>
-                  <a href="#" class="text-gray-700 transition hover:opacity-75">
-                    Accounts Review
+                  <a href="Gallery" class="text-gray-700 transition hover:opacity-75">
+                    Gallery
                   </a>
                 </li>
               </ul>
@@ -553,7 +537,7 @@ Log out
           </nav>
   
           <p class="mt-8 text-xs text-gray-500 sm:mt-0">
-            &copy; 2022. Company Name. All rights reserved.
+            &copy; 2022. WondersPh. All rights reserved.
           </p>
         </div>
       </div>
