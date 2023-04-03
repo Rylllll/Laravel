@@ -349,7 +349,7 @@
                     <table class="p-6 text-md bg-white font-sans ">
                         <thead class="border b border-black">
                             <th class="text-left p-3 px-5 text-[#424242]">Title </th>
-                            <th class="text-left p-3 md:block px-5 text-[#424242]">About</th>
+                            <th class="text-left p-3 md:block px-5 text-[#424242] hidden md:hidden lg:flex">About</th>
                             <th class="text-left p-3 px-5 text-[#424242]">Image</th>
                             <th class="text-center p-3 px-5 text-[#424242]">Action</th>
 
@@ -359,7 +359,7 @@
                                 <tr class="border-b  ">
                                     <td class="p-3 px-5 font-sans hidden"> {{ $item->id }}</td>
                                     <td class="p-3 px-5 font-sans"> {{ $item->title }}</td>
-                                    <td class="p-3 px-5 font-sans text-sm md:text-lg">{{ $item->about }}</td>
+                                    <td class="p-3 px-5 font-sans text-sm md:text-lg hidden lg:flex ">{{ $item->about }}</td>
                                     <td class="p-3 px-5 font-sans">
                                         <img src="{{ $item->image }}" width='100' height='100'
                                             class="img img-responsive rounded-lg" />
