@@ -242,11 +242,11 @@
                 <div>
   
                     <label for="about" class="block text-sm font-bold leading-6 text-gray-900">Title of the image</label>
-                    <input required placeholder="Input title" type="text" name="title" id="title" value="{{ $upload->title }}" class="mb-3 mt-1 block w-full rounded-md border border-black text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
+                    <input required placeholder="Input title" type="text" name="title" id="title" value="{{ $upload->title }}" class="mb-3 mt-1 block w-full rounded-md border-gray-500 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                     />
                     <label for="about" class="block text-sm font-bold leading-6 text-gray-900 mb-3">About (Brief description about the place or destination.)</label>
                     <div class="mt-2">
-                      <textarea required id="about" name="about" rows="3" class="mt-1 block w-full rounded-md text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6 border border-black"
+                      <textarea required id="about" name="about" rows="3" class="mt-1 block w-full rounded-md text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6 border-gray-500"
           style="max-height: 150px; max-width: 100%; resize: vertical;" placeholder="Information" >{{ $upload->about }}</textarea>
 
                     </div>
@@ -318,117 +318,9 @@
 </div>
 </div>
 
-<div id="modal" class="fixed z-10 inset-0 overflow-y-auto hidden ease-in-out duration-300">
-  <div class="flex items-center justify-center min-h-screen">
-    <!-- Modal overlay -->
-    <div class="fixed w-full z-0 inset-0 bg-black opacity-50"></div>
-
-    <!-- Modal content -->
-    <div class="relative bg-white w-1/2 mx-auto rounded-2xl shadow-lg z-30">
-      <div class="flex justify-between p-4">
-       
-        <div class="grid">
-          <h1 class="text-3xl font-sans text-black" for="">Upload image</h1>
-            
-          <h2 class="text-sm font-sans text-[#424242]" for="">Upload your images here</h2>
-        </div>
-   
-        <div class="ml-auto">
-          <i class="fa-solid fa-rectangle-xmark text-4xl text-red-500 cursor-pointer transition hover:scale-110  focus:outline-none focus:ring" onclick="closeModal()"></i>
-        </div>
-      </div>
-      
-      
-      <form method="POST" action="{{ url('uploads') }}" enctype="multipart/form-data">
-               
-        {!! csrf_field() !!}
-   
-
-          
-
-            <div class=" rounded-2xl sm:overflow-hidden sm:rounded-md">
-
-                <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
 
 
-                    <div>
-      
-                        <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Title of the image</label>
-                        <input required placeholder="Input title" type="text" name="title" id="title" class="mb-3 mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
-                        />
-                        <label for="about" class="block text-sm font-medium leading-6 text-gray-900 mb-3">About (Brief description about the place or destination.)</label>
-                        <div class="mt-2">
-                            <textarea required id="about" name="about" rows="3" class="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
-                                style="" placeholder="Information"></textarea>
-                        </div>
 
-                    </div>
-
-
-                    <div class="w-100 h-100">
-                        <img id="preview-img" class="w-full h-full object-contain" alt="">
-                    </div>
-
-
-                    <div>
-                        <label class="block text-sm font-medium leading-6 text-gray-900">Upload image section</label>
-                        <div class="mt-2 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                            <div class="space-y-1 text-center">
-                                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-          <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-                                <div class="flex text-sm text-gray-600">
-                                    <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-medium text-blue-900 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
-            <span>Upload a file</span>
-            <input type="file" name="image" id="image" class="cursor-pointer" onchange="loadFile(event)" >
-          </label>
-                                    <p class="pl-1">or drag and drop</p>
-                                </div>
-                                <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
-                    <button type="submit" value="Save" name="submit" class=" inline-flex justify-center rounded-lg bg-black py-2 px-3 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 w-full focus-visible:outline-indigo-500">Save</button>
-                </div>
-            </div>
-
-    </form>
-
-    </div>
-  </div>
-</div>
-
-{{-- Modal 2---------------------------------------------------------------------------------------------------------------------------- --}}
-
-<div id="modal1" class="fixed z-10 inset-0 overflow-y-auto hidden ease-in-out duration-300">
-  <div class="flex items-center justify-center min-h-screen">
-    <!-- Modal overlay -->
-    <div class="fixed w-full z-0 inset-0 bg-black opacity-50"></div>
-
-    <!-- Modal content -->
-    <div class="relative bg-white w-1/2 mx-auto rounded-2xl shadow-lg z-30">
-      <div class="flex justify-between p-4">
-       
-        <div class="grid">
-          <h1 class="text-3xl font-sans text-black" for="">Edit details</h1>
-            
-          <h2 class="text-sm font-sans text-[#424242]" for="">Edit the images here</h2>
-        </div>
-   
-        <div class="ml-auto">
-          <i class="fa-solid fa-rectangle-xmark text-4xl text-red-500 cursor-pointer transition hover:scale-110  focus:outline-none focus:ring" onclick="closeModal1()"></i>
-        </div>
-      </div>
-      
-      
-
-      <input type="hidden" name="page"  id="page-input">
-
-    </div>
-  </div>
-</div>
 
 
 

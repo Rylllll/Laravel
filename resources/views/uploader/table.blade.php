@@ -135,7 +135,13 @@
                             Logout
                         </button>
                     </form>
-
+                    <a  href="/register" class="lg:flex hidden group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+                        <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
+                   
+                        <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
+                    
+                       Create account
+                        </span></a>
                 </nav>
             </details>
         </nav>
@@ -263,7 +269,7 @@
 
                     <div class="mt-6 flex items-center gap-8 text-xs">
 
-                        <h1 class="sm:text-9xl text-8xl ">{{ $count }}</h1>
+                        <h1 class="sm:text-9xl text-8xl ">{{ $userCount }}</h1>
 
                     </div>
                 </div>
@@ -467,13 +473,13 @@
                                         image</label>
                                     <input required placeholder="Input title" type="text" name="title"
                                         id="title"
-                                        class="mb-3 mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6" />
+                                        class="mb-3 mt-1 block w-full rounded-md border-gray-500 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6" />
                                     <label for="about"
                                         class="block text-sm font-bold leading-6 text-gray-900 mb-3">About (Brief
                                         description about the place or destination.)</label>
                                     <div class="mt-2">
                                         <textarea required id="about" name="about" rows="3"
-                                        class="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
+                                        class="mt-1 block w-full rounded-md border-gray-500 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
                                         style="" placeholder="Information" maxlength="300"></textarea>
                               
                                     </div>
@@ -502,15 +508,18 @@
                                             <div class="flex text-sm text-gray-600">
                                                 <label for="file-upload"
                                                     class="relative cursor-pointer rounded-md bg-white font-medium text-blue-900 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
-                                                    <span>Upload a file</span>
+                                                  
                                                     <input type="file" name="image" id="image"
                                                         class="cursor-pointer" onchange="loadFile(event)">
                                                 </label>
-                                                <p class="pl-1">or drag and drop</p>
+                                             
                                             </div>
-                                            <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                                        
                                         </div>
                                     </div>
+                                    
+                                    <img id="output" class="mt-5 flex mx-auto justify-center h-50 w-50" src="../../img/prev1.jpg" alt="">
+                                
                                 </div>
                             </div>
                             <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
@@ -570,6 +579,7 @@
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.min.js " async></script>
 <script src="../js/modal.js " async></script>
+<script src="../js/alert.js " async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 
 </html>

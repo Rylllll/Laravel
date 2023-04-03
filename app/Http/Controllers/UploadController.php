@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\upload;
+use App\Models\User;
 use DB;
 class UploadController extends Controller
 {
@@ -11,10 +12,13 @@ class UploadController extends Controller
      */
     public function index()
     {
-       
+       if (auth()->guest()){
+           abort(403);
+       }
+       $userCount = User::count(); 
         $uploads = Upload::paginate(10); 
         $count = Upload::count();
-        return view('uploader.table')->with('uploader', $uploads)->with('count', $count);
+        return view('uploader.table')->with('uploader', $uploads)->with('count', $count)->with('userCount', $userCount);
     }
     public function add()
     {

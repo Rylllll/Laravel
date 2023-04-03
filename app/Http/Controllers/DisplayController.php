@@ -8,7 +8,7 @@ class DisplayController extends Controller
 {
     public function index(){
         $homes = upload::all();
-        $home = upload::take(6)->get();
+        $home = upload::latest()->take(6)->get();
         return view('/gallery', ['home' => $home], ['homes' => $homes]);
     }
     

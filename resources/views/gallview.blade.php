@@ -123,13 +123,13 @@ Log out
 
     @else
         
-        <a  href="/register" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+        {{-- <a  href="/register" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
           <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
      
           <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
       
           Register
-          </span></a>
+          </span></a> --}}
         <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
           <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
      
@@ -165,7 +165,7 @@ Log out
   </div>
 </nav>
 
-<section class="mt-20"> 
+<section class="mt-40"> 
     <div
       class="mx-auto max-w-screen-xl px-6 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 sm:text-sm "
     >
@@ -231,10 +231,85 @@ Log out
        
       </div>
     </div>
+
   </section>
 
   
-  <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5 mt-10">
+{{-- Sidebar ----------------------------------------------------------------------}}
+<div id="drawer-navigation" class="fixed top-0 mt-20 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+  <h5 id="drawer-navigation-label" class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">7Wonders menu</h5>
+  <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
+      <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      <span class="sr-only">Close menu</span>
+  </button>
+<div class="py-4 overflow-y-auto">
+    <ul class="space-y-2 font-medium">
+    
+       @auth
+           
+       <li>
+        <button type="button" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+          <i class="fa-solid fa-user" style="color: #000000;"></i>
+          <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+        <ul id="dropdown-example" class="hidden py-2 space-y-2">
+              <li>
+                <a href="{{URL::to('uploads')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                  <i class="fa-solid fa-chart-simple hover:text-white" ></i>
+                   <span class="ml-3">Dashboard</span>
+                </a>
+                
+              </li>
+        
+          
+      
+                
+              <form method="POST" action="/logout" >
+                @csrf
+              <li>
+                <button href="#" type="submit" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                  <i class="fa-solid fa-right-from-bracket" style="color: #000000;"></i>
+                  <span class="ml-3">Logout</span>
+                </button>
+                </li>
+            </form>
+        </ul>
+     </li>
+      
+       
+          
+                 @else
+                     
+               
+                       </span>
+                      </li>
+   
+                       <li>
+                         <a href="{{URL::to('login')}}" class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700">
+                           <i class="fa-solid fa-right-to-bracket hover:text-white"></i>
+                           <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+                         </a>
+                      </li>
+                      
+               
+                 @endauth         
+                 <li>
+                  <a href="/gallery" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                    <i class="fa-sharp fa-solid fa-address-card hover:text-white" ></i>
+                     <span class="ml-3">Gallery</span>
+                  </a>
+               </li>
+              
+           
+                        
+    </ul>
+    
+  
+ </div>
+</div>
+
+  <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5 mt-40">
     <div class="relative block h-32 lg:col-span-2 lg:h-full">
       <img
         src="../img/shout.jpg"
@@ -483,6 +558,12 @@ Log out
       </div>
     </div>
   </footer>
+
+  <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+      <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
+      <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>

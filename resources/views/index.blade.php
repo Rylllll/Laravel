@@ -52,9 +52,9 @@
                 <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
                 href="#About " >About</a>
                 <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
+            href="#How">How it works</a>
+            <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
           href="#Gallery">Gallery</a>
-                <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-            href="#Services">Services</a>
             </div>
             <div class="flex justify-between space-x-2">
               
@@ -135,13 +135,13 @@
    
           @else
               
-              <a  href="/register" class="lg:flex hidden group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+              {{-- <a  href="/register" class="lg:flex hidden group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                 <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
            
                 <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
             
                 Register
-                </span></a>
+                </span></a> --}}
               <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden lg:flex  group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                 <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
            
@@ -194,7 +194,7 @@
     <div class="max-w-xl text-center sm:text-left  md:mt-20">
       <h1 class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl">
        Welcome to
-       <strong class="font-extrabold text-[#212121] max-w-full text-6xl block md:text-5xl ">
+       <strong class="font-extrabold text-[#212121] max-w-full font-del text-6xl block md:text-9xl ">
         Wonders of the world
       </strong>
     
@@ -235,12 +235,12 @@
             <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                 <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                     <h2 class="mb-4 md:text-4xl text-sm tracking-tight font-extrabold text-gray-900 dark:text-white">Travel and see the world with your eyes</h2>
-                    <p class="mb-4 md:text-lg text-sm">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
-                    <p class="md:text-lg text-sm">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
+                    <p class="mb-4 md:text-lg text-sm">Traveling provides an opportunity to see the world with your own eyes, to experience new cultures, and to create memories that will last a lifetime. It allows you to break free from the monotony of everyday life, to explore new horizons, and to broaden your perspective on the world. Whether it's trying exotic foods, witnessing breathtaking natural landscapes, or immersing yourself in the local customs, traveling is an enriching experience that can teach you about the world and yourself. So why not take the leap and travel to the best places in the world to see it with your own eyes?</p>
+                 
                 </div>
                 <div class="grid grid-cols-2 gap-4 mt-8">
-                    <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
-                    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
+                    <img class="w-full rounded-lg" src="../img/cav.jpg" alt="office content 1">
+                    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="../img/ice.jpg" alt="office content 2">
                 </div>
             </div>
           </div>
@@ -253,8 +253,8 @@
       </div>
       </section>
 
-
-    <div class="py-16 ">  
+<section class="py-16 " id="How">
+    <div class="py-16 " >  
       <div class="md:container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
           <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">02 - How it works</h1>
           <div class="border border-[#9e9e9e] 1px "></div>
@@ -269,7 +269,7 @@
                 <div
                   class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-black"
                 >
-                <img src="../img/trav1.png" class="w-1/2 md:w-2/3 md:mx-auto mb-5 flex mx-auto justify-center " alt="illustration" loading="lazy" width="900" height="600">
+                <img src="../img/gall.jpg" class="w-1/2 md:w-2/3 md:mx-auto mb-5 flex mx-auto justify-center " alt="illustration" loading="lazy" width="900" height="600">
                
             
               
@@ -300,7 +300,7 @@
                   class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-black"
                 >
                
-                <img src="../img/trav2.png" class="w-2/4 md:w-2/3 ml-auto mb-5 flex mx-auto " alt="illustration" loading="lazy" width="900" height="600">
+                <img src="../img/read.jpg" class="w-2/4 md:w-2/3 ml-auto mb-5 flex mx-auto " alt="illustration" loading="lazy" width="900" height="600">
                   
                 </div>
             
@@ -328,7 +328,7 @@
                 <div
                   class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-black"
             >
-            <img src="../img/trav3.png" class="w-2/4 ml-auto mb-5 flex mx-auto " alt="illustration" loading="lazy" width="900" height="600">
+            <img src="../img/teach.jpg" class="w-2/4 ml-auto mb-5 flex mx-auto " alt="illustration" loading="lazy" width="900" height="600">
                 </div>
             
                 <div
@@ -348,6 +348,7 @@
           </div>
       </div>
   </div>
+</section>
     <!--Services-->
  
 
@@ -367,16 +368,14 @@
               Travel spot gallery
             </h2>
       
-            <p class=" mt-4 text-gray-500 text-center ">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
-              praesentium cumque iure dicta incidunt est ipsam, officia dolor fugit
-              natus?
+            <p class=" mt-4 text-gray-500 text-center mt-10 ">
+              Traveling is an exhilarating experience that broadens our horizons and exposes us to the wonders of the world. From the picturesque beaches of Bali to the magnificent pyramids of Giza, there is an endless array of destinations that offer unique cultural experiences, breathtaking scenery, and memorable adventures. Whether you're looking for a tropical getaway or an urban adventure, the best places in the world have something to offer for everyone. So pack your bags, grab your passport, and get ready to embark on a journey of a lifetime!
             </p>
           </header>
       
     
    
-          <div class="md:grid grid-cols-4 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-6 px-4 w-96 sm:w-auto">
+          <div class="md:grid grid-cols-4 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-6 px-4 w-96 sm:w-auto mt-20">
             @foreach ($home as $item)
            
             
@@ -452,38 +451,38 @@
 <div class="py-16 " >  
 
   <div class="md:container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
-      <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/3 text-center bg-[#212121] font-bold">04 - Services we offer</h1>
+      <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/3 text-center bg-[#212121] font-bold">04 - Contact us</h1>
       <div class="border border-[#9e9e9e] 1px "></div>
       <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3 p-9">
 
 
           <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 transition hover:scale-90 hover:shadow-xl focus:outline-none focus:ring">
               <div class="mb-12 space-y-4">
-                  <h3 class="text-2xl font-semibold text-black"></i> High definition pictures</h3>
+                  <h3 class="text-2xl font-semibold text-black"></i> facebook page</h3>
                   <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                  <a href="#" class="block font-medium text-black">Know more</a>
+             
               </div>
-              <img src="../img/gall.jpg" class="w-2/3 ml-auto -mb-12 flex mx-auto " alt="illustration" loading="lazy" width="900" height="600">
+              <img src="../img/fb.png" class="w-2/3 ml-auto -mb-12 flex mx-auto " alt="illustration" loading="lazy" width="900" height="600">
           </div>
 
 
           <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 transition hover:scale-90 hover:shadow-xl focus:outline-none focus:ring">
               <div class="mb-12 space-y-4">
-                  <h3 class="text-2xl font-semibold text-black"><i class="fa-regular fa-square-info"></i>Detailed information</h3>
+                  <h3 class="text-2xl font-semibold text-black"><i class="fa-regular fa-square-info"></i>Instagram page</h3>
                   <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                  <a href="#" class="block font-medium text-black">Know more</a>
+            
               </div>
-              <img src="../img/read.jpg" class="w-2/3 ml-auto mx-auto" alt="illustration" loading="lazy" width="900" height="600">
+              <img src="../img/insta.png" class="w-2/3 ml-auto mx-auto" alt="illustration" loading="lazy" width="900" height="600">
           </div>
 
 
           <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 transition hover:scale-90 hover:shadow-xl focus:outline-none focus:ring">
               <div class="mb-12 space-y-4">
-                  <h3 class="text-2xl font-semibold text-black">Remarkable tips</h3>
+                  <h3 class="text-2xl font-semibold text-black">Youtube page</h3>
                   <p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-                  <a href="#" class="block font-medium text-black">Know more</a>
+                 
               </div>
-              <img src="../img/teach.jpg" class="w-2/3 ml-auto mx-auto " alt="illustration" loading="lazy" width="900" height="600">
+              <img src="../img/yt.png" class="w-2/3 ml-auto mx-auto " alt="illustration" loading="lazy" width="900" height="600">
           </div>
 
           
@@ -792,12 +791,12 @@
           
                  @else
                      
-                 <li>
+                 {{-- <li>
                    <a href="{{URL::to('register')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
                      <i class="fa-solid fa-user-plus hover:text-white"></i>
                      <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
                    </a>
-                </li>
+                </li> --}}
                        </span>
                       </li>
    
@@ -817,15 +816,15 @@
                   </a>
                </li>
                <li>
-                <a href="#Gallery" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                <a href="#How" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                   <i class="fa-solid fa-image hover:text-white" ></i>
-                  <span class="ml-3">Gallery</span>
+                  <span class="ml-3">How it works</span>
                 </a>
              </li>
              <li>
-              <a href="#Services" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+              <a href="#Gallery" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                 <i class="fa-sharp fa-solid fa-address-card hover:text-white" ></i>
-                <span class="ml-3">Services</span>
+                <span class="ml-3">Gallery</span>
               </a>
            </li>
                         

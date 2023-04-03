@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     
     public function index(){
-        $home = upload::take(6)->get();
+        $home = upload::latest()->take(6)->get();
         return view('/index', ['home' => $home]);
     }
     
