@@ -10,22 +10,10 @@ use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-// Route::get('gallview', function () {
-//    return view('gallview');
-// });
 Route::get('/display/{id}', [DisplayController::class, 'show'])->name('display.show');
 Route::resource("/uploads", UploadController::class);
+Route::get('search', [DisplayController::class, 'searchPlaces'])->name('search.search');
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest');

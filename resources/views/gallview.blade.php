@@ -165,6 +165,7 @@ Log out
   </div>
 </nav>
 
+{{-- Viewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww --}}
 <section class="mt-40"> 
     <div
       class="mx-auto max-w-screen-xl px-6 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 sm:text-sm "

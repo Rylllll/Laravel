@@ -18,4 +18,19 @@ class DisplayController extends Controller
         return view('/gallview', compact('upload'));
     }
     
+    public function searchPlaces(Request $request){
+        if ($request->search){
+           
+            $searchPlaces = Upload::where('title','LIKE', '%' .$request->search. '%')->latest()->get();
+            return view ('/search', compact('searchPlaces'));
+
+        }
+
+        else{
+
+            return redirect()->back()->with('message'.'Empty search');
+        }
+
+
+    }
 }

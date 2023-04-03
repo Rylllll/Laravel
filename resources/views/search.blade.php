@@ -176,115 +176,103 @@ Log out
 
  
 
-<section  class="mt-20 " id="recent">
- 
-<div class="flex items-center justify-center flex-wrap mt-40 ">
-  <div role="main" class="flex flex-col items-center justify-center">
-    <h1 class="text-4xl font-semibold leading-9 text-center text-gray-800 dark:text-gray-50">Wonders Gallery</h1>
-    <p class="text-base leading-normal text-center text-gray-600 dark:text-white mt-4 lg:w-1/2 md:w-10/12 w-11/12">If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough</p>
-  </div>
-</div>
 
 
-<div class="md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
-  <div class="flex items-center justify-center mt-10 mb-10 md:mt-1 md:mb-1 md:justify-end">
-    <form action="{{ url('search') }}" method="GET" role="search">
-    <div class="flex border-2 rounded">
-  
-        <input type="text" class="px-4 py-2 w-80 rounded-2xl" placeholder="Search..." name="search">
-        <button class="flex items-center justify-center px-4 border-l rounded-2xl" type="submit">
-            <svg class="w-6 h-6 text-gray-600 rounded-2xl" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
-                <path
-                    d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-            </svg>
-        </button>
-      
-    </div>
-    </form>
-  </div>
-  <div class="mt-20">
-<h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">Recent Post</h1>
-<h2>Last week post</h2>
-</div>
-</div>
-
-<div class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-6 px-4 w-96 sm:w-auto">
-  @foreach ($home as $item)
- 
-  
-    <a href="{{ route('display.show', ['id' => $item->id]) }}" class="group relative block bg-black ">
-      <img
-        alt="Developer"
-        src="{{$item->image}}"
-        class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 "
-      />
-    
-      <div class="relative p-4 sm:p-6 lg:p-8">
-        <p class="text-sm font-medium uppercase tracking-widest text-blue-500">
-          Gallery
-        </p>
-    
-        <p class="text-xl font-bold text-white sm:text-2xl">{{$item->title}}</p>
-    
-        <div class="mt-32 sm:mt-48 lg:mt-64">
-          <div
-            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-          >
-          <p class="mt-1.5 max-w-[45ch] text-xs text-white overflow-hidden" style="max-height: 3em; text-overflow: ellipsis;">
-            {{ substr($item->about, 0, 60) }}{{ strlen($item->about) > 250 ? "..." : "" }}
-          </p>
-          
-          </div>
-          
-        </div>
-        
-      </div>
-    </a>
-  
-  @endforeach
-</div>
-</div>
-</section>
- 
                 
      
  
-  <section id="all">
+  <section id="all ">
    <div class="py-16">
+    
     <div class="md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
-    <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">All travel spot images</h1>
+        <div class="flex items-center justify-center mt-10 mb-10 md:mt-1 md:mb-1 md:justify-end">
+            <form action="{{ url('search') }}" method="GET" role="search">
+            <div class="flex border-2 rounded">
+          
+                <input type="text" class="px-4 py-2 w-80 rounded-2xl" placeholder="Search..." name="search">
+                <button class="flex items-center justify-center px-4 border-l rounded-2xl" type="submit">
+                    <svg class="w-6 h-6 text-gray-600 rounded-2xl" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                    </svg>
+                </button>
+              
+            </div>
+            </form>
+          </div>
+        <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">Search results</h1>
     <h2>Collections of images from beautiful places around the world</h2>
     
     </div>
     
-    <div class="w-full max-w-7xl pb-10 mx-auto gap-6 columns-3 space-y-10 grid md:block md:grid-cols-3 lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
+    <div class="md:grid gap-y-5 gap-3  grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
+
       
       
-      @foreach ($homes as $item)
-      <img src="{{$item->image}}" class="transition hover:scale-90">
-      <div class="mt-3 flex justify-between text-sm">
-        <div>
-          <h3
-            class="text-black text-xl group-hover:underline group-hover:underline-offset-4 font-bold"
-          >
-          {{$item->title}}
-          </h3>
+      @forelse ($searchPlaces as $item)
     
-          <p class="mt-1.5 max-w-[45ch] text-xs text-gray-500 overflow-hidden" style="max-height: 3em; text-overflow: ellipsis;">
-            {{ substr($item->about, 0, 100) }}{{ strlen($item->about) > 250 ? "..." : "" }}
-          </p>
-        <div class="mt-5 transition  ">
-        <a class="text-blue-400 hover:text-black" href="{{ route('display.show', ['id' => $item->id]) }}">See more</a>
+
+      <a
+  href="{{ route('display.show', ['id' => $item->id]) }}"
+  class="relative block overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat" style="background-image: url('{{ $item->image }}')">
+  <div class="absolute inset-0 bg-black/25"></div>
+
+  <div class="relative flex items-start justify-between p-4 sm:p-6 lg:p-8">
+    <div class="sm:pt-18 pt-12 text-white lg:pt-24">
+      <h3 class="text-xl font-bold sm:text-2xl">{{ $item->title }}</h3>
+
+      <p class="mt-1.5 max-w-[45ch] text-xs text-white overflow-hidden" style="max-height: 3em; text-overflow: ellipsis;">
+        {{ substr($item->about, 0, 100) }}{{ strlen($item->about) > 250 ? "..." : "" }}
+      </p>
+    </div>
+
+
+  </div>
+</a>
+
+      @empty
+
+      <div>
+        <h1>wala</h1>
       </div>
-        </div>
-    
-        
-      </div>
-      @endforeach
+      @endforelse
     
     </div>
- 
+    <div class="md:grid gap-3 grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 px-4 w-96 sm:w-auto">
+
+        <a href="/gallery">
+            <button
+    class="mt-8 group relative inline-flex items-center overflow-hidden rounded-full bg-[#212121] px-8 py-3 text-white focus:outline-none focus:ring active:bg-[#212121]"
+    href="/gallery"
+  >
+    <span
+      class="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4"
+    >
+      <svg
+        class="h-5 w-5"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M17 8l4 4m0 0l-4 4m4-4H3"
+        />
+      </svg>
+    </span>
+  
+    <span class="text-sm font-medium transition-all group-hover:ml-4">
+     Go back
+   
+    </span>
+  </button>
+  </a>
+    </div>
+  </div>
 
     </section>
            
@@ -335,12 +323,7 @@ Log out
           
                  @else
                      
-                 {{-- <li>
-                   <a href="{{URL::to('register')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
-                     <i class="fa-solid fa-user-plus hover:text-white"></i>
-                     <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
-                   </a>
-                </li> --}}
+                
                        </span>
                       </li>
    
@@ -375,7 +358,7 @@ Log out
 
 
 
-    <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5">
+    <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5 mt-40">
       <div class="relative block h-32 lg:col-span-2 lg:h-full">
         <img
           src="../img/shout.jpg"

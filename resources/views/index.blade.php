@@ -56,6 +56,8 @@
             <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
           href="#Gallery">Gallery</a>
             </div>
+
+            
             <div class="flex justify-between space-x-2">
               
               
