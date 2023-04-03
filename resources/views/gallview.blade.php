@@ -41,7 +41,7 @@
 
   <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
       <div class="">
-        <a href="/">
+        <a href="/" target="_blank">
           <img src="../img/Wonders.png " alt=" ">
         </a>
       </div>

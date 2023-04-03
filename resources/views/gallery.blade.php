@@ -43,7 +43,7 @@
       </div>
       <div class="hidden lg:flex space-x-20 ">
           <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-          href="#recent " >Recent Images.</a>
+          href="#recent " >Recent Images</a>
           <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
     href="#all">Albums</a>
     
@@ -356,7 +356,7 @@ Log out
                  <li>
                   <a href="#recent" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                     <i class="fa-sharp fa-solid fa-address-card hover:text-white" ></i>
-                     <span class="ml-3">Recent Images.</span>
+                     <span class="ml-3">Recent Images</span>
                   </a>
                </li>
                <li>
