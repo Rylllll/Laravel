@@ -43,7 +43,7 @@
       </div>
       <div class="hidden lg:flex space-x-20 ">
           <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-          href="#recent " >Recent post</a>
+          href="#recent " >Recent Images.</a>
           <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
     href="#all">Albums</a>
     
@@ -204,7 +204,7 @@ Log out
     </form>
   </div>
   <div class="mt-20">
-<h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">Recent Post</h1>
+<h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">Recent Images</h1>
 <h2>Last week post</h2>
 </div>
 </div>
@@ -275,7 +275,7 @@ Log out
             {{ substr($item->about, 0, 100) }}{{ strlen($item->about) > 250 ? "..." : "" }}
           </p>
         <div class="mt-5 transition  ">
-        <a class="text-blue-400 hover:text-black" href="{{ route('display.show', ['id' => $item->id]) }}">See more</a>
+        <a class="text-blue-400 hover:text-black" href="{{ route('display.show', ['id' => $item->id]) }}">View full image</a>
       </div>
         </div>
     
@@ -356,7 +356,7 @@ Log out
                  <li>
                   <a href="#recent" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                     <i class="fa-sharp fa-solid fa-address-card hover:text-white" ></i>
-                     <span class="ml-3">Recent</span>
+                     <span class="ml-3">Recent Images.</span>
                   </a>
                </li>
                <li>

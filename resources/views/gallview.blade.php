@@ -41,7 +41,9 @@
 
   <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
       <div class="">
+        <a href="/">
           <img src="../img/Wonders.png " alt=" ">
+        </a>
       </div>
    
       <div class="flex justify-between space-x-2">
