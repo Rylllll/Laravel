@@ -28,6 +28,7 @@
 
 <body class="bg-blue-400">
 
+ 
     <section class="min-h-screen flex items-center mx-auto justify-center bg-2b2d42">
         <!-- login container -->
         <div class="bg-gray-100 md:flex md:flex-row md:max-w-7xl md:mx-auto rounded-2xl shadow-2xl p-5 text-black mx-auto justify-center">
@@ -75,7 +76,6 @@
             </div>
         </div>
     </section>
-
 
 </body>
 
