@@ -34,11 +34,12 @@
 
 <body class="bg-[#fff3e0]">
 
-
   <button x-data="topBtn" @click="scrolltoTop" id="topButton"
   class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
   <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000;"></i>
 </button>
+
+  
 
     <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between  ">
 
@@ -187,16 +188,16 @@
     class="relative px-4 py-32 mx-auto md:mx-auto lg:flex lg:h-screen lg:items-center lg:px-8 mt-0  container flex flex-col-reverse items-center space-y-0 md:space-y-0 md:flex-row text-[#212121]"
   >
   
-    <div class="max-w-xl text-center sm:text-left mt-40 md:mt-20">
-      <h1 class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl">
+    <div class="max-w-xl text-center sm:text-left mt-20 md:mt-20">
+      <h1 class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl animate__animated animate__slideInDown">
        Welcome to
-       <strong class="font-extrabold text-[#212121] max-w-full font-del text-6xl block md:text-9xl ">
+       <strong class="font-extrabold text-[#212121] max-w-full font-del text-6xl block md:text-9xl animate__animated animate__slideInLeft">
         Wonders of the world
       </strong>
     
       </h1>
    
-      <p class="text-white mt-4 max-w-lg text-sm md:text-2xl sm:leading-relaxed w-full">
+      <p class="text-white mt-4 max-w-lg text-sm md:text-2xl sm:leading-relaxed w-full animate__animated animate__slideInUp">
         Step into the world of wonder and marvel at the awe-inspiring creations of our ancestors, experience the magnificence of human achievement as you embark on a journey to discover the wonders that have stood the test of time
       </p>
 
@@ -276,7 +277,7 @@
                 >
                   <h3 class="mt-4 md:text-2xl text-sm font-medium ">Breath taking images</h3>
             
-                  <p class="mt-4 md:text-xl text-sm">
+                  <p class="mt-4 md:text-sm text-sm">
                     The high-definition images allow you to feel as if you are standing right in the midst of the most beautiful and exotic locations in the world. From the majestic peaks of the Himalayas to the stunning beaches of the Maldives, our collection of HD images will transport you to another world.
                   </p>
             
@@ -304,7 +305,7 @@
                 >
                   <h3 class="mt-4 font-medium md:text-2xl text-sm">Detailed Places</h3>
             
-                  <p class="mt-4 md:text-xl text-sm">
+                  <p class="mt-4 md:text-sm text-sm">
                     We understand that travelers crave unique experiences and want to be fully informed about the places they visit. That's why we've invested in creating a comprehensive and detailed database of locations that will leave no stone unturned.
                   </p>
             
@@ -330,7 +331,7 @@
                 >
                   <h3 class="mt-4 md:text-2xl font-medium text-sm">Collections of places</h3>
             
-                  <p class="mt-4 md:text-xl text-sm">
+                  <p class="mt-4 md:text-sm text-sm">
                     From natural wonders like the Grand Canyon and Victoria Falls to man-made marvels such as the Great Wall of China and the Colosseum in Rome, my collection has something for everyone.
                   </p>
             
@@ -368,7 +369,7 @@
       
     
    
-          <div class="md:grid grid-cols-4 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-6 px-4 w-96 sm:w-auto mt-20">
+          <div class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-6 px-4 w-96 sm:w-auto">
             @foreach ($home as $item)
            
             
@@ -376,7 +377,7 @@
                 <img
                   alt="Developer"
                   src="{{$item->image}}"
-                  class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+                  class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 "
                 />
               
                 <div class="relative p-4 sm:p-6 lg:p-8">
@@ -774,7 +775,7 @@
         </button>
         <ul id="dropdown-example" class="hidden py-2 space-y-2">
               <li>
-                <a href="{{URL::to('uploads')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                <a href="{{URL::to('uploads')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                   <i class="fa-solid fa-chart-simple hover:text-white" ></i>
                    <span class="ml-3">Dashboard</span>
                 </a>
@@ -787,8 +788,8 @@
               <form method="POST" action="/logout" >
                 @csrf
               <li>
-                <button href="#" type="submit" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                  <i class="fa-solid fa-right-from-bracket" style="color: #000000;"></i>
+                <button href="#" type="submit" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                  <i class="fa-solid fa-right-from-bracket hover:text-white" ></i>
                   <span class="ml-3">Logout</span>
                 </button>
                 </li>
@@ -800,12 +801,12 @@
           
                  @else
                      
-                 {{-- <li>
-                   <a href="{{URL::to('register')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
+                 <li>
+                   <a href="{{URL::to('register')}}" class="hidden flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
                      <i class="fa-solid fa-user-plus hover:text-white"></i>
                      <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
                    </a>
-                </li> --}}
+                </li>
                        </span>
                       </li>
    
@@ -853,7 +854,7 @@
 
     <aside
     x-data="{ show: true }"
-    x-init="setTimeout(() => show = false, 4000)"
+    x-init="setTimeout(() => show = false, 4000)" 
     x-show="show" 
   class="fixed bottom-4 right-4 z-50 flex items-center justify-center gap-4 rounded-lg bg-black px-5 py-3 text-white"
 >
@@ -885,15 +886,16 @@
 
 
 
-    
-    @endif
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 
+    @endif
+    
+<script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
     <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="../js/scroll.js"></script>
+    <script src="../js/nav.js"></script>
  
 </body>
 

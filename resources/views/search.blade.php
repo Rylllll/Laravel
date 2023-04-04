@@ -306,7 +306,7 @@ Log out
         </button>
         <ul id="dropdown-example" class="hidden py-2 space-y-2">
               <li>
-                <a href="{{URL::to('uploads')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                <a href="{{URL::to('uploads')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                   <i class="fa-solid fa-chart-simple hover:text-white" ></i>
                    <span class="ml-3">Dashboard</span>
                 </a>
@@ -319,15 +319,14 @@ Log out
               <form method="POST" action="/logout" >
                 @csrf
               <li>
-                <button href="#" type="submit" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                  <i class="fa-solid fa-right-from-bracket" style="color: #000000;"></i>
+                <button href="#" type="submit" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                  <i class="fa-solid fa-right-from-bracket hover:text-white" ></i>
                   <span class="ml-3">Logout</span>
                 </button>
                 </li>
             </form>
         </ul>
      </li>
-      
        
           
                  @else
@@ -614,7 +613,7 @@ Log out
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-    
+    <script src="../js/nav.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
         <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
         <script src="../js/scroll.js"></script>

@@ -28,14 +28,14 @@
 
 
 <body>
-  <button x-data="topBtn" @click="scrolltoTop" id="topButton"
+  {{-- <button x-data="topBtn" @click="scrolltoTop" id="topButton"
   class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18">
       </path>
   </svg>
-</button>
+</button> --}}
 
 <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between">
 
@@ -258,7 +258,7 @@ Log out
         </button>
         <ul id="dropdown-example" class="hidden py-2 space-y-2">
               <li>
-                <a href="{{URL::to('uploads')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                <a href="{{URL::to('uploads')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                   <i class="fa-solid fa-chart-simple hover:text-white" ></i>
                    <span class="ml-3">Dashboard</span>
                 </a>
@@ -271,8 +271,8 @@ Log out
               <form method="POST" action="/logout" >
                 @csrf
               <li>
-                <button href="#" type="submit" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                  <i class="fa-solid fa-right-from-bracket" style="color: #000000;"></i>
+                <button href="#" type="submit" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                  <i class="fa-solid fa-right-from-bracket hover:text-white" ></i>
                   <span class="ml-3">Logout</span>
                 </button>
                 </li>
@@ -547,7 +547,7 @@ Log out
   </footer>
 
   <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-  
+  <script src="../js/nav.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
   <script src="../js/scroll.js"></script>
       <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>

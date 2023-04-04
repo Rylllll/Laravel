@@ -189,18 +189,7 @@ Log out
 <div class="md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
   <div class="flex items-center justify-center mt-10 mb-10 md:mt-1 md:mb-1 md:justify-end">
     <form action="{{ url('search') }}" method="GET" role="search">
-    {{-- <div class="flex border-2 rounded">
-  
-        <input type="text" class="px-4 py-2 w-80 rounded-2xl" placeholder="Search..." name="search">
-        <button class="flex items-center justify-center px-4 border-l rounded-2xl" type="submit">
-            <svg class="w-6 h-6 text-gray-600 rounded-2xl" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
-                <path
-                    d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-            </svg>
-        </button>
-      
-    </div> --}}
+    
 
     <div class="relative text-gray-600">
       <input type="text" placeholder="Search...." class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" name="search" value="{{Request::get('search')}}">
@@ -266,11 +255,12 @@ Log out
     <h2>Collections of images from beautiful places around the world</h2>
     
     </div>
-    
+   
     <div class="w-full max-w-7xl pb-10 mx-auto gap-6 columns-3 space-y-10 grid md:block md:grid-cols-3 lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
-      
-      
+     
       @foreach ($homes as $item)
+       
+      <div class="delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0" data-taos-offset="400">
       <img src="{{$item->image}}" class="transition hover:scale-90">
       <div class="mt-3 flex justify-between text-sm">
         <div>
@@ -290,10 +280,11 @@ Log out
     
         
       </div>
+    </div>
       @endforeach
     
-    </div>
- 
+    
+    <div>
 
     </section>
            
@@ -318,7 +309,7 @@ Log out
         </button>
         <ul id="dropdown-example" class="hidden py-2 space-y-2">
               <li>
-                <a href="{{URL::to('uploads')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                <a href="{{URL::to('uploads')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                   <i class="fa-solid fa-chart-simple hover:text-white" ></i>
                    <span class="ml-3">Dashboard</span>
                 </a>
@@ -331,8 +322,8 @@ Log out
               <form method="POST" action="/logout" >
                 @csrf
               <li>
-                <button href="#" type="submit" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                  <i class="fa-solid fa-right-from-bracket" style="color: #000000;"></i>
+                <button href="#" type="submit" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                  <i class="fa-solid fa-right-from-bracket hover:text-white" ></i>
                   <span class="ml-3">Logout</span>
                 </button>
                 </li>
@@ -636,7 +627,7 @@ Log out
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-    <script src="../js/scroll.js"></script>
+     <script src="../../js/scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
         <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>

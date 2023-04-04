@@ -135,13 +135,13 @@
                             Logout
                         </button>
                     </form>
-                    <a  href="/register" class="lg:flex hidden group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+                    {{-- <a  href="/register" class="lg:flex hidden group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                         <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
                    
                         <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
                     
                        Create account
-                        </span></a>
+                        </span></a> --}}
                 </nav>
             </details>
         </nav>
@@ -263,7 +263,7 @@
                             <div>
                                 <dt class="sr-only">Address</dt>
 
-                                <dd class="font-bold text-black">Number of Users</dd>
+                                <dd class="font-bold text-black">Number of Admin account</dd>
                             </div>
                     </dl>
 
