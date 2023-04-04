@@ -9,7 +9,7 @@ module.exports = {
     theme: {
         fontFamily: {
             'sans': ['Poppins', 'sans-serif'],
-            'del': [ 'DELIRIUM NCV', 'sans-serif'],
+            'del': ['DELIRIUM NCV', 'sans-serif'],
             'script': ['Dancing Script', 'cursive'],
 
         },
@@ -30,7 +30,7 @@ module.exports = {
                 lg: '976px',
 
             },
-           
+
             fontSize: {
                 xs: ["0.75rem", { lineHeight: "1rem" }],
                 sm: ["0.875rem", { lineHeight: "1.25rem" }],

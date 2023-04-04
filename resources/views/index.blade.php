@@ -40,7 +40,7 @@
   <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000;"></i>
 </button>
 
-    <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between">
+    <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between  ">
 
         <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
             <div class="">
@@ -137,13 +137,7 @@
    
           @else
               
-              {{-- <a  href="/register" class="lg:flex hidden group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
-                <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
            
-                <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
-            
-                Register
-                </span></a> --}}
               <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden lg:flex  group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                 <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
            
@@ -185,7 +179,7 @@
 
       
 <section
-  class="bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('../img/shout.jpg'); top: 0%; height: 110vh;"
+  class="bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('../img/shout.jpg'); top: 0%; height: 110vh; "
 >
  
 
@@ -193,7 +187,7 @@
     class="relative px-4 py-32 mx-auto md:mx-auto lg:flex lg:h-screen lg:items-center lg:px-8 mt-0  container flex flex-col-reverse items-center space-y-0 md:space-y-0 md:flex-row text-[#212121]"
   >
   
-    <div class="max-w-xl text-center sm:text-left  md:mt-20">
+    <div class="max-w-xl text-center sm:text-left mt-40 md:mt-20">
       <h1 class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl">
        Welcome to
        <strong class="font-extrabold text-[#212121] max-w-full font-del text-6xl block md:text-9xl ">
@@ -340,7 +334,7 @@
                     From natural wonders like the Grand Canyon and Victoria Falls to man-made marvels such as the Great Wall of China and the Colosseum in Rome, my collection has something for everyone.
                   </p>
             
-                  <p class="mt-8 font-bold">Read more</p>
+         
                 </div>
               </div>
             </a>
@@ -452,40 +446,71 @@
   <div class="md:container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
       <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/3 text-center bg-[#212121] font-bold">04 - Contact us</h1>
       <div class="border border-[#9e9e9e] 1px "></div>
-      <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3 p-9">
-
-
-          <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 transition hover:scale-90 hover:shadow-xl focus:outline-none focus:ring">
-              <div class="mb-12 space-y-4">
-                  <h3 class="text-2xl font-semibold text-black"></i> facebook page</h3>
-                  <p class="mb-6">https://www.facebook.com/wonders.ph</p>
-             
-              </div>
-              <img src="../img/fb.png" class="w-2/3 ml-auto -mb-12 flex mx-auto " alt="illustration" loading="lazy" width="900" height="600">
+      <section class="bg-white text-white">
+        <div class="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 mt-10 rounded-2xl ">
+          <div class="max-w-xl rounded-2xl">
+            <h2 class="text-3xl font-bold sm:text-4xl text-[#212121]">Contact WondersPh to know more about</h2>
+      
+            <p class="mt-4 text-gray-500">
+              Contacting Wonders website is easy and convenient. There are several ways to reach out to us depending on your preference. You can use the contact form provided on our website and send us your questions, concerns or feedback. Alternatively, you can send an email directly to our customer support team at the email address provided on our website. 
+            </p>
           </div>
-
-
-          <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 transition hover:scale-90 hover:shadow-xl focus:outline-none focus:ring">
-              <div class="mb-12 space-y-4">
-                  <h3 class="text-2xl font-semibold text-black"><i class="fa-regular fa-square-info"></i>Instagram page</h3>
-                  <p class="mb-6">https://www.Instagram.com/wonders.ph</p>
-            
+      
+          <div
+            class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+          >
+            <div class="flex items-start gap-4">
+              <span class="shrink-0 rounded-lg bg-gray-800 p-4">
+                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+              </span>
+      
+              <div class="text-gray-500">
+                <h2 class="text-lg font-bold">Facebook Page.</h2>
+      
+                <p class="mt-1 text-sm ">
+                 Join our facebook page and discover new places
+                </p>
               </div>
-              <img src="../img/insta.png" class="w-2/3 ml-auto mx-auto" alt="illustration" loading="lazy" width="900" height="600">
-          </div>
-
-
-          <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8 transition hover:scale-90 hover:shadow-xl focus:outline-none focus:ring">
-              <div class="mb-12 space-y-4">
-                  <h3 class="text-2xl font-semibold text-black">Youtube page</h3>
-                  <p class="mb-6">https://www.youtube.com/wonders.ph</p>
-                 
+            </div>
+      
+            <div class="flex items-start gap-4">
+              <span class="shrink-0 rounded-lg bg-gray-800 p-4">
+                <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+              </span>
+      
+              <div class="text-gray-500">
+                <h2 class="text-lg font-bold">Instagram page</h2>
+      
+                <p class="mt-1 text-sm ">
+                  Join our Instagram page and discover new places
+                </p>
               </div>
-              <img src="../img/yt.png" class="w-2/3 ml-auto mx-auto " alt="illustration" loading="lazy" width="900" height="600">
-          </div>
+            </div>
+      
+            <div class="flex items-start gap-4">
+              <span class="shrink-0 rounded-lg bg-gray-800 p-4">
+                <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
+              </span>
+      
+              <div class="text-gray-500">
+                <h2 class="text-lg font-bold">Youtube Page</h2>
+      
+                <p class="mt-1 text-sm ">
+                  Watch videos in our youtube page to learn more about us
+                </p>
+              </div>
+            </div>
+      
+        
+      
+           
+      
 
-          
-      </div>
+       
+          </div>
+        </div>
+      </section>
+      
   </div>
  
 </div>
