@@ -34,113 +34,122 @@
   <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000;"></i>
 </button>
 
-<nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between">
+<nav class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
 
-  <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
-      <div class="">
-        <a href="/">
-          <img  src="../img/wonders.png " alt=" "></a>
+  <div class="md:container flex items-center justify-between bg-white p-4 font-bold gap-2">
+    <div class="flex items-center gap-8">
+      <a href="/">
+        <img src="../img/ph.png" alt="">
+      </a>
+      <div class="hidden xl:flex gap-6 mt-2">
+        <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100" href="/">Home</a>
+        <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100" href="#recent">Recent</a>
+        <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100" href="#all">Albums</a>
       </div>
-      <div class="hidden lg:flex space-x-20 ">
-        <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-        href="/ " >Home</a>
-
-          <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-          href="#recent " >Recent Images</a>
-          <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-    href="#all">Albums</a>
+    </div>
     
-        
-      </div>
-
-      
+    
+     
       <div class="flex justify-between space-x-2">
         
-        
+        <div class="hidden md:flex">
+          <form action="{{ url('search') }}" method="GET" role="search">
+  
+
+            <div class="relative text-gray-600">
+              <input type="text" placeholder="Search places.." class="bg-white h-10 p-6 text-sm focus:outline-none" name="search" value="{{Request::get('search')}}">
+              <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 i">
+                <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
+                  <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+                </svg>
+              </button>
+            </div>
+            </form>
+          </div>
         @auth
      
    
 
-<div x-data="{ isActive: false }" class="relative lg:block hidden">
-<div
-class=" relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
-href="#"
->
-<span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
-
-<button
-x-on:click="isActive = !isActive"
-class="h-full p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-700"
->
-<span class="sr-only">Menu</span>
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  class="h-4 w-4"
-  viewBox="0 0 20 20"
-  fill="currentColor"
->
-  <path
-    fill-rule="evenodd"
-    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-    clip-rule="evenodd"
-  />
-</svg>
-</button>
-</div>
-
-<div
-class="absolute right-0 z-10 mt-2 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
-role="menu"
-x-cloak
-x-transition
-x-show="isActive"
-x-on:click.away="isActive = false"
-x-on:keydown.escape.window="isActive = false"
->
-<div class="p-2">
-<strong class="block p-2 text-xs font-medium uppercase text-gray-400">
-  General
-</strong>
-
-<a
-  href="{{URL::to('uploads')}}"
-  class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-  role="menuitem"
->
-  Go to dashboard
-</a>
-
-
-<form method="POST" action="/logout" >
-@csrf
-
-<button type="submit"
-href=""
-class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-role="menuitem"
->
-Log out
-</button>
-
-</form>
-
-</div>
-
-
-</div>
-</div>
+        <div x-data="{ isActive: false }" class="relative lg:block hidden">
+          <div
+            class="mt-1 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
+            href="#"
+          >
+          <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+        
+            <button
+              x-on:click="isActive = !isActive"
+              class="h-full p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-700"
+            >
+              <span class="sr-only">Menu</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        
+          <div
+            class="absolute right-0 z-10 mt-2 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
+            role="menu"
+            x-cloak
+            x-transition
+            x-show="isActive"
+            x-on:click.away="isActive = false"
+            x-on:keydown.escape.window="isActive = false"
+          >
+            <div class="p-2">
+              <strong class="block p-2 text-xs font-medium uppercase text-gray-400">
+                General
+              </strong>
+        
+              <a
+                href="{{URL::to('uploads')}}"
+                class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                role="menuitem"
+              >
+                Go to dashboard
+              </a>
+            
+             
+            <form method="POST" action="/logout" >
+              @csrf
+        
+              <button type="submit"
+              href=""
+              class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+              role="menuitem"
+            >
+             Log out
+            </button>
+              
+          </form>
+        
+            </div>
+        
+           
+          </div>
+        </div>
 
 
     @else
-        
         <a  href="/register" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
-          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
+    <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
+
+    <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
+
+    Register
+    </span></a>
      
-          <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
-      
-          Register
-          </span></a>
-        <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+        <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden lg:flex  group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
           <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
      
           <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
@@ -175,7 +184,7 @@ Log out
   </div>
 </nav>
 
-    
+
 
  
 
@@ -191,18 +200,7 @@ Log out
 
 <div class="md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
   <div class="flex items-center justify-center mt-10 mb-10 md:mt-1 md:mb-1 md:justify-end">
-    <form action="{{ url('search') }}" method="GET" role="search">
-    
-
-    <div class="relative text-gray-600">
-      <input type="text" placeholder="Search...." class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" name="search" value="{{Request::get('search')}}">
-      <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-        <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
-          <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
-        </svg>
-      </button>
-    </div>
-    </form>
+  
   </div>
   <div class="mt-20">
 <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">Recent Images</h1>
@@ -631,6 +629,7 @@ Log out
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
      <script src="../../js/scroll.js"></script>
+     <script src="../js/nav.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
         <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>

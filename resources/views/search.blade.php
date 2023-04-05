@@ -39,7 +39,7 @@
   <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
       <div class="">
         <a href="/">
-          <img  src="../img/wonders.png " alt=" "></a>
+          <img  src="../img/ph.png " alt=" "></a>
       </div>
       <div class="hidden lg:flex space-x-20 ">
           <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"

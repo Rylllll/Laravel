@@ -32,7 +32,7 @@
 
 
 
-<body class="bg-[#fff3e0]">
+<body class="bg-[#e1f5fe]">
 
   <button x-data="topBtn" @click="scrolltoTop" id="topButton"
   class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
@@ -43,12 +43,12 @@
 
     <nav class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
 
-        <div class="container flex items-center justify-between bg-white p-4 font-bold gap-2">
+        <div class="md:container flex items-center justify-between bg-white p-4 font-bold gap-2">
           <div class="flex items-center gap-8">
             <a href="/">
               <img src="../img/ph.png" alt="">
             </a>
-            <div class="hidden lg:flex gap-6 mt-2">
+            <div class="hidden xl:flex gap-6 mt-2">
               <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100" href="#About">About</a>
               <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100" href="#How">How it works</a>
               <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100" href="#Gallery">Gallery</a>
@@ -60,12 +60,12 @@
            
             <div class="flex justify-between space-x-2">
               
-              <div class="">
+              <div class="hidden md:flex">
                 <form action="{{ url('search') }}" method="GET" role="search">
         
     
                   <div class="relative text-gray-600">
-                    <input type="text" placeholder="Search places.." class="bg-white h-10  p-6 text-sm focus:outline-none" name="search" value="{{Request::get('search')}}">
+                    <input type="text" placeholder="Search places.." class="bg-white h-10 p-6 text-sm focus:outline-none" name="search" value="{{Request::get('search')}}">
                     <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 i">
                       <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
                         <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
@@ -209,20 +209,23 @@
     <div class="max-w-xl text-center sm:text-left mt-20 md:mt-20">
       <h1 class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl animate__animated animate__slideInDown">
        Welcome to
-       <strong class="font-extrabold text-[#212121] max-w-full font-del text-6xl block md:text-6xl lg:text-9xl animate__animated animate__slideInLeft">
-        Wonders of the world
+       <strong class="font-black text-[#03a9f4] max-w-full font-sans text-6xl block md:text-6xl lg:text-7xl animate__animated animate__slideInLeft">
+        Wonders of 
+      </strong>
+      <strong class="font-black text-[#212121] max-w-full font-sans text-6xl block md:text-6xl lg:text-7xl animate__animated animate__slideInLeft">
+       the world
       </strong>
     
       </h1>
    
-      <p class="text-white mt-4 max-w-lg text-sm md:text-xl lg:text-xl sm:leading-relaxed w-full animate__animated animate__slideInUp">
+      <p class="text-white mt-4 max-w-lg text-sm md:text-xl lg:text-lg sm:leading-relaxed w-full animate__animated animate__slideInUp">
         Step into the world of wonder and marvel at the awe-inspiring creations of our ancestors, experience the magnificence of human achievement as you embark on a journey to discover the wonders that have stood the test of time
       </p>
 
       <div class="mt-8 flex flex-wrap gap-4 text-center">
-        <a class="group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring active:text-[#212121] w-full md:w-1/2 sm:w-full text-center" href="/gallery">
+        <a class="group relative inline-block text-sm font-medium text-[#03a9f4] focus:outline-none focus:ring active:text-[#212121] w-full md:w-1/2 sm:w-full text-center" href="/gallery">
           <span class="absolute inset-0 border border-current rounded-lg"></span>
-          <span class="block border border-current bg-[#212121] p-6 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 rounded-lg">
+          <span class="block border border-current bg-[#212121] p-6 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 rounded-lg text-white">
             Lets go </span></a>
       </div>
       <div class="mt-10 text-center md:text-left">
@@ -465,7 +468,7 @@
   <div class="md:container md:m-auto mx-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
       <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/3 text-center bg-[#212121] font-bold">04 - Contact us</h1>
       <div class="border border-[#9e9e9e] 1px "></div>
-      <section class="bg-white text-white">
+      <section class="bg-white text-white  shadow-2xl">
         <div class="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 mt-10 rounded-2xl ">
           <div class="max-w-xl rounded-2xl">
             <h2 class="text-3xl font-bold sm:text-4xl text-[#212121]">Contact WondersPh to know more about us</h2>
