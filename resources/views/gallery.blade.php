@@ -42,6 +42,9 @@
           <img  src="../img/wonders.png " alt=" "></a>
       </div>
       <div class="hidden lg:flex space-x-20 ">
+        <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
+        href="/ " >Home</a>
+
           <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
           href="#recent " >Recent Images</a>
           <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
@@ -130,13 +133,13 @@ Log out
 
     @else
         
-        {{-- <a  href="/register" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+        <a  href="/register" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
           <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
      
           <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
       
           Register
-          </span></a> --}}
+          </span></a>
         <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
           <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
      
@@ -203,7 +206,7 @@ Log out
   </div>
   <div class="mt-20">
 <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">Recent Images</h1>
-<h2>Last week post</h2>
+<h2>Recent post</h2>
 </div>
 </div>
 
@@ -260,7 +263,7 @@ Log out
      
       @foreach ($homes as $item)
        
-      <div class="delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0" data-taos-offset="400">
+    
       <img src="{{$item->image}}" class="transition hover:scale-90">
       <div class="mt-3 flex justify-between text-sm">
         <div>
@@ -280,7 +283,7 @@ Log out
     
         
       </div>
-    </div>
+   
       @endforeach
     
     
@@ -335,12 +338,12 @@ Log out
           
                  @else
                      
-                 {{-- <li>
+                 <li>
                    <a href="{{URL::to('register')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
                      <i class="fa-solid fa-user-plus hover:text-white"></i>
                      <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
                    </a>
-                </li> --}}
+                </li>
                        </span>
                       </li>
    

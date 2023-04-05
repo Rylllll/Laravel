@@ -31,9 +31,9 @@
  
     <section class="min-h-screen flex items-center mx-auto justify-center bg-2b2d42">
         <!-- login container -->
-        <div class="bg-gray-100 md:flex md:flex-row md:max-w-7xl md:mx-auto rounded-2xl shadow-2xl p-5 text-black mx-auto justify-center">
+        <div class="bg-gray-100 flex rounded-2xl shadow-2xl max-w-7xl p-5 items-center text-black  ">
             <!-- form -->
-            <div class="md:w-1/2 md:px-8 mx-auto justify-center">
+            <div class="md:w-1/2 md:px-12 mx-auto justify-center">
                 <a href="{{URL::to('/')}}">
                     <img class="mx-auto block cursor-pointer" src="../img/wonders.png" alt="">
                 </a>
@@ -53,8 +53,7 @@
                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                         </svg>
                     </div>
-                    <button type="submit" name="submit" id="submit" class="bg-black rounded-md text-white py-2 hover
-        :scale-105 duration-300">Login</button>
+                    <button type="submit" name="submit" id="submit" class="bg-black rounded-md text-white py-2 hover:scale-105 duration-300">Login</button>
                     @error('password')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
@@ -78,5 +77,5 @@
     </section>
 
 </body>
-
+<script src="../js/pass.js"></script>
 </html>

@@ -125,13 +125,13 @@ Log out
 
     @else
         
-        {{-- <a  href="/register" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+        <a  href="/register" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
           <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
      
           <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
       
           Register
-          </span></a> --}}
+          </span></a>
         <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
           <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
      
@@ -186,7 +186,7 @@ Log out
         </div>
   
         <div class="lg:py-24">
-            <img src="../img/templog.png" class="w-24" alt="">
+            <img src="../img/wonderss.png" class="w-24" alt="">
           <h2 class="text-3xl font-bold sm:text-4xl"> {{ $upload->title }}</h2>
   
           <p class="mt-4 text-gray-600">
@@ -197,7 +197,7 @@ Log out
 
           <div class="flex items-center mt-8 gap-4">
             <i class="fa-sharp fa-solid fa-calendar-days" style="color: #000000;"></i>
-            <p class="m-0"> {{ $upload->created_at }}</p>
+            <p class="m-0">{{ substr( $upload->created_at, 0, 10) }}</p>
           </div>
           <a href="/gallery">
           <button
@@ -284,7 +284,12 @@ Log out
           
                  @else
                      
-               
+                 <li>
+                  <a href="{{URL::to('register')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
+                    <i class="fa-solid fa-user-plus hover:text-white"></i>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+                  </a>
+               </li>
                        </span>
                       </li>
    

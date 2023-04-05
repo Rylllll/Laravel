@@ -43,9 +43,9 @@
       </div>
       <div class="hidden lg:flex space-x-20 ">
           <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-          href="#recent " >Recent post</a>
+          href="/ " >Home</a>
           <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-    href="#all">Albums</a>
+    href="#recent">Search results</a>
     
         
       </div>
@@ -130,13 +130,13 @@ Log out
 
     @else
         
-        {{-- <a  href="/register" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+        <a  href="/register" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
           <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
      
           <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
       
           Register
-          </span></a> --}}
+          </span></a>
         <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
           <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
      
@@ -187,18 +187,7 @@ Log out
     <div class="md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
         <div class="flex items-center justify-center mt-10 mb-10 md:mt-1 md:mb-1 md:justify-end">
             <form action="{{ url('search') }}" method="GET" role="search">
-            {{-- <div class="flex border-2 rounded">
-          
-                <input type="text" class="px-4 py-2 w-80 rounded-2xl" placeholder="Search..." name="search" value="{{Request::get('search')}}">
-                <button class="flex items-center justify-center px-4 border-l rounded-2xl" type="submit">
-                    <svg class="w-6 h-6 text-gray-600 rounded-2xl" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-                    </svg>
-                </button>
-              
-            </div> --}}
+         
 
             <div class="relative text-gray-600">
               <input type="text" placeholder="Search...." class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" name="search" value="{{Request::get('search')}}">
@@ -215,7 +204,7 @@ Log out
     
     </div>
     
-    <div class="md:grid gap-y-5 gap-3  grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
+    <div class="md:grid gap-3 grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
 
       
       
@@ -331,7 +320,12 @@ Log out
           
                  @else
                      
-                
+                 <li>
+                  <a href="{{URL::to('register')}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
+                    <i class="fa-solid fa-user-plus hover:text-white"></i>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+                  </a>
+               </li>
                        </span>
                       </li>
    

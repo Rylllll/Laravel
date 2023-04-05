@@ -41,9 +41,9 @@
 
   
 
-    <nav class="fixed w-full mx-auto top-0 z-50 bg-transparent shadow-md transition duration-300 transform --translate-x-full items-center justify-between  ">
+    <nav class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
 
-        <div class="flex items-center justify-between bg-white shadow-lg shadow-black-500/100 p-4 font-bold ">
+        <div class="container flex items-center justify-between bg-white p-4 font-bold gap-2">
             <div class="">
               <a href="/">
                 <img src="../img/wonders.png " alt=" ">
@@ -56,88 +56,109 @@
             href="#How">How it works</a>
             <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
           href="#Gallery">Gallery</a>
+          <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
+          href="#Services">Contact us</a>
+          
             </div>
-
-            
+           
             <div class="flex justify-between space-x-2">
               
-              
+              <div class="">
+                <form action="{{ url('search') }}" method="GET" role="search">
+        
+    
+                  <div class="relative text-gray-600">
+                    <input type="text" placeholder="Search places.." class="bg-white h-10  p-6 text-sm focus:outline-none" name="search" value="{{Request::get('search')}}">
+                    <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 i">
+                      <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
+                        <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+                      </svg>
+                    </button>
+                  </div>
+                  </form>
+                </div>
               @auth
            
          
 
-<div x-data="{ isActive: false }" class="relative lg:block hidden">
-  <div
-    class=" relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
-    href="#"
-  >
-  <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
-
-    <button
-      x-on:click="isActive = !isActive"
-      class="h-full p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-700"
-    >
-      <span class="sr-only">Menu</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-4 w-4"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-          clip-rule="evenodd"
-        />
-      </svg>
-    </button>
-  </div>
-
-  <div
-    class="absolute right-0 z-10 mt-2 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
-    role="menu"
-    x-cloak
-    x-transition
-    x-show="isActive"
-    x-on:click.away="isActive = false"
-    x-on:keydown.escape.window="isActive = false"
-  >
-    <div class="p-2">
-      <strong class="block p-2 text-xs font-medium uppercase text-gray-400">
-        General
-      </strong>
-
-      <a
-        href="{{URL::to('uploads')}}"
-        class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-        role="menuitem"
-      >
-        Go to dashboard
-      </a>
-    
-     
-    <form method="POST" action="/logout" >
-      @csrf
-
-      <button type="submit"
-      href=""
-      class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-      role="menuitem"
-    >
-     Log out
-    </button>
-      
-  </form>
-
-    </div>
-
-   
-  </div>
-</div>
+              <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                <div
+                  class="mt-1 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
+                  href="#"
+                >
+                <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+              
+                  <button
+                    x-on:click="isActive = !isActive"
+                    class="h-full p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-700"
+                  >
+                    <span class="sr-only">Menu</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              
+                <div
+                  class="absolute right-0 z-10 mt-2 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
+                  role="menu"
+                  x-cloak
+                  x-transition
+                  x-show="isActive"
+                  x-on:click.away="isActive = false"
+                  x-on:keydown.escape.window="isActive = false"
+                >
+                  <div class="p-2">
+                    <strong class="block p-2 text-xs font-medium uppercase text-gray-400">
+                      General
+                    </strong>
+              
+                    <a
+                      href="{{URL::to('uploads')}}"
+                      class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                      role="menuitem"
+                    >
+                      Go to dashboard
+                    </a>
+                  
+                   
+                  <form method="POST" action="/logout" >
+                    @csrf
+              
+                    <button type="submit"
+                    href=""
+                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                    role="menuitem"
+                  >
+                   Log out
+                  </button>
+                    
+                </form>
+              
+                  </div>
+              
+                 
+                </div>
+              </div>
 
    
           @else
-              
+              <a  href="/register" class="hidden lg:flex group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
+          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
+     
+          <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
+      
+          Register
+          </span></a>
            
               <a  id="navbar-login-btn" href="{{URL::to('login')}}" class="hidden lg:flex  group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
                 <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
@@ -191,13 +212,13 @@
     <div class="max-w-xl text-center sm:text-left mt-20 md:mt-20">
       <h1 class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl animate__animated animate__slideInDown">
        Welcome to
-       <strong class="font-extrabold text-[#212121] max-w-full font-del text-6xl block md:text-9xl animate__animated animate__slideInLeft">
+       <strong class="font-extrabold text-[#212121] max-w-full font-del text-6xl block md:text-6xl lg:text-xl animate__animated animate__slideInLeft">
         Wonders of the world
       </strong>
     
       </h1>
    
-      <p class="text-white mt-4 max-w-lg text-sm md:text-2xl sm:leading-relaxed w-full animate__animated animate__slideInUp">
+      <p class="text-white mt-4 max-w-lg text-sm md:text-xl lg:text-xl sm:leading-relaxed w-full animate__animated animate__slideInUp">
         Step into the world of wonder and marvel at the awe-inspiring creations of our ancestors, experience the magnificence of human achievement as you embark on a journey to discover the wonders that have stood the test of time
       </p>
 
@@ -252,12 +273,12 @@
 
 <section class="py-16 " id="How">
     <div class="py-16 " >  
-      <div class="md:container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
+      <div class="md:container md:m-auto mx-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
           <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">02 - How it works</h1>
           <div class="border border-[#9e9e9e] 1px "></div>
           <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3 p-9">
 
-            <a href="" class="group relative block h-64 sm:h-80 lg:h-96">
+            <a  class="group relative block h-64 sm:h-80 lg:h-96">
               <span class="absolute inset-0 border-2 border-dashed border-black rounded-2xl"></span>
             
               <div
@@ -286,7 +307,7 @@
               </div>
             </a>
             
-            <a href="" class="group relative block h-64 sm:h-80 lg:h-96">
+            <a  class="group relative block h-64 sm:h-80 lg:h-96">
               <span class="absolute inset-0 border-2 border-dashed border-black rounded-2xl"></span>
             
               <div
@@ -314,7 +335,7 @@
               </div>
             </a>
             
-            <a href="" class="group relative block h-64 sm:h-80 lg:h-96">
+            <a  class="group relative block h-64 sm:h-80 lg:h-96">
               <span class="absolute inset-0 border-2 border-dashed border-black rounded-2xl"></span>
             
               <div
@@ -352,7 +373,7 @@
 
  <section class="py-16" id="Gallery">
 <div class="py-16" >  
-  <div class="md:container  m-auto px-6 text-gray-500 md:px-12 xl:px-0">
+  <div class="md:container md:m-auto mx-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
       <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">03 - Gallery</h1>
       <div class="border border-[#9e9e9e] 1px "></div>
       <section>
@@ -385,7 +406,7 @@
                     Gallery
                   </p>
               
-                  <p class="text-xl font-bold text-white sm:text-2xl">{{$item->title}}</p>
+                  <p class="font-bold text-white md:text-2xl text-sm">{{$item->title}}</p>
               
                   <div class="mt-32 sm:mt-48 lg:mt-64">
                     <div
@@ -444,13 +465,13 @@
 <section class="py-16" id="Services">
 <div class="py-16 " >  
 
-  <div class="md:container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
+  <div class="md:container md:m-auto mx-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
       <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/3 text-center bg-[#212121] font-bold">04 - Contact us</h1>
       <div class="border border-[#9e9e9e] 1px "></div>
       <section class="bg-white text-white">
         <div class="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 mt-10 rounded-2xl ">
           <div class="max-w-xl rounded-2xl">
-            <h2 class="text-3xl font-bold sm:text-4xl text-[#212121]">Contact WondersPh to know more about</h2>
+            <h2 class="text-3xl font-bold sm:text-4xl text-[#212121]">Contact WondersPh to know more about us</h2>
       
             <p class="mt-4 text-gray-500">
               Contacting Wonders website is easy and convenient. There are several ways to reach out to us depending on your preference. You can use the contact form provided on our website and send us your questions, concerns or feedback. Alternatively, you can send an email directly to our customer support team at the email address provided on our website. 
@@ -802,7 +823,7 @@
                  @else
                      
                  <li>
-                   <a href="{{URL::to('register')}}" class="hidden flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
+                   <a href="{{URL::to('register')}}" class=" flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
                      <i class="fa-solid fa-user-plus hover:text-white"></i>
                      <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
                    </a>

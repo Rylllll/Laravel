@@ -263,7 +263,7 @@
                             <div>
                                 <dt class="sr-only">Address</dt>
 
-                                <dd class="font-bold text-black">Number of Admin account</dd>
+                                <dd class="font-bold text-black">Number of Users account</dd>
                             </div>
                     </dl>
 
@@ -331,17 +331,6 @@
                 <div class="p-4 flex">
                     <h1 class="text-xl font-bold">Wonders Table</h1>
 
-                    <div class="hidden md:block items-center md:ml-auto md:pr-4">
-                        <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease-soft">
-                            <span
-                                class="text-sm ease-soft leading-5.6 absolute z-10 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                            </span>
-                            <input type="text"
-                                class="pl-8.75 text-sm focus:shadow-soft-primary-outline ease-soft w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
-                                placeholder="Type here..." />
-                        </div>
-                    </div>
                 </div>
 
                 <div class="flex justify-center items-center ">
@@ -349,7 +338,7 @@
                     <table class="p-6 text-md bg-white font-sans ">
                         <thead class="border b border-black">
                             <th class="text-left p-3 px-5 text-[#424242]">Title </th>
-                            <th class="text-left p-3 md:block px-5 text-[#424242] hidden md:hidden lg:flex">About</th>
+                            <th class="text-left p-3 md:block px-5 text-[#424242] hidden  lg:flex">About</th>
                             <th class="text-left p-3 px-5 text-[#424242]">Image</th>
                             <th class="text-center p-3 px-5 text-[#424242]">Action</th>
 
@@ -522,9 +511,11 @@
                                 
                                 </div>
                             </div>
-                            <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
+                            <div class="bg-gray-50 px-4 py-3 text-right flex justify-between gap-4 sm:px-6">
                                 <button type="submit" value="Save" name="submit"
                                     class=" inline-flex justify-center rounded-lg bg-black py-2 px-3 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 w-full focus-visible:outline-indigo-500">Save</button>
+                                    <button value="Save" name="submit"
+                                    onclick="closeModal()" class=" inline-flex justify-center rounded-lg bg-black py-2 px-3 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 w-full focus-visible:outline-indigo-500">Cancel</button>
                             </div>
                         </div>
 
