@@ -44,22 +44,19 @@
     <nav class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
 
         <div class="container flex items-center justify-between bg-white p-4 font-bold gap-2">
-            <div class="">
-              <a href="/">
-                <img src="../img/wonders.png " alt=" ">
-              </a>
+          <div class="flex items-center gap-8">
+            <a href="/">
+              <img src="../img/ph.png" alt="">
+            </a>
+            <div class="hidden lg:flex gap-6 mt-2">
+              <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100" href="#About">About</a>
+              <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100" href="#How">How it works</a>
+              <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100" href="#Gallery">Gallery</a>
+              <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100" href="#Services">Contact us</a>
             </div>
-            <div class="hidden lg:flex space-x-20 ">
-                <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-                href="#About " >About</a>
-                <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-            href="#How">How it works</a>
-            <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-          href="#Gallery">Gallery</a>
-          <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-black before:transition hover:before:scale-100"
-          href="#Services">Contact us</a>
+          </div>
           
-            </div>
+          
            
             <div class="flex justify-between space-x-2">
               
@@ -212,7 +209,7 @@
     <div class="max-w-xl text-center sm:text-left mt-20 md:mt-20">
       <h1 class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl animate__animated animate__slideInDown">
        Welcome to
-       <strong class="font-extrabold text-[#212121] max-w-full font-del text-6xl block md:text-6xl lg:text-xl animate__animated animate__slideInLeft">
+       <strong class="font-extrabold text-[#212121] max-w-full font-del text-6xl block md:text-6xl lg:text-9xl animate__animated animate__slideInLeft">
         Wonders of the world
       </strong>
     
