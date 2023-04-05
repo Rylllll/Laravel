@@ -27,7 +27,7 @@
 </head>
 
 
-<body>
+<body class="">
   <nav class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
 
     <div class="md:container flex items-center justify-between bg-white p-4 font-bold gap-2">

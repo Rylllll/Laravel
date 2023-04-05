@@ -13,6 +13,17 @@ module.exports = {
             'script': ['Dancing Script', 'cursive'],
 
         },
+        
+          daisyui: {
+            styled: true,
+            themes: false,
+            base: false,
+            utils: true,
+            logs: true,
+            rtl: false,
+            prefix: "",
+            darkTheme: false,
+          },
         safelist: [
             '!duration-0',
             '!delay-0',
@@ -89,6 +100,7 @@ module.exports = {
     plugins: [
         require('taos/plugin'),
         require('flowbite/plugin'),
+        // require('daisyui'),
 
     ],
 }

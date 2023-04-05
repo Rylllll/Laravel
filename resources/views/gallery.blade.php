@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html lang="en" class="scroll-smooth">
+<html data-theme="cupcake" lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
