@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/delirium-ncv" rel="stylesheet">
-    @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/730a8ae355.js" crossorigin="anonymous"></script>
@@ -25,6 +24,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="./app.css" rel="stylesheet">
     <title>Wonders Gallery</title>
+    @vite('resources/css/app.css')
 </head>
 
 
@@ -33,10 +33,10 @@
 
 
 
-<body class="bg-[#e1f5fe]">
+<body class="">
 
     <button x-data="topBtn" @click="scrolltoTop" id="topButton"
-        class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
+        class="fixed z-20 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
         <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000;"></i>
     </button>
 
@@ -50,7 +50,7 @@
                 <a href="/">
                     <img src="../img/ph.png" alt="">
                 </a>
-                <div class="hidden xl:flex gap-6 mt-2 text-sm ">
+                <div class="hidden xl:flex gap-6 mt-2 text-sm  ">
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                         href="#About">About</a>
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
@@ -72,17 +72,10 @@
 
                         <div class="relative text-gray-600">
                             <input type="text" placeholder="Search places.."
-                                class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 w-96 " name="search"
+                                class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 " name="search"
                                 value="{{ Request::get('search') }}" required>
-                            <button type="submit" class="absolute right-0 top-0 mt-5 mr-4 i">
-                                <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-                                    x="0px" y="0px" viewBox="0 0 56.966 56.966"
-                                    style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px"
-                                    height="512px">
-                                    <path
-                                        d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
-                                </svg>
+                            <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
+                                <i class="fa-solid fa-magnifying-glass text-black"></i>
                             </button>
                         </div>
                     </form>
@@ -94,30 +87,25 @@
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
                         <div class="mt-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
                             href="#">
-                            <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+
 
                             <button x-on:click="isActive = !isActive"
                                 class="h-full p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-700">
-                                <span class="sr-only">Menu</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
+                                <i class="fa-solid fa-user text-black"></i>
                             </button>
                         </div>
 
-                        <div class="absolute right-0 z-10 mt-7 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
+                        <div class="absolute right-0 z-10 mt-6 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
                             role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
                             x-on:keydown.escape.window="isActive = false">
+                            <h1 class="p-4 text-center font-bold uppercase">Welcome, {{ auth()->user()->name }}!</h1>
                             <div class="p-2">
                                 <strong class="block p-2 text-xs font-medium uppercase text-gray-400">
                                     General
                                 </strong>
 
                                 <a href="{{ URL::to('uploads') }}"
-                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-[#03a9f4] hover:text-white font-thin"
                                     role="menuitem">
                                     Go to dashboard
                                 </a>
@@ -125,13 +113,12 @@
 
                                 <form method="POST" action="/logout">
                                     @csrf
-
-                                    <button type="submit" href=""
-                                        class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                                        role="menuitem">
-                                        Log out
-                                    </button>
-
+                                    <a href=""
+                                        class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-[#03a9f4] hover:text-white font-thin">
+                                        <button type="submit" href="" role="menuitem">
+                                            Log out
+                                        </button>
+                                    </a>
                                 </form>
 
                             </div>
@@ -140,42 +127,39 @@
                         </div>
                     </div>
                 @else
-                
+                    <div x-data="{ isActive: false }" class="relative lg:block hidden">
 
-                <div x-data="{ isActive: false }" class="relative lg:block hidden">
-                   
 
-                        <button x-on:click="isActive = !isActive"
-                            class="h-full p-2 text-gray-600 mt-1">
+                        <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600 mt-1 mx-auto">
                             <span class="sr-only">Acc</span>
                             <i class="fa-regular fa-user text[#212121]"></i></label>
                         </button>
-                   
-                    <div class="absolute right-0 z-10 mt-2  divide-y divide-gray-100 rounded-md shadow-lg"
-                        role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
-                        x-on:keydown.escape.window="isActive = false">
-                     
-                        <ul tabindex="0"
-                        class="dropdown-content menu p-2 shadow bg-white mt-3 rounded w-86 text-black font-sans">
-                        <div class="p-4 items-center justify-center ">
-                            <h1 class="text-lg">Wonders Gallery Accounts</h1>
-                            <h2 class="text-sm text-gray-500 font-thin">Create or login account</h2>
-                        </div>
-                        <div class="border border-[#9e9e9e] 1px w-full "></div>
-                        <div class="flex p-2 gap-4 justify-center mt-2 ">
 
-                            <a
-                                href="{{ URL::to('login') }}"class="bg-black text-white font-thin hover:bg-[#03a9f4] p-4 transition duration:300 w-36 text-center">Sign
-                                in</a>
-                            <a href="{{ URL::to('register') }}"
-                                class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">
-                                Sign up</a>
-                        </div>
-                    </ul>
+                        <div class="absolute right-0 z-10 mt-2  divide-y divide-gray-100 rounded-md shadow-lg"
+                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                            x-on:keydown.escape.window="isActive = false">
 
+                            <ul tabindex="0"
+                                class="dropdown-content menu p-2 shadow bg-white mt-3 rounded w-86 text-black font-sans">
+                                <div class="p-4 items-center justify-center ">
+                                    <h1 class="text-lg">Wonders Gallery Accounts</h1>
+                                    <h2 class="text-sm text-gray-500 font-thin">Create or login account</h2>
+                                </div>
+                                <div class="border border-[#9e9e9e] 1px w-full "></div>
+                                <div class="flex p-2 gap-4 justify-center mt-2 ">
+
+                                    <a
+                                        href="{{ URL::to('login') }}"class="bg-black text-white font-thin hover:bg-[#03a9f4] p-4 transition duration:300 w-36 text-center">Sign
+                                        in</a>
+                                    <a href="{{ URL::to('register') }}"
+                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">
+                                        Sign up</a>
+                                </div>
+                            </ul>
+
+                        </div>
                     </div>
-                </div>
-                  
+
                 @endauth
 
 
@@ -195,66 +179,110 @@
     </nav>
 
 
+    {{-- Carousel --}}
 
+    <section class="mt-18">
+        <div id="default-carousel" class="relative w-full justify-center mx-auto" data-carousel="slide">
 
+            <div class="relative h-60 overflow-hidden md:h-96 justify-center mx-auto">
 
-
-    <section class="bg-cover bg-center bg-no-repeat bg-fixed"
-        style="background-image: url('../img/shout.jpg'); top: 0%; height: 110vh; ">
-
-
-        <div
-            class="relative px-4 py-32 mx-auto md:mx-auto lg:flex lg:h-screen lg:items-center lg:px-8 mt-0  container flex flex-col-reverse items-center space-y-0 md:space-y-0 md:flex-row text-[#212121]">
-
-            <div class="max-w-xl text-center sm:text-left mt-20 md:mt-20">
-                <h1
-                    class="sm:text-sm md:text-3xl text-center md:text-left font-extrabold sm:text-5xl animate__animated animate__slideInDown">
-                    Welcome to
-                    <strong
-                        class="font-black text-[#03a9f4] max-w-full font-sans text-6xl block md:text-6xl lg:text-7xl animate__animated animate__slideInLeft">
-                        Wonders of
-                    </strong>
-                    <strong
-                        class="font-black text-[#212121] max-w-full font-sans text-6xl block md:text-6xl lg:text-7xl animate__animated animate__slideInLeft">
-                        the world
-                    </strong>
-
-                </h1>
-
-                <p
-                    class="text-white mt-4 max-w-lg text-sm md:text-xl lg:text-lg sm:leading-relaxed w-full animate__animated animate__slideInUp">
-                    Step into the world of wonder and marvel at the awe-inspiring creations of our ancestors, experience
-                    the magnificence of human achievement as you embark on a journey to discover the wonders that have
-                    stood the test of time
-                </p>
-
-                <div class="mt-8 flex flex-wrap gap-4 text-center">
-                    <a class="group relative inline-block text-sm font-medium text-[#03a9f4] focus:outline-none focus:ring active:text-[#212121] w-full md:w-1/2 sm:w-full text-center"
-                        href="/gallery">
-                        <span class="absolute inset-0 border border-current rounded-lg"></span>
-                        <span
-                            class="block border border-current bg-[#212121] p-6 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 rounded-lg text-white">
-                            Lets go </span></a>
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <img src="../img/1.png"
+                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        alt="...">
+                
                 </div>
-                <div class="mt-10 text-center md:text-left">
-                    <i
-                        class="fab fa-facebook-f fa-lg cursor-pointer bg-blue rounded-lg text-white p-4 hover:bg-blue-600  transition duration-300"></i>
-                    <i
-                        class="fab fa-youtube fa-lg bg-red rounded-lg p-4 cursor-pointer hover:bg-red-700  text-white transition duration-300"></i>
-                    <i
-                        class="fab fa-instagram fa-lg bg-red rounded-lg p-4 cursor-pointer hover:bg-gradient-to-br from-[#ff9800]  text-white to-[#f50057] transition duration-300"></i>
-                    <i
-                        class="fab fa-github fa-lg rounded-lg p-4 cursor-pointer hover:bg-gray-600  text-white transition duration-300"></i>
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+
+                    <img src="../img/2.png"
+                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        alt="...">
+
                 </div>
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+
+                    <img src="../img/3.png"
+                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        alt="...">
+
+                </div>
+               
+                
             </div>
+            <div class="relative z-50 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2 justify-center mx-auto">
+                <button type="button" class="w-3 h-3 " aria-current="true" aria-label="Slide 1"
+                    data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 " aria-current="false" aria-label="Slide 2"
+                    data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 " aria-current="false" aria-label="Slide 3"
+                    data-carousel-slide-to="2"></button>
+               
+                
+            </div>
+           
+
         </div>
-
     </section>
+{{-- Title --}}
+    <div class="container mx-auto px-7">
+        <div class="flex gap-1">
+            <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4]">Wonders
+            </h1>
+            <h1 class="mt-5 mb-2 text-2xl text-black">Featured Places
+            </h1>
+        </div>
+        <p class="mb-2 text-xs text-gray-500">
+           Gallery of weekly images</p>
+     
+     
+    </div>
 
+<section class=" container px-7 justify-center mx-auto">
+    <div id="animation-carousel" class="relative w-full bg-white px-7" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96  ">
+            @foreach($home->chunk(2) as $items)
+              <div class="hidden duration-200 ease-linear" data-carousel-item>
+                <div class="flex">
+                  @foreach($items as $item)
+                
+                    <div class="w-1/2 mx-4">
+                      <img src="{{$item->image}}" class="w-50 h-50 object-cover bg-white p-6" alt="...">
+                     
+                    </div>
+       
+         
+                  @endforeach
+                </div>
+              </div>
+            @endforeach
+          </div>
+          
+        
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+      
+    
+    
+    
 
-    <section class="py-16 " id="About">
+</section>
+
+    {{-- <section class="py-16 " id="About">
         <div class="py-16">
-            <div class="md:container md:m-auto mx-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
+            <div class="md:container md:m-auto mx-auto px-7 text-gray-600 md:px-12 xl:px-7 text-left">
                 <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">01
                     - About us</h1>
 
@@ -265,7 +293,7 @@
                         <div class="delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0"
                             data-taos-offset="300">
                             <div
-                                class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                                class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-7">
                                 <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                                     <h2
                                         class="mb-4 md:text-4xl text-sm tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -295,11 +323,11 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <section class="py-16 " id="How">
+    {{-- <section class="py-16 " id="How">
         <div class="py-16 ">
-            <div class="md:container md:m-auto mx-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
+            <div class="md:container md:m-auto mx-auto px-7 text-gray-600 md:px-12 xl:px-7 text-left">
                 <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">02
                     - How it works</h1>
                 <div class="border border-[#9e9e9e] 1px "></div>
@@ -392,7 +420,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--Services-->
 
 
@@ -402,12 +430,12 @@
 
     <section class="py-16" id="Gallery">
         <div class="py-16">
-            <div class="md:container md:m-auto mx-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
+            <div class="md:container md:m-auto mx-auto px-7 text-gray-600 md:px-12 xl:px-7 text-left">
                 <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">03
                     - Gallery</h1>
                 <div class="border border-[#9e9e9e] 1px "></div>
                 <section>
-                    <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+                    <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-7 sm:py-12 lg:px-8">
                         <header>
                             <h2 class="text-xl font-bold text-gray-900 sm:text-3xl text-center">
                                 Wonders Gallery
@@ -427,7 +455,7 @@
 
 
                         <div
-                            class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-6 px-4 w-96 sm:w-auto">
+                            class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-7 px-4 w-96 sm:w-auto">
                             @foreach ($home as $item)
                                 <a href="{{ route('display.show', ['id' => $item->id]) }}"
                                     class="group relative block bg-black ">
@@ -481,16 +509,16 @@
 
         </div>
     </section>
-
+{{-- 
     <section class="py-16" id="Services">
         <div class="py-16 ">
 
-            <div class="md:container md:m-auto mx-auto px-6 text-gray-600 md:px-12 xl:px-6 text-left">
+            <div class="md:container md:m-auto mx-auto px-7 text-gray-600 md:px-12 xl:px-7 text-left">
                 <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/3 text-center bg-[#212121] font-bold">04
                     - Contact us</h1>
                 <div class="border border-[#9e9e9e] 1px "></div>
                 <section class="bg-white text-white  shadow-2xl">
-                    <div class="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 mt-10 rounded-2xl ">
+                    <div class="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-7 lg:py-16 lg:px-8 mt-10 rounded-2xl ">
                         <div class="max-w-xl rounded-2xl">
                             <h2 class="text-3xl font-bold sm:text-4xl text-[#212121]">Contact WondersPh to know more
                                 about us</h2>
@@ -560,7 +588,7 @@
 
         </div>
 
-    </section>
+    </section> --}}
 
 
 
@@ -569,7 +597,7 @@
             <img src="../img/shout.jpg" alt="" class="absolute inset-0 object-cover w-full h-full" />
         </div>
 
-        <div class="px-4 py-16 sm:px-6 lg:col-span-3 lg:px-8">
+        <div class="px-4 py-16 sm:px-7 lg:col-span-3 lg:px-8">
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
                 <div>
                     <p>
@@ -876,7 +904,6 @@
     <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="../js/scroll.js"></script>
-    <script src="../js/nav.js"></script>
 
 </body>
 

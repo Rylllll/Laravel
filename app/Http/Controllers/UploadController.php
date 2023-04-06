@@ -12,9 +12,7 @@ class UploadController extends Controller
      */
     public function index()
     {
-    //    if (auth()->guest()){
-    //        abort(403);
-    //    }
+  
        if (auth()->user()?->email != 'reymark.boquiron123@gmail.com'){
         abort(403);
        }

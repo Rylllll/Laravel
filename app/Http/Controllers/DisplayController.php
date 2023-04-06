@@ -6,11 +6,19 @@ use Illuminate\Http\Request;
 
 class DisplayController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $homes = upload::all();
         $home = upload::latest()->take(6)->get();
-        return view('/gallery', ['home' => $home], ['homes' => $homes]);
+        $count = upload::count();
+        $data = [
+            'home' => $home,
+            'homes' => $homes,
+            'count' => $count,
+        ];
+        return view('gallery', $data);
     }
+    
     
     public function show($id)
     {
