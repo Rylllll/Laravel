@@ -262,7 +262,7 @@
                         <i class="fa-solid fa-angle-right text-black text-xs"></i>
                         <a href="/gallery"
                             class="ml-1 text-sm font-medium md:ml-2 dark:text-gray-400 dark:hover:text-white">Gallery</a>
-                        <i class="fa-solid fa-angle-right text-black text-xs"></i>
+                        <i class="fa-solid fa-angle-right text-black text-xs mx-auto justify-center"></i>
                         <a
                             class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">{{$category}} Category</a>
                     </div>
