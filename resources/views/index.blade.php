@@ -51,16 +51,90 @@
                     <img src="../img/ph.png" alt="">
                 </a>
                 <div class="hidden xl:flex gap-6 mt-2 text-sm  ">
+                     {{-- Navbar dropdowns all --}}
+                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                        
+                        <button x-on:click="isActive = !isActive"
+                        class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                        href="#How">
+                   All places
+                   <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
+                           class="text-black text-xs"></i>
+                   </button>
+                
+
+                        <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
+                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                            x-on:keydown.escape.window="isActive = false">
+
+                            <ul tabindex="0"
+                                class="dropdown-content menu p-2 shadow bg-white mt-3  max-w-96 text-black font-sans ">
+                                <div class="p-2 items-center justify-center ">
+                                    <h1 class="text-lg">Wonders Gallery all images</h1>
+                                    <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                                </div>
+                                <div class="border border-[#9e9e9e] 1px w-full "></div>
+                                <div class="flex p-2 gap-4 justify-center mt-2 ">
+
+                                    <a href="{{ route('uploads.category', 'Beach') }}"class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Beach</a>
+                                    <a href="{{ route('uploads.category', 'Cave') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cave</a>
+                                    <a href="{{ route('uploads.category', 'Mountain') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Mountain</a>
+                                    <a href="{{ route('uploads.category', 'Forest') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Forest</a>
+                                    <a href="{{ route('uploads.category', 'Cities') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cities</a>
+                               
+                                </div>
+                                <div class="flex p-2 justify-left mt-2 text-[#03a9f4] font-thin">
+                                    <a href="/gallery">See all images<i class="fa-sharp  fa-solid fa-angle-right text-[#03a9f4] text-xs  ml-1" ></i></a>
+                                </div>
+                            </ul>
+
+                        </div>
+                    </div>
+                    {{-- Navbar dropdowns --}}
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#About">About</a>
+                    href="/">Home</a>
+
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#How">All places</a>
-                    <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#Gallery">How it works</a>
-                    <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#Services">Contact us</a>
+                    href="/">Blog post</a>
+
+                    {{-- Navbar dropdowns about --}}
+                    <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                        
+                        <button x-on:click="isActive = !isActive"
+                        class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                        href="#How">
+                   About us
+                   <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
+                           class="text-black text-xs"></i>
+                   </button>
+                
+
+                        <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
+                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                            x-on:keydown.escape.window="isActive = false">
+
+                            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
+                                <div class="p-2 items-center justify-center">
+                                    <h1 class="text-lg">About Wonders Gallery</h1>
+                                    <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                                </div>
+                                <div class="border border-[#9e9e9e] 1px w-full"></div>
+                                <div class="flex p-2 gap-4 justify-center mt-2">
+                                    <a href=""class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">About us</a>
+                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Contact us</a>
+                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">How it works</a>
+                                </div>
+                            </ul>
+                            
+
+                        </div>
+                    </div>
+                    {{-- Navbar dropdowns --}}
+                   
+                   
                 </div>
             </div>
+
 
 
 
@@ -135,12 +209,12 @@
                             <i class="fa-regular fa-user text[#212121]"></i></label>
                         </button>
 
-                        <div class="absolute right-0 z-10 mt-2  divide-y divide-gray-100 rounded-md shadow-lg"
+                        <div class="absolute right-0 z-10 mt-2  divide-y divide-gray-100 shadow-lg"
                             role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
                             x-on:keydown.escape.window="isActive = false">
 
                             <ul tabindex="0"
-                                class="dropdown-content menu p-2 shadow bg-white mt-3 rounded w-86 text-black font-sans">
+                                class="dropdown-content menu p-2 shadow bg-white mt-3  w-86 text-black font-sans">
                                 <div class="p-4 items-center justify-center ">
                                     <h1 class="text-lg">Wonders Gallery Accounts</h1>
                                     <h2 class="text-sm text-gray-500 font-thin">Create or login account</h2>
@@ -190,7 +264,7 @@
                     <img src="../img/1.png"
                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                         alt="...">
-                
+
                 </div>
                 <div class="hidden duration-1000 ease-in-out" data-carousel-item>
 
@@ -206,8 +280,8 @@
                         alt="...">
 
                 </div>
-               
-                
+
+
             </div>
             <div class="relative z-50 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2 justify-center mx-auto">
                 <button type="button" class="w-3 h-3 " aria-current="true" aria-label="Slide 1"
@@ -216,76 +290,83 @@
                     data-carousel-slide-to="1"></button>
                 <button type="button" class="w-3 h-3 " aria-current="false" aria-label="Slide 3"
                     data-carousel-slide-to="2"></button>
-               
-                
+
+
             </div>
-           
+
 
         </div>
     </section>
 
 
-{{-- Icons --}}
-<section class="container relative items-center w-full mx-auto justify-center px-6 mb-5">
-    <div class="flex justify-center">
-        <div class="container grid flex-cols-2 md:grid-cols-3 gap-1 mx-auto justify-center items-center">
-            <div class="mx-auto justify-center items-center">
-                <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center" src="../img/gal1.png" alt="Gallery icon">
-                <h1 class="text-center font-black">High quality images</h1>
-            </div>
-      
+    {{-- Icons --}}
+    <section class="container relative items-center w-full mx-auto justify-center px-6 mb-5">
+        <div class="flex justify-center">
+            <div class="container grid flex-cols-2 md:grid-cols-3 gap-1 mx-auto justify-center items-center">
+                <div class="mx-auto justify-center items-center">
+                    <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center"
+                        src="../img/gal1.png" alt="Gallery icon">
+                    <h1 class="text-center font-black">High quality images</h1>
+                </div>
 
-            <div class="mx-auto justify-center items-center">
-                <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center" src="../img/gal2.png" alt="information icon">
-                <h1 class="text-center font-black">Detailed information</h1> 
+
+                <div class="mx-auto justify-center items-center">
+                    <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center"
+                        src="../img/gal2.png" alt="information icon">
+                    <h1 class="text-center font-black">Detailed information</h1>
+                </div>
+
+
+                <div class="mx-auto justify-center items-center">
+                    <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center"
+                        src="../img/gal3.png" alt="">
+                    <h1 class="text-center font-black">Easy navigation</h1>
+                </div>
+
             </div>
-           
-            
-            <div class="mx-auto justify-center items-center">
-                <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center" src="../img/gal3.png" alt="">
-                <h1 class="text-center font-black">Easy navigation</h1>
-            </div>
-           
         </div>
-    </div>
-</section>
+    </section>
 
 
 
 
-{{-- Title1 --}}
-<div class="container mx-auto px-7">
-    <div class="flex gap-1">
-        <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
-        </h1>
-        <h1 class="mt-5 mb-2 text-2xl text-black font-black">Latest Uploads
-        </h1>
-    </div>
-    <p class="mb-2 text-xs text-gray-500">
-       Gallery of latest uploads</p>
- 
-</div>
-
-
-
-<section class="container relative  items-center w-full mx-auto justify-center ">
-    <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-3">
-        @foreach($takes as $item)
-        <div class="p-6 gap-2">
-           <a href="{{ route('display.show', ['id' => $item->id]) }}"><img  class="object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{$item->image}}" alt="{{$item->title}}"></a> 
-            <div class="justify-between w-full">
-                <h1 class="mb-2 md:text-sm text-sm font-semibold leading-none tracking-tighter text-neutral-600">{{$item->title}}</h1>
-                <p class="text-xs">{{ substr($item->about, 0, 200) }}{{ strlen($item->about) > 250 ? '...' : '' }}</p>
-            </div>
-           
+    {{-- Title1 --}}
+    <div class="container mx-auto px-7">
+        <div class="flex gap-1">
+            <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
+            </h1>
+            <h1 class="mt-5 mb-2 text-2xl text-black font-black">Latest Uploads
+            </h1>
         </div>
-   
-        @endforeach
+        <p class="mb-2 text-xs text-gray-500">
+            Gallery of latest uploads</p>
 
     </div>
-</section>
 
-{{-- Title2 --}}
+
+
+    <section class="container relative  items-center w-full mx-auto justify-center ">
+        <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-3">
+            @foreach ($takes as $item)
+                <div class="px-7 gap-2">
+                    <a href="{{ route('display.show', ['id' => $item->id]) }}"><img
+                            class="object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{ $item->image }}"
+                            alt="{{ $item->title }}"></a>
+                    <div class="justify-between w-full">
+                        <h1
+                            class="mb-2 md:text-sm text-sm font-semibold leading-none tracking-tighter text-neutral-600">
+                            {{ $item->title }}</h1>
+                        <p class="text-xs mb-3">
+                            {{ substr($item->about, 0, 200) }}{{ strlen($item->about) > 250 ? '...' : '' }}</p>
+                    </div>
+
+                </div>
+            @endforeach
+
+        </div>
+    </section>
+
+    {{-- Title2 --}}
     <div class="container mx-auto px-7">
         <div class="flex gap-1">
             <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
@@ -294,134 +375,147 @@
             </h1>
         </div>
         <p class="mb-2 text-xs text-gray-500">
-           Gallery of weekly images</p>
-     
-     
+            Gallery of weekly images</p>
+
+
     </div>
 
 
 
-        <div class="container relative  items-center w-full mx-auto justify-center ">
-            <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-4">
-                @foreach($take as $item)
-                <div class="p-6 ">
-                    <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{$item->image}}" alt="{{$item->title}}">
+    <div class="container relative  items-center w-full mx-auto justify-center ">
+        <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-4">
+            @foreach ($take as $item)
+                <div class="px-7">
+                    <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{ $item->image }}"
+                        alt="{{ $item->title }}">
                     <div class="justify-between w-full">
-                        <h1 class="mb-8 md:text-xs text-sm font-semibold leading-none tracking-tighter text-neutral-600">{{$item->title}}</h1>
+                        <h1
+                            class="mb-8 md:text-xs text-sm font-semibold leading-none tracking-tighter text-neutral-600">
+                            {{ $item->title }}</h1>
                     </div>
-                    <a
-                    class="group relative inline-block overflow-hidden border border-[#03a9f4] px-8 py-3 focus:outline-none focus:ring w-full text-center"
-                    href="{{ route('display.show', ['id' => $item->id]) }}"
-                  >
-                    <span
-                      class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-full group-active:bg-indigo-500"
-                    ></span>
-                  
-                    <span
-                      class="relative text-sm font-medium text-[#03a9f4] transition-colors group-hover:text-white"
-                    >
-                     Visit
-                    </span>
-                  </a>
+                    <a class="group relative inline-block overflow-hidden border border-[#03a9f4] px-8 py-3 focus:outline-none focus:ring w-full text-center"
+                        href="{{ route('display.show', ['id' => $item->id]) }}">
+                        <span
+                            class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-full group-active:bg-indigo-500"></span>
+
+                        <span
+                            class="relative text-sm font-medium text-[#03a9f4] transition-colors group-hover:text-white">
+                            Visit
+                        </span>
+                    </a>
                 </div>
-           
-                @endforeach
+            @endforeach
 
-            </div>
         </div>
-   
- 
-
-<section class="py-16 justify-center mx-auto px-7">
-   {{-- Title3 --}}
-   <div class="container mx-auto px-7">
-    <div class="flex gap-1">
-        <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Explore
-        </h1>
-        <h1 class="mt-5 mb-2 text-2xl text-black font-black">Our Categories
-        </h1>
     </div>
-    <p class="mb-2 text-xs text-gray-500">
-      Select in our categories</p>
- 
-</div>
-    {{-- <ul>
+
+
+
+    <section class="py-16 justify-center mx-auto px-7">
+        {{-- Title3 --}}
+        <div class="container mx-auto px-7">
+            <div class="flex gap-1">
+                <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Explore
+                </h1>
+                <h1 class="mt-5 mb-2 text-2xl text-black font-black">Our Categories
+                </h1>
+            </div>
+            <p class="mb-2 text-xs text-gray-500">
+                Select in our categories</p>
+
+        </div>
+        {{-- <ul>
         <li><a href="{{ route('uploads.category', 'Mountain') }}">Nature</a></li>
         <li><a href="{{ route('uploads.category', 'Cave') }}">Architecture</a></li>
         <li><a href="{{ route('uploads.category', 'Beach') }}">Food</a></li>
     </ul>
      --}}
-     
-<div class="container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-2">
-    
-    <div class="relative">
-        <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center" href="{{ route('uploads.category', 'Beach') }}">
-          <img class="h-auto max-w-full " src="../img/cov1.png" alt="">
-          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
-          <span class="absolute inset-0 flex items-end py-2 md:py-5 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
-            let's go
-            <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
-          </span>
-        </a>
-      </div>
-      
-    
-      <div class="relative">
-        <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center" href="{{ route('uploads.category', 'Beach') }}">
-          <img class="h-auto max-w-full " src="../img/cov2.png" alt="">
-          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
-          <span class="absolute inset-0 flex items-end py-2 md:py-5 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
-            let's go
-            <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
-          </span>
-        </a>
-      </div>
-      
-      <div class="relative">
-        <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center" href="{{ route('uploads.category', 'Beach') }}">
-          <img class="h-auto max-w-full " src="../img/cov3.png" alt="">
-          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
-          <span class="absolute inset-0 flex items-end py-2 md:py-5 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
-            let's go
-            <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
-          </span>
-        </a>
-      </div>
+
+        <div class="container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-2">
+
+            <div class="relative">
+                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
+                    href="{{ route('uploads.category', 'Beach') }}">
+                    <img class="h-auto max-w-full " src="../img/cov1.png" alt="">
+                    <span
+                        class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
+                    <span
+                        class="absolute inset-0 flex items-end py-2 md:py-5 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
+                        let's go
+                        <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
+                    </span>
+                </a>
+            </div>
+
+
+            <div class="relative">
+                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
+                    href="{{ route('uploads.category', 'Cave') }}">
+                    <img class="h-auto max-w-full " src="../img/cov2.png" alt="">
+                    <span
+                        class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
+                    <span
+                        class="absolute inset-0 flex items-end py-2 md:py-5 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
+                        let's go
+                        <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
+                    </span>
+                </a>
+            </div>
+
+            <div class="relative">
+                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
+                    href="{{ route('uploads.category', 'Mountain') }}">
+                    <img class="h-auto max-w-full " src="../img/cov3.png" alt="">
+                    <span
+                        class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
+                    <span
+                        class="absolute inset-0 flex items-end py-2 md:py-5 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
+                        let's go
+                        <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
+                    </span>
+                </a>
+            </div>
 
 
 
-    </div>
+        </div>
 
-    <div class="container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-4">
+        <div class="container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-4">
 
-        <div class="relative">
-            <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center" href="{{ route('uploads.category', 'Beach') }}">
-              <img class="h-auto max-w-full " src="../img/cov4.png" alt="">
-              <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
-              <span class="absolute inset-0 flex items-end py-2 md:py-10 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
-                let's go
-                <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
-              </span>
-            </a>
-          </div>
+            <div class="relative">
+                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
+                    href="{{ route('uploads.category', 'Forest') }}">
+                    <img class="h-auto max-w-full " src="../img/cov4.png" alt="">
+                    <span
+                        class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
+                    <span
+                        class="absolute inset-0 flex items-end py-2 md:py-10 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
+                        let's go
+                        <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
+                    </span>
+                </a>
+            </div>
 
-           <div class="relative">
-        <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center" href="{{ route('uploads.category', 'Beach') }}">
-          <img class="h-auto max-w-full " src="../img/cov5.png" alt="">
-          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
-          <span class="absolute inset-0 flex items-end py-2 md:py-10 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
-            let's go
-            <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
-          </span>
-        </a>
-      </div>
-    </div>
-    
+            <div class="relative">
+                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
+                    href="{{ route('uploads.category', 'Cities') }}">
+                    <img class="h-auto max-w-full " src="../img/cov5.png" alt="">
+                    <span
+                        class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
+                    <span
+                        class="absolute inset-0 flex items-end py-2 md:py-10 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
+                        let's go
+                        <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
 
-</section>
 
-       
-    
+    </section>
+
+
+
 
 
 
@@ -570,7 +664,7 @@
 
 
 
-{{-- 
+    {{-- 
 
 
     <section class="py-16" id="Gallery">
@@ -654,7 +748,7 @@
 
         </div>
     </section> --}}
-{{-- 
+    {{-- 
     <section class="py-16" id="Services">
         <div class="py-16 ">
 
@@ -737,32 +831,33 @@
 
     <section class="min-h-auto flex items-stretch text-white ">
         <div class="lg:flex w-1/2 hidden bg-cover bg-no-repeat bg-center relative items-center"
-        style="background-image: url('../img/cave.jpg')">
-       <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
-       <div class="w-full px-24 z-10">
-           <h1 class="text-5xl font-bold text-left tracking-wide">Keep it special</h1>
-           <p class="text-3xl my-4">Capture your personal memory in unique way, anywhere.</p>
-       </div>
-   </div>
-   
-        <div class="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-black">
-            <div class="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center" style="background-image: url('../img/wonders.png');">
-                <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+            style="background-image: url('../img/cave.jpg')">
+            <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+            <div class="w-full px-24 z-10">
+                <h1 class="text-5xl font-bold text-left tracking-wide">Keep it special</h1>
+                <p class="text-3xl my-4">Capture your personal memory in unique way, anywhere.</p>
             </div>
+        </div>
+
+        <div class="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-black">
+            
             <div class="w-full py-6 z-20">
                 <h1 class="my-6">
-                  
-                   <img src="../img/ph1.png" class="w-auto h-50 sm:h-8 inline-flex"alt="">
+
+                    <img src="../img/ph1.png" class="w-auto h-50 sm:h-8 inline-flex"alt="">
                 </h1>
                 <div class="py-6 space-x-2">
                     <p class="text-gray-100">
-                       Connect with us
+                        Connect with us
                     </p>
-                    <span class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">f</span>
-                    <span class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">G+</span>
-                    <span class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">in</span>
+                    <span
+                        class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">f</span>
+                    <span
+                        class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">G+</span>
+                    <span
+                        class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">in</span>
                 </div>
-             
+
             </div>
         </div>
     </section>

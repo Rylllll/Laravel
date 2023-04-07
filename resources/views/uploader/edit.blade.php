@@ -246,6 +246,8 @@
                                     <option value="Mountain">Mountain</option>
                                     <option value="Cave">Cave</option>
                                     <option value="Beach">Beach</option>
+                                    <option value="Forest">Forest</option>
+                                    <option value="Cities">City</option>
                                 </select>
                             </div>
 

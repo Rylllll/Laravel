@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../img/Logo.png" />
+    <link rel="icon" type="image/png" href="../../img/Logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="./app.css" rel="stylesheet">
-    <title>Wonders Gallery</title>
+    <title>{{$category}} Category</title>
     @vite('resources/css/app.css')
 </head>
 
@@ -31,29 +31,105 @@
 <body>
 
     <button x-data="topBtn" @click="scrolltoTop" id="topButton"
-        class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
-        <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000;"></i>
-    </button>
+    class="fixed z-20 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
+    <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000;"></i>
+</button>
 
+
+   
     <nav
         class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
 
         <div class="md:container flex items-center justify-between bg-white p-4 font-bold gap-2">
             <div class="flex items-center gap-8">
                 <a href="/">
-                    <img src="../img/ph.png" alt="">
+                    <img src="../../img/ph.png" alt="">
                 </a>
                 <div class="hidden xl:flex gap-6 mt-2 text-sm  ">
+                     {{-- Navbar dropdowns all --}}
+                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                        
+                        <button x-on:click="isActive = !isActive"
+                        class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                        href="#How">
+                   All places
+                   <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
+                           class="text-black text-xs"></i>
+                   </button>
+                
+
+                        <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
+                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                            x-on:keydown.escape.window="isActive = false">
+
+                            <ul tabindex="0"
+                                class="dropdown-content menu p-2 shadow bg-white mt-3  max-w-96 text-black font-sans ">
+                                <div class="p-2 items-center justify-center ">
+                                    <h1 class="text-lg">Wonders Gallery all images</h1>
+                                    <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                                </div>
+                                <div class="border border-[#9e9e9e] 1px w-full "></div>
+                                <div class="flex p-2 gap-4 justify-center mt-2 ">
+
+                                    <a href="{{ route('uploads.category', 'Beach') }}"class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Beach</a>
+                                    <a href="{{ route('uploads.category', 'Cave') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cave</a>
+                                    <a href="{{ route('uploads.category', 'Mountain') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Mountain</a>
+                                    <a href="{{ route('uploads.category', 'Forest') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Forest</a>
+                                    <a href="{{ route('uploads.category', 'Cities') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cities</a>
+                               
+                                </div>
+                                <div class="flex p-2 justify-left mt-2 text-[#03a9f4] font-thin">
+                                    <a href="/gallery">See all images<i class="fa-sharp  fa-solid fa-angle-right text-[#03a9f4] text-xs  ml-1" ></i></a>
+                                </div>
+                            </ul>
+
+                        </div>
+                    </div>
+                    {{-- Navbar dropdowns --}}
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#About">About</a>
+                    href="/">Home</a>
+
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#How">How it works</a>
-                    <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#Gallery">Gallery</a>
-                    <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#Services">Contact us</a>
+                    href="/">Blog post</a>
+
+                    {{-- Navbar dropdowns about --}}
+                    <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                        
+                        <button x-on:click="isActive = !isActive"
+                        class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                        href="#How">
+                   About us
+                   <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
+                           class="text-black text-xs"></i>
+                   </button>
+                
+
+                        <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
+                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                            x-on:keydown.escape.window="isActive = false">
+
+                            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
+                                <div class="p-2 items-center justify-center">
+                                    <h1 class="text-lg">About Wonders Gallery</h1>
+                                    <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                                </div>
+                                <div class="border border-[#9e9e9e] 1px w-full"></div>
+                                <div class="flex p-2 gap-4 justify-center mt-2">
+                                    <a href=""class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">About us</a>
+                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Contact us</a>
+                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">How it works</a>
+                                </div>
+                            </ul>
+                            
+
+                        </div>
+                    </div>
+                    {{-- Navbar dropdowns --}}
+                   
+                   
                 </div>
             </div>
+
 
 
 
@@ -67,7 +143,7 @@
                             <input type="text" placeholder="Search places.."
                                 class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 " name="search"
                                 value="{{ Request::get('search') }}" required>
-                            <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 mx-auto ">
+                            <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
                                 <i class="fa-solid fa-magnifying-glass text-black"></i>
                             </button>
                         </div>
@@ -123,17 +199,17 @@
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
 
 
-                        <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600 mt-1">
+                        <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600 mt-1 mx-auto">
                             <span class="sr-only">Acc</span>
                             <i class="fa-regular fa-user text[#212121]"></i></label>
                         </button>
 
-                        <div class="absolute right-0 z-10 mt-2  divide-y divide-gray-100 rounded-md shadow-lg"
+                        <div class="absolute right-0 z-10 mt-2  divide-y divide-gray-100 shadow-lg"
                             role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
                             x-on:keydown.escape.window="isActive = false">
 
                             <ul tabindex="0"
-                                class="dropdown-content menu p-2 shadow bg-white mt-3 rounded w-86 text-black font-sans">
+                                class="dropdown-content menu p-2 shadow bg-white mt-3  w-86 text-black font-sans">
                                 <div class="p-4 items-center justify-center ">
                                     <h1 class="text-lg">Wonders Gallery Accounts</h1>
                                     <h2 class="text-sm text-gray-500 font-thin">Create or login account</h2>
@@ -170,7 +246,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Breadcrumb -->
     <div class="bg-gray-50">
         <nav class="container flex px-7 mx-auto py-3 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 md:mt-20 mt-16 justify-left md:justify-end w-full"
@@ -178,15 +253,18 @@
             <ol class="inline-flex items-center space-x-1 md:space-x-3 gap-1">
                 <li class="inline-flex items-center">
                     <a href="/"
-                        class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                        class="inline-flex items-center text-sm mx-auto font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                         <i class="fa-solid fa-house text-black"></i>
                     </a>
                 </li>
                 <li>
-                    <div class="flex items-center gap-1">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-angle-right text-black text-xs"></i>
+                        <a href="/gallery"
+                            class="ml-1 text-sm font-medium md:ml-2 dark:text-gray-400 dark:hover:text-white">Gallery</a>
                         <i class="fa-solid fa-angle-right text-black text-xs"></i>
                         <a
-                            class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">Gallery</a>
+                            class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">{{$category}} Category</a>
                     </div>
                 </li>
             </ol>
@@ -203,8 +281,7 @@
             </h1>
         </div>
         <p class="mb-2 text-xs text-gray-500">
-            If you're looking for random paragraphs, you've come to the right place. When a random word or a
-            random sentence isn't quite enough</p>
+            Traveling is an exhilarating experience that broadens our horizons and exposes us to the wonders of the world. From the picturesque beaches of Bali to the magnificent pyramids of Giza, there is an endless array of destinations that offer unique cultural experiences, breathtaking scenery, and memorable adventures. Whether you're looking for a tropical getaway or an urban adventure, the best places in the world have something to offer for everyone. So pack your bags, grab your passport, and get ready to embark on a journey of a lifetime!</p>
         <div class="border border-[#9e9e9e] "></div>
         <h1 class="mx-auto flex justify-end mt-2 text-xs">Total of  Places</h1>
     </div>
@@ -212,20 +289,47 @@
   
 
 
+   
+    
     <section id="all" class="container justify-center flex mx-auto">
-        
-<div class="row">
-    @foreach($images as $image)
-    <h1>{{ $image->category }}</h1>
-    <div class="col-md-4">
-        <img src="{{ $image->image }}" alt="{{ $image->title }}" class="img-fluid">
-        <h2>{{ $image->title }}</h2>
-        <p>{{ $image->about }}</p>
-    </div>
-    @endforeach
-</div>
+        <div class="">
+            <div class="md:grid-cols-3 2xl:mx-auto lg:px-7  md:px-7 py-9 px-7 w-96 sm:w-auto">
+                <h1 class="text-black sm:w-full md:w-1/4 font-black text-2xl">{{$category}} Category</h1>
+                <h2>Collections of images from {{$category}} Category</h2>
+
+            </div>
+
+            <div
+                class="container w-full max-w-full mx-auto px-7 pb-10 gap-6 columns-3 grid md:block md:grid-cols-3 lg:px-7 md:px-7 px-7 w-96 sm:w-auto">
+                <div class="h-50 ">
+                    @foreach($images as $item)
+                        <img src="{{ $item->image }}" class="transition hover:scale-90">
+                        <div class="mt-3 flex justify-between text-sm">
+                            <div>
+                                <h3
+                                    class="text-black text-xl group-hover:underline group-hover:underline-offset-4 font-bold">
+                                    {{ $item->title }}
+                                </h3>
+
+                                <p class="mt-1.5 max-w-[45ch] text-xs text-gray-500 overflow-hidden"
+                                    style="max-height: 3em; text-overflow: ellipsis;">
+                                    {{ substr($item->about, 0, 100) }}{{ strlen($item->about) > 250 ? '...' : '' }}
+                                </p>
+                                <div class="mt-5 mb-3">
+                                    <a class="text-blue-400 hover:text-black"
+                                        href="{{ route('display.show', ['id' => $item->id]) }}">View full image</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
 
     </section>
+
 
 
     {{-- Sidebar -------------------------------------------------------------------- --}}
@@ -334,7 +438,7 @@
 
     <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5">
         <div class="relative block h-32 lg:col-span-2 lg:h-full">
-            <img src="../img/shout.jpg" alt="" class="absolute inset-0 object-cover w-full h-full" />
+            <img src="../../img/shout.jpg" alt="" class="absolute inset-0 object-cover w-full h-full" />
         </div>
 
         <div class="px-4 py-16 sm:px-6 lg:col-span-3 lg:px-8">

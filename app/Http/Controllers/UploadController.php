@@ -75,13 +75,11 @@ public function create(){
 
     return view('uploader.create');
 }
-
 public function category($category)
 {
     $images = Upload::where('category', $category)->get();
-    return view('uploader.category', compact('images'));
+    return view('uploader.category', compact('images', 'category'));
 }
-
 
 public function edit($id)
 {
