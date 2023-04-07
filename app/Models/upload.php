@@ -12,7 +12,7 @@ class upload extends Model
     use HasFactory, SoftDeletes;
     protected $table = 'upimages';
     protected $primaryKey = 'id';
-    protected $fillable = ['title', 'about', 'image', 'multi_image'];
+    protected $fillable = ['title', 'about', 'image', 'category'];
 
 
 }

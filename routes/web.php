@@ -21,6 +21,7 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 Route::get('/gallery', [DisplayController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/uploads/{category}/category',  [UploadController::class, 'category'])->name('uploads.category');
 Route::delete('uploads/{id}', 'UploadController@destroy')->name('uploads.destroy');
 Route::get('/uploads/{id}/edit', 'UploadController@edit')->name('uploads.edit');
 Route::put('/uploads/{id}', 'UploadController@update')->name('uploads.update');

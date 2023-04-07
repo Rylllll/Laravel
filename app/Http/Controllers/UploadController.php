@@ -68,6 +68,19 @@ public function edit_controller($id){
 
 }
  
+public function create(){
+    if (auth()->user()?->email != 'reymark.boquiron123@gmail.com'){
+        abort(403);
+       }
+
+    return view('uploader.create');
+}
+
+public function category($category)
+{
+    $images = Upload::where('category', $category)->get();
+    return view('uploader.category', compact('images'));
+}
 
 
 public function edit($id)
@@ -88,10 +101,13 @@ public function update(Request $request, $id)
 
     $upload->title = $request->input('title');
     $upload->about = $request->input('about');
+    $upload->category = $request->input('category');
     $upload->save();
 
     return redirect('uploads')->with('flash_message', 'Photo updated');
 }
+
+
 
 
 }

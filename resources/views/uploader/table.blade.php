@@ -26,7 +26,7 @@
     <!-- Sweet Alert JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     @vite('resources/css/app.css')
-      @vite('resources/js/app.js')
+    @vite('resources/js/app.js')
     <title>Wonders Dashboard/Tables</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!--     Fonts and icons     -->
@@ -47,21 +47,20 @@
 
 <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-[#fff3e0] text-slate-500">
     <button x-data="topBtn" @click="scrolltoTop" id="topButton"
-    class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18">
-        </path>
-    </svg>
-  </button>
+        class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18">
+            </path>
+        </svg>
+    </button>
     <aside
-        class="hidden max-w-62.5 ease-nav-brand lg:block lr:hidden fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-2xl transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent"
-        >
+        class="hidden max-w-62.5 ease-nav-brand lg:block lr:hidden fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-2xl transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent">
         <div class="h-19.5 ">
             <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"
                 sidenav-close></i>
             <a class="block px-8 py-6 m-0 mx-auto text-xl whitespace-nowrap text-slate-700 font-sans"
-                href="{{URL::to('/')}}" target="_blank">
+                href="{{ URL::to('/') }}" target="_blank">
                 <img src="../img/tempLog.png"
                     class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8"
                     alt="main_logo" />
@@ -87,17 +86,17 @@
             <details class="group [&_summary::-webkit-details-marker]:hidden">
                 <summary
                     class="group flex items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-                   
 
-                
+
+
                 </summary>
 
-           
+
             </details>
 
-           
 
-          
+
+
 
             <details class="group [&_summary::-webkit-details-marker]:hidden">
                 <summary
@@ -113,8 +112,7 @@
                     </div>
 
                     <span class="shrink-0 transition duration-300 group-open:-rotate-180">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                            fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                                 clip-rule="evenodd" />
@@ -123,9 +121,9 @@
                 </summary>
 
                 <nav aria-label="Account Nav" class="mt-2 flex flex-col space-y-1 px-4">
-                  
 
-                   
+
+
                     <form method="POST" action="/logout" class="">
                         @csrf
 
@@ -149,7 +147,7 @@
     </aside>
 
     <main class=" xl:ml-68.5 relative rounded-xl transition-all duration-200">
-        
+
         <!-- Navbar -->
         <nav class="flex flex-wrap items-center justify-between px-0 py-2 mx-6  rounded-2xl lg:flex-nowrap lg:justify-start bg-white shadow-xl mt-4"
             navbar-main navbar-scroll="true">
@@ -170,20 +168,15 @@
                     @auth
                         <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
 
-                    
-                            @csrf
-                            <div class="p-2 hidden lg:flex">
-                                <a class="inline-block rounded bg-black cursor-pointer px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
-                                    onclick="openModal()">
-                                    <i class="fa-solid fa-plus"></i> Create
-                                </a>
-                            </div>
 
-
-
-                     
+                        @csrf
+                        <div class="p-2 hidden lg:flex">
+                            <a href="{{ route('uploads.create') }}"
+                                class="inline-block rounded bg-black cursor-pointer px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
+                                <i class="fa-solid fa-plus"></i> Create
+                            </a>
+                        </div>
                     @else
-              
                     @endauth
 
 
@@ -191,64 +184,58 @@
                 </div>
                 <div class="block lg:hidden">
                     <button
-                      class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"
-                      id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
-                      >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M4 6h16M4 12h16M4 18h16"
-                        />
-                      </svg>
+                        class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation"
+                        data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"
+                        id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
                     </button>
-                  </div>
+                </div>
             </div>
-            
+
         </nav>
 
-{{-- Dropdown --}}
-<div class="p-4 lg:hidden">
-<div id="dropdown" class="fixed top-0 z-10 hidden bg-white divide-x divide-gray-100 rounded-2xl shadow dark:bg-gray-700 mt-2 transition duration-300 w-full p-4">
-    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-        <ul class="flex justify-between ">
-            @auth
-                <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
-    
-          
-                    @csrf
-            @else
-            @endauth
-            <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
-            </ul>
-       
-      <li>
-        <a href="/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
-      </li>
+        {{-- Dropdown --}}
+        <div class="p-4 lg:hidden">
+            <div id="dropdown"
+                class="fixed top-0 z-10 hidden bg-white divide-x divide-gray-100 rounded-2xl shadow dark:bg-gray-700 mt-2 transition duration-300 w-full p-4">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                    <ul class="flex justify-between ">
+                        @auth
+                            <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
 
-        <form method="POST" action="/logout" class="">
-          @csrf
-        <li>
-          <button type="submit" href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</button>
-        </li>
-      </form>
-      <li class="p-2">
-        <a class="inline-block rounded bg-[#212121] cursor-pointer px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
-            onclick="openModal()">
-            <i class="fa-solid fa-plus"></i> Create
-        </a>
-    </li>
 
-</ul>
-</div>
-</div>
+                            @csrf
+                        @else
+                        @endauth
+                        <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
+                    </ul>
+
+                    <li>
+                        <a href="/"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
+                    </li>
+
+                    <form method="POST" action="/logout" class="">
+                        @csrf
+                        <li>
+                            <button type="submit" href="#"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                                out</button>
+                        </li>
+                    </form>
+                    <li class="p-2">
+                        <a class="inline-block rounded bg-[#212121] cursor-pointer px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+                            onclick="openModal()">
+                            <i class="fa-solid fa-plus"></i> Create
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
         <div class="relative grid grid-col-1 lg:grid-cols-3 lr:grid-cols-3 gap-3 p-4 mt-10">
 
             <a href="#"
@@ -335,49 +322,54 @@
 
                 <div class="flex justify-center items-center ">
                     <div class="sm:max-h-screen sm:overflow-x-auto">
-                    <table class="p-6 text-md bg-white font-sans ">
-                        <thead class="border b border-black">
-                            <th class="text-left p-3 px-5 text-[#424242]">Title </th>
-                            <th class="text-left p-3 md:block px-5 text-[#424242] hidden  lg:flex">About</th>
-                            <th class="text-left p-3 px-5 text-[#424242]">Image</th>
-                            <th class="text-center p-3 px-5 text-[#424242]">Action</th>
+                        <table class="p-6 text-md bg-white font-sans ">
+                            <thead class="border b border-black">
+                                <th class="text-left p-3 px-5 text-[#424242]">Title </th>
+                                <th class="text-left p-3 md:block px-5 text-[#424242] hidden  lg:flex">About</th>
+                                <th class="text-left p-3 px-5 text-[#424242]">Category</th>
+                                <th class="text-left p-3 px-5 text-[#424242]">Image</th>
+                                <th class="text-center p-3 px-5 text-[#424242]">Action</th>
 
-                        </thead>
-                        <tbody>
-                            @foreach ($uploader as $item)
-                                <tr class="border-b  ">
-                                    <td class="p-3 px-5 font-sans hidden"> {{ $item->id }}</td>
-                                    <td class="p-3 px-5 font-sans"> {{ $item->title }}</td>
-                                    <td class="p-3 px-5 font-sans text-sm md:text-lg hidden lg:flex ">{{ $item->about }}</td>
-                                    <td class="p-3 px-5 font-sans">
-                                        <img src="{{ $item->image }}" width='100' height='100'
-                                            class="img img-responsive rounded-lg" />
-                                    </td>
-                                    <td class="p-3 px-5 flex justify-center">
-                                        <div class="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
-                                            <a href="{{ route('uploads.edit', $item->id) }}">
-                                            <button
-                                                class="inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm text-gray-500 hover:text-gray-700 focus:relative">
+                            </thead>
+                            <tbody>
+                                @foreach ($uploader as $item)
+                                    <tr class="border-b  ">
+                                        <td class="p-3 px-5 font-sans hidden"> {{ $item->id }}</td>
+                                        <td class="p-3 px-5 font-sans"> {{ $item->title }}</td>
+                                        <td class="p-3 px-5 font-sans text-sm md:text-lg hidden lg:flex ">
+                                            {{ $item->about }}</td>
+                                        <td class="p-3 px-5 font-sans"> {{ $item->category }}</td>
+                                        <td class="p-3 px-5 font-sans">
+                                            <img src="{{ $item->image }}" width='100' height='100'
+                                                class="img img-responsive rounded-lg" />
+                                        </td>
+                                        <td class="p-3 px-5 flex justify-center">
+                                            <div class="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
+                                                <a href="{{ route('uploads.edit', $item->id) }}">
+                                                    <button
+                                                        class="inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm text-gray-500 hover:text-gray-700 focus:relative">
 
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                    class="h-4 w-4">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                                </svg>
-                                              
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5"
+                                                            stroke="currentColor" class="h-4 w-4">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                        </svg>
 
-                                                    Edit
-                                                
-                                            </button>
-                                        </a>
 
-                                            <form method="POST" action="{{ route('uploads.destroy', ['id' => $item->id]) }}">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button
-                                                    class="inline-flex items-center gap-2 rounded-md bg-white hover:bg-red-500 px-4 py-2 text-sm text-red-500 shadow-sm focus:relative"
-                                                    type="submit" onclick="event.preventDefault(); 
+                                                        Edit
+
+                                                    </button>
+                                                </a>
+
+                                                <form method="POST"
+                                                    action="{{ route('uploads.destroy', ['id' => $item->id]) }}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button
+                                                        class="inline-flex items-center gap-2 rounded-md bg-white hover:bg-red-500 px-4 py-2 text-sm text-red-500 shadow-sm focus:relative"
+                                                        type="submit"
+                                                        onclick="event.preventDefault(); 
                                                     Swal.fire({
                                                         title: 'Are you sure?',
                                                         text: 'You will not be able to recover this file!',
@@ -398,24 +390,27 @@
                                                             )
                                                         }
                                                     });">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                                                    </svg>
-                                                    Delete
-                                                </button>
-                                            </form>
-                                            
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5"
+                                                            stroke="currentColor" class="h-4 w-4">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                        </svg>
+                                                        Delete
+                                                    </button>
+                                                </form>
 
-                                        </div>
 
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
+                                            </div>
 
-                    </table>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
 
-                </div>
+                        </table>
+
+                    </div>
                 </div>
                 {{ $uploader->appends(request()->input())->links() }}
             </div>
@@ -444,19 +439,10 @@
 
 
                     <form method="POST" action="{{ url('uploads') }}" enctype="multipart/form-data">
-
                         {!! csrf_field() !!}
-
-
-
-
                         <div class=" rounded-2xl sm:overflow-hidden sm:rounded-md">
-
                             <div class=" bg-white  sm:p-6">
-
-
                                 <div>
-
                                     <label for="about"
                                         class="block text-sm font-bold leading-6 text-gray-900">Title of the
                                         image</label>
@@ -468,19 +454,13 @@
                                         description about the place or destination.)</label>
                                     <div class="mt-2">
                                         <textarea required id="about" name="about" rows="3"
-                                        class="mt-1 block w-full rounded-md border-gray-500 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
-                                        style="" placeholder="Information"></textarea>
-                              
+                                            class="mt-1 block w-full rounded-md border-gray-500 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
+                                            style="" placeholder="Information"></textarea>
                                     </div>
-
                                 </div>
-
-
                                 <div class="w-100 h-100">
                                     <img id="preview-img" class="w-full h-full object-contain" alt="">
                                 </div>
-
-
                                 <div>
                                     <label class="block text-sm font-bold leading-6 text-gray-900">Upload image
                                         section</label>
@@ -497,25 +477,25 @@
                                             <div class="flex text-sm text-gray-600">
                                                 <label for="file-upload"
                                                     class="relative cursor-pointer rounded-md bg-white font-medium text-blue-900 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
-                                                  
+
                                                     <input type="file" name="image" id="image"
                                                         class="cursor-pointer" onchange="loadFile(event)">
                                                 </label>
-                                             
+
                                             </div>
-                                        
+
                                         </div>
                                     </div>
-                                    
-                                    <img id="output" class="mt-5 flex mx-auto justify-center h-50 w-50" src="../../img/prev1.jpg" alt="">
-                                
+
+                                    <img id="output" class="mt-5 flex mx-auto justify-center h-50 w-50"
+                                        src="../../img/prev1.jpg" alt="">
+
                                 </div>
                             </div>
                             <div class="bg-gray-50 px-4 py-3 text-right flex justify-between gap-4 sm:px-6">
                                 <button type="submit" value="Save" name="submit"
                                     class=" inline-flex justify-center rounded-lg bg-black py-2 px-3 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 w-full focus-visible:outline-indigo-500">Save</button>
-                                    <button value="Save" name="submit"
-                                    onclick="closeModal()" class=" inline-flex justify-center rounded-lg bg-black py-2 px-3 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 w-full focus-visible:outline-indigo-500">Cancel</button>
+
                             </div>
                         </div>
 
@@ -559,12 +539,12 @@
 
 
     </main>
-  
-
-    
 
 
-    
+
+
+
+
 </body>
 <!-- plugin for scrollbar  -->
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>

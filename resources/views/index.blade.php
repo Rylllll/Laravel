@@ -226,9 +226,9 @@
 {{-- Title --}}
     <div class="container mx-auto px-7">
         <div class="flex gap-1">
-            <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4]">Wonders
+            <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
             </h1>
-            <h1 class="mt-5 mb-2 text-2xl text-black">Featured Places
+            <h1 class="mt-5 mb-2 text-2xl text-black font-black">Featured Places
             </h1>
         </div>
         <p class="mb-2 text-xs text-gray-500">
@@ -237,48 +237,76 @@
      
     </div>
 
-<section class=" container px-7 justify-center mx-auto">
-    <div id="animation-carousel" class="relative w-full bg-white px-7" data-carousel="static">
-        <!-- Carousel wrapper -->
-        <div class="relative h-56 overflow-hidden rounded-lg md:h-96  ">
-            @foreach($home->chunk(2) as $items)
-              <div class="hidden duration-200 ease-linear" data-carousel-item>
-                <div class="flex">
-                  @foreach($items as $item)
-                
-                    <div class="w-1/2 mx-4">
-                      <img src="{{$item->image}}" class="w-50 h-50 object-cover bg-white p-6" alt="...">
-                     
+
+
+        <div class="container relative  items-center w-full mx-auto justify-center ">
+            <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-4">
+                @foreach($take as $item)
+                <div class="p-6 ">
+                    <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{$item->image}}" alt="{{$item->title}}">
+                    <div class="inline-flex justify-between w-full border border-black 1px">
+                        <h1 class="mb-8 text-xl font-semibold leading-none tracking-tighter text-neutral-600">{{$item->title}}</h1>
+                        <p class="mx-auto text-base font-medium leading-relaxed text-gray-500">  {{ substr($item->about, 0, 60) }}{{ strlen($item->about) > 250 ? '...' : '' }}</p>
                     </div>
-       
-         
-                  @endforeach
+                  
                 </div>
-              </div>
-            @endforeach
-          </div>
-          
-        
-        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-            <span class="sr-only">Previous</span>
-          </span>
-        </button>
-        
-        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-            <span class="sr-only">Next</span>
-          </span>
-        </button>
-      </div>
-      
-    
-    
-    
+               
+                @endforeach
+            </div>
+        </div>
+   
+ 
+
+<section class="py-16 justify-center mx-auto px-7">
+   {{-- Title1 --}}
+   <div class="container mx-auto px-7">
+    <div class="flex gap-1">
+        <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Explore
+        </h1>
+        <h1 class="mt-5 mb-2 text-2xl text-black font-black">Our Categories
+        </h1>
+    </div>
+    <p class="mb-2 text-xs text-gray-500">
+      Select in our categories</p>
+ 
+</div>
+    {{-- <ul>
+        <li><a href="{{ route('uploads.category', 'Mountain') }}">Nature</a></li>
+        <li><a href="{{ route('uploads.category', 'Cave') }}">Architecture</a></li>
+        <li><a href="{{ route('uploads.category', 'Beach') }}">Food</a></li>
+    </ul>
+     --}}
+     
+<div class="grid gap-4 mx-auto justify-center w-full">
+    <div class="grid gap-4 px-7 mx-auto justify-center w-full">
+        <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="">
+    </div>
+    <div class="grid grid-cols-5 gap-4 px-7 mx-auto justify-center w-full">
+        <div >
+            <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
+        </div>
+    </div>
+</div>
+
 
 </section>
+
+       
+    
+
+
 
     {{-- <section class="py-16 " id="About">
         <div class="py-16">

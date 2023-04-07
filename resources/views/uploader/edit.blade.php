@@ -227,6 +227,7 @@
   </span>
 </a>
   </div>
+
   <form method="POST" action="{{ route('uploads.update', $upload->id) }}" enctype="multipart/form-data">
                    
     @csrf
@@ -237,7 +238,16 @@
         <div class=" rounded-2xl sm:overflow-hidden sm:rounded-md">
 
             <div class=" bg-white px-4 sm:p-6">
-
+                        <div>
+                                <label for="category" class="block text-sm font-bold leading-6 text-gray-900">Category</label>
+                                <select required id="category" name="category"
+                                    class="mb-3 mt-1 block w-full rounded-md border-gray-500 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6">
+                                    <option value="">Select a category</option>
+                                    <option value="Mountain">Mountain</option>
+                                    <option value="Cave">Cave</option>
+                                    <option value="Beach">Beach</option>
+                                </select>
+                            </div>
 
                 <div>
   
