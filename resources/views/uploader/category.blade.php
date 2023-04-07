@@ -216,6 +216,7 @@
         
 <div class="row">
     @foreach($images as $image)
+    <h1>{{ $image->category }}</h1>
     <div class="col-md-4">
         <img src="{{ $image->image }}" alt="{{ $image->title }}" class="img-fluid">
         <h2>{{ $image->title }}</h2>

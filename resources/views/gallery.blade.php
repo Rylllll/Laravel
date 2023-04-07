@@ -226,7 +226,7 @@
             class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-7 md:px-7 px-7 w-96 sm:w-auto">
             @foreach ($home as $item)
                 <a href="{{ route('display.show', ['id' => $item->id]) }}" class="group relative block bg-black ">
-                    <img alt="Developer" src="{{ $item->image }}"
+                    <img alt="{{ $item->title }}" src="{{ $item->image }}"
                         class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 " />
 
                     <div class="relative p-4 sm:p-6 lg:p-8">

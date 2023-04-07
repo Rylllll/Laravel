@@ -54,9 +54,9 @@
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                         href="#About">About</a>
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#How">How it works</a>
+                        href="#How">All places</a>
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#Gallery">Gallery</a>
+                        href="#Gallery">How it works</a>
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                         href="#Services">Contact us</a>
                 </div>
@@ -223,7 +223,69 @@
 
         </div>
     </section>
-{{-- Title --}}
+
+
+{{-- Icons --}}
+<section class="container relative items-center w-full mx-auto justify-center px-6 mb-5">
+    <div class="flex justify-center">
+        <div class="container grid flex-cols-2 md:grid-cols-3 gap-1 mx-auto justify-center items-center">
+            <div class="mx-auto justify-center items-center">
+                <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center" src="../img/gal1.png" alt="Gallery icon">
+                <h1 class="text-center font-black">High quality images</h1>
+            </div>
+      
+
+            <div class="mx-auto justify-center items-center">
+                <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center" src="../img/gal2.png" alt="information icon">
+                <h1 class="text-center font-black">Detailed information</h1> 
+            </div>
+           
+            
+            <div class="mx-auto justify-center items-center">
+                <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center" src="../img/gal3.png" alt="">
+                <h1 class="text-center font-black">Easy navigation</h1>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+
+
+
+{{-- Title1 --}}
+<div class="container mx-auto px-7">
+    <div class="flex gap-1">
+        <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
+        </h1>
+        <h1 class="mt-5 mb-2 text-2xl text-black font-black">Latest Uploads
+        </h1>
+    </div>
+    <p class="mb-2 text-xs text-gray-500">
+       Gallery of latest uploads</p>
+ 
+</div>
+
+
+
+<section class="container relative  items-center w-full mx-auto justify-center ">
+    <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-3">
+        @foreach($takes as $item)
+        <div class="p-6 gap-2">
+           <a href="{{ route('display.show', ['id' => $item->id]) }}"><img  class="object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{$item->image}}" alt="{{$item->title}}"></a> 
+            <div class="justify-between w-full">
+                <h1 class="mb-2 md:text-sm text-sm font-semibold leading-none tracking-tighter text-neutral-600">{{$item->title}}</h1>
+                <p class="text-xs">{{ substr($item->about, 0, 200) }}{{ strlen($item->about) > 250 ? '...' : '' }}</p>
+            </div>
+           
+        </div>
+   
+        @endforeach
+
+    </div>
+</section>
+
+{{-- Title2 --}}
     <div class="container mx-auto px-7">
         <div class="flex gap-1">
             <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
@@ -244,21 +306,34 @@
                 @foreach($take as $item)
                 <div class="p-6 ">
                     <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{$item->image}}" alt="{{$item->title}}">
-                    <div class="inline-flex justify-between w-full border border-black 1px">
-                        <h1 class="mb-8 text-xl font-semibold leading-none tracking-tighter text-neutral-600">{{$item->title}}</h1>
-                        <p class="mx-auto text-base font-medium leading-relaxed text-gray-500">  {{ substr($item->about, 0, 60) }}{{ strlen($item->about) > 250 ? '...' : '' }}</p>
+                    <div class="justify-between w-full">
+                        <h1 class="mb-8 md:text-xs text-sm font-semibold leading-none tracking-tighter text-neutral-600">{{$item->title}}</h1>
                     </div>
+                    <a
+                    class="group relative inline-block overflow-hidden border border-[#03a9f4] px-8 py-3 focus:outline-none focus:ring w-full text-center"
+                    href="{{ route('display.show', ['id' => $item->id]) }}"
+                  >
+                    <span
+                      class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-full group-active:bg-indigo-500"
+                    ></span>
                   
+                    <span
+                      class="relative text-sm font-medium text-[#03a9f4] transition-colors group-hover:text-white"
+                    >
+                     Visit
+                    </span>
+                  </a>
                 </div>
-               
+           
                 @endforeach
+
             </div>
         </div>
    
  
 
 <section class="py-16 justify-center mx-auto px-7">
-   {{-- Title1 --}}
+   {{-- Title3 --}}
    <div class="container mx-auto px-7">
     <div class="flex gap-1">
         <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Explore
@@ -277,29 +352,71 @@
     </ul>
      --}}
      
-<div class="grid gap-4 mx-auto justify-center w-full">
-    <div class="grid gap-4 px-7 mx-auto justify-center w-full">
-        <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="">
-    </div>
-    <div class="grid grid-cols-5 gap-4 px-7 mx-auto justify-center w-full">
-        <div >
-            <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full " src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-        </div>
-    </div>
-</div>
+<div class="container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-2">
+    
+    <div class="relative">
+        <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center" href="{{ route('uploads.category', 'Beach') }}">
+          <img class="h-auto max-w-full " src="../img/cov1.png" alt="">
+          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
+          <span class="absolute inset-0 flex items-end py-2 md:py-5 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
+            let's go
+            <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
+          </span>
+        </a>
+      </div>
+      
+    
+      <div class="relative">
+        <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center" href="{{ route('uploads.category', 'Beach') }}">
+          <img class="h-auto max-w-full " src="../img/cov2.png" alt="">
+          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
+          <span class="absolute inset-0 flex items-end py-2 md:py-5 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
+            let's go
+            <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
+          </span>
+        </a>
+      </div>
+      
+      <div class="relative">
+        <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center" href="{{ route('uploads.category', 'Beach') }}">
+          <img class="h-auto max-w-full " src="../img/cov3.png" alt="">
+          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
+          <span class="absolute inset-0 flex items-end py-2 md:py-5 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
+            let's go
+            <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
+          </span>
+        </a>
+      </div>
 
+
+
+    </div>
+
+    <div class="container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-4">
+
+        <div class="relative">
+            <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center" href="{{ route('uploads.category', 'Beach') }}">
+              <img class="h-auto max-w-full " src="../img/cov4.png" alt="">
+              <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
+              <span class="absolute inset-0 flex items-end py-2 md:py-10 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
+                let's go
+                <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
+              </span>
+            </a>
+          </div>
+
+           <div class="relative">
+        <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center" href="{{ route('uploads.category', 'Beach') }}">
+          <img class="h-auto max-w-full " src="../img/cov5.png" alt="">
+          <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-1/6 group-active:bg-indigo-500"></span>
+          <span class="absolute inset-0 flex items-end py-2 md:py-10 justify-center text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100 text-white">
+            let's go
+            <i class="fa-solid fa-arrow-right w-4 h-4 ml-2 inline-block transform text-white"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+    
 
 </section>
 
@@ -453,7 +570,7 @@
 
 
 
-
+{{-- 
 
 
     <section class="py-16" id="Gallery">
@@ -536,7 +653,7 @@
             </div>
 
         </div>
-    </section>
+    </section> --}}
 {{-- 
     <section class="py-16" id="Services">
         <div class="py-16 ">
@@ -618,7 +735,37 @@
 
     </section> --}}
 
-
+    <section class="min-h-auto flex items-stretch text-white ">
+        <div class="lg:flex w-1/2 hidden bg-cover bg-no-repeat bg-center relative items-center"
+        style="background-image: url('../img/cave.jpg')">
+       <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+       <div class="w-full px-24 z-10">
+           <h1 class="text-5xl font-bold text-left tracking-wide">Keep it special</h1>
+           <p class="text-3xl my-4">Capture your personal memory in unique way, anywhere.</p>
+       </div>
+   </div>
+   
+        <div class="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-black">
+            <div class="absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center" style="background-image: url('../img/wonders.png');">
+                <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+            </div>
+            <div class="w-full py-6 z-20">
+                <h1 class="my-6">
+                  
+                   <img src="../img/ph1.png" class="w-auto h-50 sm:h-8 inline-flex"alt="">
+                </h1>
+                <div class="py-6 space-x-2">
+                    <p class="text-gray-100">
+                       Connect with us
+                    </p>
+                    <span class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">f</span>
+                    <span class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">G+</span>
+                    <span class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">in</span>
+                </div>
+             
+            </div>
+        </div>
+    </section>
 
     <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5 mt-40">
         <div class="relative block h-32 lg:col-span-2 lg:h-full">
