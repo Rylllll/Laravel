@@ -14,9 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/730a8ae355.js" crossorigin="anonymous"></script>
-    <script>
-        document.documentElement.classList.add('js')
-    </script>
+    <script>document.documentElement.classList.add('js')</script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
@@ -36,9 +34,9 @@
 <body class="">
 
     <button x-data="topBtn" @click="scrolltoTop" id="topButton"
-        class="fixed z-20 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
-        <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000;"></i>
-    </button>
+    class="fixed z-20 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce transform-gpu translate-z-0 hover:translate-z-1">
+    <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000; transform: translateZ(0.1rem);"></i>
+</button>
 
 
 
@@ -91,11 +89,9 @@
                         </div>
                     </div>
                     {{-- Navbar dropdowns --}}
+                 
                     <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                     href="/">Home</a>
-
-                    <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                    href="/">Blog post</a>
 
                     {{-- Navbar dropdowns about --}}
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
@@ -130,7 +126,40 @@
                         </div>
                     </div>
                     {{-- Navbar dropdowns --}}
-                   
+
+                         {{-- Navbar dropdowns about --}}
+                         <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                        
+                            <button x-on:click="isActive = !isActive"
+                            class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                            href="#How">
+                       Blog post
+                       <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
+                               class="text-black text-xs"></i>
+                       </button>
+                    
+    
+                            <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
+                                role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                                x-on:keydown.escape.window="isActive = false">
+    
+                                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
+                                    <div class="p-2 items-center justify-center">
+                                        <h1 class="text-lg">Blog post Wonders Gallery</h1>
+                                        <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                                    </div>
+                                    <div class="border border-[#9e9e9e] 1px w-96"></div>
+                                    <div class="flex p-2 gap-4 justify-center mt-2">
+                                       <h1 class="p-4">Coming soon!</h1>
+                                    </div>
+                                </ul>
+                                
+    
+                            </div>
+                        </div>
+                        
+                        {{-- Navbar dropdowns --}}
+                    
                    
                 </div>
             </div>
@@ -159,17 +188,17 @@
 
 
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
-                        <div class="mt-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
+                        <div class="mt-2 relative font-medium text-black before:absolute before:-bottom-1 hover:before:scale-x-100 cursor-pointer"
                             href="#">
 
 
                             <button x-on:click="isActive = !isActive"
-                                class="h-full p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-700">
+                                class="h-full p-2 text-gray-600  ">
                                 <i class="fa-solid fa-user text-black"></i>
                             </button>
                         </div>
 
-                        <div class="absolute right-0 z-10 mt-6 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
+                        <div class="absolute right-0 z-10 mt-6 w-56 divide-y divide-gray-100  border border-gray-100 bg-white shadow-lg"
                             role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
                             x-on:keydown.escape.window="isActive = false">
                             <h1 class="p-4 text-center font-bold uppercase">Welcome, {{ auth()->user()->name }}!</h1>
@@ -300,9 +329,9 @@
 
 
     {{-- Icons --}}
-    <section class="container relative items-center w-full mx-auto justify-center px-6 mb-5">
+    <section class="md:container relative items-center w-full mx-auto justify-center px-6 mb-5">
         <div class="flex justify-center">
-            <div class="container grid flex-cols-2 md:grid-cols-3 gap-1 mx-auto justify-center items-center">
+            <div class="md:container  md:flex flex-cols-3 flex gap-1 mx-auto justify-center items-center">
                 <div class="mx-auto justify-center items-center">
                     <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center"
                         src="../img/gal1.png" alt="Gallery icon">
@@ -331,7 +360,7 @@
 
 
     {{-- Title1 --}}
-    <div class="container mx-auto px-7">
+    <div class="md:container mx-auto px-7">
         <div class="flex gap-1">
             <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
             </h1>
@@ -345,7 +374,7 @@
 
 
 
-    <section class="container relative  items-center w-full mx-auto justify-center ">
+    <section class="md:container relative  items-center w-full mx-auto justify-center ">
         <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-3">
             @foreach ($takes as $item)
                 <div class="px-7 gap-2">
@@ -367,7 +396,7 @@
     </section>
 
     {{-- Title2 --}}
-    <div class="container mx-auto px-7">
+    <div class="md:container mx-auto px-7">
         <div class="flex gap-1">
             <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
             </h1>
@@ -382,7 +411,7 @@
 
 
 
-    <div class="container relative  items-center w-full mx-auto justify-center ">
+    <div class="md:container relative  items-center w-full mx-auto justify-center ">
         <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-4">
             @foreach ($take as $item)
                 <div class="px-7">
@@ -413,7 +442,7 @@
 
     <section class="py-16 justify-center mx-auto px-7">
         {{-- Title3 --}}
-        <div class="container mx-auto px-7">
+        <div class="md:container mx-auto px-7">
             <div class="flex gap-1">
                 <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Explore
                 </h1>
@@ -424,14 +453,9 @@
                 Select in our categories</p>
 
         </div>
-        {{-- <ul>
-        <li><a href="{{ route('uploads.category', 'Mountain') }}">Nature</a></li>
-        <li><a href="{{ route('uploads.category', 'Cave') }}">Architecture</a></li>
-        <li><a href="{{ route('uploads.category', 'Beach') }}">Food</a></li>
-    </ul>
-     --}}
+        
 
-        <div class="container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-2">
+        <div class="md:container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-2">
 
             <div class="relative">
                 <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
@@ -480,7 +504,7 @@
 
         </div>
 
-        <div class="container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-4">
+        <div class="md:container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-4">
 
             <div class="relative">
                 <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"

@@ -240,7 +240,7 @@
     </nav>
     <!-- Breadcrumb -->
     <div class="bg-gray-50">
-        <nav class="container flex px-7 mx-auto py-3 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 md:mt-20 mt-16 justify-left md:justify-end w-full"
+        <nav class="md:container flex px-7 mx-auto py-3 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 md:mt-20 mt-16 justify-left md:justify-end w-full"
             aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3 gap-1">
                 <li class="inline-flex items-center">
@@ -262,7 +262,7 @@
     </div>
 
 {{-- Title --}}
-<div class="container mx-auto px-7">
+<div class="md:container mx-auto px-7">
     <div class="flex gap-1">
     <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4]">Create
         </h1>
@@ -274,9 +274,9 @@
     </div>
 
 
-    <section class="container  px-7 mt-5  flex items-center mx-auto justify-center bg-2b2d42">
-        <!-- login container -->
-        <div class="container bg-gray-100 mx-auto flex max-w-full p-5 items-center text-black  ">
+    <section class="md:container  px-7 mt-5  flex items-center mx-auto justify-center bg-2b2d42">
+        <!-- login md:container -->
+        <div class="md:container bg-gray-100 mx-auto flex max-w-full p-5 items-center text-black  ">
             <!-- form -->
             <div class="md:w-1/2 px-8 md:px-16 ">
                 <a href="{{ URL::to('/') }}">

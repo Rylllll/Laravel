@@ -10,320 +10,260 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Sweet Alert CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
     @include('sweetalert::alert')
-    <!-- Sweet Alert JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-    <title>Wonders Dashboard/Tables</title>
+    <script src="https://kit.fontawesome.com/730a8ae355.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <!-- Nucleo Icons -->
-    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
-    <!-- Popper -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <!-- Main Styling -->
-    <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />
-
+    <title>Wonders Dashboard/Tables</title>
+ 
+   
 </head>
 
 
 
-<body class="m-0 font-sans antialiased font-normal text-base leading-default bg-[#fff3e0] text-slate-500">
-    <button x-data="topBtn" @click="scrolltoTop" id="topButton"
+<body class="font-sans">
+
+    {{-- <button x-data="topBtn" @click="scrolltoTop" id="topButton"
         class="fixed z-10 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18">
             </path>
         </svg>
-    </button>
-    <aside
-        class="hidden max-w-62.5 ease-nav-brand lg:block lr:hidden fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-2xl transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent">
-        <div class="h-19.5 ">
-            <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"
-                sidenav-close></i>
-            <a class="block px-8 py-6 m-0 mx-auto text-xl whitespace-nowrap text-slate-700 font-sans"
-                href="{{ URL::to('/') }}" target="_blank">
-                <img src="../img/tempLog.png"
-                    class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8"
-                    alt="main_logo" />
-                <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Wonders</span>
-            </a>
-        </div>
+    </button> --}}
 
-
-        <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
-
-        <nav aria-label="Main Nav" class="flex flex-col space-y-1 p-4 h-sidenav">
-            <a href="" class="flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-
-                <span class="text-sm font-medium"> Dashboard </span>
-            </a>
-
-            <details class="group [&_summary::-webkit-details-marker]:hidden">
-                <summary
-                    class="group flex items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-
-
-
-                </summary>
-
-
-            </details>
-
-
-
-
-
-            <details class="group [&_summary::-webkit-details-marker]:hidden">
-                <summary
-                    class="group flex items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-                    <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-
-                        <span class="text-sm font-medium"> Account </span>
-                    </div>
-
-                    <span class="shrink-0 transition duration-300 group-open:-rotate-180">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </span>
-                </summary>
-
-                <nav aria-label="Account Nav" class="mt-2 flex flex-col space-y-1 px-4">
-
-
-
-                    <form method="POST" action="/logout" class="">
-                        @csrf
-
-
-                        <button type="submit"
-                            class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-                            Logout
-                        </button>
-                    </form>
-                    {{-- <a  href="/register" class="lg:flex hidden group relative inline-block overflow-hidden border border-[#212121] px-8 py-3 focus:outline-none focus:ring" href="/download">
-                        <span class="absolute inset-x-0 bottom-0 h-[2px] bg-[#212121] transition-all group-hover:h-full group-active:bg-[#212121]"></span>
-                   
-                        <span class="relative text-sm font-medium text-[#212121] transition-colors group-hover:text-white">
-                    
-                       Create account
-                        </span></a> --}}
-                </nav>
-            </details>
-        </nav>
-
-    </aside>
-
-    <main class=" xl:ml-68.5 relative rounded-xl transition-all duration-200">
-
-        <!-- Navbar -->
-        <nav class="flex flex-wrap items-center justify-between px-0 py-2 mx-6  rounded-2xl lg:flex-nowrap lg:justify-start bg-white shadow-xl mt-4"
-            navbar-main navbar-scroll="true">
-            <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
-                <nav>
-                    <!-- breadcrumb -->
-                    <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
-                        <li class="leading-normal text-sm">
-                            <a class="opacity-50 text-slate-700" href="javascript:;">Pages</a>
-                        </li>
-                        <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
-                            aria-current="page">Dashboard</li>
-                    </ol>
-                    <h6 class="mb-0 font-bold capitalize">Tables</h6>
-                </nav>
-
-                <div class="flex justify-between space-x-2 lg:flex hidden">
-                    @auth
-                        <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
-
-
-                        @csrf
-                        <div class="p-2 hidden lg:flex">
-                            <a href="{{ route('uploads.create') }}"
-                                class="inline-block rounded bg-black cursor-pointer px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
-                                <i class="fa-solid fa-plus"></i> Create
-                            </a>
-                        </div>
-                    @else
-                    @endauth
-
-
-                    <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
-                </div>
-                <div class="block lg:hidden">
-                    <button
-                        class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation"
-                        data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"
-                        id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 font-sans">
+        <div class="px-3 py-3 lg:px-5 lg:pl-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-start">
+                    <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"
+                      type="button"
+                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                        <span class="sr-only">Open sidebar</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" fill-rule="evenodd"
+                                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+                            </path>
                         </svg>
                     </button>
-                </div>
-            </div>
+                    <a href="#" class="flex ml-2 md:mr-24">
+                        <img src="../img/ph.png" class="h-8 mr-3" alt="FlowBite Logo" />
 
+                    </a>
+                </div>
+                @auth
+
+
+
+             
+
+                
+                        <h1 class="text-center font-bold uppercase px-7">Welcome, {{ auth()->user()->name }}!</h1>
+                       
+
+            @else
+              
+
+            @endauth
+
+            </div>
+        </div>
+    </nav>
+
+    {{-- Breadcrumbs --}}
+    <div class="bg-gray-100 font-sans">
+        <nav class="container flex px-7 mx-auto py-3 text-gray-700 bg-gray-100 dark:bg-gray-800 dark:border-gray-700 md:mt-16 justify-left md:justify-end w-full"
+            aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3 gap-1">
+                <li class="inline-flex items-center">
+                    <a href="/"
+                        class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                        <i class="fa-solid fa-house text-black"></i>
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center gap-1">
+                        <i class="fa-solid fa-angle-right text-black text-xs"></i>
+                        <p
+                            class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">
+                            Dashboard</p>
+                    </div>
+                </li>
+            </ol>
         </nav>
 
-        {{-- Dropdown --}}
-        <div class="p-4 lg:hidden">
-            <div id="dropdown"
-                class="fixed top-0 z-10 hidden bg-white divide-x divide-gray-100 rounded-2xl shadow dark:bg-gray-700 mt-2 transition duration-300 w-full p-4">
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                    <ul class="flex justify-between ">
-                        @auth
-                            <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+    </div>
+
+    <aside id="sidebar-multi-level-sidebar" class="hidden md:block fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 mt-14" aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-200 dark:bg-gray-800 justify-between">
+           <ul class="space-y-2 font-medium">
+              <li>
+                 <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span class="ml-3">Dashboard</span>
+                 </a>
+              </li>
+              <li>
+                 <button type="button" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                    <i class="fa-brands fa-wpforms"></i>
+                       <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Forms</span>
+                       <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                 </button>
+                 <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                       <li>
+                        
+                          <a href="{{ route('uploads.create') }}" class="gap-2 flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><i class="fa-solid fa-plus"></i> Add images</a>
+                       </li>
+                       
+                 </ul>
+              </li>
+             
+
+           </ul>
+
+     
+
+<form method="POST" action="/logout" class="">
+    @csrf
 
 
-                            @csrf
-                        @else
-                        @endauth
-                        <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
-                    </ul>
+    <button type="submit"
+    class="mt-96 ml-2 group relative inline-flex items-center overflow-hidden rounded bg-[#212121] px-8 py-3 text-white focus:outline-none focus:ring active:bg-[#212121]"
+    href="/download"
+  >
+    <span
+      class="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4"
+    >
+      <svg
+        class="h-5 w-5"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M17 8l4 4m0 0l-4 4m4-4H3"
+        />
+      </svg>
+    </span>
+  
+    <span class="text-sm font-medium transition-all group-hover:ml-4">
+      Log out
+    </span>
+</button>
+</form>
+        </div>
+     </aside>
 
-                    <li>
-                        <a href="/"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
-                    </li>
+    <div class="p-4 md:ml-64">
+        <div class="p-4 rounded-lg dark:border-gray-700 ">
+            <div class="md:grid grid-cols-3 gap-4 mb-4">
+                <div
+                    class="block shadow-indigo-100 rounded-xl border border-gray-100 p-4 shadow-xl bg-white font-sans  mb-4">
+                    <img alt="Home" src="../img/user.jpg" class="h-56 w-full rounded-md object-cover" />
 
-                    <form method="POST" action="/logout" class="">
-                        @csrf
-                        <li>
-                            <button type="submit" href="#"
-                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
-                                out</button>
-                        </li>
-                    </form>
-                    <li class="p-2">
-                        <a class="inline-block rounded bg-[#212121] cursor-pointer px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
-                            onclick="openModal()">
-                            <i class="fa-solid fa-plus"></i> Create
-                        </a>
-                    </li>
+                    <div class="mt-2">
+                        <dl>
+                            <div>
 
-                </ul>
+
+                                <div>
+                                    <dt class="sr-only">Address</dt>
+
+                                    <dd class="text-center font-bold text-black">Number of Users account</dd>
+                                </div>
+                        </dl>
+
+                        <div class="mt-6 flex items-center gap-8 text-xs justify-center">
+
+                            <h1 class="sm:text-9xl text-8xl ">{{ $userCount }}</h1>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="block shadow-indigo-100 rounded-xl border border-gray-100 p-4 shadow-xl bg-white font-sans mb-4" >
+                    <img alt="Home" src="../img/garden.jpg" class="h-56 w-full rounded-md object-cover" />
+
+                    <div class="mt-2">
+                        <dl>
+                            <div>
+
+
+                                <div>
+                                    <dt class="sr-only">Address</dt>
+
+                                    <dd class="text-center font-bold text-black">Number of Images</dd>
+                                </div>
+                        </dl>
+
+                        <div class="mt-6 flex items-center gap-8 text-xs justify-center">
+
+                            <h1 class="sm:text-9xl text-8xl ">{{ $count }}</h1>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="block shadow-indigo-100 rounded-xl border border-gray-100 p-4 shadow-xl bg-white font-sans mb-4">
+                    <img alt="Home" src="../img/women.jpg" class="h-56 w-full rounded-md object-cover" />
+
+                    <div class="mt-2">
+                        <dl>
+                            <div>
+
+
+                                <div>
+                                    <dt class="sr-only">Address</dt>
+
+                                    <dd class="text-center font-bold text-black">Travel the world</dd>
+                                </div>
+                        </dl>
+
+                        <div class="mt-6 flex items-center gap-8 text-xs justify-center text-center">
+
+                            <h1 class=" text-sm "> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                                dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
+                                sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
+                                voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
+                                Molestias explicabo corporis voluptatem?</h1>
+
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-        </div>
-        <div class="relative grid grid-col-1 lg:grid-cols-3 lr:grid-cols-3 gap-3 p-4 mt-10">
-
-            <a href="#"
-                class="block shadow-indigo-100 rounded-xl border border-gray-100 p-4 shadow-xl bg-white">
-                <img alt="Home" src="../img/user.jpg" class="h-56 w-full rounded-md object-cover" />
-
-                <div class="mt-2">
-                    <dl>
-                        <div>
-
-
-                            <div>
-                                <dt class="sr-only">Address</dt>
-
-                                <dd class="font-bold text-black">Number of Users account</dd>
-                            </div>
-                    </dl>
-
-                    <div class="mt-6 flex items-center gap-8 text-xs">
-
-                        <h1 class="sm:text-9xl text-8xl ">{{ $userCount }}</h1>
-
-                    </div>
-                </div>
+            <div class="p-4 left-0 flex justify-between">
+                <h1 class="text-xl font-bold">Wonders Table</h1>
+                <a href="{{ route('uploads.create') }}"
+                class="inline-block rounded bg-[#212121] cursor-pointer px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
+                <i class="fa-solid fa-plus"></i> Add Image
             </a>
-
-            <a href="#"
-                class="block shadow-indigo-100 rounded-xl border border-gray-100 p-4 shadow-xl bg-white">
-                <img alt="Home" src="../img/garden.jpg" class="h-56 w-full rounded-md object-cover" />
-
-                <div class="mt-2">
-                    <dl>
-                        <div>
-
-
-                            <div>
-                                <dt class="sr-only">Address</dt>
-
-                                <dd class="font-bold  text-black">Number of Images</dd>
-                            </div>
-                    </dl>
-
-                    <div class="mt-6 flex items-center gap-8 text-xs">
-
-                        <h1 class="sm:text-9xl text-8xl">{{ $count }}</h1>
-
-                    </div>
-                </div>
-            </a>
-
-
-
-            <article class="group bg-white rounded-2xl shadow-2xl w-full">
-                <img alt="Lava" src="../img/women.jpg"
-                    class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]" />
-
-                <div class="p-4 bg-white">
-                    <a href="#">
-                        <h3 class="text-lg font-medium text-gray-900">
-                            Travel the world
-                        </h3>
-                    </a>
-
-                    <p class="mt-5 text-sm leading-relaxed text-gray-500 line-clamp-3">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                        dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
-                        sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
-                        voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-                        Molestias explicabo corporis voluptatem?
-                    </p>
-                </div>
-            </article>
-
-
-        </div>
-
-        <div class="p-4 mt-10">
-
-            <div class="p-4 text-gray-900 bg-white rounded-2xl shadow-xl">
-                <div class="p-4 flex">
-                    <h1 class="text-xl font-bold">Wonders Table</h1>
-
-                </div>
-
-                <div class="flex justify-center items-center ">
+            </div>
+            <div class="p-4 text-gray-900 bg-white rounded-2xl shadow-xl border border-gray-100 ">
+                <div class="flex items-center font-sans ">
                     <div class="sm:max-h-screen sm:overflow-x-auto">
                         <table class="p-6 text-md bg-white font-sans ">
-                            <thead class="border b border-black">
+                            <thead class="bg-gray-100 rounded-2xl ">
                                 <th class="text-left p-3 px-5 text-[#424242]">Title </th>
                                 <th class="text-left p-3 md:block px-5 text-[#424242] hidden  lg:flex">About</th>
                                 <th class="text-left p-3 px-5 text-[#424242]">Category</th>
@@ -336,15 +276,17 @@
                                     <tr class="border-b  ">
                                         <td class="p-3 px-5 font-sans hidden"> {{ $item->id }}</td>
                                         <td class="p-3 px-5 font-sans"> {{ $item->title }}</td>
-                                        <td class="p-3 px-5 font-sans text-sm md:text-lg hidden lg:flex ">
-                                            {{ $item->about }}</td>
+                                        <td class="p-3 px-5 font-sans text-sm md:text-lg hidden lg:flex mx-auto justify-center items-center">
+                                            {{ substr($item->about, 0, 60) }}{{ strlen($item->about) > 250 ? '...' : '' }}
+                                        </td>
                                         <td class="p-3 px-5 font-sans"> {{ $item->category }}</td>
                                         <td class="p-3 px-5 font-sans">
                                             <img src="{{ $item->image }}" width='100' height='100'
                                                 class="img img-responsive rounded-lg" />
                                         </td>
-                                        <td class="p-3 px-5 flex justify-center">
-                                            <div class="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1">
+                                        <td class="p-3 px-5 flex mx-auto justify-center items-center">
+                                            <div
+                                                class="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1 ">
                                                 <a href="{{ route('uploads.edit', $item->id) }}">
                                                     <button
                                                         class="inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm text-gray-500 hover:text-gray-700 focus:relative">
@@ -412,145 +354,106 @@
 
                     </div>
                 </div>
-                {{ $uploader->appends(request()->input())->links() }}
             </div>
+            {{ $uploader->appends(request()->input())->links() }}
+
+
+
         </div>
+    </div>
+    <div id="drawer-navigation"
+    class="fixed top-0 mt-16 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800"
+    tabindex="-1" aria-labelledby="drawer-navigation-label">
+   <img src="../img/ph.png" alt="">
+    <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+        </svg>
+        <span class="sr-only">Close menu</span>
+    </button>
+    <div class="py-4 overflow-y-auto">
+        <ul class="space-y-2 font-medium">
 
-        <div id="modal" class="fixed z-10 top-0 inset-0 overflow-y-auto hidden ease-in-out duration-300">
-            <div class="flex items-center justify-center max-h-screen">
-                <!-- Modal overlay -->
-                <div class="fixed w-full z-0 inset-0 bg-black opacity-50"></div>
+            @auth
 
-                <!-- Modal content -->
-                <div class="relative bg-white w-full md:w-1/2 sm:mt-20 rounded-2xl shadow-lg z-30">
-                    <div class="flex justify-between p-4">
+            
+            @else
+          
 
-                        <div class="grid">
-                            <h1 class="text-3xl font-sans text-black" for="">Upload image</h1>
-
-                            <h2 class="text-sm font-sans text-[#424242]" for="">Upload your images here</h2>
-                        </div>
-
-                        <div class="ml-auto">
-                            <i class="fa-solid fa-rectangle-xmark text-4xl text-red-500 cursor-pointer transition hover:scale-110  focus:outline-none focus:ring"
-                                onclick="closeModal()"></i>
-                        </div>
-                    </div>
-
-
-                    <form method="POST" action="{{ url('uploads') }}" enctype="multipart/form-data">
-                        {!! csrf_field() !!}
-                        <div class=" rounded-2xl sm:overflow-hidden sm:rounded-md">
-                            <div class=" bg-white  sm:p-6">
-                                <div>
-                                    <label for="about"
-                                        class="block text-sm font-bold leading-6 text-gray-900">Title of the
-                                        image</label>
-                                    <input required placeholder="Input title" type="text" name="title"
-                                        id="title"
-                                        class="mb-3 mt-1 block w-full rounded-md border-gray-500 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6" />
-                                    <label for="about"
-                                        class="block text-sm font-bold leading-6 text-gray-900 mb-3">About (Brief
-                                        description about the place or destination.)</label>
-                                    <div class="mt-2">
-                                        <textarea required id="about" name="about" rows="3"
-                                            class="mt-1 block w-full rounded-md border-gray-500 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
-                                            style="" placeholder="Information"></textarea>
-                                    </div>
-                                </div>
-                                <div class="w-100 h-100">
-                                    <img id="preview-img" class="w-full h-full object-contain" alt="">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-bold leading-6 text-gray-900">Upload image
-                                        section</label>
-                                    <div
-                                        class="mt-2 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                                        <div class="space-y-1 text-center">
-                                            <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"
-                                                fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                                                <path
-                                                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                                                    stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            <div class="flex text-sm text-gray-600">
-                                                <label for="file-upload"
-                                                    class="relative cursor-pointer rounded-md bg-white font-medium text-blue-900 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
-
-                                                    <input type="file" name="image" id="image"
-                                                        class="cursor-pointer" onchange="loadFile(event)">
-                                                </label>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <img id="output" class="mt-5 flex mx-auto justify-center h-50 w-50"
-                                        src="../../img/prev1.jpg" alt="">
-
-                                </div>
-                            </div>
-                            <div class="bg-gray-50 px-4 py-3 text-right flex justify-between gap-4 sm:px-6">
-                                <button type="submit" value="Save" name="submit"
-                                    class=" inline-flex justify-center rounded-lg bg-black py-2 px-3 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 w-full focus-visible:outline-indigo-500">Save</button>
-
-                            </div>
-                        </div>
-
-                    </form>
-
-                </div>
-            </div>
-        </div>
-
-        {{-- Modal 2---------------------------------------------------------------------------------------------------------------------------- --}}
-
-        <div id="modal1" class="fixed z-10 inset-0 overflow-y-auto hidden ease-in-out duration-300">
-            <div class="flex items-center justify-center min-h-screen">
-                <!-- Modal overlay -->
-                <div class="fixed w-full z-0 inset-0 bg-black opacity-50"></div>
-
-                <!-- Modal content -->
-                <div class="relative bg-white w-1/2 mx-auto rounded-2xl shadow-lg z-30">
-                    <div class="flex justify-between p-4">
-
-                        <div class="grid">
-                            <h1 class="text-3xl font-sans text-black" for="">Edit details</h1>
-
-                            <h2 class="text-sm font-sans text-[#424242]" for="">Edit the images here</h2>
-                        </div>
-
-                        <div class="ml-auto">
-                            <i class="fa-solid fa-rectangle-xmark text-4xl text-red-500 cursor-pointer transition hover:scale-110  focus:outline-none focus:ring"
-                                onclick="closeModal1()"></i>
-                        </div>
-                    </div>
+            @endauth
+            <div class="h-full px-3 py-4 overflow-y-auto  dark:bg-gray-800 justify-between">
+                <ul class="space-y-2 font-medium">
+                   <li>
+                      <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                         <i class="fa-solid fa-chart-pie"></i>
+                         <span class="ml-3">Dashboard</span>
+                      </a>
+                   </li>
+                   <li>
+                      <a type="button" href="{{ route('uploads.create') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                        <i class="fa-solid fa-plus"></i>
+                            <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Add images</span>
+                      </a>
+                    
+                   </li>
+                  
+     
+                </ul>
+     
+          
+     
+     <form method="POST" action="/logout" class="">
+         @csrf
+     
+     
+         <button type="submit"
+         class="mt-40 ml-2 group relative inline-flex items-center overflow-hidden rounded bg-[#212121] px-8 py-3 text-white focus:outline-none focus:ring active:bg-[#212121]"
+         href="/download"
+       >
+         <span
+           class="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4"
+         >
+           <svg
+             class="h-5 w-5"
+             xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke="currentColor"
+           >
+             <path
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               d="M17 8l4 4m0 0l-4 4m4-4H3"
+             />
+           </svg>
+         </span>
+       
+         <span class="text-sm font-medium transition-all group-hover:ml-4">
+           Log out
+         </span>
+     </button>
+     </form>
+             </div>
+        </ul>
 
 
-
-                    {{-- <input type="hidden" name="page" value="{{ $item->id }}" id="page-input"> --}}
-
-                </div>
-            </div>
-        </div>
-
-
-
-    </main>
-
-
-
+    </div>
+</div>
 
 
 
 </body>
-<!-- plugin for scrollbar  -->
+<script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.min.js " async></script>
 <script src="../js/modal.js " async></script>
 <script src="../js/alert.js " async></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+
 
 </html>
