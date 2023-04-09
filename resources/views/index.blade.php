@@ -174,8 +174,8 @@
 
 
                         <div class="relative text-gray-600">
-                            <input type="text" placeholder="Search places.."
-                                class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 " name="search"
+                            <input type="text" placeholder="Search places..."
+                                class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 font-thin " name="search"
                                 value="{{ Request::get('search') }}" required>
                             <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
                                 <i class="fa-solid fa-magnifying-glass text-black"></i>
@@ -194,7 +194,8 @@
 
                             <button x-on:click="isActive = !isActive"
                                 class="h-full p-2 text-gray-600  ">
-                                <i class="fa-solid fa-user text-black"></i>
+                               <img src="../img/user.png" class="w-7 h-7 rounded-full" alt="">
+                                {{-- <i class="fa-solid fa-user text-black"></i> --}}
                             </button>
                         </div>
 
@@ -329,31 +330,37 @@
 
 
     {{-- Icons --}}
-    <section class="md:container relative items-center w-full mx-auto justify-center px-6 mb-5">
-        <div class="flex justify-center">
-            <div class="md:container  md:flex flex-cols-3 flex gap-1 mx-auto justify-center items-center">
+    <section class="md:container relative items-center w-full mx-auto justify-between px-6 mb-10 mt-5">
+        <div class="flex justify-center md:container">
+            <div class="md:container  md:flex flex-cols-3 flex  justify-center items-center">
+        
+
+                
                 <div class="mx-auto justify-center items-center">
                     <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center"
-                        src="../img/gal1.png" alt="Gallery icon">
-                    <h1 class="text-center font-black">High quality images</h1>
+                        src="../img/gal3.png" alt="">
+                        <h1 class="text-center font-black">HD quality image</h1>
                 </div>
 
-
                 <div class="mx-auto justify-center items-center">
                     <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center"
-                        src="../img/gal2.png" alt="information icon">
-                    <h1 class="text-center font-black">Detailed information</h1>
+                        src="../img/gal3.png" alt="">
+                        <h1 class="text-center font-black">Detailed information</h1>
                 </div>
 
 
                 <div class="mx-auto justify-center items-center">
                     <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center"
                         src="../img/gal3.png" alt="">
-                    <h1 class="text-center font-black">Easy navigation</h1>
+                        <h1 class="text-center font-black">Easy navigation</h1>
+                    
                 </div>
 
             </div>
+           
         </div>
+       
+           
     </section>
 
 
@@ -374,7 +381,7 @@
 
 
 
-    <section class="md:container relative  items-center w-full mx-auto justify-center ">
+    <section class="md:container relative  items-center w-full mx-auto justify-center mb-10">
         <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-3">
             @foreach ($takes as $item)
                 <div class="px-7 gap-2">
@@ -397,15 +404,25 @@
 
     {{-- Title2 --}}
     <div class="md:container mx-auto px-7">
+        <div class="md:flex justify-between ">
+            <div class="grid">
         <div class="flex gap-1">
             <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
             </h1>
             <h1 class="mt-5 mb-2 text-2xl text-black font-black">Featured Places
             </h1>
+            
         </div>
         <p class="mb-2 text-xs text-gray-500">
             Gallery of weekly images</p>
+        </div>
 
+        <div class="justify-end mt-7 mb-2">
+            <a href="/gallery"><button class="bg-[#03a9f4] text-white px-9 py-3 text-sm hover:bg-white border border-[#03a9f4] hover:text-[#03a9f4] transition duration-300">MORE PLACES</button></a>
+        </div>
+    </div>
+       
+   
 
     </div>
 
@@ -444,9 +461,9 @@
         {{-- Title3 --}}
         <div class="md:container mx-auto px-7">
             <div class="flex gap-1">
-                <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Explore
+                <h1 class="mt-3 mb-2 text-2xl text-[#03a9f4] font-black">Explore
                 </h1>
-                <h1 class="mt-5 mb-2 text-2xl text-black font-black">Our Categories
+                <h1 class="mt-3 mb-2 text-2xl text-black font-black">Our Categories
                 </h1>
             </div>
             <p class="mb-2 text-xs text-gray-500">
