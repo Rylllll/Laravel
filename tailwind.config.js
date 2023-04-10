@@ -5,7 +5,14 @@ module.exports = {
         "./resources/**/*.js",
         "./resources/**/*.vue",
         "./node_modules/flowbite/**/*.js"
+        
     ],
+    safelist: [
+        '!duration-0',
+        '!delay-0',
+        'html.js :where([class*="taos:"]:not(.taos-init))'
+    ],
+    
     theme: {
         fontFamily: {
             'sans': ['Poppins', 'sans-serif'],
@@ -24,11 +31,7 @@ module.exports = {
             prefix: "",
             darkTheme: false,
           },
-        safelist: [
-            '!duration-0',
-            '!delay-0',
-            'html.js :where([class*="taos:"]:not(.taos-init))'
-        ],
+      
         content: {
             transform: (content) => content.replace(/taos:/g, ''),
 
@@ -100,7 +103,7 @@ module.exports = {
     plugins: [
         require('taos/plugin'),
         require('flowbite/plugin'),
-        // require('daisyui'),
+        
 
     ],
 }

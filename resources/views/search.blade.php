@@ -34,234 +34,267 @@
   <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000;"></i>
 </button>
 <nav
-class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
+        class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
 
-<div class="md:container flex items-center justify-between bg-white p-4 font-bold gap-2">
-    <div class="flex items-center gap-8">
-        <a href="/">
-            <img src="../../img/ph.png" alt="">
-        </a>
-        <div class="hidden xl:flex gap-6 mt-2 text-sm  ">
-             {{-- Navbar dropdowns all --}}
-             <div x-data="{ isActive: false }" class="relative lg:block hidden">
+        <div class="md:md:container flex items-center justify-between bg-white p-4 font-bold gap-2">
+            <div class="flex items-center gap-8">
+                <a href="/">
+                    <img src="../img/ph.png" alt="">
+                </a>
+                <div class="hidden xl:flex gap-6 mt-2 text-sm  ">
+                     {{-- Navbar dropdowns all --}}
+                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                        
+                        <button x-on:click="isActive = !isActive"
+                        class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                        href="#How">
+                   All places
+                   <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
+                           class="text-black text-xs"></i>
+                   </button>
                 
-                <button x-on:click="isActive = !isActive"
-                class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                href="#How">
-           All places
-           <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
-                   class="text-black text-xs"></i>
-           </button>
-        
 
-                <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
-                    role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
-                    x-on:keydown.escape.window="isActive = false">
+                        <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
+                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                            x-on:keydown.escape.window="isActive = false">
 
-                    <ul tabindex="0"
-                        class="dropdown-content menu p-2 shadow bg-white mt-3  max-w-96 text-black font-sans ">
-                        <div class="p-2 items-center justify-center ">
-                            <h1 class="text-lg">Wonders Gallery all images</h1>
-                            <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                            <ul tabindex="0"
+                                class="dropdown-content menu p-2 shadow bg-white mt-3  max-w-96 text-black font-sans ">
+                                <div class="p-2 items-center justify-center ">
+                                    <h1 class="text-lg">Wonders Gallery all images</h1>
+                                    <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                                </div>
+                                <div class="border border-[#9e9e9e] 1px w-full "></div>
+                                <div class="flex p-2 gap-4 justify-center mt-2 ">
+
+                                    <a href="{{ route('uploads.category', 'Beach') }}"class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Beach</a>
+                                    <a href="{{ route('uploads.category', 'Cave') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cave</a>
+                                    <a href="{{ route('uploads.category', 'Mountain') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Mountain</a>
+                                    <a href="{{ route('uploads.category', 'Forest') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Forest</a>
+                                    <a href="{{ route('uploads.category', 'Cities') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cities</a>
+                               
+                                </div>
+                                <div class="flex p-2 justify-left mt-2 text-[#03a9f4] font-thin">
+                                    <a href="/gallery">See all images<i class="fa-sharp  fa-solid fa-angle-right text-[#03a9f4] text-xs  ml-1" ></i></a>
+                                </div>
+                            </ul>
+
                         </div>
-                        <div class="border border-[#9e9e9e] 1px w-full "></div>
-                        <div class="flex p-2 gap-4 justify-center mt-2 ">
+                    </div>
+                    {{-- Navbar dropdowns --}}
+                 
+                    <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                    href="/">Home</a>
 
-                            <a href="{{ route('uploads.category', 'Beach') }}"class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Beach</a>
-                            <a href="{{ route('uploads.category', 'Cave') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cave</a>
-                            <a href="{{ route('uploads.category', 'Mountain') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Mountain</a>
-                            <a href="{{ route('uploads.category', 'Forest') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Forest</a>
-                            <a href="{{ route('uploads.category', 'Cities') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cities</a>
-                       
-                        </div>
-                        <div class="flex p-2 justify-left mt-2 text-[#03a9f4] font-thin">
-                            <a href="/gallery">See all images<i class="fa-sharp  fa-solid fa-angle-right text-[#03a9f4] text-xs  ml-1" ></i></a>
-                        </div>
-                    </ul>
-
-                </div>
-            </div>
-            {{-- Navbar dropdowns --}}
-            <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-            href="/">Home</a>
-
-            <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-            href="/">Blog post</a>
-
-            {{-- Navbar dropdowns about --}}
-            <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                    {{-- Navbar dropdowns about --}}
+                    <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                        
+                        <button x-on:click="isActive = !isActive"
+                        class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                        href="#How">
+                   About us
+                   <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
+                           class="text-black text-xs"></i>
+                   </button>
                 
-                <button x-on:click="isActive = !isActive"
-                class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                href="#How">
-           About us
-           <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
-                   class="text-black text-xs"></i>
-           </button>
-        
 
-                <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
-                    role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
-                    x-on:keydown.escape.window="isActive = false">
+                        <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
+                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                            x-on:keydown.escape.window="isActive = false">
 
-                    <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
-                        <div class="p-2 items-center justify-center">
-                            <h1 class="text-lg">About Wonders Gallery</h1>
-                            <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
+                                <div class="p-2 items-center justify-center">
+                                    <h1 class="text-lg">About Wonders Gallery</h1>
+                                    <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                                </div>
+                                <div class="border border-[#9e9e9e] 1px w-full"></div>
+                                <div class="flex p-2 gap-4 justify-center mt-2">
+                                    <a href=""class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">About us</a>
+                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Contact us</a>
+                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">How it works</a>
+                                </div>
+                            </ul>
+                            
+
                         </div>
-                        <div class="border border-[#9e9e9e] 1px w-full"></div>
-                        <div class="flex p-2 gap-4 justify-center mt-2">
-                            <a href=""class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">About us</a>
-                            <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Contact us</a>
-                            <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">How it works</a>
-                        </div>
-                    </ul>
+                    </div>
+                    {{-- Navbar dropdowns --}}
+
+                         {{-- Navbar dropdowns about --}}
+                         <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                        
+                            <button x-on:click="isActive = !isActive"
+                            class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                            href="#How">
+                       Blog post
+                       <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
+                               class="text-black text-xs"></i>
+                       </button>
                     
-
+    
+                            <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
+                                role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                                x-on:keydown.escape.window="isActive = false">
+    
+                                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
+                                    <div class="p-2 items-center justify-center">
+                                        <h1 class="text-lg">Blog post Wonders Gallery</h1>
+                                        <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                                    </div>
+                                    <div class="border border-[#9e9e9e] 1px w-96"></div>
+                                    <div class="flex p-2 gap-4 justify-center mt-2">
+                                       <h1 class="p-4">Coming soon!</h1>
+                                    </div>
+                                </ul>
+                                
+    
+                            </div>
+                        </div>
+                        
+                        {{-- Navbar dropdowns --}}
+                    
+                   
                 </div>
             </div>
-            {{-- Navbar dropdowns --}}
-           
-           
-        </div>
-    </div>
 
 
 
 
-    <div class="flex justify-between space-x-2">
+            <div class="flex justify-between space-x-2">
 
-        <div class="hidden md:flex">
-            <form action="{{ url('search') }}" method="GET" role="search">
+                <div class="hidden md:flex sm:flex">
+                    <form action="{{ url('search') }}" method="GET" role="search">
 
 
-                <div class="relative text-gray-600">
-                    <input type="text" placeholder="Search places.."
-                        class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 " name="search"
-                        value="{{ Request::get('search') }}" required>
-                    <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
-                        <i class="fa-solid fa-magnifying-glass text-black"></i>
-                    </button>
+                        <div class="relative text-gray-600">
+                            <input type="text" placeholder="Search places..."
+                                class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 w-40 font-thin " name="search"
+                                value="{{ Request::get('search') }}" required>
+                            <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
+                                <i class="fa-solid fa-magnifying-glass text-black"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-        @auth
+                @auth
 
 
 
-            <div x-data="{ isActive: false }" class="relative lg:block hidden">
-                <div class="mt-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
-                    href="#">
+                    <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                        <div class="mt-2 relative font-medium text-black before:absolute before:-bottom-1 hover:before:scale-x-100 cursor-pointer"
+                            href="#">
 
 
-                    <button x-on:click="isActive = !isActive"
-                        class="h-full p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-700">
-                        <i class="fa-solid fa-user text-black"></i>
-                    </button>
-                </div>
+                            <button x-on:click="isActive = !isActive"
+                                class="h-full p-2 text-gray-600  ">
+                               <img src="../img/user.png" class="w-7 h-7 rounded-full" alt="">
+                                {{-- <i class="fa-solid fa-user text-black"></i> --}}
+                            </button>
+                        </div>
 
-                <div class="absolute right-0 z-10 mt-6 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
-                    role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
-                    x-on:keydown.escape.window="isActive = false">
-                    <h1 class="p-4 text-center font-bold uppercase">Welcome, {{ auth()->user()->name }}!</h1>
-                    <div class="p-2">
-                        <strong class="block p-2 text-xs font-medium uppercase text-gray-400">
-                            General
-                        </strong>
+                        <div class="absolute right-0 z-10 mt-6 w-56 divide-y divide-gray-100  border border-gray-100 bg-white shadow-lg"
+                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                            x-on:keydown.escape.window="isActive = false">
+                            <h1 class="p-4 text-center font-bold uppercase">Welcome, {{ auth()->user()->name }}!</h1>
+                            <div class="p-2">
+                                <strong class="block p-2 text-xs font-medium uppercase text-gray-400">
+                                    General
+                                </strong>
 
-                        <a href="{{ URL::to('uploads') }}"
-                            class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-[#03a9f4] hover:text-white font-thin"
-                            role="menuitem">
-                            Go to dashboard
-                        </a>
+                                <a href="{{ URL::to('uploads') }}"
+                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-[#03a9f4] hover:text-white font-thin"
+                                    role="menuitem">
+                                    Go to dashboard
+                                </a>
 
 
-                        <form method="POST" action="/logout">
-                            @csrf
-                            <a href=""
-                                class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-[#03a9f4] hover:text-white font-thin">
-                                <button type="submit" href="" role="menuitem">
-                                    Log out
-                                </button>
-                            </a>
-                        </form>
+                                <form method="POST" action="/logout">
+                                    @csrf
+                                    <a href=""
+                                        class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-[#03a9f4] hover:text-white font-thin">
+                                        <button type="submit" href="" role="menuitem">
+                                            Log out
+                                        </button>
+                                    </a>
+                                </form>
 
+                            </div>
+
+
+                        </div>
+                    </div>
+                @else
+                    <div x-data="{ isActive: false }" class="relative lg:block hidden">
+
+
+                        <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600 mt-1 mx-auto">
+                            <span class="sr-only">Acc</span>
+                            <i class="fa-regular fa-user text[#212121]"></i></label>
+                        </button>
+
+                        <div class="absolute right-0 z-10 mt-2  divide-y divide-gray-100 shadow-lg"
+                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                            x-on:keydown.escape.window="isActive = false">
+
+                            <ul tabindex="0"
+                                class="dropdown-content menu p-2 shadow bg-white mt-3  w-86 text-black font-sans">
+                                <div class="p-4 items-center justify-center ">
+                                    <h1 class="text-lg">Wonders Gallery Accounts</h1>
+                                    <h2 class="text-sm text-gray-500 font-thin">Create or login account</h2>
+                                </div>
+                                <div class="border border-[#9e9e9e] 1px w-full "></div>
+                                <div class="flex p-2 gap-4 justify-center mt-2 ">
+
+                                    <a
+                                        href="{{ URL::to('login') }}"class="bg-black text-white font-thin hover:bg-[#03a9f4] p-4 transition duration:300 w-36 text-center">Sign
+                                        in</a>
+                                    <a href="{{ URL::to('register') }}"
+                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">
+                                        Sign up</a>
+                                </div>
+                            </ul>
+
+                        </div>
                     </div>
 
+                @endauth
 
-                </div>
+
+                <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
             </div>
-        @else
-            <div x-data="{ isActive: false }" class="relative lg:block hidden">
-
-
-                <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600 mt-1 mx-auto">
-                    <span class="sr-only">Acc</span>
-                    <i class="fa-regular fa-user text[#212121]"></i></label>
+            <div class="block mt-3 lg:hidden">
+                <button
+                    class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation"
+                    data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
                 </button>
-
-                <div class="absolute right-0 z-10 mt-2  divide-y divide-gray-100 shadow-lg"
-                    role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
-                    x-on:keydown.escape.window="isActive = false">
-
-                    <ul tabindex="0"
-                        class="dropdown-content menu p-2 shadow bg-white mt-3  w-86 text-black font-sans">
-                        <div class="p-4 items-center justify-center ">
-                            <h1 class="text-lg">Wonders Gallery Accounts</h1>
-                            <h2 class="text-sm text-gray-500 font-thin">Create or login account</h2>
-                        </div>
-                        <div class="border border-[#9e9e9e] 1px w-full "></div>
-                        <div class="flex p-2 gap-4 justify-center mt-2 ">
-
-                            <a
-                                href="{{ URL::to('login') }}"class="bg-black text-white font-thin hover:bg-[#03a9f4] p-4 transition duration:300 w-36 text-center">Sign
-                                in</a>
-                            <a href="{{ URL::to('register') }}"
-                                class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">
-                                Sign up</a>
-                        </div>
-                    </ul>
-
-                </div>
             </div>
+        </div>
+    </nav>
 
-        @endauth
-
-
-        <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
-    </div>
-    <div class="block lg:hidden">
-        <button
-            class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation"
-            data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-    </div>
-</div>
-</nav>
 <!-- Breadcrumb -->
 <div class="bg-gray-50">
-<nav class="container flex px-7 mx-auto py-3 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 md:mt-20 mt-16 justify-left md:justify-end w-full"
-    aria-label="Breadcrumb">
-    <ol class="inline-flex items-center space-x-1 md:space-x-3 gap-1">
-        <li class="inline-flex items-center">
-            <a href="/"
-                class="inline-flex items-center text-sm mx-auto font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
-                <i class="fa-solid fa-house text-black"></i>
-            </a>
-        </li>
-        <li>
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-angle-right text-black text-xs"></i>
-                <a
-                    class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">Search</a>
-            </div>
-        </li>
-    </ol>
-</nav>
+  <nav class="md:container flex px-7 mx-auto py-3 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 md:mt-20 mt-20 justify-left md:justify-end w-full"
+      aria-label="Breadcrumb">
+      <ol class="inline-flex items-center space-x-1 md:space-x-3 gap-1">
+          <li class="inline-flex items-center">
+              <a href="/"
+                  class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                  <i class="fa-solid fa-house text-black"></i>
+              </a>
+          </li>
+          <li>
+              <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-angle-right text-black text-xs"></i>
+                  <a
+                      class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">Search</a>
+              </div>
+          </li>
+      </ol>
+  </nav>
 
 </div>
 
@@ -273,27 +306,36 @@ class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transfor
                 
      
  
-  <section id="all ">
-   <div class="py-16">
+  <section id="">
+   <div class="md:container mx-auto px-7 justify-center">
+    <div class="">
+      <div class="flex gap-3">
+          <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4]">Search for: 
+          </h1>
+          <h1 class="mt-7 mb-2 text-2xl text-gray-500 text-sm ">"{{ Request::get('search') }}"
+          </h1>
+      </div>
+      <p class="mb-2 text-xs text-gray-500">
+          Traveling is an exhilarating experience that broadens our horizons and exposes us to the
+                              wonders of the world. From the picturesque beaches of Bali to the magnificent pyramids
+                              of Giza, there is an endless array of destinations that offer unique cultural
+                              experiences, breathtaking scenery, and memorable adventures. Whether you're looking for
+                              a tropical getaway or an urban adventure, the best places in the world have something to
+                              offer for everyone. So pack your bags, grab your passport, and get ready to embark on a
+                              journey of a lifetime!</p>
+      <div class="border border-[#9e9e9e] "></div>
+
+  </div>
     
-    <div class="md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
-      
-        <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">Search results</h1>
-    <h2>Collections of images from beautiful places around the world</h2>
-    
-    </div>
-    
-    <div class="md:grid gap-3 grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
+    <div class="md:grid gap-3 grid-cols-3 md:container lg:py-16 py-16 md:py-12 w-96 sm:w-auto mb-4">
 
       
       
       @forelse ($searchPlaces as $item)
     
 
-      <a
-  href="{{ route('display.show', ['id' => $item->id]) }}"
-  class="relative block overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat" style="background-image: url('{{ $item->image }}')">
-  <div class="absolute inset-0 bg-black/25"></div>
+      <a href="{{ route('display.show', ['id' => $item->id]) }}" class="mb-4 relative block overflow-hidden  bg-cover bg-center bg-no-repeat" style="background-image: url('{{ $item->image }}')" alt="{{ $item->title}}">
+        <div class="absolute inset-0 bg-black/25"></div>
 
   <div class="relative flex items-start justify-between p-4 sm:p-6 lg:p-8">
     <div class="sm:pt-18 pt-12 text-white lg:pt-24">
@@ -310,45 +352,13 @@ class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transfor
 
       @empty
 
-      <div class="col-md-12 p-2">
-        <h1 class="row">No such place found</h1>
+      <div class="col-md-12 py-4 px-4 border border-red-500 w-96 bg-red-100 text-gray-500 text-sm justify-right">
+        <h1 class="row ">No such place found.</h1>
       </div>
       @endforelse
     
     </div>
-    <div class="md:grid gap-3 grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 px-4 w-96 sm:w-auto">
-
-        <a href="/gallery">
-            <button
-    class="mt-8 group relative inline-flex items-center overflow-hidden rounded-full bg-[#212121] px-8 py-3 text-white focus:outline-none focus:ring active:bg-[#212121]"
-    href="/gallery"
-  >
-    <span
-      class="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4"
-    >
-      <svg
-        class="h-5 w-5"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M17 8l4 4m0 0l-4 4m4-4H3"
-        />
-      </svg>
-    </span>
-  
-    <span class="text-sm font-medium transition-all group-hover:ml-4">
-     Go back
-   
-    </span>
-  </button>
-  </a>
-    </div>
+    
   </div>
 
     </section>

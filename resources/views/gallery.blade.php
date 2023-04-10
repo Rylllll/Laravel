@@ -38,67 +38,99 @@
 
    
     <nav
-        class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
+    class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
 
-        <div class="md:container flex items-center justify-between bg-white p-4 font-bold gap-2">
-            <div class="flex items-center gap-8">
-                <a href="/">
-                    <img src="../img/ph.png" alt="">
-                </a>
-                <div class="hidden xl:flex gap-6 mt-2 text-sm  ">
-                     {{-- Navbar dropdowns all --}}
-                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
-                        
-                        <button x-on:click="isActive = !isActive"
-                        class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                        href="#How">
-                   All places
-                   <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
-                           class="text-black text-xs"></i>
-                   </button>
-                
+    <div class="md:container flex items-center justify-between bg-white p-4 font-bold gap-2">
+        <div class="flex items-center gap-8">
+            <a href="/">
+                <img src="../img/ph.png" alt="">
+            </a>
+            <div class="hidden xl:flex gap-6 mt-2 text-sm  ">
+                 {{-- Navbar dropdowns all --}}
+                 <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                    
+                    <button x-on:click="isActive = !isActive"
+                    class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                    href="#How">
+               All places
+               <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
+                       class="text-black text-xs"></i>
+               </button>
+            
 
-                        <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
-                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
-                            x-on:keydown.escape.window="isActive = false">
+                    <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
+                        role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                        x-on:keydown.escape.window="isActive = false">
 
-                            <ul tabindex="0"
-                                class="dropdown-content menu p-2 shadow bg-white mt-3  max-w-96 text-black font-sans ">
-                                <div class="p-2 items-center justify-center ">
-                                    <h1 class="text-lg">Wonders Gallery all images</h1>
-                                    <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
-                                </div>
-                                <div class="border border-[#9e9e9e] 1px w-full "></div>
-                                <div class="flex p-2 gap-4 justify-center mt-2 ">
+                        <ul tabindex="0"
+                            class="dropdown-content menu p-2 shadow bg-white mt-3  max-w-96 text-black font-sans ">
+                            <div class="p-2 items-center justify-center ">
+                                <h1 class="text-lg">Wonders Gallery all images</h1>
+                                <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                            </div>
+                            <div class="border border-[#9e9e9e] 1px w-full "></div>
+                            <div class="flex p-2 gap-4 justify-center mt-2 ">
 
-                                    <a href="{{ route('uploads.category', 'Beach') }}"class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Beach</a>
-                                    <a href="{{ route('uploads.category', 'Cave') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cave</a>
-                                    <a href="{{ route('uploads.category', 'Mountain') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Mountain</a>
-                                    <a href="{{ route('uploads.category', 'Forest') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Forest</a>
-                                    <a href="{{ route('uploads.category', 'Cities') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cities</a>
-                               
-                                </div>
-                                <div class="flex p-2 justify-left mt-2 text-[#03a9f4] font-thin">
-                                    <a href="/gallery">See all images<i class="fa-sharp  fa-solid fa-angle-right text-[#03a9f4] text-xs  ml-1" ></i></a>
-                                </div>
-                            </ul>
+                                <a href="{{ route('uploads.category', 'Beach') }}"class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Beach</a>
+                                <a href="{{ route('uploads.category', 'Cave') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cave</a>
+                                <a href="{{ route('uploads.category', 'Mountain') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Mountain</a>
+                                <a href="{{ route('uploads.category', 'Forest') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Forest</a>
+                                <a href="{{ route('uploads.category', 'Cities') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cities</a>
+                           
+                            </div>
+                            <div class="flex p-2 justify-left mt-2 text-[#03a9f4] font-thin">
+                                <a href="/gallery">See all images<i class="fa-sharp  fa-solid fa-angle-right text-[#03a9f4] text-xs  ml-1" ></i></a>
+                            </div>
+                        </ul>
 
-                        </div>
                     </div>
-                    {{-- Navbar dropdowns --}}
-                    <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                    href="/">Home</a>
+                </div>
+                {{-- Navbar dropdowns --}}
+             
+                <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                href="/">Home</a>
 
-                    <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
-                    href="/">Blog post</a>
+                {{-- Navbar dropdowns about --}}
+                <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                    
+                    <button x-on:click="isActive = !isActive"
+                    class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                    href="#How">
+               About us
+               <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
+                       class="text-black text-xs"></i>
+               </button>
+            
 
-                    {{-- Navbar dropdowns about --}}
-                    <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                    <div class="absolute left-0 z-10 mt-5 divide-y divide-gray-100 shadow-lg "
+                        role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                        x-on:keydown.escape.window="isActive = false">
+
+                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
+                            <div class="p-2 items-center justify-center">
+                                <h1 class="text-lg">About Wonders Gallery</h1>
+                                <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
+                            </div>
+                            <div class="border border-[#9e9e9e] 1px w-full"></div>
+                            <div class="flex p-2 gap-4 justify-center mt-2">
+                                <a href=""class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">About us</a>
+                                <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Contact us</a>
+                                <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">How it works</a>
+                            </div>
+                        </ul>
                         
+
+                    </div>
+                </div>
+                {{-- Navbar dropdowns --}}
+
+                     {{-- Navbar dropdowns about --}}
+                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                    
                         <button x-on:click="isActive = !isActive"
                         class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                         href="#How">
-                   About us
+                   Blog post
                    <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
                            class="text-black text-xs"></i>
                    </button>
@@ -110,145 +142,146 @@
 
                             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
                                 <div class="p-2 items-center justify-center">
-                                    <h1 class="text-lg">About Wonders Gallery</h1>
+                                    <h1 class="text-lg">Blog post Wonders Gallery</h1>
                                     <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
                                 </div>
-                                <div class="border border-[#9e9e9e] 1px w-full"></div>
+                                <div class="border border-[#9e9e9e] 1px w-96"></div>
                                 <div class="flex p-2 gap-4 justify-center mt-2">
-                                    <a href=""class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">About us</a>
-                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Contact us</a>
-                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">How it works</a>
+                                   <h1 class="p-4">Coming soon!</h1>
                                 </div>
                             </ul>
                             
 
                         </div>
                     </div>
+                    
                     {{-- Navbar dropdowns --}}
-                   
-                   
-                </div>
-            </div>
-
-
-
-
-            <div class="flex justify-between space-x-2">
-
-                <div class="hidden md:flex">
-                    <form action="{{ url('search') }}" method="GET" role="search">
-
-
-                        <div class="relative text-gray-600">
-                            <input type="text" placeholder="Search places.."
-                                class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 " name="search"
-                                value="{{ Request::get('search') }}" required>
-                            <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
-                                <i class="fa-solid fa-magnifying-glass text-black"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                @auth
-
-
-
-                    <div x-data="{ isActive: false }" class="relative lg:block hidden">
-                        <div class="mt-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:scale-x-0 before:bg-black before:transition hover:before:scale-x-100 cursor-pointer"
-                            href="#">
-
-
-                            <button x-on:click="isActive = !isActive"
-                                class="h-full p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-700">
-                                <i class="fa-solid fa-user text-black"></i>
-                            </button>
-                        </div>
-
-                        <div class="absolute right-0 z-10 mt-6 w-56 divide-y divide-gray-100 rounded-md border border-gray-100 bg-white shadow-lg"
-                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
-                            x-on:keydown.escape.window="isActive = false">
-                            <h1 class="p-4 text-center font-bold uppercase">Welcome, {{ auth()->user()->name }}!</h1>
-                            <div class="p-2">
-                                <strong class="block p-2 text-xs font-medium uppercase text-gray-400">
-                                    General
-                                </strong>
-
-                                <a href="{{ URL::to('uploads') }}"
-                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-[#03a9f4] hover:text-white font-thin"
-                                    role="menuitem">
-                                    Go to dashboard
-                                </a>
-
-
-                                <form method="POST" action="/logout">
-                                    @csrf
-                                    <a href=""
-                                        class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-[#03a9f4] hover:text-white font-thin">
-                                        <button type="submit" href="" role="menuitem">
-                                            Log out
-                                        </button>
-                                    </a>
-                                </form>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                @else
-                    <div x-data="{ isActive: false }" class="relative lg:block hidden">
-
-
-                        <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600 mt-1 mx-auto">
-                            <span class="sr-only">Acc</span>
-                            <i class="fa-regular fa-user text[#212121]"></i></label>
-                        </button>
-
-                        <div class="absolute right-0 z-10 mt-2  divide-y divide-gray-100 shadow-lg"
-                            role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
-                            x-on:keydown.escape.window="isActive = false">
-
-                            <ul tabindex="0"
-                                class="dropdown-content menu p-2 shadow bg-white mt-3  w-86 text-black font-sans">
-                                <div class="p-4 items-center justify-center ">
-                                    <h1 class="text-lg">Wonders Gallery Accounts</h1>
-                                    <h2 class="text-sm text-gray-500 font-thin">Create or login account</h2>
-                                </div>
-                                <div class="border border-[#9e9e9e] 1px w-full "></div>
-                                <div class="flex p-2 gap-4 justify-center mt-2 ">
-
-                                    <a
-                                        href="{{ URL::to('login') }}"class="bg-black text-white font-thin hover:bg-[#03a9f4] p-4 transition duration:300 w-36 text-center">Sign
-                                        in</a>
-                                    <a href="{{ URL::to('register') }}"
-                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">
-                                        Sign up</a>
-                                </div>
-                            </ul>
-
-                        </div>
-                    </div>
-
-                @endauth
-
-
-                <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
-            </div>
-            <div class="block lg:hidden">
-                <button
-                    class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation"
-                    data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
+                
+               
             </div>
         </div>
-    </nav>
+
+
+
+
+        <div class="flex justify-between space-x-2">
+
+            <div class="hidden md:flex sm:flex">
+                <form action="{{ url('search') }}" method="GET" role="search">
+
+
+                    <div class="relative text-gray-600">
+                        <input type="text" placeholder="Search places..."
+                            class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 w-40 font-thin " name="search"
+                            value="{{ Request::get('search') }}" required>
+                        <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
+                            <i class="fa-solid fa-magnifying-glass text-black"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            @auth
+
+
+
+                <div x-data="{ isActive: false }" class="relative lg:block hidden">
+                    <div class="mt-2 relative font-medium text-black before:absolute before:-bottom-1 hover:before:scale-x-100 cursor-pointer"
+                        href="#">
+
+
+                        <button x-on:click="isActive = !isActive"
+                            class="h-full p-2 text-gray-600  ">
+                           <img src="../img/user.png" class="w-7 h-7 rounded-full" alt="">
+                            {{-- <i class="fa-solid fa-user text-black"></i> --}}
+                        </button>
+                    </div>
+
+                    <div class="absolute right-0 z-10 mt-6 w-56 divide-y divide-gray-100  border border-gray-100 bg-white shadow-lg"
+                        role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                        x-on:keydown.escape.window="isActive = false">
+                        <h1 class="p-4 text-center font-bold uppercase">Welcome, {{ auth()->user()->name }}!</h1>
+                        <div class="p-2">
+                            <strong class="block p-2 text-xs font-medium uppercase text-gray-400">
+                                General
+                            </strong>
+
+                            <a href="{{ URL::to('uploads') }}"
+                                class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-[#03a9f4] hover:text-white font-thin"
+                                role="menuitem">
+                                Go to dashboard
+                            </a>
+
+
+                            <form method="POST" action="/logout">
+                                @csrf
+                                <a href=""
+                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-[#03a9f4] hover:text-white font-thin">
+                                    <button type="submit" href="" role="menuitem">
+                                        Log out
+                                    </button>
+                                </a>
+                            </form>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            @else
+                <div x-data="{ isActive: false }" class="relative lg:block hidden">
+
+
+                    <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600 mt-1 mx-auto">
+                        <span class="sr-only">Acc</span>
+                        <i class="fa-regular fa-user text[#212121]"></i></label>
+                    </button>
+
+                    <div class="absolute right-0 z-10 mt-2  divide-y divide-gray-100 shadow-lg"
+                        role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
+                        x-on:keydown.escape.window="isActive = false">
+
+                        <ul tabindex="0"
+                            class="dropdown-content menu p-2 shadow bg-white mt-3  w-86 text-black font-sans">
+                            <div class="p-4 items-center justify-center ">
+                                <h1 class="text-lg">Wonders Gallery Accounts</h1>
+                                <h2 class="text-sm text-gray-500 font-thin">Create or login account</h2>
+                            </div>
+                            <div class="border border-[#9e9e9e] 1px w-full "></div>
+                            <div class="flex p-2 gap-4 justify-center mt-2 ">
+
+                                <a
+                                    href="{{ URL::to('login') }}"class="bg-black text-white font-thin hover:bg-[#03a9f4] p-4 transition duration:300 w-36 text-center">Sign
+                                    in</a>
+                                <a href="{{ URL::to('register') }}"
+                                    class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">
+                                    Sign up</a>
+                            </div>
+                        </ul>
+
+                    </div>
+                </div>
+
+            @endauth
+
+
+            <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
+        </div>
+        <div class="block mt-3 lg:hidden">
+            <button
+                class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation"
+                data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
     <!-- Breadcrumb -->
     <div class="bg-gray-50">
-        <nav class="container flex px-7 mx-auto py-3 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 md:mt-20 mt-16 justify-left md:justify-end w-full"
+        <nav class="md:container flex px-7 mx-auto py-3 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 md:mt-20 mt-20 justify-left md:justify-end w-full"
             aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3 gap-1">
                 <li class="inline-flex items-center">
@@ -270,7 +303,7 @@
     </div>
 
     {{-- Title --}}
-    <div class="container mx-auto px-7">
+    <div class="md:container mx-auto px-7">
         <div class="flex gap-1">
             <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4]">Wonders
             </h1>
@@ -291,7 +324,7 @@
 
 
 
-    <section id="all" class="container justify-center flex mx-auto">
+    <section id="all" class="md:container justify-center flex mx-auto">
         <div class="">
             <div class="md:grid-cols-3 2xl:mx-auto lg:px-7  md:px-7 py-9 px-7 w-96 sm:w-auto">
                 <h1 class="text-black sm:w-full md:w-1/4 font-black text-2xl">All
@@ -301,7 +334,7 @@
             </div>
 
             <div
-                class="container w-full max-w-full mx-auto px-7 pb-10 gap-6 columns-3 grid md:block md:grid-cols-3 lg:px-7 md:px-7 px-7 w-96 sm:w-auto">
+                class="md:container w-full max-w-full mx-auto px-7 pb-10 gap-6 columns-3 grid md:block md:grid-cols-3 lg:px-7 md:px-7 px-7 w-96 sm:w-auto">
                 <div class="h-50 ">
                     @foreach ($homes as $item)
                         <img src="{{ $item->image }}" class="transition hover:scale-90">

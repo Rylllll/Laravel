@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/730a8ae355.js" crossorigin="anonymous"></script>
-    <script>document.documentElement.classList.add('js')</script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
@@ -169,13 +169,13 @@
 
             <div class="flex justify-between space-x-2">
 
-                <div class="hidden md:flex">
+                <div class="hidden md:flex sm:flex">
                     <form action="{{ url('search') }}" method="GET" role="search">
 
 
                         <div class="relative text-gray-600">
                             <input type="text" placeholder="Search places..."
-                                class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 font-thin " name="search"
+                                class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 w-40 font-thin " name="search"
                                 value="{{ Request::get('search') }}" required>
                             <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
                                 <i class="fa-solid fa-magnifying-glass text-black"></i>
@@ -269,7 +269,7 @@
 
                 <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
             </div>
-            <div class="block lg:hidden">
+            <div class="block mt-3 lg:hidden">
                 <button
                     class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation"
                     data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
@@ -382,6 +382,7 @@
 
 
     <section class="md:container relative  items-center w-full mx-auto justify-center mb-10">
+
         <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-3">
             @foreach ($takes as $item)
                 <div class="px-7 gap-2">
@@ -400,6 +401,7 @@
             @endforeach
 
         </div>
+ 
     </section>
 
     {{-- Title2 --}}
@@ -431,8 +433,8 @@
     <div class="md:container relative  items-center w-full mx-auto justify-center ">
         <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-4">
             @foreach ($take as $item)
-                <div class="px-7">
-                    <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{ $item->image }}"
+                <div class="px-7 ">
+                    <img class=" object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{ $item->image }}"
                         alt="{{ $item->title }}">
                     <div class="justify-between w-full">
                         <h1
@@ -1159,24 +1161,25 @@
 
                 @endauth
                 <li>
-                    <a href="#About"
+                    <a href="/gallery"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                        <i class="fa-sharp fa-solid fa-circle-info hover:text-white"></i>
-                        <span class="ml-3">About</span>
+                   
+                        <i class="fa-solid fa-image hover:text-white"></i>
+                        <span class="ml-3">All places</span>
                     </a>
                 </li>
                 <li>
                     <a href="#How"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                        <i class="fa-solid fa-image hover:text-white"></i>
-                        <span class="ml-3">How it works</span>
+                        <i class="fa-sharp fa-solid fa-circle-info hover:text-white"></i>
+                        <span class="ml-3">About us</span>
                     </a>
                 </li>
                 <li>
                     <a href="#Gallery"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
                         <i class="fa-sharp fa-solid fa-address-card hover:text-white"></i>
-                        <span class="ml-3">Gallery</span>
+                        <span class="ml-3">Blog post</span>
                     </a>
                 </li>
 
