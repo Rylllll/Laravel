@@ -16,6 +16,7 @@
         "daisyui": "^2.51.5",
         "flowbite": "^1.6.4",
         "react-grid-carousel": "^1.0.1",
+        "scrollreveal": "^4.0.9",
         "sweetalert2": "^11.4.8",
         "taos": "^1.0.3"
     }

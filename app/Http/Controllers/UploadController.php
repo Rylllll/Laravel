@@ -78,7 +78,8 @@ public function create(){
 public function category($category)
 {
     $images = Upload::where('category', $category)->get();
-    return view('uploader.category', compact('images', 'category'));
+    $count = count($images);
+    return view('uploader.category', compact('images', 'category', 'count'));
 }
 
 public function edit($id)

@@ -84,8 +84,8 @@
     </nav>
 
     {{-- Breadcrumbs --}}
-    <div class="bg-gray-100 font-sans">
-        <nav class="container flex px-7 mx-auto py-3 text-gray-700 bg-gray-100 dark:bg-gray-800 dark:border-gray-700 md:mt-16 justify-left md:justify-end w-full"
+    <div class="bg-gray-100 font-sans px-7">
+        <nav class="container flex  mx-auto py-3 text-gray-700 bg-gray-100 dark:bg-gray-800 dark:border-gray-700 md:mt-16 justify-left md:justify-end w-full"
             aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3 gap-1">
                 <li class="inline-flex items-center">
@@ -95,7 +95,7 @@
                     </a>
                 </li>
                 <li>
-                    <div class="flex items-center gap-1">
+                    <div class="flex items-center gap-1 ">
                         <i class="fa-solid fa-angle-right text-black text-xs"></i>
                         <p
                             class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">

@@ -20,6 +20,7 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link href="./app.css" rel="stylesheet">
     <title>Wonders Gallery</title>
     @vite('resources/css/app.css')
@@ -31,7 +32,7 @@
 
 
 
-<body class="">
+<body class="font-sans">
 
     <button x-data="topBtn" @click="scrolltoTop" id="topButton"
     class="fixed z-20 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce transform-gpu translate-z-0 hover:translate-z-1">
@@ -40,8 +41,7 @@
 
 
 
-    <nav
-        class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
+<nav class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center">
 
         <div class="md:container flex items-center justify-between bg-white p-4 font-bold gap-2">
             <div class="flex items-center gap-8">
@@ -53,11 +53,11 @@
                      <div x-data="{ isActive: false }" class="relative lg:block hidden">
                         
                         <button x-on:click="isActive = !isActive"
-                        class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                        class="gap-2 relative font-medium text-[#212121] before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                         href="#How">
                    All places
                    <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
-                           class="text-black text-xs"></i>
+                           class="text-[#212121] text-xs"></i>
                    </button>
                 
 
@@ -66,7 +66,7 @@
                             x-on:keydown.escape.window="isActive = false">
 
                             <ul tabindex="0"
-                                class="dropdown-content menu p-2 shadow bg-white mt-3  max-w-96 text-black font-sans ">
+                                class="dropdown-content menu p-2 shadow bg-white mt-3  max-w-96 text-[#212121] font-sans ">
                                 <div class="p-2 items-center justify-center ">
                                     <h1 class="text-lg">Wonders Gallery all images</h1>
                                     <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
@@ -74,11 +74,11 @@
                                 <div class="border border-[#9e9e9e] 1px w-full "></div>
                                 <div class="flex p-2 gap-4 justify-center mt-2 ">
 
-                                    <a href="{{ route('uploads.category', 'Beach') }}"class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Beach</a>
-                                    <a href="{{ route('uploads.category', 'Cave') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cave</a>
-                                    <a href="{{ route('uploads.category', 'Mountain') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Mountain</a>
-                                    <a href="{{ route('uploads.category', 'Forest') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Forest</a>
-                                    <a href="{{ route('uploads.category', 'Cities') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cities</a>
+                                    <a href="{{ route('uploads.category', 'Beach') }}"class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Beach</a>
+                                    <a href="{{ route('uploads.category', 'Cave') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Cave</a>
+                                    <a href="{{ route('uploads.category', 'Mountain') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Mountain</a>
+                                    <a href="{{ route('uploads.category', 'Forest') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Forest</a>
+                                    <a href="{{ route('uploads.category', 'Cities') }}" class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Cities</a>
                                
                                 </div>
                                 <div class="flex p-2 justify-left mt-2 text-[#03a9f4] font-thin">
@@ -90,18 +90,18 @@
                     </div>
                     {{-- Navbar dropdowns --}}
                  
-                    <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                    <a class="relative font-medium text-[#212121] before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                     href="/">Home</a>
 
                     {{-- Navbar dropdowns about --}}
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
                         
                         <button x-on:click="isActive = !isActive"
-                        class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                        class="gap-2 relative font-medium text-[#212121] before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                         href="#How">
                    About us
                    <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
-                           class="text-black text-xs"></i>
+                           class="text-[#212121] text-xs"></i>
                    </button>
                 
 
@@ -109,16 +109,16 @@
                             role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
                             x-on:keydown.escape.window="isActive = false">
 
-                            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
+                            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-[#212121] font-sans">
                                 <div class="p-2 items-center justify-center">
                                     <h1 class="text-lg">About Wonders Gallery</h1>
                                     <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
                                 </div>
                                 <div class="border border-[#9e9e9e] 1px w-full"></div>
                                 <div class="flex p-2 gap-4 justify-center mt-2">
-                                    <a href=""class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">About us</a>
-                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Contact us</a>
-                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">How it works</a>
+                                    <a href=""class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">About us</a>
+                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Contact us</a>
+                                    <a href="" class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">How it works</a>
                                 </div>
                             </ul>
                             
@@ -131,11 +131,11 @@
                          <div x-data="{ isActive: false }" class="relative lg:block hidden">
                         
                             <button x-on:click="isActive = !isActive"
-                            class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                            class="gap-2 relative font-medium text-[#212121] before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                             href="#How">
                        Blog post
                        <i x-bind:class="{'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive}"
-                               class="text-black text-xs"></i>
+                               class="text-[#212121] text-xs"></i>
                        </button>
                     
     
@@ -143,7 +143,7 @@
                                 role="menu" x-cloak x-transition x-show="isActive" x-on:click.away="isActive = false"
                                 x-on:keydown.escape.window="isActive = false">
     
-                                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
+                                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-[#212121] font-sans">
                                     <div class="p-2 items-center justify-center">
                                         <h1 class="text-lg">Blog post Wonders Gallery</h1>
                                         <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
@@ -178,7 +178,7 @@
                                 class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 w-40 font-thin " name="search"
                                 value="{{ Request::get('search') }}" required>
                             <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
-                                <i class="fa-solid fa-magnifying-glass text-black"></i>
+                                <i class="fa-solid fa-magnifying-glass text-[#212121]"></i>
                             </button>
                         </div>
                     </form>
@@ -188,14 +188,14 @@
 
 
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
-                        <div class="mt-2 relative font-medium text-black before:absolute before:-bottom-1 hover:before:scale-x-100 cursor-pointer"
+                        <div class="mt-2 relative font-medium text-[#212121] before:absolute before:-bottom-1 hover:before:scale-x-100 cursor-pointer"
                             href="#">
 
 
                             <button x-on:click="isActive = !isActive"
                                 class="h-full p-2 text-gray-600  ">
                                <img src="../img/user.png" class="w-7 h-7 rounded-full" alt="">
-                                {{-- <i class="fa-solid fa-user text-black"></i> --}}
+                                {{-- <i class="fa-solid fa-user text-[#212121]"></i> --}}
                             </button>
                         </div>
 
@@ -244,7 +244,7 @@
                             x-on:keydown.escape.window="isActive = false">
 
                             <ul tabindex="0"
-                                class="dropdown-content menu p-2 shadow bg-white mt-3  w-86 text-black font-sans">
+                                class="dropdown-content menu p-2 shadow bg-white mt-3  w-86 text-[#212121] font-sans">
                                 <div class="p-4 items-center justify-center ">
                                     <h1 class="text-lg">Wonders Gallery Accounts</h1>
                                     <h2 class="text-sm text-gray-500 font-thin">Create or login account</h2>
@@ -253,10 +253,10 @@
                                 <div class="flex p-2 gap-4 justify-center mt-2 ">
 
                                     <a
-                                        href="{{ URL::to('login') }}"class="bg-black text-white font-thin hover:bg-[#03a9f4] p-4 transition duration:300 w-36 text-center">Sign
+                                        href="{{ URL::to('login') }}"class="bg-[#212121] text-white font-thin hover:bg-[#03a9f4] p-4 transition duration:300 w-36 text-center">Sign
                                         in</a>
                                     <a href="{{ URL::to('register') }}"
-                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">
+                                        class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">
                                         Sign up</a>
                                 </div>
                             </ul>
@@ -283,55 +283,125 @@
     </nav>
 
 
-    {{-- Carousel --}}
 
-    <section class="mt-18">
-        <div id="default-carousel" class="relative w-full justify-center mx-auto" data-carousel="slide">
 
-            <div class="relative h-60 overflow-hidden md:h-96 justify-center mx-auto">
+      <section class="mt-28 container justify-center mx-auto ">
+        <div
+          class="mx-auto container py-8 sm:py-12 sm:px-6 lg:py-16 rounded-lg "
+        >
 
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <img src="../img/1.png"
-                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="...">
+        <div class="">
+          <div class="">
+            <div>
+            <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl text-[#03a9f4] mb-2 slide-right ">READY TO EXPLORE THE BEAUTY OF</h2>
+            
+            <div class="flex">
+            <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl mb-2 text-black slide-right w-3/4">WONDERFUL WORLD</h2>
+            <p class="text-gray-600 text-black slide-right justify-left mt-2">
+              
+              Each wonder tells a unique story of its time, culture, and the people who built it. They are a reflection of human ambition and the desire to leave a lasting legacy. 
+            </p>
+          
+          </div>
 
+          
+    
+           
+          </div>
+          
+          <div class="w-full h-auto relative mt-10">
+            <div class="relative">
+               
+<div id="default-carousel" class="relative w-full" data-carousel="slide">
+
+  <div class="relative h-56 overflow-hidden md:h-96">
+
+       @foreach($takes as $item)
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="{{$item->image}}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+      </div>
+      
+     @endforeach
+      
+  </div>
+  <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+      <button type="button" class="w-3 h-3 " aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+      <button type="button" class="w-3 h-3 " aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+      <button type="button" class="w-3 h-3 " aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+      <button type="button" class="w-3 h-3 " aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+      <button type="button" class="w-3 h-3 " aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+      <button type="button" class="w-3 h-3 " aria-current="false" aria-label="Slide 5" data-carousel-slide-to="5"></button>
+  </div>
+
+</div>
+
+                <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 slide-right ">
+                    <form action="{{ url('search') }}" method="GET" role="search">
+                        <div class="relative text-gray-600">
+                            <input type="text" placeholder="Search places..."
+                                class="bg-white h-6 p-8 text-sm focus:outline-none border border-gray-500 mt-3 md:w-96 w-60 font-thin rounded-lg"
+                                name="search" value="{{ Request::get('search') }}" required>
+                            <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                                <i class="fa-solid fa-magnifying-glass text-white bg-[#03a9f4] p-4 rounded-lg"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-
-                    <img src="../img/2.png"
-                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="...">
-
-                </div>
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-
-                    <img src="../img/3.png"
-                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="...">
-
-                </div>
-
-
+                @foreach($taked as $item)
+                    <div class="absolute mt-24 top-64 left-100 right-0 mr-4 z-20 flex flex-col items-center justify-center slide-right ">
+                        <a href="{{ route('display.show', ['id' => $item->id]) }}" class="flex flex-col items-center bg-white shadow-xl md:flex-row md:max-w-xl  dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white slide-right ">{{$item->title}}</h5>
+                                <p class="mb-3 font-normal text-black dark:text-gray-400 text-sm slide-right ">View the latest place!</p>
+                            </div>
+                            <img class="object-cover w-full h-full md:h-full md:w-48 md:rounded-none slide-right " src="{{$item->image}}" alt="{{$item->title}}">
+                        </a>
+                    </div>
+                @endforeach
             </div>
-            <div class="relative z-50 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2 justify-center mx-auto">
-                <button type="button" class="w-3 h-3 " aria-current="true" aria-label="Slide 1"
-                    data-carousel-slide-to="0"></button>
-                <button type="button" class="w-3 h-3 " aria-current="false" aria-label="Slide 2"
-                    data-carousel-slide-to="1"></button>
-                <button type="button" class="w-3 h-3 " aria-current="false" aria-label="Slide 3"
-                    data-carousel-slide-to="2"></button>
-
-
-            </div>
-
-
         </div>
+        <p class="text-gray-600 text-black slide-right justify-left mt-4">
+          The wonders of the world are a testament to human creativity, ingenuity, and perseverance, From the ancient</p>
+       <p class="text-gray-600 text-black slide-right justify-left">
+          wonders like the Great Pyramid of Giza and the Hanging Gardens of Babylon,to the modern marvels
+       </p>
+       <p class="text-gray-600 text-black slide-right justify-left">
+        like the Panama Canal and the Burj Khalifa, these structures have captivated and inspired people for centuries.
+       </p>
+
+        
+          </div>
+        
+        </div>
+        </div>
+      
+      
+      </section>
+      
+
+ 
+    <section class="md:container items-center w-full mx-auto px-7 mt-24 mb-24">
+<div class="flex justify-between ">
+  
+
+
+
+
+    <img src="../img/sponsors1.png" class="w-28 h-auto filter grayscale slide-down" alt="">
+    <img src="../img/sponsors2.png" class="w-28 h-auto filter grayscale slide-down" alt="">
+    <img src="../img/sponsors3.png" class="w-28 h-auto grayscale slide-down" alt="">
+    <img src="../img/sponsors4.png" class="w-28 h-auto grayscale slide-down" alt="">
+    <img src="../img/sponsors5.png" class="w-28 h-auto grayscale slide-down" alt="">
+ 
+</div>
+
+ 
+  </div>
     </section>
 
-
     {{-- Icons --}}
-    <section class="md:container relative items-center w-full mx-auto justify-between px-6 mb-10 mt-5">
-        <div class="flex justify-center md:container">
+    {{-- <section class="md:container relative items-center w-full mx-auto justify-between px-6 mt-24 mb-24">
+        <div class="flex justify-center md:container slide-right ">
             <div class="md:container  md:flex flex-cols-3 flex  justify-center items-center">
         
 
@@ -339,20 +409,20 @@
                 <div class="mx-auto justify-center items-center">
                     <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center"
                         src="../img/gal3.png" alt="">
-                        <h1 class="text-center font-black">HD quality image</h1>
+                        <h1 class="text-center font-[#212121]">HD quality image</h1>
                 </div>
 
                 <div class="mx-auto justify-center items-center">
                     <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center"
                         src="../img/gal3.png" alt="">
-                        <h1 class="text-center font-black">Detailed information</h1>
+                        <h1 class="text-center font-[#212121]">Detailed information</h1>
                 </div>
 
 
                 <div class="mx-auto justify-center items-center">
                     <img class="h-auto max-w-full rounded-lg mx-auto justify-center items-center"
                         src="../img/gal3.png" alt="">
-                        <h1 class="text-center font-black">Easy navigation</h1>
+                        <h1 class="text-center font-[#212121]">Easy navigation</h1>
                     
                 </div>
 
@@ -361,17 +431,17 @@
         </div>
        
            
-    </section>
+    </section> --}}
 
 
 
 
     {{-- Title1 --}}
-    <div class="md:container mx-auto px-7">
+    <div class="md:container mx-auto px-7 latest">
         <div class="flex gap-1">
-            <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
+            <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-[#212121]">Wonders
             </h1>
-            <h1 class="mt-5 mb-2 text-2xl text-black font-black">Latest Uploads
+            <h1 class="mt-5 mb-2 text-2xl text-[#212121] font-[#212121]">Latest Uploads
             </h1>
         </div>
         <p class="mb-2 text-xs text-gray-500">
@@ -383,17 +453,17 @@
 
     <section class="md:container relative  items-center w-full mx-auto justify-center mb-10">
 
-        <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-3">
+        <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-3 latest_up">
             @foreach ($takes as $item)
                 <div class="px-7 gap-2">
                     <a href="{{ route('display.show', ['id' => $item->id]) }}"><img
-                            class="object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{ $item->image }}"
+                            class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 latest_up" src="{{ $item->image }}"
                             alt="{{ $item->title }}"></a>
                     <div class="justify-between w-full">
                         <h1
-                            class="mb-2 md:text-sm text-sm font-semibold leading-none tracking-tighter text-neutral-600">
+                            class="mb-2 md:text-sm text-sm font-semibold leading-none tracking-tighter text-neutral-600 latest_up"">
                             {{ $item->title }}</h1>
-                        <p class="text-xs mb-3">
+                        <p class="text-xs mb-3 latest_up"">
                             {{ substr($item->about, 0, 200) }}{{ strlen($item->about) > 250 ? '...' : '' }}</p>
                     </div>
 
@@ -409,13 +479,13 @@
         <div class="md:flex justify-between ">
             <div class="grid">
         <div class="flex gap-1">
-            <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-black">Wonders
+            <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4] font-[#212121] slide-right ">Wonders
             </h1>
-            <h1 class="mt-5 mb-2 text-2xl text-black font-black">Featured Places
+            <h1 class="mt-5 mb-2 text-2xl text-[#212121] font-[#212121] slide-right ">Featured Places
             </h1>
             
         </div>
-        <p class="mb-2 text-xs text-gray-500">
+        <p class="mb-2 text-xs text-gray-500 slide-right ">
             Gallery of weekly images</p>
         </div>
 
@@ -431,17 +501,17 @@
 
 
     <div class="md:container relative  items-center w-full mx-auto justify-center ">
-        <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-4">
+        <div class="grid w-full grid-cols-1 mx-auto lg:grid-cols-4 slide-right ">
             @foreach ($take as $item)
                 <div class="px-7 ">
-                    <img class=" object-cover object-center w-full mb-8 lg:h-48 md:h-36" src="{{ $item->image }}"
+                    <img class=" object-cover object-center w-full mb-8 lg:h-48 md:h-36 slide-right " src="{{ $item->image }}"
                         alt="{{ $item->title }}">
                     <div class="justify-between w-full">
                         <h1
-                            class="mb-8 md:text-xs text-sm font-semibold leading-none tracking-tighter text-neutral-600">
+                            class="mb-8 md:text-xs text-sm font-semibold leading-none tracking-tighter text-neutral-600 slide-right ">
                             {{ $item->title }}</h1>
                     </div>
-                    <a class="group relative inline-block overflow-hidden border border-[#03a9f4] px-8 py-3 focus:outline-none focus:ring w-full text-center"
+                    <a class="group relative inline-block overflow-hidden border border-[#03a9f4] px-8 py-3 focus:outline-none focus:ring w-full text-center slide-right "
                         href="{{ route('display.show', ['id' => $item->id]) }}">
                         <span
                             class="absolute inset-x-0 bottom-0 h-[2px] bg-[#03a9f4] transition-all group-hover:h-full group-active:bg-indigo-500"></span>
@@ -463,9 +533,9 @@
         {{-- Title3 --}}
         <div class="md:container mx-auto px-7">
             <div class="flex gap-1">
-                <h1 class="mt-3 mb-2 text-2xl text-[#03a9f4] font-black">Explore
+                <h1 class="mt-3 mb-2 text-2xl text-[#03a9f4] font-[#212121]">Explore
                 </h1>
-                <h1 class="mt-3 mb-2 text-2xl text-black font-black">Our Categories
+                <h1 class="mt-3 mb-2 text-2xl text-[#212121] font-[#212121]">Our Categories
                 </h1>
             </div>
             <p class="mb-2 text-xs text-gray-500">
@@ -477,7 +547,7 @@
         <div class="md:container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-2">
 
             <div class="relative">
-                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
+                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-[#212121] text-center"
                     href="{{ route('uploads.category', 'Beach') }}">
                     <img class="h-auto max-w-full " src="../img/cov1.png" alt="">
                     <span
@@ -492,7 +562,7 @@
 
 
             <div class="relative">
-                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
+                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-[#212121] text-center"
                     href="{{ route('uploads.category', 'Cave') }}">
                     <img class="h-auto max-w-full " src="../img/cov2.png" alt="">
                     <span
@@ -506,7 +576,7 @@
             </div>
 
             <div class="relative">
-                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
+                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-[#212121] text-center"
                     href="{{ route('uploads.category', 'Mountain') }}">
                     <img class="h-auto max-w-full " src="../img/cov3.png" alt="">
                     <span
@@ -526,7 +596,7 @@
         <div class="md:container grid md:flex gap-4 px-7 mx-auto justify-center w-full mt-4">
 
             <div class="relative">
-                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
+                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-[#212121] text-center"
                     href="{{ route('uploads.category', 'Forest') }}">
                     <img class="h-auto max-w-full " src="../img/cov4.png" alt="">
                     <span
@@ -540,7 +610,7 @@
             </div>
 
             <div class="relative">
-                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-black text-center"
+                <a class="group relative inline-block overflow-hidden border border-none focus:outline-none focus:ring font-[#212121] text-center"
                     href="{{ route('uploads.category', 'Cities') }}">
                     <img class="h-auto max-w-full " src="../img/cov5.png" alt="">
                     <span
@@ -616,12 +686,12 @@
                 <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3 p-9">
 
                     <a class="group relative block h-64 sm:h-80 lg:h-96">
-                        <span class="absolute inset-0 border-2 border-dashed border-black rounded-2xl"></span>
+                        <span class="absolute inset-0 border-2 border-dashed border-[#212121] rounded-2xl"></span>
 
                         <div
                             class="relative flex h-full transform items-end  rounded-2xl bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 shadow-2xl">
                             <div
-                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-black">
+                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-[#212121]">
                                 <img src="../img/gall.jpg"
                                     class="w-1/2 md:w-2/3 md:mx-auto mb-5 flex mx-auto justify-center "
                                     alt="illustration" loading="lazy" width="900" height="600">
@@ -631,7 +701,7 @@
                             </div>
 
                             <div
-                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-black">
+                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-[#212121]">
                                 <h3 class="mt-4 md:text-2xl text-sm font-medium ">Breath taking images</h3>
 
                                 <p class="mt-4 md:text-sm text-sm">
@@ -647,12 +717,12 @@
                     </a>
 
                     <a class="group relative block h-64 sm:h-80 lg:h-96">
-                        <span class="absolute inset-0 border-2 border-dashed border-black rounded-2xl"></span>
+                        <span class="absolute inset-0 border-2 border-dashed border-[#212121] rounded-2xl"></span>
 
                         <div
                             class="relative flex h-full transform items-end  rounded-2xl bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 shadow-2xl">
                             <div
-                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-black">
+                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-[#212121]">
 
                                 <img src="../img/read.jpg" class="w-2/4 md:w-2/3 ml-auto mb-5 flex mx-auto "
                                     alt="illustration" loading="lazy" width="900" height="600">
@@ -660,7 +730,7 @@
                             </div>
 
                             <div
-                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-black">
+                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-[#212121]">
                                 <h3 class="mt-4 font-medium md:text-2xl text-sm">Detailed Places</h3>
 
                                 <p class="mt-4 md:text-sm text-sm">
@@ -675,18 +745,18 @@
                     </a>
 
                     <a class="group relative block h-64 sm:h-80 lg:h-96">
-                        <span class="absolute inset-0 border-2 border-dashed border-black rounded-2xl"></span>
+                        <span class="absolute inset-0 border-2 border-dashed border-[#212121] rounded-2xl"></span>
 
                         <div
                             class="relative flex h-full transform items-end  rounded-lg bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 shadow-2xl">
                             <div
-                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-black">
+                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-[#212121]">
                                 <img src="../img/teach.jpg" class="w-2/4 ml-auto mb-5 flex mx-auto "
                                     alt="illustration" loading="lazy" width="900" height="600">
                             </div>
 
                             <div
-                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-black">
+                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-[#212121]">
                                 <h3 class="mt-4 md:text-2xl font-medium text-sm">Collections of places</h3>
 
                                 <p class="mt-4 md:text-sm text-sm">
@@ -740,7 +810,7 @@
                             class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-7 px-4 w-96 sm:w-auto">
                             @foreach ($home as $item)
                                 <a href="{{ route('display.show', ['id' => $item->id]) }}"
-                                    class="group relative block bg-black ">
+                                    class="group relative block bg-[#212121] ">
                                     <img alt="Developer" src="{{ $item->image }}"
                                         class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 " />
 
@@ -875,14 +945,14 @@
     <section class="min-h-auto flex items-stretch text-white ">
         <div class="lg:flex w-1/2 hidden bg-cover bg-no-repeat bg-center relative items-center"
             style="background-image: url('../img/cave.jpg')">
-            <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+            <div class="absolute bg-[#212121] opacity-60 inset-0 z-0"></div>
             <div class="w-full px-24 z-10">
                 <h1 class="text-5xl font-bold text-left tracking-wide">Keep it special</h1>
                 <p class="text-3xl my-4">Capture your personal memory in unique way, anywhere.</p>
             </div>
         </div>
 
-        <div class="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-black">
+        <div class="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-[#212121]">
             
             <div class="w-full py-6 z-20">
                 <h1 class="my-6">
@@ -1117,7 +1187,7 @@
                         <ul id="dropdown-example" class="hidden py-2 space-y-2">
                             <li>
                                 <a href="{{ URL::to('uploads') }}"
-                                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
                                     <i class="fa-solid fa-chart-simple hover:text-white"></i>
                                     <span class="ml-3">Dashboard</span>
                                 </a>
@@ -1131,7 +1201,7 @@
                                 @csrf
                                 <li>
                                     <button href="#" type="submit"
-                                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
                                         <i class="fa-solid fa-right-from-bracket hover:text-white"></i>
                                         <span class="ml-3">Logout</span>
                                     </button>
@@ -1142,7 +1212,7 @@
                 @else
                     <li>
                         <a href="{{ URL::to('register') }}"
-                            class=" flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
+                            class=" flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700 hover:text-white">
                             <i class="fa-solid fa-user-plus hover:text-white"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
                         </a>
@@ -1152,7 +1222,7 @@
 
                     <li>
                         <a href="{{ URL::to('login') }}"
-                            class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700">
+                            class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700">
                             <i class="fa-solid fa-right-to-bracket hover:text-white"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
                         </a>
@@ -1162,7 +1232,7 @@
                 @endauth
                 <li>
                     <a href="/gallery"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
                    
                         <i class="fa-solid fa-image hover:text-white"></i>
                         <span class="ml-3">All places</span>
@@ -1170,14 +1240,14 @@
                 </li>
                 <li>
                     <a href="#How"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
                         <i class="fa-sharp fa-solid fa-circle-info hover:text-white"></i>
                         <span class="ml-3">About us</span>
                     </a>
                 </li>
                 <li>
                     <a href="#Gallery"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
                         <i class="fa-sharp fa-solid fa-address-card hover:text-white"></i>
                         <span class="ml-3">Blog post</span>
                     </a>
@@ -1196,7 +1266,7 @@
 
     @if (session()->has('success'))
         <aside x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)" x-show="show"
-            class="fixed bottom-4 right-4 z-50 flex items-center justify-center gap-4 rounded-lg bg-black px-5 py-3 text-white">
+            class="fixed bottom-4 right-4 z-50 flex items-center justify-center gap-4 rounded-lg bg-[#212121] px-5 py-3 text-white">
             <a href="/new-thing" target="_blank" rel="noreferrer" class="text-sm font-medium hover:opacity-75">
                 {{ session('success') }} 👋
             </a>

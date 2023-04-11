@@ -315,7 +315,7 @@ class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transfor
         <p class="mb-2 text-xs text-gray-500">
             Traveling is an exhilarating experience that broadens our horizons and exposes us to the wonders of the world. From the picturesque beaches of Bali to the magnificent pyramids of Giza, there is an endless array of destinations that offer unique cultural experiences, breathtaking scenery, and memorable adventures. Whether you're looking for a tropical getaway or an urban adventure, the best places in the world have something to offer for everyone. So pack your bags, grab your passport, and get ready to embark on a journey of a lifetime!</p>
         <div class="border border-[#9e9e9e] "></div>
-        <h1 class="mx-auto flex justify-end mt-2 text-xs">Total of  Places</h1>
+        <h1 class="mx-auto flex justify-end mt-2 text-xs">Total of {{$count}} Places</h1>
     </div>
 
   
