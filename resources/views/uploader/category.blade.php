@@ -323,7 +323,7 @@ class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transfor
 
    
     
-    <section id="all" class="container justify-center flex mx-auto">
+    <section id="all" class="container justify-center flex mx-auto ">
         <div class="">
             <div class="md:grid-cols-3 2xl:mx-auto lg:px-7  md:px-7 py-9 px-7 w-96 sm:w-auto">
                 <h1 class="text-black sm:w-full md:w-1/4 font-black text-2xl">{{$category}} Category</h1>
@@ -332,11 +332,12 @@ class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transfor
             </div>
 
             <div
-                class="container w-full max-w-full mx-auto px-7 pb-10 gap-6 columns-3 grid md:block md:grid-cols-3 lg:px-7 md:px-7 px-7 w-96 sm:w-auto">
-                <div class="h-50 ">
+                class="container w-full max-w-full mx-auto px-7 pb-10 gap-6 columns-3 grid md:block md:grid-cols-3 lg:px-7 md:px-7 px-7 sm:w-auto">
+               
                     @foreach($images as $item)
-                        <img src="{{ $item->image }}" class="transition hover:scale-90">
-                        <div class="mt-3 flex justify-between text-sm">
+                   
+                        <img src="{{ $item->image }}" class="transition hover:scale-90" alt="{{ $item->title }}">
+                        <div class="mt-3 flex justify-between text-sm mb-5">
                             <div>
                                 <h3
                                     class="text-black text-xl group-hover:underline group-hover:underline-offset-4 font-bold">
@@ -355,11 +356,12 @@ class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transfor
 
 
                         </div>
+                    
                     @endforeach
 
-                </div>
+              
             </div>
-
+        </div>
     </section>
 
 

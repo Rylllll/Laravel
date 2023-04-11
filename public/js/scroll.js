@@ -30,6 +30,7 @@ const sr = ScrollReveal({
     duration: 2800,
 
 })
+ScrollReveal({ reset: true });
 
 
 sr.reveal(".latest_up, .latest", {
