@@ -334,32 +334,34 @@
             </div>
 
             <div
-                class="md:container w-full max-w-full mx-auto px-7 pb-10 gap-6 columns-3 grid md:block md:grid-cols-3 lg:px-7 md:px-7 px-7 w-96 sm:w-auto">
-                <div class="h-50 ">
+                class="md:container w-full max-w-full mx-auto px-7 pb-10 gap-6 lg:columns-4 grid  lg:block md:block md:grid-cols-4 lg:px-7 md:px-7 px-7 w-96 sm:w-auto">
+           
                     @foreach ($homes as $item)
-                        <img src="{{ $item->image }}" class="transition hover:scale-90">
-                        <div class="mt-3 flex justify-between text-sm">
-                            <div>
-                                <h3
-                                    class="text-black text-xl group-hover:underline group-hover:underline-offset-4 font-bold">
-                                    {{ $item->title }}
-                                </h3>
-
-                                <p class="mt-1.5 max-w-[45ch] text-xs text-gray-500 overflow-hidden"
-                                    style="max-height: 3em; text-overflow: ellipsis;">
-                                    {{ substr($item->about, 0, 100) }}{{ strlen($item->about) > 250 ? '...' : '' }}
-                                </p>
-                                <div class="mt-5 mb-3">
-                                    <a class="text-blue-400 hover:text-black"
-                                        href="{{ route('display.show', ['id' => $item->id]) }}">View full image</a>
-                                </div>
-                            </div>
-
-
+                    <a href="{{ route('display.show', ['id' => $item->id]) }}" class="">
+                    <div  class="group relative md:block lg:block grid  mb-6 bg-black rounded">
+                        <img
+                          alt="{{ $item->title }}"
+                          src="{{ $item->image }}"
+                          class="absolute inset-0 h-full w-full object-cover transition-opacity group-hover:opacity-50 rounded"
+                        />
+                      
+                        <div class="relative p-4 sm:p-6 lg:p-8">
+                            <div  class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                                <p class="text-xl font-bold text-white sm:text-2xl">{{ $item->title }}</p>
+     
+                          <div class="mt-32 sm:mt-48 lg:mt-64">
+                              <p class="text-sm text-white">
+                                {{ substr($item->about, 0, 100) }}{{ strlen($item->about) > 250 ? '...' : '' }}
+                              </p>
                         </div>
+                          </div>
+                        </div>
+                    </div>
+                </a>
+                     
                     @endforeach
 
-                </div>
+                 
             </div>
 
     </section>

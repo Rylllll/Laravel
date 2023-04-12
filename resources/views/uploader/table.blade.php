@@ -354,8 +354,9 @@
 
                     </div>
                 </div>
+                {{ $uploader->appends(request()->input())->links() }}
             </div>
-            {{ $uploader->appends(request()->input())->links() }}
+           
 
 
 

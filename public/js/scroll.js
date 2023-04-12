@@ -26,11 +26,11 @@ window.addEventListener('scroll', function() {
 });
 
 const sr = ScrollReveal({
-    distance: '60px',
-    duration: 2800,
+        distance: '60px',
+        duration: 2800,
 
-})
-ScrollReveal({ reset: true });
+    })
+    // ScrollReveal({ reset: true });
 
 
 sr.reveal(".latest_up, .latest", {

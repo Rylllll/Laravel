@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.grayscale {
+    filter: grayscale(100%);
+}
+
 .indicator {
     transition: left .4s;
 }
