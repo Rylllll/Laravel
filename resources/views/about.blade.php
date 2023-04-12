@@ -22,8 +22,9 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link href="./app.css" rel="stylesheet">
-    <title>Wonders Gallery</title>
+    <title>Wonders Gallery/About</title>
     @vite('resources/css/app.css')
 </head>
 
@@ -302,52 +303,115 @@
 
     </div>
 
-    {{-- Title --}}
-    <div class="md:container mx-auto px-7">
-        <div class="flex gap-1">
-            <h1 class="mt-5 mb-2 text-2xl text-[#03a9f4]">Wonders
-            </h1>
-            <h1 class="mt-5 mb-2 text-2xl text-black">Gallery About Page
-            </h1>
+  
+
+
+    <section class=" md:container justify-center mx-auto mb-56">
+        <div class="mx-auto md:container py-8 sm:py-12 sm:px-6 lg:py-16 rounded-lg ">
+
+            <div class="">
+                <div class="">
+                    <div>
+                        <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl text-[#03a9f4] mb-2 slide-right ">About Wonders Gallery
+                            </h2>
+
+                        <div class="lg:flex  grid">
+                            <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl mb-2 text-black slide-right w-3/4">
+                                Know what we do</h2>
+                            <p class="text-gray-600 text-black slide-right justify-left mt-2">
+
+                                Each wonder tells a unique story of its time, culture, and the people who built it. They
+                                are a reflection of human ambition and the desire to leave a lasting legacy.
+                            </p>
+
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="w-full h-auto relative mt-10">
+                        <div class="relative">
+
+                            <div  class="relative w-full" >
+
+                                <div class="relative h-56 overflow-hidden md:h-96 slide-down">
+
+                                  
+                                        
+                                            <div class="">
+                                                <img src="../img/meeting.jpg"
+                                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                                    alt="...">
+                                            </div>
+                                        
+                                
+
+                                </div>
+                      
+                            
+                            </div>
+
+                      
+                        
+                                <div
+                                    class="hidden absolute mt-24 top-44 left-48 right-0 mr-4 z-20 xl:flex  flex-col items-center justify-center slide-right bg-gray-500 w-3/4">
+                                    <div
+                                    class="relative flex items-start justify-between  p-4 shadow-xl sm:p-6 lg:p-8 bg-gray-500 "
+                                   
+                                  >
+                                    <div class="pt-4 text-gray-500">
+                                    
+                                  
+                                      <h3 class="text-lg font-bold text-white sm:text-2xl">
+                                       What we do
+                                      </h3>
+                                  
+                                      <p class="mt-2 hidden text-sm sm:block text-white">
+                                        Our website's standout feature is undoubtedly the high-quality images we provide for each of the wonders we feature. We understand that these places are incredibly stunning, and we believe that a picture is worth a thousand words. That's why we go the extra mile to provide you with high-resolution images that capture the beauty of each wonder in all its glory. From the majestic peaks of Mount Everest to the ancient ruins of Machu Picchu, our images will transport you to each of these incredible places.
+                                      </p>
+                                    </div>
+                                  
+                                  
+                                </div>
+                                  
+                                </div>
+                       
+                        </div>
+                    </div>
+                 
+                <div
+                class="xl:hidden  z-20 lg:flex  flex-col items-center justify-center slide-right ">
+                <div
+                class="relative flex items-start justify-between  p-4 shadow-xl sm:p-6 lg:p-8  "
+               
+              >
+                <div class="pt-4 text-gray-500">
+                
+              
+                  <h3 class="text-lg font-bold text-[#212121] sm:text-2xl">
+                   Why were here
+                  </h3>
+              
+                  <p class="mt-2 hidden text-sm sm:block text-[#212121]">
+                    Wonders is a website dedicated to showcasing the most incredible places on earth, providing detailed information and high-quality images for each of the wonders we feature, all while offering an easy-to-use navigation system. We hope that our website will inspire you to explore these wonders and appreciate the beauty of our world.
+                  </p>
+                </div>
+              
+              
+            </div>
+              
+            </div>
+                </div>
+                
+            </div>
+          
         </div>
-        <p class="mb-2 text-xs text-gray-500">
-            Traveling is an exhilarating experience that broadens our horizons and exposes us to the
-                                wonders of the world. From the picturesque beaches of Bali to the magnificent pyramids
-                                of Giza, there is an endless array of destinations that offer unique cultural
-                                experiences, breathtaking scenery, and memorable adventures. Whether you're looking for
-                                a tropical getaway or an urban adventure, the best places in the world have something to
-                                offer for everyone. So pack your bags, grab your passport, and get ready to embark on a
-                                journey of a lifetime!</p>
-        <div class="border border-[#9e9e9e] "></div>
-
-    </div>
 
 
-
-    <section id="all" class="md:container justify-center flex mx-auto">
-     
-<div class="px-7 justify-center mx-auto">
-    <div class="mt-5 mb-5 text-3xl">
-    <h1>About Wonders Gallery</h1>
-</div>
-<div class="justify-left grid gap-5">
-    <p>Welcome to Wonders, a website dedicated to showcasing some of the most incredible places on earth. Our mission is to provide you with a comprehensive guide to each of these wonders, including detailed information and high-quality images, all while offering an easy-to-use navigation system to ensure a seamless browsing experience.
-
-    <p> Our website's standout feature is undoubtedly the high-quality images we provide for each of the wonders we feature. We understand that these places are incredibly stunning, and we believe that a picture is worth a thousand words. That's why we go the extra mile to provide you with high-resolution images that capture the beauty of each wonder in all its glory. From the majestic peaks of Mount Everest to the ancient ruins of Machu Picchu, our images will transport you to each of these incredible places.</p>
-        
-      <p>But our website is not just about stunning visuals. We also pride ourselves on providing detailed information about each of the wonders we feature. Our team of expert researchers has spent countless hours gathering information on each of these places, from their history and cultural significance to their unique geological formations. Whether you're looking to plan a trip to one of these wonders or just want to learn more about them, our website is the perfect resource.</p>  
-        
-    <p>Of course, none of this would matter if our website was difficult to navigate. That's why we've put a lot of thought into our user interface to ensure that browsing our site is as easy as possible. Our navigation system is intuitive and user-friendly, allowing you to quickly and easily find the information you're looking for. Whether you're a seasoned traveler or someone who's never left their hometown, we believe that our website will provide you with a seamless browsing experience.</p> 
-        
-      <p>In conclusion, Wonders is a website dedicated to showcasing the most incredible places on earth, providing detailed information and high-quality images for each of the wonders we feature, all while offering an easy-to-use navigation system. We hope that our website will inspire you to explore these wonders and appreciate the beauty of our world.</p>  
-        
-        
-        
-        
-        </p>
-    </div>
-</div>
     </section>
+  
 
 
     {{-- Sidebar -------------------------------------------------------------------- --}}

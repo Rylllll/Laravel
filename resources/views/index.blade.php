@@ -331,7 +331,7 @@
 
                             <div id="default-carousel" class="relative w-full" data-carousel="slide">
 
-                                <div class="relative h-56 overflow-hidden md:h-96">
+                                <div class="relative h-56 overflow-hidden md:h-96 slide-down">
 
                                     @foreach ($takes as $item)
                                         <a href="{{ route('display.show', ['id' => $item->id]) }}">
@@ -492,7 +492,7 @@
                     Gallery of weekly images</p>
             </div>
 
-            <div class="justify-end mt-7 mb-2">
+            <div class="justify-end mt-7 mb-2 slide-down">
                 <a href="/gallery"><button
                         class="bg-[#03a9f4] text-white px-9 py-3 text-sm hover:bg-white border border-[#03a9f4] hover:text-[#03a9f4] transition duration-300">MORE
                         PLACES</button></a>
