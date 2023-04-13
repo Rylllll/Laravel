@@ -1,6 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.ui-menu {
+    position: relative;
+    z-index: 3500 !important;
+    border: black 1px;
+    position: fixed;
+    background-color: white;
+    cursor: pointer;
+    color: #212121;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ui-menu-item {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.ui-menu-item:hover {
+    background-color: #03a9f4;
+    color: white;
+}
+
+.ui-autocomplete {
+    transition: all 0.9s ease-in-out;
+    max-height: 0;
+    overflow-y: scroll;
+}
+
+.ui-autocomplete.ui-front {
+    max-height: 200px;
+}
+
+.transition-all {
+    transition-property: all;
+}
+
 .grayscale {
     filter: grayscale(100%);
 }

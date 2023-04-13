@@ -41,4 +41,20 @@ class DisplayController extends Controller
 
 
     }
+
+public function searchPlacesAjax(Request $request)
+{
+    $places = Upload::where('title', 'LIKE', '%' . $request->search . '%')->get();
+    $data = [];
+
+    foreach ($places as $item) {
+        $data[] = [
+            'label' => $item['title'],
+            'url' => route('display.show', ['id' => $item->id])
+        ];
+    }
+
+    return $data;
+}
+
 }

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
         document.documentElement.classList.add('js')
     </script>
@@ -38,8 +38,9 @@
     </button>
 
 
+    
     <nav
-        class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center shadow-lg ">
+        class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center">
 
         <div class="md:container flex items-center justify-between bg-white p-4 font-bold gap-2">
             <div class="flex items-center gap-8">
@@ -51,11 +52,11 @@
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
 
                         <button x-on:click="isActive = !isActive"
-                            class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                            class="gap-2 relative font-medium text-[#212121] before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                             href="#How">
                             All places
                             <i x-bind:class="{ 'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive }"
-                                class="text-black text-xs"></i>
+                                class="text-[#212121] text-xs"></i>
                         </button>
 
 
@@ -64,7 +65,7 @@
                             x-on:keydown.escape.window="isActive = false">
 
                             <ul tabindex="0"
-                                class="dropdown-content menu p-2 shadow bg-white mt-3  max-w-96 text-black font-sans ">
+                                class="dropdown-content menu p-2 shadow bg-white mt-3  max-w-96 text-[#212121] font-sans ">
                                 <div class="p-2 items-center justify-center ">
                                     <h1 class="text-lg">Wonders Gallery all images</h1>
                                     <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
@@ -73,15 +74,15 @@
                                 <div class="flex p-2 gap-4 justify-center mt-2 ">
 
                                     <a
-                                        href="{{ route('uploads.category', 'Beach') }}"class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Beach</a>
+                                        href="{{ route('uploads.category', 'Beach') }}"class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Beach</a>
                                     <a href="{{ route('uploads.category', 'Cave') }}"
-                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cave</a>
+                                        class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Cave</a>
                                     <a href="{{ route('uploads.category', 'Mountain') }}"
-                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Mountain</a>
+                                        class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Mountain</a>
                                     <a href="{{ route('uploads.category', 'Forest') }}"
-                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Forest</a>
+                                        class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Forest</a>
                                     <a href="{{ route('uploads.category', 'Cities') }}"
-                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Cities</a>
+                                        class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Cities</a>
 
                                 </div>
                                 <div class="flex p-2 justify-left mt-2 text-[#03a9f4] font-thin">
@@ -94,18 +95,18 @@
                     </div>
                     {{-- Navbar dropdowns --}}
 
-                    <a class="relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                    <a class="relative font-medium text-[#212121] before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                         href="/">Home</a>
 
                     {{-- Navbar dropdowns about --}}
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
 
                         <button x-on:click="isActive = !isActive"
-                            class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                            class="gap-2 relative font-medium text-[#212121] before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                             href="#How">
                             About us
                             <i x-bind:class="{ 'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive }"
-                                class="text-black text-xs"></i>
+                                class="text-[#212121] text-xs"></i>
                         </button>
 
 
@@ -114,7 +115,7 @@
                             x-on:keydown.escape.window="isActive = false">
 
                             <ul tabindex="0"
-                                class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
+                                class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-[#212121] font-sans">
                                 <div class="p-2 items-center justify-center">
                                     <h1 class="text-lg">About Wonders Gallery</h1>
                                     <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
@@ -122,13 +123,13 @@
                                 <div class="border border-[#9e9e9e] 1px w-full"></div>
                                 <div class="flex p-2 gap-4 justify-center mt-2">
                                     <a
-                                        href=""class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">About
+                                        href="/About-us"class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">About
                                         us</a>
-                                    <a href=""
-                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">Contact
+                                    <a href="/Contact-us"
+                                        class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Contact
                                         us</a>
-                                    <a href=""
-                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">How
+                                    <a href="/How-it-works"
+                                        class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">How
                                         it works</a>
                                 </div>
                             </ul>
@@ -142,11 +143,11 @@
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
 
                         <button x-on:click="isActive = !isActive"
-                            class="gap-2 relative font-medium text-black before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
+                            class="gap-2 relative font-medium text-[#212121] before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-[#03a9f4] before:transition hover:before:scale-100"
                             href="#How">
                             Blog post
                             <i x-bind:class="{ 'fa-solid fa-chevron-down': !isActive, 'fa-solid fa-chevron-up': isActive }"
-                                class="text-black text-xs"></i>
+                                class="text-[#212121] text-xs"></i>
                         </button>
 
 
@@ -155,7 +156,7 @@
                             x-on:keydown.escape.window="isActive = false">
 
                             <ul tabindex="0"
-                                class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-black font-sans">
+                                class="dropdown-content menu p-2 shadow bg-white mt-3 max-w-86 text-[#212121] font-sans">
                                 <div class="p-2 items-center justify-center">
                                     <h1 class="text-lg">Blog post Wonders Gallery</h1>
                                     <h2 class="text-sm text-gray-500 font-thin">Select Categories</h2>
@@ -178,35 +179,39 @@
 
 
 
-
             <div class="flex justify-between space-x-2">
 
-                <div class="hidden md:flex sm:flex">
-                    <form action="{{ url('search') }}" method="GET" role="search">
-
-
-                        <div class="relative text-gray-600">
-                            <input type="text" placeholder="Search places..."
-                                class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 w-40 font-thin "
-                                name="search" value="{{ Request::get('search') }}" required>
-                            <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
-                                <i class="fa-solid fa-magnifying-glass text-black"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                <div class="hidden md:flex ">
+                  <form action="{{ url('search') }}" method="GET" role="search">
+          
+          
+                      <div class="relative text-gray-600">
+                          <input type="search" placeholder="Search places..."
+                          id="search_places"
+                              class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 w-40 font-thin "
+                              name="search" value="{{ Request::get('search') }}" required>
+                          <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
+                              <i class="fa-solid fa-magnifying-glass text-[#212121]"></i>
+                          </button>
+          
+                          
+                      </div>
+                  </form>
+                  
+          
+              </div>
                 @auth
 
 
 
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
-                        <div class="mt-2 relative font-medium text-black before:absolute before:-bottom-1 hover:before:scale-x-100 cursor-pointer"
+                        <div class="mt-2 relative font-medium text-[#212121] before:absolute before:-bottom-1 hover:before:scale-x-100 cursor-pointer"
                             href="#">
 
 
                             <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600  ">
                                 <img src="../img/user.png" class="w-7 h-7 rounded-full" alt="">
-                                {{-- <i class="fa-solid fa-user text-black"></i> --}}
+                         
                             </button>
                         </div>
 
@@ -245,7 +250,7 @@
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
 
 
-                        <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600 mt-1 mx-auto">
+                        <button x-on:click="isActive = !isActive" class="h-full px-2 mt-1 text-gray-600 justify-center mx-auto">
                             <span class="sr-only">Acc</span>
                             <i class="fa-regular fa-user text[#212121]"></i></label>
                         </button>
@@ -255,7 +260,7 @@
                             x-on:keydown.escape.window="isActive = false">
 
                             <ul tabindex="0"
-                                class="dropdown-content menu p-2 shadow bg-white mt-3  w-86 text-black font-sans">
+                                class="dropdown-content menu p-2 shadow bg-white mt-3  w-86 text-[#212121] font-sans">
                                 <div class="p-4 items-center justify-center ">
                                     <h1 class="text-lg">Wonders Gallery Accounts</h1>
                                     <h2 class="text-sm text-gray-500 font-thin">Create or login account</h2>
@@ -264,10 +269,10 @@
                                 <div class="flex p-2 gap-4 justify-center mt-2 ">
 
                                     <a
-                                        href="{{ URL::to('login') }}"class="bg-black text-white font-thin hover:bg-[#03a9f4] p-4 transition duration:300 w-36 text-center">Sign
+                                        href="{{ URL::to('login') }}"class="bg-[#212121] text-white font-thin hover:bg-[#03a9f4] p-4 transition duration:300 w-36 text-center">Sign
                                         in</a>
                                     <a href="{{ URL::to('register') }}"
-                                        class="bg-[#03a9f4] text-white font-thin hover:bg-black p-4 transition duration:300 w-36 text-center">
+                                        class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">
                                         Sign up</a>
                                 </div>
                             </ul>
@@ -280,7 +285,7 @@
 
                 <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
             </div>
-            <div class="block mt-3 lg:hidden">
+            <div class="block mt-3 xl:hidden">
                 <button
                     class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation"
                     data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
@@ -292,6 +297,9 @@
             </div>
         </div>
     </nav>
+
+
+
 
 
     <!-- Breadcrumb -->
@@ -344,7 +352,7 @@
                         class="absolute inset-0 h-full object-cover w-full md:w-full transition hover:scale-90" />
                 </div>
 
-                <div class="lg:py-24 mx-auto justify-center w-full ">
+                <div class="lg:py-24 mx-auto justify-center w-full  ">
                     <img src="../img/wonderss.png" class="w-24" alt="Logo">
                     <h2 class="text-3xl font-bold sm:text-4xl"> {{ $upload->title }}</h2>
 
@@ -386,101 +394,114 @@
     </section>
 
 
-    {{-- Sidebar -------------------------------------------------------------------- --}}
-    <div id="drawer-navigation"
-        class="fixed top-0 mt-20 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800"
-        tabindex="-1" aria-labelledby="drawer-navigation-label">
-        <h5 id="drawer-navigation-label"
-            class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">Wonders menu</h5>
-        <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
-            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
-            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clip-rule="evenodd"></path>
-            </svg>
-            <span class="sr-only">Close menu</span>
-        </button>
-        <div class="py-4 overflow-y-auto">
-            <ul class="space-y-2 font-medium">
+       {{-- Sidebar -------------------------------------------------------------------- --}}
+       <div id="drawer-navigation"
+       class="fixed top-0 mt-20 xl: mt-14 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800 "
+       tabindex="-1" aria-labelledby="drawer-navigation-label">
+       <h5 id="drawer-navigation-label"
+           class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">Wonders menu</h5>
+       <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+           class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+           <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+               xmlns="http://www.w3.org/2000/svg">
+               <path fill-rule="evenodd"
+                   d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                   clip-rule="evenodd"></path>
+           </svg>
+           <span class="sr-only">Close menu</span>
+       </button>
+       <div class="py-4 overflow-y-auto">
+           <ul class="space-y-2 font-medium">
 
-                @auth
+               @auth
 
-                    <li>
-                        <button type="button"
-                            class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                            aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
-                            <i class="fa-solid fa-user" style="color: #000000;"></i>
-                            <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        <ul id="dropdown-example" class="hidden py-2 space-y-2">
-                            <li>
-                                <a href="{{ URL::to('uploads') }}"
-                                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                                    <i class="fa-solid fa-chart-simple hover:text-white"></i>
-                                    <span class="ml-3">Dashboard</span>
-                                </a>
+                   <li>
+                       <button type="button"
+                           class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                           aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                           <i class="fa-solid fa-user" style="color: #000000;"></i>
+                           <span class="p-4 font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+                           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                               xmlns="http://www.w3.org/2000/svg">
+                               <path fill-rule="evenodd"
+                                   d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                   clip-rule="evenodd"></path>
+                           </svg>
+                       </button>
+                       <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                           <li>
+                               <a href="{{ URL::to('uploads') }}"
+                                   class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+                                   <i class="fa-solid fa-chart-simple hover:text-white"></i>
+                                   <span class="ml-3">Dashboard</span>
+                               </a>
 
-                            </li>
-
-
-
-
-                            <form method="POST" action="/logout">
-                                @csrf
-                                <li>
-                                    <button href="#" type="submit"
-                                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                                        <i class="fa-solid fa-right-from-bracket hover:text-white"></i>
-                                        <span class="ml-3">Logout</span>
-                                    </button>
-                                </li>
-                            </form>
-                        </ul>
-                    </li>
-                @else
-                    <li>
-                        <a href="{{ URL::to('register') }}"
-                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
-                            <i class="fa-solid fa-user-plus hover:text-white"></i>
-                            <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
-                        </a>
-                    </li>
-                    </span>
-                    </li>
-
-                    <li>
-                        <a href="{{ URL::to('login') }}"
-                            class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700">
-                            <i class="fa-solid fa-right-to-bracket hover:text-white"></i>
-                            <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
-                        </a>
-                    </li>
-
-
-                @endauth
-                <li>
-                    <a href="/gallery"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                        <i class="fa-sharp fa-solid fa-address-card hover:text-white"></i>
-                        <span class="ml-3">Gallery</span>
-                    </a>
-                </li>
+                           </li>
 
 
 
-            </ul>
+
+                           <form method="POST" action="/logout">
+                               @csrf
+                               <li>
+                                   <button href="#" type="submit"
+                                       class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+                                       <i class="fa-solid fa-right-from-bracket hover:text-white"></i>
+                                       <span class="ml-3">Logout</span>
+                                   </button>
+                               </li>
+                           </form>
+                       </ul>
+                   </li>
+               @else
+                   <li>
+                       <a href="{{ URL::to('register') }}"
+                           class=" flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700 hover:text-white xl:hidden lg:hidden">
+                           <i class="fa-solid fa-user-plus hover:text-white"></i>
+                           <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+                       </a>
+                   </li>
+                   </span>
+                   </li>
+
+                   <li>
+                       <a href="{{ URL::to('login') }}"
+                           class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700 xl:hidden lg:hidden">
+                           <i class="fa-solid fa-right-to-bracket hover:text-white"></i>
+                           <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+                       </a>
+                   </li>
 
 
-        </div>
-    </div>
+               @endauth
+               <li>
+                   <a href="/gallery"
+                       class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+
+                       <i class="fa-solid fa-image hover:text-white"></i>
+                       <span class="ml-3">All places</span>
+                   </a>
+               </li>
+               <li>
+                   <a href="#How"
+                       class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+                       <i class="fa-sharp fa-solid fa-circle-info hover:text-white"></i>
+                       <span class="ml-3">About us</span>
+                   </a>
+               </li>
+               <li>
+                   <a href="#Gallery"
+                       class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+                       <i class="fa-sharp fa-solid fa-address-card hover:text-white"></i>
+                       <span class="ml-3">Blog post</span>
+                   </a>
+               </li>
+
+           </ul>
+
+
+       </div>
+   </div>
 
     <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5 mt-40">
         <div class="relative block h-32 lg:col-span-2 lg:h-full">
@@ -663,6 +684,8 @@
     <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../js/search.js"></script>
 </body>
 
 </html>

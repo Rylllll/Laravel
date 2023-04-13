@@ -17,6 +17,7 @@
     <script>
         document.documentElement.classList.add('js')
     </script>
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
@@ -164,22 +165,28 @@ class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transfor
 
 
 
+    
     <div class="flex justify-between space-x-2">
 
-        <div class="hidden md:flex sm:flex">
-            <form action="{{ url('search') }}" method="GET" role="search">
-
-
-                <div class="relative text-gray-600">
-                    <input type="text" placeholder="Search places..."
-                        class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 w-40 font-thin " name="search"
-                        value="{{ Request::get('search') }}" required>
-                    <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
-                        <i class="fa-solid fa-magnifying-glass text-black"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
+        <div class="hidden md:flex ">
+          <form action="{{ url('search') }}" method="GET" role="search">
+  
+  
+              <div class="relative text-gray-600">
+                  <input type="search" placeholder="Search places..."
+                  id="search_places"
+                      class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 w-40 font-thin "
+                      name="search" value="{{ Request::get('search') }}" required>
+                  <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
+                      <i class="fa-solid fa-magnifying-glass text-[#212121]"></i>
+                  </button>
+  
+                  
+              </div>
+          </form>
+          
+  
+      </div>
         @auth
 
 
@@ -667,6 +674,8 @@ class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transfor
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
     <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
     <script src="../../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="../../js/search.js"></script>
 </body>
 
 </html>

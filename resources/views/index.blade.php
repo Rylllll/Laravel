@@ -19,9 +19,11 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
         crossorigin="anonymous"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link href="./app.css" rel="stylesheet">
+    
     <title>Wonders Gallery</title>
     @vite('resources/css/app.css')
 </head>
@@ -125,12 +127,12 @@
                                 <div class="border border-[#9e9e9e] 1px w-full"></div>
                                 <div class="flex p-2 gap-4 justify-center mt-2">
                                     <a
-                                        href="/about"class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">About
+                                        href="/About-us"class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">About
                                         us</a>
-                                    <a href=""
+                                    <a href="/Contact-us"
                                         class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">Contact
                                         us</a>
-                                    <a href=""
+                                    <a href="/How-it-works"
                                         class="bg-[#03a9f4] text-white font-thin hover:bg-[#212121] p-4 transition duration:300 w-36 text-center">How
                                         it works</a>
                                 </div>
@@ -184,17 +186,20 @@
 
             <div class="flex justify-between space-x-2">
 
-                <div class="hidden md:flex sm:flex">
+                <div class="hidden md:flex ">
                     <form action="{{ url('search') }}" method="GET" role="search">
 
 
                         <div class="relative text-gray-600">
-                            <input type="text" placeholder="Search places..."
+                            <input type="search" placeholder="Search places..."
+                            id="search_places"
                                 class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 w-40 font-thin "
                                 name="search" value="{{ Request::get('search') }}" required>
                             <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
                                 <i class="fa-solid fa-magnifying-glass text-[#212121]"></i>
                             </button>
+
+                            
                         </div>
                     </form>
                     
@@ -211,7 +216,7 @@
 
                             <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600  ">
                                 <img src="../img/user.png" class="w-7 h-7 rounded-full" alt="">
-                                {{-- <i class="fa-solid fa-user text-[#212121]"></i> --}}
+                         
                             </button>
                         </div>
 
@@ -250,7 +255,7 @@
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
 
 
-                        <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600 mt-1 mx-auto">
+                        <button x-on:click="isActive = !isActive" class="h-full px-2 mt-1 text-gray-600 justify-center mx-auto">
                             <span class="sr-only">Acc</span>
                             <i class="fa-regular fa-user text[#212121]"></i></label>
                         </button>
@@ -285,7 +290,7 @@
 
                 <a id="navbar" name="user" href="#" class="text-[#212121]"></a>
             </div>
-            <div class="block mt-3 lg:hidden">
+            <div class="block mt-3 xl:hidden">
                 <button
                     class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 "data-drawer-target="drawer-navigation"
                     data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
@@ -371,7 +376,7 @@
                                             <i
                                             class="fa-solid fa-magnifying-glass text-[#212121]"></i>
                                         </div>
-                                        <input type="search" name="search" value="{{ Request::get('search') }}" id="default-search" class="block w-full p-6 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Places..." required>
+                                        <input type="search" name="search" id="search_places" value="{{ Request::get('search') }}" id="default-search" class="block w-full p-6 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Places..." required>
                                         <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-[#03a9f4] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-4 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                                     </div>
                                 </form>
@@ -637,315 +642,7 @@
 
 
 
-    {{-- <section class="py-16 " id="About">
-        <div class="py-16">
-            <div class="md:container md:m-auto mx-auto px-7 text-gray-600 md:px-12 xl:px-7 text-left">
-                <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">01
-                    - About us</h1>
-
-                <div class="border border-[#9e9e9e] 1px "></div>
-                <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12 p-9">
-
-                    <section class="bg-white rounded-2xl dark:bg-gray-900 shadow-2xl w-full ">
-                        <div class="delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0"
-                            data-taos-offset="300">
-                            <div
-                                class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-7">
-                                <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                                    <h2
-                                        class="mb-4 md:text-4xl text-sm tracking-tight font-extrabold text-gray-900 dark:text-white">
-                                        Travel and see the world with your eyes</h2>
-                                    <p class="mb-4 md:text-lg text-sm">Traveling provides an opportunity to see the
-                                        world with your own eyes, to experience new cultures, and to create memories
-                                        that will last a lifetime. It allows you to break free from the monotony of
-                                        everyday life, to explore new horizons, and to broaden your perspective on the
-                                        world. Whether it's trying exotic foods, witnessing breathtaking natural
-                                        landscapes, or immersing yourself in the local customs, traveling is an
-                                        enriching experience that can teach you about the world and yourself. So why not
-                                        take the leap and travel to the best places in the world to see it with your own
-                                        eyes?</p>
-
-                                </div>
-                                <div class="grid grid-cols-2 gap-4 mt-8">
-                                    <img class="w-full rounded-lg" src="../img/cav.jpg" alt="office content 1">
-                                    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="../img/ice.jpg"
-                                        alt="office content 2">
-                                </div>
-                            </div>
-                        </div>
-
-                    </section>
-
-                </div>
-
-            </div>
-        </div>
-    </section> --}}
-
-    {{-- <section class="py-16 " id="How">
-        <div class="py-16 ">
-            <div class="md:container md:m-auto mx-auto px-7 text-gray-600 md:px-12 xl:px-7 text-left">
-                <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">02
-                    - How it works</h1>
-                <div class="border border-[#9e9e9e] 1px "></div>
-                <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3 p-9">
-
-                    <a class="group relative block h-64 sm:h-80 lg:h-96">
-                        <span class="absolute inset-0 border-2 border-dashed border-[#212121] rounded-2xl"></span>
-
-                        <div
-                            class="relative flex h-full transform items-end  rounded-2xl bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 shadow-2xl">
-                            <div
-                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-[#212121]">
-                                <img src="../img/gall.jpg"
-                                    class="w-1/2 md:w-2/3 md:mx-auto mb-5 flex mx-auto justify-center "
-                                    alt="illustration" loading="lazy" width="900" height="600">
-
-
-
-                            </div>
-
-                            <div
-                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-[#212121]">
-                                <h3 class="mt-4 md:text-2xl text-sm font-medium ">Breath taking images</h3>
-
-                                <p class="mt-4 md:text-sm text-sm">
-                                    The high-definition images allow you to feel as if you are standing right in the
-                                    midst of the most beautiful and exotic locations in the world. From the majestic
-                                    peaks of the Himalayas to the stunning beaches of the Maldives, our collection of HD
-                                    images will transport you to another world.
-                                </p>
-
-
-                            </div>
-                        </div>
-                    </a>
-
-                    <a class="group relative block h-64 sm:h-80 lg:h-96">
-                        <span class="absolute inset-0 border-2 border-dashed border-[#212121] rounded-2xl"></span>
-
-                        <div
-                            class="relative flex h-full transform items-end  rounded-2xl bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 shadow-2xl">
-                            <div
-                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-[#212121]">
-
-                                <img src="../img/read.jpg" class="w-2/4 md:w-2/3 ml-auto mb-5 flex mx-auto "
-                                    alt="illustration" loading="lazy" width="900" height="600">
-
-                            </div>
-
-                            <div
-                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-[#212121]">
-                                <h3 class="mt-4 font-medium md:text-2xl text-sm">Detailed Places</h3>
-
-                                <p class="mt-4 md:text-sm text-sm">
-                                    We understand that travelers crave unique experiences and want to be fully informed
-                                    about the places they visit. That's why we've invested in creating a comprehensive
-                                    and detailed database of locations that will leave no stone unturned.
-                                </p>
-
-
-                            </div>
-                        </div>
-                    </a>
-
-                    <a class="group relative block h-64 sm:h-80 lg:h-96">
-                        <span class="absolute inset-0 border-2 border-dashed border-[#212121] rounded-2xl"></span>
-
-                        <div
-                            class="relative flex h-full transform items-end  rounded-lg bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 shadow-2xl">
-                            <div
-                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8 text-[#212121]">
-                                <img src="../img/teach.jpg" class="w-2/4 ml-auto mb-5 flex mx-auto "
-                                    alt="illustration" loading="lazy" width="900" height="600">
-                            </div>
-
-                            <div
-                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8 text-[#212121]">
-                                <h3 class="mt-4 md:text-2xl font-medium text-sm">Collections of places</h3>
-
-                                <p class="mt-4 md:text-sm text-sm">
-                                    From natural wonders like the Grand Canyon and Victoria Falls to man-made marvels
-                                    such as the Great Wall of China and the Colosseum in Rome, my collection has
-                                    something for everyone.
-                                </p>
-
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!--Services-->
-
-
-
-    {{-- 
-
-
-    <section class="py-16" id="Gallery">
-        <div class="py-16">
-            <div class="md:container md:m-auto mx-auto px-7 text-gray-600 md:px-12 xl:px-7 text-left">
-                <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/4 text-center bg-[#212121] font-bold">03
-                    - Gallery</h1>
-                <div class="border border-[#9e9e9e] 1px "></div>
-                <section>
-                    <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-7 sm:py-12 lg:px-8">
-                        <header>
-                            <h2 class="text-xl font-bold text-gray-900 sm:text-3xl text-center">
-                                Wonders Gallery
-                            </h2>
-
-                            <p class=" mt-4 text-gray-500 text-center mt-10 ">
-                                Traveling is an exhilarating experience that broadens our horizons and exposes us to the
-                                wonders of the world. From the picturesque beaches of Bali to the magnificent pyramids
-                                of Giza, there is an endless array of destinations that offer unique cultural
-                                experiences, breathtaking scenery, and memorable adventures. Whether you're looking for
-                                a tropical getaway or an urban adventure, the best places in the world have something to
-                                offer for everyone. So pack your bags, grab your passport, and get ready to embark on a
-                                journey of a lifetime!
-                            </p>
-                        </header>
-
-
-
-                        <div
-                            class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 2xl:mx-auto 2xl:container lg:px-20 md:px-7 px-4 w-96 sm:w-auto">
-                            @foreach ($home as $item)
-                                <a href="{{ route('display.show', ['id' => $item->id]) }}"
-                                    class="group relative block bg-[#212121] ">
-                                    <img alt="Developer" src="{{ $item->image }}"
-                                        class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 " />
-
-                                    <div class="relative p-4 sm:p-6 lg:p-8">
-                                        <p class="text-sm font-medium uppercase tracking-widest text-blue-500">
-                                            Gallery
-                                        </p>
-
-                                        <p class="font-bold text-white md:text-2xl text-sm">{{ $item->title }}</p>
-
-                                        <div class="mt-32 sm:mt-48 lg:mt-64">
-                                            <div
-                                                class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                                                <p class="mt-1.5 max-w-[45ch] text-xs text-white overflow-hidden"
-                                                    style="max-height: 3em; text-overflow: ellipsis;">
-                                                    {{ substr($item->about, 0, 60) }}{{ strlen($item->about) > 250 ? '...' : '' }}
-                                                </p>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-                        <div class="flex justify-center ">
-                            <a class="group relative inline-flex items-center overflow-hidden rounded-full bg-[#212121] px-8 py-3 text-white focus:outline-none focus:ring active:bg-[#212121]"
-                                href="{{ URL::to('/gallery') }}">
-                                <span
-                                    class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-4">
-                                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                    </svg>
-                                </span>
-
-                                <span class="text-sm font-medium transition-all group-hover:mr-4">
-                                    See more
-                                </span>
-                            </a>
-
-                        </div>
-                </section>
-
-            </div>
-
-        </div>
-    </section> --}}
-    {{-- 
-    <section class="py-16" id="Services">
-        <div class="py-16 ">
-
-            <div class="md:container md:m-auto mx-auto px-7 text-gray-600 md:px-12 xl:px-7 text-left">
-                <h1 class="p-4 text-white rounded-full mb-10 sm:w-full md:w-1/3 text-center bg-[#212121] font-bold">04
-                    - Contact us</h1>
-                <div class="border border-[#9e9e9e] 1px "></div>
-                <section class="bg-white text-white  shadow-2xl">
-                    <div class="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-7 lg:py-16 lg:px-8 mt-10 rounded-2xl ">
-                        <div class="max-w-xl rounded-2xl">
-                            <h2 class="text-3xl font-bold sm:text-4xl text-[#212121]">Contact WondersPh to know more
-                                about us</h2>
-
-                            <p class="mt-4 text-gray-500">
-                                Contacting Wonders website is easy and convenient. There are several ways to reach out
-                                to us depending on your preference. You can use the contact form provided on our website
-                                and send us your questions, concerns or feedback. Alternatively, you can send an email
-                                directly to our customer support team at the email address provided on our website.
-                            </p>
-                        </div>
-
-                        <div class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
-                            <div class="flex items-start gap-4">
-                                <span class="shrink-0 rounded-lg bg-gray-800 p-4">
-                                    <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
-                                </span>
-
-                                <div class="text-gray-500">
-                                    <h2 class="text-lg font-bold">Facebook Page.</h2>
-
-                                    <p class="mt-1 text-sm ">
-                                        Join our facebook page and discover new places
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <span class="shrink-0 rounded-lg bg-gray-800 p-4">
-                                    <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
-                                </span>
-
-                                <div class="text-gray-500">
-                                    <h2 class="text-lg font-bold">Instagram page</h2>
-
-                                    <p class="mt-1 text-sm ">
-                                        Join our Instagram page and discover new places
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <span class="shrink-0 rounded-lg bg-gray-800 p-4">
-                                    <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
-                                </span>
-
-                                <div class="text-gray-500">
-                                    <h2 class="text-lg font-bold">Youtube Page</h2>
-
-                                    <p class="mt-1 text-sm ">
-                                        Watch videos in our youtube page to learn more about us
-                                    </p>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-
-        </div>
-
-    </section> --}}
+    
 
     <section class="min-h-auto flex items-stretch text-white ">
         <div class="lg:flex w-1/2 hidden bg-cover bg-no-repeat bg-center relative items-center"
@@ -1157,7 +854,7 @@
 
     {{-- Sidebar -------------------------------------------------------------------- --}}
     <div id="drawer-navigation"
-        class="fixed top-0 mt-20 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800"
+        class="fixed top-0 mt-20 xl: mt-14 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800 "
         tabindex="-1" aria-labelledby="drawer-navigation-label">
         <h5 id="drawer-navigation-label"
             class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">Wonders menu</h5>
@@ -1217,7 +914,7 @@
                 @else
                     <li>
                         <a href="{{ URL::to('register') }}"
-                            class=" flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700 hover:text-white">
+                            class=" flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700 hover:text-white xl:hidden lg:hidden">
                             <i class="fa-solid fa-user-plus hover:text-white"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
                         </a>
@@ -1227,7 +924,7 @@
 
                     <li>
                         <a href="{{ URL::to('login') }}"
-                            class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700">
+                            class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700 xl:hidden lg:hidden">
                             <i class="fa-solid fa-right-to-bracket hover:text-white"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
                         </a>
@@ -1267,7 +964,8 @@
 
 
 
-    </div>
+
+
 
     @if (session()->has('success'))
         <aside x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)" x-show="show"
@@ -1290,9 +988,13 @@
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="../js/scroll.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    
 
 </body>
 

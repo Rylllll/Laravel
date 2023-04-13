@@ -15,7 +15,7 @@ class AboutController extends Controller
     }
 
     public function how(){
-        return view('how-it-works');
+        return view('how');
     }
 }
 

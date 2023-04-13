@@ -39,7 +39,7 @@
 
 
 
- 
+
     <nav
         class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center">
 
@@ -302,7 +302,6 @@
 
 
 
-
     <!-- Breadcrumb -->
     <div class="bg-gray-50">
         <nav class="md:container flex px-7 mx-auto py-3 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 md:mt-20 mt-20 justify-left md:justify-end w-full"
@@ -318,7 +317,7 @@
                     <div class="flex items-center gap-1">
                         <i class="fa-solid fa-angle-right text-black text-xs"></i>
                         <a
-                            class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">About us</a>
+                            class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">How it works</a>
                     </div>
                 </li>
             </ol>
@@ -335,13 +334,13 @@
             <div class="">
                 <div class="">
                     <div>
-                        <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl text-[#03a9f4] mb-2 slide-right ">About
-                            Wonders Gallery
+                        <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl text-[#03a9f4] mb-2 slide-right ">How Wonders
+                           gallery works
                         </h2>
 
                         <div class="lg:flex  grid">
                             <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl mb-2 text-black slide-right w-3/4">
-                                Know what we do</h2>
+                                Know the process</h2>
                             <p class="text-gray-600 text-black slide-right justify-left mt-2">
 
                                 Each wonder tells a unique story of its time, culture, and the people who built it. They
@@ -365,7 +364,7 @@
 
 
                                     <div class="">
-                                        <img src="../img/meeting.jpg"
+                                        <img src="../img/guide.jpg"
                                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                             alt="...">
                                     </div>
@@ -387,19 +386,29 @@
 
 
                                         <h3 class="text-lg font-bold text-white sm:text-2xl">
-                                            What we do
+                                         How it works
                                         </h3>
 
                                         <p class="mt-2 hidden text-sm sm:block text-white">
-                                            Our website's standout feature is undoubtedly the high-quality images we
-                                            provide for each of the wonders we feature. We understand that these places
-                                            are incredibly stunning, and we believe that a picture is worth a thousand
-                                            words. That's why we go the extra mile to provide you with high-resolution
-                                            images that capture the beauty of each wonder in all its glory. From the
-                                            majestic peaks of Mount Everest to the ancient ruins of Machu Picchu, our
-                                            images will transport you to each of these incredible places.
+                                            Welcome to Wonders, a website dedicated to showcasing some of the most incredible places on earth. We understand that exploring new places and learning about different cultures can be an enriching experience, but it can also be daunting, especially if you don't know where to start. That's why we've created a simple and straightforward process to help you navigate our website and discover the wonders of the world.
+                                        </p> 
+                                          
+                                           <p class="mt-2 hidden text-sm sm:block text-white"><b class="text-[#212121]"> Step 1:</b> Browse our website
+                                            The first step in exploring the wonders of the world is to browse our website. You can use our easy-to-use navigation system to search for wonders by continent, country, or type of wonder. Each wonder has a dedicated page that includes detailed information and high-quality images, so you can learn more about the place and see it in all its beauty.
                                         </p>
-                                    </div>
+                                        <p class="mt-2 hidden text-sm sm:block text-white"> <b class="text-[#212121]"> Step 2:</b> Learn more about the wonders
+                                            Once you've found a wonder that interests you, you can read more about it on its dedicated page. Our team of expert researchers has spent countless hours gathering information on each of these places, from their history and cultural significance to their unique geological formations. You can also view stunning images of each wonder, which will transport you to each of these incredible places. </p>
+                                            <p class="mt-2 hidden text-sm sm:block text-white">
+                                               <b class="text-[#212121]"> Step 3:</b> Plan your visit
+                                                If you're planning a trip to one of the wonders we feature, our website can be a valuable resource to help you plan your visit. We provide practical information such as how to get there, when to visit, and where to stay. We also include tips and recommendations to help you make the most of your trip.
+                                            </p>
+
+                                            <p class="mt-2 hidden text-sm sm:block text-white">
+                                                <b class="text-[#212121]">  Step 4:</b> Share your experience
+                                                We love hearing from our readers about their experiences visiting the wonders of the world. You can share your travel stories and photos with us on our social media channels, including Facebook, Twitter, and Instagram. Your feedback and suggestions can also help us improve our website and make it a better resource for our readers.   
+                                            </p>
+                                   
+                                        </div>
 
 
                                 </div>
@@ -415,16 +424,27 @@
 
 
                                 <h3 class="text-lg font-bold text-[#212121] sm:text-2xl">
-                                    Why were here
-                                </h3>
+                                    How it works
+                                   </h3>
 
-                                <p class="mt-2 hidden text-sm sm:block text-[#212121]">
-                                    Wonders is a website dedicated to showcasing the most incredible places on earth,
-                                    providing detailed information and high-quality images for each of the wonders we
-                                    feature, all while offering an easy-to-use navigation system. We hope that our
-                                    website will inspire you to explore these wonders and appreciate the beauty of our
-                                    world.
-                                </p>
+                                   <p class="mt-2 hidden text-sm sm:block text-[#212121]">
+                                       Welcome to Wonders, a website dedicated to showcasing some of the most incredible places on earth. We understand that exploring new places and learning about different cultures can be an enriching experience, but it can also be daunting, especially if you don't know where to start. That's why we've created a simple and straightforward process to help you navigate our website and discover the wonders of the world.
+                                   </p> 
+                                     
+                                      <p class="mt-2 hidden text-sm sm:block text-[#212121]"><b class="text-[#03a9f4]"> Step 1:</b> Browse our website
+                                       The first step in exploring the wonders of the world is to browse our website. You can use our easy-to-use navigation system to search for wonders by continent, country, or type of wonder. Each wonder has a dedicated page that includes detailed information and high-quality images, so you can learn more about the place and see it in all its beauty.
+                                   </p>
+                                   <p class="mt-2 hidden text-sm sm:block text-[#212121]"> <b class="text-[#03a9f4]"> Step 2:</b> Learn more about the wonders
+                                       Once you've found a wonder that interests you, you can read more about it on its dedicated page. Our team of expert researchers has spent countless hours gathering information on each of these places, from their history and cultural significance to their unique geological formations. You can also view stunning images of each wonder, which will transport you to each of these incredible places. </p>
+                                       <p class="mt-2 hidden text-sm sm:block text-[#212121]">
+                                          <b class="text-[#03a9f4]"> Step 3:</b> Plan your visit
+                                           If you're planning a trip to one of the wonders we feature, our website can be a valuable resource to help you plan your visit. We provide practical information such as how to get there, when to visit, and where to stay. We also include tips and recommendations to help you make the most of your trip.
+                                       </p>
+
+                                       <p class="mt-2 hidden text-sm sm:block text-[#212121]">
+                                           <b class="text-[#03a9f4]">  Step 4:</b> Share your experience
+                                           We love hearing from our readers about their experiences visiting the wonders of the world. You can share your travel stories and photos with us on our social media channels, including Facebook, Twitter, and Instagram. Your feedback and suggestions can also help us improve our website and make it a better resource for our readers.   
+                                       </p>
                             </div>
 
 
@@ -444,10 +464,10 @@
 
     {{-- Sidebar -------------------------------------------------------------------- --}}
     <div id="drawer-navigation"
-        class="fixed top-0 mt-20 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800"
+        class="fixed top-0 mt-20 xl: mt-14 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800 "
         tabindex="-1" aria-labelledby="drawer-navigation-label">
         <h5 id="drawer-navigation-label"
-            class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">7Wonders menu</h5>
+            class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">Wonders menu</h5>
         <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -479,7 +499,7 @@
                         <ul id="dropdown-example" class="hidden py-2 space-y-2">
                             <li>
                                 <a href="{{ URL::to('uploads') }}"
-                                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
                                     <i class="fa-solid fa-chart-simple hover:text-white"></i>
                                     <span class="ml-3">Dashboard</span>
                                 </a>
@@ -493,7 +513,7 @@
                                 @csrf
                                 <li>
                                     <button href="#" type="submit"
-                                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
                                         <i class="fa-solid fa-right-from-bracket hover:text-white"></i>
                                         <span class="ml-3">Logout</span>
                                     </button>
@@ -504,7 +524,7 @@
                 @else
                     <li>
                         <a href="{{ URL::to('register') }}"
-                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
+                            class=" flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700 hover:text-white xl:hidden lg:hidden">
                             <i class="fa-solid fa-user-plus hover:text-white"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
                         </a>
@@ -514,7 +534,7 @@
 
                     <li>
                         <a href="{{ URL::to('login') }}"
-                            class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700">
+                            class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700 xl:hidden lg:hidden">
                             <i class="fa-solid fa-right-to-bracket hover:text-white"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
                         </a>
@@ -523,20 +543,27 @@
 
                 @endauth
                 <li>
-                    <a href="#recent"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                        <i class="fa-sharp fa-solid fa-address-card hover:text-white"></i>
-                        <span class="ml-3">Recent Images</span>
+                    <a href="/gallery"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+
+                        <i class="fa-solid fa-image hover:text-white"></i>
+                        <span class="ml-3">All places</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#all"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                        <i class="fa-sharp fa-solid fa-address-card hover:text-white"></i>
-                        <span class="ml-3">Albums</span>
+                    <a href="#How"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+                        <i class="fa-sharp fa-solid fa-circle-info hover:text-white"></i>
+                        <span class="ml-3">About us</span>
                     </a>
                 </li>
-
+                <li>
+                    <a href="#Gallery"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+                        <i class="fa-sharp fa-solid fa-address-card hover:text-white"></i>
+                        <span class="ml-3">Blog post</span>
+                    </a>
+                </li>
 
             </ul>
 
@@ -544,9 +571,7 @@
         </div>
     </div>
 
-   
-
-    <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5">
+    <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5 mt-96">
         <div class="relative block h-32 lg:col-span-2 lg:h-full">
             <img src="../img/shout.jpg" alt="" class="absolute inset-0 object-cover w-full h-full" />
         </div>

@@ -38,8 +38,6 @@
     </button>
 
 
-
- 
     <nav
         class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center">
 
@@ -318,7 +316,7 @@
                     <div class="flex items-center gap-1">
                         <i class="fa-solid fa-angle-right text-black text-xs"></i>
                         <a
-                            class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">About us</a>
+                            class="ml-1 text-sm font-medium text-[#03a9f4]  md:ml-2 dark:text-gray-400 dark:hover:text-white">Contact us</a>
                     </div>
                 </li>
             </ol>
@@ -335,13 +333,13 @@
             <div class="">
                 <div class="">
                     <div>
-                        <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl text-[#03a9f4] mb-2 slide-right ">About
+                        <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl text-[#03a9f4] mb-2 slide-right ">Contact us
                             Wonders Gallery
                         </h2>
 
                         <div class="lg:flex  grid">
                             <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl mb-2 text-black slide-right w-3/4">
-                                Know what we do</h2>
+                                Connect with us</h2>
                             <p class="text-gray-600 text-black slide-right justify-left mt-2">
 
                                 Each wonder tells a unique story of its time, culture, and the people who built it. They
@@ -365,7 +363,7 @@
 
 
                                     <div class="">
-                                        <img src="../img/meeting.jpg"
+                                        <img src="../img/call.jpg"
                                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                             alt="...">
                                     </div>
@@ -387,18 +385,19 @@
 
 
                                         <h3 class="text-lg font-bold text-white sm:text-2xl">
-                                            What we do
+                                           Connect with us
                                         </h3>
 
                                         <p class="mt-2 hidden text-sm sm:block text-white">
-                                            Our website's standout feature is undoubtedly the high-quality images we
-                                            provide for each of the wonders we feature. We understand that these places
-                                            are incredibly stunning, and we believe that a picture is worth a thousand
-                                            words. That's why we go the extra mile to provide you with high-resolution
-                                            images that capture the beauty of each wonder in all its glory. From the
-                                            majestic peaks of Mount Everest to the ancient ruins of Machu Picchu, our
-                                            images will transport you to each of these incredible places.
+                                            We value your feedback and are always here to help you with any queries or concerns you may have. If you have any questions about our website, suggestions for new wonders to feature, or just want to say hello, we'd love to hear from you! Here's how you can get in touch with us:
+                                        </p> 
+                                          
+                                           <p class="mt-2 hidden text-sm sm:block text-white">Social Media:
+                                            You can also reach out to us on our social media channels, including Facebook, Twitter, and Instagram. We're always happy to connect with our readers and share our latest updates and stunning photos of the wonders we feature.
                                         </p>
+                                        <p class="mt-2 hidden text-sm sm:block text-white"> Email:
+                                            You can send us an email at contact@wonders.com. We strive to respond to all emails within 24-48 hours, so please be patient if we take a little longer during busy periods.
+                                           </p>
                                     </div>
 
 
@@ -415,16 +414,19 @@
 
 
                                 <h3 class="text-lg font-bold text-[#212121] sm:text-2xl">
-                                    Why were here
-                                </h3>
+                                    Connect with us
+                                 </h3>
 
-                                <p class="mt-2 hidden text-sm sm:block text-[#212121]">
-                                    Wonders is a website dedicated to showcasing the most incredible places on earth,
-                                    providing detailed information and high-quality images for each of the wonders we
-                                    feature, all while offering an easy-to-use navigation system. We hope that our
-                                    website will inspire you to explore these wonders and appreciate the beauty of our
-                                    world.
-                                </p>
+                                 <p class="mt-2 hidden text-sm sm:block text-[#212121]">
+                                     We value your feedback and are always here to help you with any queries or concerns you may have. If you have any questions about our website, suggestions for new wonders to feature, or just want to say hello, we'd love to hear from you! Here's how you can get in touch with us:
+                                 </p> 
+                                   
+                                    <p class="mt-2 hidden text-sm sm:block text-[#212121]">Social Media:
+                                     You can also reach out to us on our social media channels, including Facebook, Twitter, and Instagram. We're always happy to connect with our readers and share our latest updates and stunning photos of the wonders we feature.
+                                 </p>
+                                 <p class="mt-2 hidden text-sm sm:block text-[#212121]"> Email:
+                                     You can send us an email at contact@wonders.com. We strive to respond to all emails within 24-48 hours, so please be patient if we take a little longer during busy periods.
+                                    </p>
                             </div>
 
 
@@ -442,12 +444,12 @@
 
 
 
-    {{-- Sidebar -------------------------------------------------------------------- --}}
-    <div id="drawer-navigation"
-        class="fixed top-0 mt-20 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800"
+        {{-- Sidebar -------------------------------------------------------------------- --}}
+        <div id="drawer-navigation"
+        class="fixed top-0 mt-20 xl: mt-14 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800 "
         tabindex="-1" aria-labelledby="drawer-navigation-label">
         <h5 id="drawer-navigation-label"
-            class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">7Wonders menu</h5>
+            class="text-base font-semibold font-sans text-gray-500 uppercase dark:text-gray-400">Wonders menu</h5>
         <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -479,7 +481,7 @@
                         <ul id="dropdown-example" class="hidden py-2 space-y-2">
                             <li>
                                 <a href="{{ URL::to('uploads') }}"
-                                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
                                     <i class="fa-solid fa-chart-simple hover:text-white"></i>
                                     <span class="ml-3">Dashboard</span>
                                 </a>
@@ -493,7 +495,7 @@
                                 @csrf
                                 <li>
                                     <button href="#" type="submit"
-                                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
+                                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
                                         <i class="fa-solid fa-right-from-bracket hover:text-white"></i>
                                         <span class="ml-3">Logout</span>
                                     </button>
@@ -504,7 +506,7 @@
                 @else
                     <li>
                         <a href="{{ URL::to('register') }}"
-                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700 hover:text-white">
+                            class=" flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700 hover:text-white xl:hidden lg:hidden">
                             <i class="fa-solid fa-user-plus hover:text-white"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
                         </a>
@@ -514,7 +516,7 @@
 
                     <li>
                         <a href="{{ URL::to('login') }}"
-                            class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-black dark:hover:bg-gray-700">
+                            class="flex items-center p-2 text-gray-900 hover:text-white rounded-lg dark:text-white hover:bg-[#212121] dark:hover:bg-gray-700 xl:hidden lg:hidden">
                             <i class="fa-solid fa-right-to-bracket hover:text-white"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
                         </a>
@@ -523,28 +525,33 @@
 
                 @endauth
                 <li>
-                    <a href="#recent"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                        <i class="fa-sharp fa-solid fa-address-card hover:text-white"></i>
-                        <span class="ml-3">Recent Images</span>
+                    <a href="/gallery"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+
+                        <i class="fa-solid fa-image hover:text-white"></i>
+                        <span class="ml-3">All places</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#all"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-black hover:text-white">
-                        <i class="fa-sharp fa-solid fa-address-card hover:text-white"></i>
-                        <span class="ml-3">Albums</span>
+                    <a href="#How"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+                        <i class="fa-sharp fa-solid fa-circle-info hover:text-white"></i>
+                        <span class="ml-3">About us</span>
                     </a>
                 </li>
-
+                <li>
+                    <a href="#Gallery"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 hover:bg-[#212121] hover:text-white">
+                        <i class="fa-sharp fa-solid fa-address-card hover:text-white"></i>
+                        <span class="ml-3">Blog post</span>
+                    </a>
+                </li>
 
             </ul>
 
 
         </div>
     </div>
-
-   
 
     <footer aria-label="Site Footer" class="bg-white lg:grid lg:grid-cols-5">
         <div class="relative block h-32 lg:col-span-2 lg:h-full">
