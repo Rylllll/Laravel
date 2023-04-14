@@ -343,13 +343,29 @@
 
     {{-- Viewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww --}}
     <section class="">
+
+        <div id="imageOverlay" class="fixed inset-0 z-50 bg-black bg-opacity-75 hidden">
+            <div class="absolute top-0 right-0 p-4">
+              <button id="closeButton" class="text-white hover:text-gray-300 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                  <path d="M5.703 5.706a.999.999 0 1 1 1.414-1.414l12 12a.999.999 0 0 1-1.414 1.414l-12-12z"/>
+                  <path d="M18.117 5.293a.999.999 0 0 1 1.414 1.414l-12 12a.999.999 0 1 1-1.414-1.414l12-12z"/>
+                </svg>
+              </button>
+            </div>
+
+            <div id="imageContainer" class="flex justify-center items-center h-full w-full">
+              <img id="fullscreenImage" alt="{{ $upload->title }}" src="{{ $upload->image }}" class="h-full object-contain max-w-full">
+            </div>
+          </div>
+          
         <div class="container mx-auto w-full px-7 sm:py-12 sm:px-6 lg:py-16 lg:px-8 sm:text-sm justify-center ">
 
             <div class="grid grid-cols-1 mx-auto gap-8 lg:grid-cols-2 lg:gap-16 justify-center">
 
                 <div class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
-                    <img alt="{{ $upload->title }}" src=" {{ $upload->image }}"
-                        class="absolute inset-0 h-full object-cover w-full md:w-full transition hover:scale-90" />
+                    <img id="thumbnailImage" alt="{{ $upload->title }}" src="{{ $upload->image }}" class="absolute inset-0 h-full object-cover w-full md:w-full  cursor-pointer"
+     onclick="toggleFullscreen()">
                 </div>
 
                 <div class="lg:py-24 mx-auto justify-center w-full  ">
@@ -366,25 +382,7 @@
                         <i class="fa-sharp fa-solid fa-calendar-days" style="color: #000000;"></i>
                         <p class="m-0">{{ substr($upload->created_at, 0, 10) }}</p>
                     </div>
-                    {{-- <a href="/gallery">
-                        <button
-                            class="mt-8 group relative inline-flex items-center overflow-hidden rounded-full bg-[#212121] px-8 py-3 text-white focus:outline-none focus:ring active:bg-[#212121]"
-                            href="/gallery">
-                            <span
-                                class="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4">
-                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </span>
-
-                            <span class="text-sm font-medium transition-all group-hover:ml-4">
-                                Gallery
-
-                            </span>
-                        </button>
-                    </a> --}}
+                  
                 </div>
 
 
@@ -685,6 +683,10 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="../js/search.js"></script>
+    <script src="../js/image.js"></script>
+    
+
+ 
 </body>
 
 </html>
