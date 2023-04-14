@@ -4,7 +4,7 @@ $.ajax({
     method: "GET",
     url: "/places-list",
     success: function(response) {
-        console.log(response)
+        // console.log(response)
         startAutoComplete(response);
     }
 

@@ -39,10 +39,7 @@
 
 <body class="font-sans">
 
-    <button x-data="topBtn" @click="scrolltoTop" id="topButton"
-    class="fixed z-20 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce transform-gpu translate-z-0 hover:translate-z-1">
-    <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000; transform: translateZ(0.1rem);"></i>
-</button>
+ 
 
     <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 font-sans">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
@@ -59,8 +56,8 @@
                             </path>
                         </svg>
                     </button>
-                    <a href="#" class="flex ml-2 md:mr-24">
-                        <img src="../../img/ph.png" class="h-8 mr-3" alt="FlowBite Logo" />
+                    <a href="/" class="flex ml-2 md:mr-24">
+                        <img src="../../img/ph.png" class="h-8 mr-3" alt="wonders Logo" />
 
                     </a>
                 </div>
@@ -113,7 +110,7 @@
         <div class="h-full px-3 py-4 overflow-y-auto bg-gray-200 dark:bg-gray-800 justify-between">
            <ul class="space-y-2 font-medium">
               <li>
-                 <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                 <a href="/uploads" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                     <i class="fa-solid fa-chart-pie"></i>
                     <span class="ml-3">Dashboard</span>
                  </a>
@@ -257,7 +254,7 @@
                             <div class="w-full sm:w-2/3 px-4">
                               <div class="flex flex-wrap sm:flex-nowrap max-w-xl">
                                 <div class="flex-shrink-0 w-20 h-20 mb-4 mr-4 rounded-full">
-                                  <img src="trizzle-assets/images/avatar-photo-form.png" alt="">
+                             
                                 </div>
                                 <div class="w-full py-8 px-4 text-center border-dashed border border-gray-400 hover:border-white focus:border-green-500 rounded-lg">
                                   <div class="relative group h-14 w-14 mx-auto mb-4">
@@ -385,10 +382,8 @@
 
 
 </body>
-<!-- plugin for scrollbar  -->
-<script src="../../assets/js/plugins/perfect-scrollbar.min.js " async></script>
-<script async defer src="https://buttons.github.io/buttons.js "></script>
-<script src="../../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4 " async></script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 <script src="../../js/alert.js " async></script>
 </html>

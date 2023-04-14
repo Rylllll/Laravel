@@ -59,8 +59,8 @@
                             </path>
                         </svg>
                     </button>
-                    <a href="#" class="flex ml-2 md:mr-24">
-                        <img src="../img/ph.png" class="h-8 mr-3" alt="FlowBite Logo" />
+                    <a href="/" class="flex ml-2 md:mr-24">
+                        <img src="../img/ph.png" class="h-8 mr-3" alt="wonders Logo" />
 
                     </a>
                 </div>
@@ -263,7 +263,7 @@
                 <div class="flex items-center font-sans ">
                     <div class="sm:max-h-screen sm:overflow-x-auto">
                         <table class="p-6 text-md bg-white font-sans ">
-                            <thead class="bg-gray-100 rounded-2xl ">
+                            <thead class="bg-gray-100 rounded-2xl">
                                 <th class="text-left p-3 px-5 text-[#424242]">Title </th>
                                 <th class="text-left p-3 md:block px-5 text-[#424242] hidden  lg:flex">About</th>
                                 <th class="text-left p-3 px-5 text-[#424242]">Category</th>
@@ -454,7 +454,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.min.js " async></script>
 <script src="../js/modal.js " async></script>
-<script src="../js/alert.js " async></script>
+{{-- <script src="../js/alert.js " async></script> --}}
 
 
 </html>

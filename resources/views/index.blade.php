@@ -22,7 +22,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <link href="./app.css" rel="stylesheet">
+
     
     <title>Wonders Gallery</title>
     @vite('resources/css/app.css')
@@ -990,7 +990,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://unpkg.com/taos@1.0.2/dist/taos.js"></script>
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="../js/scroll.js"></script>
     <script src="../js/search.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
