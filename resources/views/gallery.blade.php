@@ -363,7 +363,7 @@
            
                     @foreach ($homes as $item)
                     <a href="{{ route('display.show', ['id' => $item->id]) }}" class="">
-                    <div  class="group relative md:block lg:block grid  mb-6 bg-black rounded ">
+                    <div  class="group relative md:block lg:block grid  mb-6 bg-black rounded">
                         <img
                           alt="{{ $item->title }}"
                           src="{{ $item->image }}"
@@ -391,7 +391,7 @@
 
     </section>
 
-    {{-- Sidebar -------------------------------------------------------------------- --}}
+{{-- Sidebar --}}
     <div id="drawer-navigation"
         class="fixed top-0 mt-20 xl: mt-14 left-0 z-50 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800 "
         tabindex="-1" aria-labelledby="drawer-navigation-label">

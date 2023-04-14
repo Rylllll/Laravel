@@ -311,7 +311,7 @@
 
             <div class="">
                 <div class="">
-                    <div>
+                    <div class="">
                         <h2 class="text-3xl font-bold md:text-6xl sm:text-4xl text-[#03a9f4] mb-2 slide-right ">READY
                             TO EXPLORE THE BEAUTY OF</h2>
 
@@ -343,7 +343,7 @@
                                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                                 <img src="{{ $item->image }}"
                                                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                                    alt="...">
+                                                    alt="{{ $item->title }}">
                                             </div>
                                         </a>
                                     @endforeach
@@ -389,18 +389,18 @@
                             </div>
                             @foreach ($taked as $item)
                                 <div
-                                    class="hidden absolute mt-24 top-64 left-100 right-0 mr-4 z-20 lg:flex  flex-col items-center justify-center slide-right ">
+                                    class="hidden absolute mt-24 top-64 left-100 right-0 mr-4 z-20 lg:flex  flex-col items-center justify-center cards ">
                                     <a href="{{ route('display.show', ['id' => $item->id]) }}"
-                                        class="flex flex-col items-center bg-white shadow-xl md:flex-row md:max-w-xl  dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                        class="flex flex-col items-center bg-white shadow-xl md:flex-row md:max-w-xl  dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 cards">
                                         <div class="flex flex-col justify-between p-4 leading-normal">
                                             <h5
-                                                class="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white slide-right ">
+                                                class="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white cards ">
                                                 {{ $item->title }}</h5>
                                             <p
-                                                class="mb-3 font-normal text-black dark:text-gray-400 text-sm slide-right ">
+                                                class="mb-3 font-normal text-black dark:text-gray-400 text-sm cards ">
                                                 View the latest place!</p>
                                         </div>
-                                        <img class="object-cover w-full h-full md:h-full md:w-48 md:rounded-none slide-right "
+                                        <img class="object-cover w-full h-full md:h-full md:w-48 md:rounded-none cards "
                                             src="{{ $item->image }}" alt="{{ $item->title }}">
                                     </a>
                                 </div>

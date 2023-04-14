@@ -36,6 +36,10 @@ const sr = ScrollReveal({
 sr.reveal(".latest_up, .latest", {
     origin: 'left',
 })
+sr.reveal(".cards", {
+    origin: 'right',
+    interval: 100,
+})
 
 sr.reveal(".slide-down, .slide-right", {
     origin: 'top',
