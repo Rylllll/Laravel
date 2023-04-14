@@ -29,7 +29,13 @@ class DisplayController extends Controller
     public function searchPlaces(Request $request){
         if ($request->search){
            
-            $searchPlaces = Upload::where('title','LIKE', '%' .$request->search. '%')->latest()->get();
+            $searchPlaces = Upload::where('title','LIKE', '%' .$request->search. '%')
+            ->orwhere('about','LIKE', '%' .$request->search. '%')
+            ->orwhere('category','LIKE', '%' .$request->search. '%')
+            ->orderBy('category', 'asc')
+            ->orderBy('title', 'asc')
+            ->latest()->get();
+
             return view ('/search', compact('searchPlaces'));
 
         }
@@ -44,7 +50,16 @@ class DisplayController extends Controller
 
 public function searchPlacesAjax(Request $request)
 {
-    $places = Upload::where('title', 'LIKE', '%' . $request->search . '%')->get();
+
+    
+    $places = Upload::where('title', 'LIKE', '%' . $request->search . '%')
+    ->orwhere('about','LIKE', '%' .$request->search. '%')
+            ->orwhere('category','LIKE', '%' .$request->search. '%')
+            ->orderBy('category', 'asc')
+            ->orderBy('title', 'asc')
+    ->get();
+ 
+
     $data = [];
 
     foreach ($places as $item) {
