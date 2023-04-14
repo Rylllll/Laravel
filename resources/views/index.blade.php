@@ -19,11 +19,11 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
         crossorigin="anonymous"></script>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    
+
     <title>Wonders Gallery</title>
     @vite('resources/css/app.css')
 </head>
@@ -191,18 +191,17 @@
 
 
                         <div class="relative text-gray-600">
-                            <input type="search" placeholder="Search places..."
-                            id="search_places"
+                            <input type="search" placeholder="Search places..." id="search_places"
                                 class="bg-white h-6 p-4 text-sm focus:outline-none mt-3 md:w-96 w-40 font-thin "
                                 name="search" value="{{ Request::get('search') }}" required>
                             <button type="submit" class="absolute right-0 top-0 mt-4 mr-4 ">
                                 <i class="fa-solid fa-magnifying-glass text-[#212121]"></i>
                             </button>
 
-                            
+
                         </div>
                     </form>
-                    
+
 
                 </div>
                 @auth
@@ -216,7 +215,7 @@
 
                             <button x-on:click="isActive = !isActive" class="h-full p-2 text-gray-600  ">
                                 <img src="../img/user.png" class="w-7 h-7 rounded-full" alt="">
-                         
+
                             </button>
                         </div>
 
@@ -255,7 +254,8 @@
                     <div x-data="{ isActive: false }" class="relative lg:block hidden">
 
 
-                        <button x-on:click="isActive = !isActive" class="h-full px-2 mt-1 text-gray-600 justify-center mx-auto">
+                        <button x-on:click="isActive = !isActive"
+                            class="h-full px-2 mt-1 text-gray-600 justify-center mx-auto">
                             <span class="sr-only">Acc</span>
                             <i class="fa-regular fa-user text[#212121]"></i></label>
                         </button>
@@ -368,19 +368,24 @@
 
                             <div
                                 class="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 slide-right w-full">
-                               
-                                <form action="{{ url('search') }}" method="GET" role="search">   
-                                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+
+                                <form action="{{ url('search') }}" method="GET" role="search">
+                                    <label for="default-search"
+                                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                                     <div class="relative w-1/2 container justify-center mx-auto items-center">
-                                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                            <i
-                                            class="fa-solid fa-magnifying-glass text-[#212121]"></i>
+                                        <div
+                                            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                            <i class="fa-solid fa-magnifying-glass text-[#212121]"></i>
                                         </div>
-                                        <input type="search" name="search" id="search_places" value="{{ Request::get('search') }}" id="default-search" class="block w-full p-6 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Places..." required>
-                                        <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-[#03a9f4] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-4 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                                        <input type="search" name="search" id="search_places"
+                                            value="{{ Request::get('search') }}" id="default-search"
+                                            class="block w-full p-6 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Search Places..." required>
+                                        <button type="submit"
+                                            class="text-white absolute right-2.5 bottom-2.5 bg-[#03a9f4] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-4 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                                     </div>
                                 </form>
-                                
+
                             </div>
                             @foreach ($taked as $item)
                                 <div
@@ -423,16 +428,34 @@
     </section>
 
 
-{{--Sponsors--}}
+    {{-- Sponsors --}}
 
     <section class="md:container items-center w-full mx-auto px-7 mt-24 mb-24 ">
-        <div class="flex justify-between s">
+        <div class="flex justify-between ">
+            <div class="sponsor__content">
+                <img src="../img/sponsors1.png" class="md:w-28 w-16 sm:w-12 h-auto slide-down sponsor__img "
+                    alt="">
+            </div>
+            <div class="sponsor__content">
+                <img src="../img/sponsors2.png" class="md:w-28 w-16 sm:w-12 h-auto slide-down sponsor__img "
+                    alt="">
+            </div>
+            <div class="sponsor__content">
 
-            <img src="../img/sponsors1.png" class="md:w-28 w-16 sm:w-12 h-auto filter grayscale-100 slide-down" alt="">
-            <img src="../img/sponsors2.png" class="md:w-28 w-16 sm:w-12 h-auto filter grayscale slide-down" alt="">
-            <img src="../img/sponsors3.png" class="md:w-28 w-16 sm:w-12 h-auto filter grayscale slide-down" alt="">
-            <img src="../img/sponsors4.png" class="md:w-28 w-16 sm:w-12 h-auto filter grayscale slide-down" alt="">
-            <img src="../img/sponsors5.png" class="md:w-28 w-16 sm:w-12 h-auto filter grayscale slide-down" alt="">
+                <img src="../img/sponsors3.png" class="md:w-28 w-16 sm:w-12 h-auto slide-down sponsor__img "
+                    alt="">
+            </div>
+            <div class="sponsor__content">
+
+                <img src="../img/sponsors4.png" class="md:w-28 w-16 sm:w-12 h-auto slide-down sponsor__img "
+                    alt="">
+            </div>
+            <div class="sponsor__content">
+                <img src="../img/sponsors5.png" class="md:w-28 w-16 sm:w-12 h-auto slide-down sponsor__img "
+                    alt="">
+            </div>
+
+
 
         </div>
 
@@ -440,7 +463,7 @@
         </div>
     </section>
 
- 
+
 
 
 
@@ -642,7 +665,7 @@
 
 
 
-    
+
 
     <section class="min-h-auto flex items-stretch text-white ">
         <div class="lg:flex w-1/2 hidden bg-cover bg-no-repeat bg-center relative items-center"
@@ -974,14 +997,7 @@
                 {{ session('success') }} 👋
             </a>
 
-            <button class="rounded bg-white/20 p-1 hover:bg-white/10">
-                <span class="sr-only">Close</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clipRule="evenodd" />
-                </svg>
-            </button>
+
         </aside>
     @endif
 
@@ -993,7 +1009,7 @@
     <script src="../js/scroll.js"></script>
     <script src="../js/search.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    
+
 
 </body>
 

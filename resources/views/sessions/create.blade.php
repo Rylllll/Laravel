@@ -27,7 +27,11 @@
 
 <body >
 
-   
+    <button x-data="topBtn" @click="scrolltoTop" id="topButton"
+    class="fixed z-20 hidden p-3 bg-blue-400 rounded-full shadow-md bottom-10 right-10 animate-bounce transform-gpu translate-z-0 hover:translate-z-1">
+    <i class="fa-solid fa-chevron-up w-6 h-5" style="color: #000000; transform: translateZ(0.1rem);"></i>
+</button>
+
     <nav
         class="fixed w-full mx-auto top-0 z-50 bg-white transition duration-300 transform --translate-x-full items-center flex justify-center">
 

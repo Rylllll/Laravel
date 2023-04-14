@@ -33,17 +33,18 @@ class UploadController extends Controller
 
    
     public function store(Request $request)
-    {
-        if ($request->hasFile('image')) {
-            $requestData = $request->all();
-            $fileName = time().$request->file('image')->getClientOriginalName();
-            $path = $request->file('image')->storeAs('images', $fileName, 'public');
-            $requestData["image"] = '/storage/'.$path;
-            upload::create($requestData);
-            return redirect('uploads')->with('flash_message', 'Photo added');
-        }
-        
+{
+    if ($request->hasFile('image') && $request->file('image')->isValid() && strpos($request->file('image')->getMimeType(), "image/") !== false) {
+        $requestData = $request->all();
+        $fileName = time().$request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->storeAs('images', $fileName, 'public');
+        $requestData["image"] = '/storage/'.$path;
+        upload::create($requestData);
+        return redirect('uploads')->with('flash_message', 'Photo added');
+    } else {
+        return redirect()->back()->withErrors(['image' => 'The uploaded file is not a valid image.']);
     }
+}
 
 
   

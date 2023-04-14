@@ -33,6 +33,16 @@
     max-height: 200px;
 }
 
+.sponsor__content:hover .sponsor__img {
+    filter: invert(0.5);
+}
+
+.sponsor__img {
+    width: 90px;
+    filter: invert(0.7);
+    transition: var(--img-transition);
+}
+
 .transition-all {
     transition-property: all;
 }
